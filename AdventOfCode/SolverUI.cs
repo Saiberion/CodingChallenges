@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,60 +17,60 @@ namespace AdventOfCode
 
         readonly List<Day> days2019 = new List<Day>()
         {
-            new _2019.Day01() { Name = "Day 01", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day02() { Name = "Day 02", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day03() { Name = "Day 03", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day04() { Name = "Day 04", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day05() { Name = "Day 05", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day06() { Name = "Day 06", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day07() { Name = "Day 07", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day08() { Name = "Day 08", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day09() { Name = "Day 09", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day10() { Name = "Day 10", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day11() { Name = "Day 11", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day12() { Name = "Day 12", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day13() { Name = "Day 13", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day14() { Name = "Day 14", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day15() { Name = "Day 15", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day16() { Name = "Day 16", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day17() { Name = "Day 17", StopWatch = new Stopwatch(), Enabled = true },
-            new _2019.Day18() { Name = "Day 18", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day19() { Name = "Day 19", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day20() { Name = "Day 20", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day21() { Name = "Day 21", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day22() { Name = "Day 22", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day23() { Name = "Day 23", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day24() { Name = "Day 24", StopWatch = new Stopwatch(), Enabled = false },
-            new _2019.Day25() { Name = "Day 25", StopWatch = new Stopwatch(), Enabled = false }
+            new _2019.Day01() { Name = "Day 01", Enabled = true },
+            new _2019.Day02() { Name = "Day 02", Enabled = true },
+            new _2019.Day03() { Name = "Day 03", Enabled = true },
+            new _2019.Day04() { Name = "Day 04", Enabled = true },
+            new _2019.Day05() { Name = "Day 05", Enabled = true },
+            new _2019.Day06() { Name = "Day 06", Enabled = true },
+            new _2019.Day07() { Name = "Day 07", Enabled = true },
+            new _2019.Day08() { Name = "Day 08", Enabled = true },
+            new _2019.Day09() { Name = "Day 09", Enabled = true },
+            new _2019.Day10() { Name = "Day 10", Enabled = true },
+            new _2019.Day11() { Name = "Day 11", Enabled = true },
+            new _2019.Day12() { Name = "Day 12", Enabled = true },
+            new _2019.Day13() { Name = "Day 13", Enabled = true },
+            new _2019.Day14() { Name = "Day 14", Enabled = false },
+            new _2019.Day15() { Name = "Day 15", Enabled = false },
+            new _2019.Day16() { Name = "Day 16", Enabled = false },
+            new _2019.Day17() { Name = "Day 17", Enabled = true },
+            new _2019.Day18() { Name = "Day 18", Enabled = false },
+            new _2019.Day19() { Name = "Day 19", Enabled = false },
+            new _2019.Day20() { Name = "Day 20", Enabled = false },
+            new _2019.Day21() { Name = "Day 21", Enabled = false },
+            new _2019.Day22() { Name = "Day 22", Enabled = false },
+            new _2019.Day23() { Name = "Day 23", Enabled = false },
+            new _2019.Day24() { Name = "Day 24", Enabled = false },
+            new _2019.Day25() { Name = "Day 25", Enabled = false }
         };
 
         readonly List<Day> days2020 = new List<Day>()
         {
-            new _2020.Day01() { Name = "Day 01", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day02() { Name = "Day 02", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day03() { Name = "Day 03", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day04() { Name = "Day 04", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day05() { Name = "Day 05", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day06() { Name = "Day 06", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day07() { Name = "Day 07", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day08() { Name = "Day 08", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day09() { Name = "Day 09", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day10() { Name = "Day 10", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day11() { Name = "Day 11", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day12() { Name = "Day 12", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day13() { Name = "Day 13", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day14() { Name = "Day 14", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day15() { Name = "Day 15", StopWatch = new Stopwatch(), Enabled = false },
-            new _2020.Day16() { Name = "Day 16", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day17() { Name = "Day 17", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day18() { Name = "Day 18", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day19() { Name = "Day 19", StopWatch = new Stopwatch(), Enabled = false },
-            new _2020.Day20() { Name = "Day 20", StopWatch = new Stopwatch(), Enabled = false },
-            new _2020.Day21() { Name = "Day 21", StopWatch = new Stopwatch(), Enabled = false },
-            new _2020.Day22() { Name = "Day 22", StopWatch = new Stopwatch(), Enabled = true },
-            new _2020.Day23() { Name = "Day 23", StopWatch = new Stopwatch(), Enabled = false },
-            new _2020.Day24() { Name = "Day 24", StopWatch = new Stopwatch(), Enabled = false },
-            new _2020.Day25() { Name = "Day 25", StopWatch = new Stopwatch(), Enabled = false }
+            new _2020.Day01() { Name = "Day 01", Enabled = true },
+            new _2020.Day02() { Name = "Day 02", Enabled = true },
+            new _2020.Day03() { Name = "Day 03", Enabled = true },
+            new _2020.Day04() { Name = "Day 04", Enabled = true },
+            new _2020.Day05() { Name = "Day 05", Enabled = true },
+            new _2020.Day06() { Name = "Day 06", Enabled = true },
+            new _2020.Day07() { Name = "Day 07", Enabled = true },
+            new _2020.Day08() { Name = "Day 08", Enabled = true },
+            new _2020.Day09() { Name = "Day 09", Enabled = true },
+            new _2020.Day10() { Name = "Day 10", Enabled = true },
+            new _2020.Day11() { Name = "Day 11", Enabled = true },
+            new _2020.Day12() { Name = "Day 12", Enabled = true },
+            new _2020.Day13() { Name = "Day 13", Enabled = true },
+            new _2020.Day14() { Name = "Day 14", Enabled = true },
+            new _2020.Day15() { Name = "Day 15", Enabled = false },
+            new _2020.Day16() { Name = "Day 16", Enabled = true },
+            new _2020.Day17() { Name = "Day 17", Enabled = true },
+            new _2020.Day18() { Name = "Day 18", Enabled = true },
+            new _2020.Day19() { Name = "Day 19", Enabled = false },
+            new _2020.Day20() { Name = "Day 20", Enabled = false },
+            new _2020.Day21() { Name = "Day 21", Enabled = false },
+            new _2020.Day22() { Name = "Day 22", Enabled = true },
+            new _2020.Day23() { Name = "Day 23", Enabled = false },
+            new _2020.Day24() { Name = "Day 24", Enabled = false },
+            new _2020.Day25() { Name = "Day 25", Enabled = false }
         };
 
         readonly List<Day> days2021 = new List<Day>()
