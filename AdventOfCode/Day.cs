@@ -12,7 +12,6 @@ namespace AdventOfCode
     {
         public string Part1Solution { get; set; }
         public string Part2Solution { get; set; }
-        public string Name { get; set; }
         internal List<string> Input { get; set; }
         public Stopwatch StopWatch { get; set; }
         public bool Enabled { get; set; }
