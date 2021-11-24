@@ -99,6 +99,31 @@
     <Compile Include="2020\Day23.cs" />
     <Compile Include="2020\Day24.cs" />
     <Compile Include="2020\Day25.cs" />
+    <Compile Include="AoC2021\Day01.cs" />
+    <Compile Include="AoC2021\Day02.cs" />
+    <Compile Include="AoC2021\Day03.cs" />
+    <Compile Include="AoC2021\Day04.cs" />
+    <Compile Include="AoC2021\Day05.cs" />
+    <Compile Include="AoC2021\Day06.cs" />
+    <Compile Include="AoC2021\Day07.cs" />
+    <Compile Include="AoC2021\Day08.cs" />
+    <Compile Include="AoC2021\Day09.cs" />
+    <Compile Include="AoC2021\Day10.cs" />
+    <Compile Include="AoC2021\Day11.cs" />
+    <Compile Include="AoC2021\Day12.cs" />
+    <Compile Include="AoC2021\Day13.cs" />
+    <Compile Include="AoC2021\Day14.cs" />
+    <Compile Include="AoC2021\Day15.cs" />
+    <Compile Include="AoC2021\Day16.cs" />
+    <Compile Include="AoC2021\Day17.cs" />
+    <Compile Include="AoC2021\Day18.cs" />
+    <Compile Include="AoC2021\Day19.cs" />
+    <Compile Include="AoC2021\Day20.cs" />
+    <Compile Include="AoC2021\Day21.cs" />
+    <Compile Include="AoC2021\Day22.cs" />
+    <Compile Include="AoC2021\Day23.cs" />
+    <Compile Include="AoC2021\Day24.cs" />
+    <Compile Include="AoC2021\Day25.cs" />
     <Compile Include="Day.cs" />
     <Compile Include="SolverUI.cs">
       <SubType>Form</SubType>
@@ -283,6 +308,81 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="2020\inputs\day01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day02.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day03.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day04.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day05.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day06.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day07.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day08.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day09.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day10.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day11.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day12.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day13.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day14.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day15.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day16.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day17.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day18.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day19.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day20.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day21.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day22.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day23.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day24.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2021\inputs\Day25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

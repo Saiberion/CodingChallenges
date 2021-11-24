@@ -73,6 +73,35 @@ namespace AdventOfCode
             new _2020.Day25() { Name = "Day 25", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false }
         };
 
+        readonly List<Day> days2021 = new List<Day>()
+        {
+            new AoC2021.Day01() { Name = "Day 01", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day02() { Name = "Day 02", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day03() { Name = "Day 03", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day04() { Name = "Day 04", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day05() { Name = "Day 05", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day06() { Name = "Day 06", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day07() { Name = "Day 07", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day08() { Name = "Day 08", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day09() { Name = "Day 09", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day10() { Name = "Day 10", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day11() { Name = "Day 11", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day12() { Name = "Day 12", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day13() { Name = "Day 13", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day14() { Name = "Day 14", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day15() { Name = "Day 15", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day16() { Name = "Day 16", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day17() { Name = "Day 17", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day18() { Name = "Day 18", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day19() { Name = "Day 19", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day20() { Name = "Day 20", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day21() { Name = "Day 21", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day22() { Name = "Day 22", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day23() { Name = "Day 23", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day24() { Name = "Day 24", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false },
+            new AoC2021.Day25() { Name = "Day 25", StopWatch = new System.Diagnostics.Stopwatch(), Enabled = false }
+        };
+
         public FormSolverUI()
         {
             InitializeComponent();
@@ -190,6 +219,10 @@ namespace AdventOfCode
             else if (comboBoxYearSelect.SelectedItem.ToString().Equals("2019"))
             {
                 days = days2019;
+            }
+            else if (comboBoxYearSelect.SelectedItem.ToString().Equals("AoC2021"))
+            {
+                days = days2021;
             }
 
             for (int i = 0; i < days.Count; i++)
