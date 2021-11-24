@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,13 @@ namespace AdventOfCode
         public string Part2Solution { get; set; }
         public string Name { get; set; }
         internal List<string> Input { get; set; }
-        public System.Diagnostics.Stopwatch StopWatch { get; set; }
+        public Stopwatch StopWatch { get; set; }
         public bool Enabled { get; set; }
+
+        public Day()
+        {
+            StopWatch = new Stopwatch();
+        }
 
         virtual public void Solve()
         {
