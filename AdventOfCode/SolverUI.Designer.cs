@@ -29,32 +29,32 @@ namespace AdventOfCode
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelMainContainer = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxYearSelect = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelDayGrid = new System.Windows.Forms.TableLayoutPanel();
             this.labelCaptionSolutionPart1 = new System.Windows.Forms.Label();
             this.labelCaptionSolutionPart2 = new System.Windows.Forms.Label();
             this.labelCaptionRuntime = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanelMainContainer.SuspendLayout();
+            this.tableLayoutPanelDayGrid.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelMainContainer
             // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxYearSelect, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(559, 450);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanelMainContainer.AutoSize = true;
+            this.tableLayoutPanelMainContainer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelMainContainer.ColumnCount = 1;
+            this.tableLayoutPanelMainContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelMainContainer.Controls.Add(this.comboBoxYearSelect, 0, 0);
+            this.tableLayoutPanelMainContainer.Controls.Add(this.tableLayoutPanelDayGrid, 0, 1);
+            this.tableLayoutPanelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelMainContainer.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelMainContainer.Name = "tableLayoutPanelMainContainer";
+            this.tableLayoutPanelMainContainer.RowCount = 2;
+            this.tableLayoutPanelMainContainer.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMainContainer.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMainContainer.Size = new System.Drawing.Size(559, 450);
+            this.tableLayoutPanelMainContainer.TabIndex = 0;
             // 
             // comboBoxYearSelect
             // 
@@ -67,26 +67,26 @@ namespace AdventOfCode
             this.comboBoxYearSelect.TabIndex = 0;
             this.comboBoxYearSelect.SelectedIndexChanged += new System.EventHandler(this.ComboBoxYearSelect_SelectedIndexChanged);
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanelDayGrid
             // 
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 249F));
-            this.tableLayoutPanel2.Controls.Add(this.labelCaptionSolutionPart1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.labelCaptionSolutionPart2, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.labelCaptionRuntime, 3, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 30);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(554, 417);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanelDayGrid.AutoSize = true;
+            this.tableLayoutPanelDayGrid.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelDayGrid.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanelDayGrid.ColumnCount = 4;
+            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanelDayGrid.Controls.Add(this.labelCaptionSolutionPart1, 1, 0);
+            this.tableLayoutPanelDayGrid.Controls.Add(this.labelCaptionSolutionPart2, 2, 0);
+            this.tableLayoutPanelDayGrid.Controls.Add(this.labelCaptionRuntime, 3, 0);
+            this.tableLayoutPanelDayGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelDayGrid.Location = new System.Drawing.Point(3, 30);
+            this.tableLayoutPanelDayGrid.Name = "tableLayoutPanelDayGrid";
+            this.tableLayoutPanelDayGrid.RowCount = 1;
+            this.tableLayoutPanelDayGrid.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelDayGrid.Size = new System.Drawing.Size(555, 417);
+            this.tableLayoutPanelDayGrid.TabIndex = 1;
             // 
             // labelCaptionSolutionPart1
             // 
@@ -125,15 +125,15 @@ namespace AdventOfCode
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(559, 450);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanelMainContainer);
             this.Name = "FormSolverUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advent of Code Collection";
             this.Load += new System.EventHandler(this.SolverUI_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanelMainContainer.ResumeLayout(false);
+            this.tableLayoutPanelMainContainer.PerformLayout();
+            this.tableLayoutPanelDayGrid.ResumeLayout(false);
+            this.tableLayoutPanelDayGrid.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,9 +141,9 @@ namespace AdventOfCode
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMainContainer;
         private System.Windows.Forms.ComboBox comboBoxYearSelect;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelDayGrid;
         private System.Windows.Forms.Label labelCaptionSolutionPart1;
         private System.Windows.Forms.Label labelCaptionSolutionPart2;
         private System.Windows.Forms.Label labelCaptionRuntime;

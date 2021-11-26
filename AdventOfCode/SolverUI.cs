@@ -13,108 +13,116 @@ namespace AdventOfCode
 {
     public partial class FormSolverUI : Form
     {
-        List<Day> days;
-
-        readonly List<Day> days2019 = new List<Day>()
+        private Dictionary<string, List<Day>> allAoCDays = new Dictionary<string, List<Day>>()
         {
-            new AoC2019.Day01() { Enabled = true },
-            new AoC2019.Day02() { Enabled = true },
-            new AoC2019.Day03() { Enabled = true },
-            new AoC2019.Day04() { Enabled = true },
-            new AoC2019.Day05() { Enabled = true },
-            new AoC2019.Day06() { Enabled = true },
-            new AoC2019.Day07() { Enabled = true },
-            new AoC2019.Day08() { Enabled = true },
-            new AoC2019.Day09() { Enabled = true },
-            new AoC2019.Day10() { Enabled = true },
-            new AoC2019.Day11() { Enabled = true },
-            new AoC2019.Day12() { Enabled = true },
-            new AoC2019.Day13() { Enabled = true },
-            new AoC2019.Day14() { Enabled = false },
-            new AoC2019.Day15() { Enabled = false },
-            new AoC2019.Day16() { Enabled = false },
-            new AoC2019.Day17() { Enabled = true },
-            new AoC2019.Day18() { Enabled = false },
-            new AoC2019.Day19() { Enabled = false },
-            new AoC2019.Day20() { Enabled = false },
-            new AoC2019.Day21() { Enabled = false },
-            new AoC2019.Day22() { Enabled = false },
-            new AoC2019.Day23() { Enabled = false },
-            new AoC2019.Day24() { Enabled = false },
-            new AoC2019.Day25() { Enabled = false }
-        };
-
-        readonly List<Day> days2020 = new List<Day>()
-        {
-            new AoC2020.Day01() { Enabled = true },
-            new AoC2020.Day02() { Enabled = true },
-            new AoC2020.Day03() { Enabled = true },
-            new AoC2020.Day04() { Enabled = true },
-            new AoC2020.Day05() { Enabled = true },
-            new AoC2020.Day06() { Enabled = true },
-            new AoC2020.Day07() { Enabled = true },
-            new AoC2020.Day08() { Enabled = true },
-            new AoC2020.Day09() { Enabled = true },
-            new AoC2020.Day10() { Enabled = true },
-            new AoC2020.Day11() { Enabled = true },
-            new AoC2020.Day12() { Enabled = true },
-            new AoC2020.Day13() { Enabled = true },
-            new AoC2020.Day14() { Enabled = true },
-            new AoC2020.Day15() { Enabled = false },
-            new AoC2020.Day16() { Enabled = true },
-            new AoC2020.Day17() { Enabled = true },
-            new AoC2020.Day18() { Enabled = true },
-            new AoC2020.Day19() { Enabled = false },
-            new AoC2020.Day20() { Enabled = false },
-            new AoC2020.Day21() { Enabled = false },
-            new AoC2020.Day22() { Enabled = true },
-            new AoC2020.Day23() { Enabled = false },
-            new AoC2020.Day24() { Enabled = false },
-            new AoC2020.Day25() { Enabled = false }
-        };
-
-        readonly List<Day> days2021 = new List<Day>()
-        {
-            new AoC2021.Day01() { Enabled = false },
-            new AoC2021.Day02() { Enabled = false },
-            new AoC2021.Day03() { Enabled = false },
-            new AoC2021.Day04() { Enabled = false },
-            new AoC2021.Day05() { Enabled = false },
-            new AoC2021.Day06() { Enabled = false },
-            new AoC2021.Day07() { Enabled = false },
-            new AoC2021.Day08() { Enabled = false },
-            new AoC2021.Day09() { Enabled = false },
-            new AoC2021.Day10() { Enabled = false },
-            new AoC2021.Day11() { Enabled = false },
-            new AoC2021.Day12() { Enabled = false },
-            new AoC2021.Day13() { Enabled = false },
-            new AoC2021.Day14() { Enabled = false },
-            new AoC2021.Day15() { Enabled = false },
-            new AoC2021.Day16() { Enabled = false },
-            new AoC2021.Day17() { Enabled = false },
-            new AoC2021.Day18() { Enabled = false },
-            new AoC2021.Day19() { Enabled = false },
-            new AoC2021.Day20() { Enabled = false },
-            new AoC2021.Day21() { Enabled = false },
-            new AoC2021.Day22() { Enabled = false },
-            new AoC2021.Day23() { Enabled = false },
-            new AoC2021.Day24() { Enabled = false },
-            new AoC2021.Day25() { Enabled = false }
+            {
+                "AoC2019",
+                new List<Day>()
+                {
+                    new AoC2019.Day01() { Enabled = true },
+                    new AoC2019.Day02() { Enabled = true },
+                    new AoC2019.Day03() { Enabled = true },
+                    new AoC2019.Day04() { Enabled = true },
+                    new AoC2019.Day05() { Enabled = true },
+                    new AoC2019.Day06() { Enabled = true },
+                    new AoC2019.Day07() { Enabled = true },
+                    new AoC2019.Day08() { Enabled = true },
+                    new AoC2019.Day09() { Enabled = true },
+                    new AoC2019.Day10() { Enabled = true },
+                    new AoC2019.Day11() { Enabled = true },
+                    new AoC2019.Day12() { Enabled = true },
+                    new AoC2019.Day13() { Enabled = true },
+                    new AoC2019.Day14() { Enabled = false },
+                    new AoC2019.Day15() { Enabled = false },
+                    new AoC2019.Day16() { Enabled = false },
+                    new AoC2019.Day17() { Enabled = true },
+                    new AoC2019.Day18() { Enabled = false },
+                    new AoC2019.Day19() { Enabled = false },
+                    new AoC2019.Day20() { Enabled = false },
+                    new AoC2019.Day21() { Enabled = false },
+                    new AoC2019.Day22() { Enabled = false },
+                    new AoC2019.Day23() { Enabled = false },
+                    new AoC2019.Day24() { Enabled = false },
+                    new AoC2019.Day25() { Enabled = false }
+                }
+            },
+            {
+                "AoC2020",
+                new List<Day>()
+                {
+                    new AoC2020.Day01() { Enabled = true },
+                    new AoC2020.Day02() { Enabled = true },
+                    new AoC2020.Day03() { Enabled = true },
+                    new AoC2020.Day04() { Enabled = true },
+                    new AoC2020.Day05() { Enabled = true },
+                    new AoC2020.Day06() { Enabled = true },
+                    new AoC2020.Day07() { Enabled = true },
+                    new AoC2020.Day08() { Enabled = true },
+                    new AoC2020.Day09() { Enabled = true },
+                    new AoC2020.Day10() { Enabled = true },
+                    new AoC2020.Day11() { Enabled = true },
+                    new AoC2020.Day12() { Enabled = true },
+                    new AoC2020.Day13() { Enabled = true },
+                    new AoC2020.Day14() { Enabled = true },
+                    new AoC2020.Day15() { Enabled = false },
+                    new AoC2020.Day16() { Enabled = true },
+                    new AoC2020.Day17() { Enabled = true },
+                    new AoC2020.Day18() { Enabled = true },
+                    new AoC2020.Day19() { Enabled = false },
+                    new AoC2020.Day20() { Enabled = false },
+                    new AoC2020.Day21() { Enabled = false },
+                    new AoC2020.Day22() { Enabled = true },
+                    new AoC2020.Day23() { Enabled = false },
+                    new AoC2020.Day24() { Enabled = false },
+                    new AoC2020.Day25() { Enabled = false }
+                }
+            },
+            {
+                "AoC2021",
+                new List<Day>()
+                {
+                    new AoC2021.Day01() { Enabled = false },
+                    new AoC2021.Day02() { Enabled = false },
+                    new AoC2021.Day03() { Enabled = false },
+                    new AoC2021.Day04() { Enabled = false },
+                    new AoC2021.Day05() { Enabled = false },
+                    new AoC2021.Day06() { Enabled = false },
+                    new AoC2021.Day07() { Enabled = false },
+                    new AoC2021.Day08() { Enabled = false },
+                    new AoC2021.Day09() { Enabled = false },
+                    new AoC2021.Day10() { Enabled = false },
+                    new AoC2021.Day11() { Enabled = false },
+                    new AoC2021.Day12() { Enabled = false },
+                    new AoC2021.Day13() { Enabled = false },
+                    new AoC2021.Day14() { Enabled = false },
+                    new AoC2021.Day15() { Enabled = false },
+                    new AoC2021.Day16() { Enabled = false },
+                    new AoC2021.Day17() { Enabled = false },
+                    new AoC2021.Day18() { Enabled = false },
+                    new AoC2021.Day19() { Enabled = false },
+                    new AoC2021.Day20() { Enabled = false },
+                    new AoC2021.Day21() { Enabled = false },
+                    new AoC2021.Day22() { Enabled = false },
+                    new AoC2021.Day23() { Enabled = false },
+                    new AoC2021.Day24() { Enabled = false },
+                    new AoC2021.Day25() { Enabled = false }
+                }
+            }
         };
 
         public FormSolverUI()
         {
             InitializeComponent();
 
-            SetDoubleBuffered(tableLayoutPanel1);
-            SetDoubleBuffered(tableLayoutPanel2);
+            SetDoubleBuffered(tableLayoutPanelMainContainer);
+            SetDoubleBuffered(tableLayoutPanelDayGrid);
         }
 
         private void ButtonSolveAllDays(object sender, EventArgs e)
         {
-            for (int i = 1; i < tableLayoutPanel2.RowCount; i++)
+            for (int i = 1; i < tableLayoutPanelDayGrid.RowCount; i++)
             {
-                Button b = tableLayoutPanel2.GetControlFromPosition(0, i) as Button;
+                Button b = tableLayoutPanelDayGrid.GetControlFromPosition(0, i) as Button;
                 if (b.Enabled)
                 {
                     ButtonSolveSingleDay(b, new EventArgs());
@@ -184,10 +192,11 @@ namespace AdventOfCode
 
         private void ComboBoxYearSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tableLayoutPanel2.Controls.Clear();
-            tableLayoutPanel2.RowStyles.Clear();
+            List<Day> days;
+            tableLayoutPanelDayGrid.Controls.Clear();
+            tableLayoutPanelDayGrid.RowStyles.Clear();
 
-            tableLayoutPanel2.Controls.Add(new Label()
+            tableLayoutPanelDayGrid.Controls.Add(new Label()
             {
                 Anchor = AnchorStyles.None,
                 Name = string.Format("labelCaptionSolutionPart1"),
@@ -195,7 +204,7 @@ namespace AdventOfCode
                 AutoSize = true
             }, 1, 0);
 
-            tableLayoutPanel2.Controls.Add(new Label()
+            tableLayoutPanelDayGrid.Controls.Add(new Label()
             {
                 Anchor = AnchorStyles.None,
                 Name = string.Format("labelCaptionSolutionPart2"),
@@ -203,32 +212,21 @@ namespace AdventOfCode
                 AutoSize = true
             }, 2, 0);
 
-            tableLayoutPanel2.Controls.Add(new Label()
+            tableLayoutPanelDayGrid.Controls.Add(new Label()
             {
                 Anchor = AnchorStyles.None,
                 Name = string.Format("labelCaptionRuntime"),
                 Text = "Durchlaufzeit",
                 AutoSize = true
             }, 3, 0);
-            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanelDayGrid.RowCount = 1;
 
-            if (comboBoxYearSelect.SelectedItem.ToString().Equals("AoC2020"))
-            {
-                days = days2020;
-            }
-            else if (comboBoxYearSelect.SelectedItem.ToString().Equals("AoC2019"))
-            {
-                days = days2019;
-            }
-            else if (comboBoxYearSelect.SelectedItem.ToString().Equals("AoC2021"))
-            {
-                days = days2021;
-            }
+            days = allAoCDays[comboBoxYearSelect.SelectedItem.ToString()];
 
             for (int i = 0; i < days.Count; i++)
             {
-                tableLayoutPanel2.RowCount++;
-                tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+                tableLayoutPanelDayGrid.RowCount++;
+                tableLayoutPanelDayGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
 
                 Button b = new Button
                 {
@@ -240,9 +238,9 @@ namespace AdventOfCode
                     Enabled = days[i].Enabled
                 };
                 b.Click += ButtonSolveSingleDay;
-                tableLayoutPanel2.Controls.Add(b, 0, i + 1);
+                tableLayoutPanelDayGrid.Controls.Add(b, 0, i + 1);
 
-                tableLayoutPanel2.Controls.Add(new Label()
+                tableLayoutPanelDayGrid.Controls.Add(new Label()
                 {
                     Anchor = AnchorStyles.None,
                     Name = string.Format("labelD{0}P1", i + 1),
@@ -250,7 +248,7 @@ namespace AdventOfCode
                     AutoSize = true
                 }, 1, i + 1);
 
-                tableLayoutPanel2.Controls.Add(new Label()
+                tableLayoutPanelDayGrid.Controls.Add(new Label()
                 {
                     Anchor = AnchorStyles.None,
                     Name = string.Format("labelD{0}P2", i + 1),
@@ -258,7 +256,7 @@ namespace AdventOfCode
                     AutoSize = true
                 }, 2, i + 1);
 
-                tableLayoutPanel2.Controls.Add(new Label()
+                tableLayoutPanelDayGrid.Controls.Add(new Label()
                 {
                     Anchor = AnchorStyles.None,
                     Name = string.Format("labelD{0}Perf", i + 1),
@@ -275,7 +273,7 @@ namespace AdventOfCode
                 Size = new Size(90, 25)
             };
             b2.Click += ButtonSolveAllDays;
-            tableLayoutPanel2.Controls.Add(b2, 0, 0);
+            tableLayoutPanelDayGrid.Controls.Add(b2, 0, 0);
 
             this.CenterToScreen();
         }
