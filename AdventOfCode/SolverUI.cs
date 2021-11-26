@@ -17,60 +17,60 @@ namespace AdventOfCode
 
         readonly List<Day> days2019 = new List<Day>()
         {
-            new _2019.Day01() { Enabled = true },
-            new _2019.Day02() { Enabled = true },
-            new _2019.Day03() { Enabled = true },
-            new _2019.Day04() { Enabled = true },
-            new _2019.Day05() { Enabled = true },
-            new _2019.Day06() { Enabled = true },
-            new _2019.Day07() { Enabled = true },
-            new _2019.Day08() { Enabled = true },
-            new _2019.Day09() { Enabled = true },
-            new _2019.Day10() { Enabled = true },
-            new _2019.Day11() { Enabled = true },
-            new _2019.Day12() { Enabled = true },
-            new _2019.Day13() { Enabled = true },
-            new _2019.Day14() { Enabled = false },
-            new _2019.Day15() { Enabled = false },
-            new _2019.Day16() { Enabled = false },
-            new _2019.Day17() { Enabled = true },
-            new _2019.Day18() { Enabled = false },
-            new _2019.Day19() { Enabled = false },
-            new _2019.Day20() { Enabled = false },
-            new _2019.Day21() { Enabled = false },
-            new _2019.Day22() { Enabled = false },
-            new _2019.Day23() { Enabled = false },
-            new _2019.Day24() { Enabled = false },
-            new _2019.Day25() { Enabled = false }
+            new AoC2019.Day01() { Enabled = true },
+            new AoC2019.Day02() { Enabled = true },
+            new AoC2019.Day03() { Enabled = true },
+            new AoC2019.Day04() { Enabled = true },
+            new AoC2019.Day05() { Enabled = true },
+            new AoC2019.Day06() { Enabled = true },
+            new AoC2019.Day07() { Enabled = true },
+            new AoC2019.Day08() { Enabled = true },
+            new AoC2019.Day09() { Enabled = true },
+            new AoC2019.Day10() { Enabled = true },
+            new AoC2019.Day11() { Enabled = true },
+            new AoC2019.Day12() { Enabled = true },
+            new AoC2019.Day13() { Enabled = true },
+            new AoC2019.Day14() { Enabled = false },
+            new AoC2019.Day15() { Enabled = false },
+            new AoC2019.Day16() { Enabled = false },
+            new AoC2019.Day17() { Enabled = true },
+            new AoC2019.Day18() { Enabled = false },
+            new AoC2019.Day19() { Enabled = false },
+            new AoC2019.Day20() { Enabled = false },
+            new AoC2019.Day21() { Enabled = false },
+            new AoC2019.Day22() { Enabled = false },
+            new AoC2019.Day23() { Enabled = false },
+            new AoC2019.Day24() { Enabled = false },
+            new AoC2019.Day25() { Enabled = false }
         };
 
         readonly List<Day> days2020 = new List<Day>()
         {
-            new _2020.Day01() { Enabled = true },
-            new _2020.Day02() { Enabled = true },
-            new _2020.Day03() { Enabled = true },
-            new _2020.Day04() { Enabled = true },
-            new _2020.Day05() { Enabled = true },
-            new _2020.Day06() { Enabled = true },
-            new _2020.Day07() { Enabled = true },
-            new _2020.Day08() { Enabled = true },
-            new _2020.Day09() { Enabled = true },
-            new _2020.Day10() { Enabled = true },
-            new _2020.Day11() { Enabled = true },
-            new _2020.Day12() { Enabled = true },
-            new _2020.Day13() { Enabled = true },
-            new _2020.Day14() { Enabled = true },
-            new _2020.Day15() { Enabled = false },
-            new _2020.Day16() { Enabled = true },
-            new _2020.Day17() { Enabled = true },
-            new _2020.Day18() { Enabled = true },
-            new _2020.Day19() { Enabled = false },
-            new _2020.Day20() { Enabled = false },
-            new _2020.Day21() { Enabled = false },
-            new _2020.Day22() { Enabled = true },
-            new _2020.Day23() { Enabled = false },
-            new _2020.Day24() { Enabled = false },
-            new _2020.Day25() { Enabled = false }
+            new AoC2020.Day01() { Enabled = true },
+            new AoC2020.Day02() { Enabled = true },
+            new AoC2020.Day03() { Enabled = true },
+            new AoC2020.Day04() { Enabled = true },
+            new AoC2020.Day05() { Enabled = true },
+            new AoC2020.Day06() { Enabled = true },
+            new AoC2020.Day07() { Enabled = true },
+            new AoC2020.Day08() { Enabled = true },
+            new AoC2020.Day09() { Enabled = true },
+            new AoC2020.Day10() { Enabled = true },
+            new AoC2020.Day11() { Enabled = true },
+            new AoC2020.Day12() { Enabled = true },
+            new AoC2020.Day13() { Enabled = true },
+            new AoC2020.Day14() { Enabled = true },
+            new AoC2020.Day15() { Enabled = false },
+            new AoC2020.Day16() { Enabled = true },
+            new AoC2020.Day17() { Enabled = true },
+            new AoC2020.Day18() { Enabled = true },
+            new AoC2020.Day19() { Enabled = false },
+            new AoC2020.Day20() { Enabled = false },
+            new AoC2020.Day21() { Enabled = false },
+            new AoC2020.Day22() { Enabled = true },
+            new AoC2020.Day23() { Enabled = false },
+            new AoC2020.Day24() { Enabled = false },
+            new AoC2020.Day25() { Enabled = false }
         };
 
         readonly List<Day> days2021 = new List<Day>()
@@ -212,11 +212,11 @@ namespace AdventOfCode
             }, 3, 0);
             tableLayoutPanel2.RowCount = 1;
 
-            if (comboBoxYearSelect.SelectedItem.ToString().Equals("2020"))
+            if (comboBoxYearSelect.SelectedItem.ToString().Equals("AoC2020"))
             {
                 days = days2020;
             }
-            else if (comboBoxYearSelect.SelectedItem.ToString().Equals("2019"))
+            else if (comboBoxYearSelect.SelectedItem.ToString().Equals("AoC2019"))
             {
                 days = days2019;
             }

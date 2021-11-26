@@ -7,11 +7,6 @@ namespace AoC2021
 {
     public class Day15 : Day
     {
-        public Day15()
-        {
-            Load(string.Format("{0}/inputs/{1}.txt", this.GetType().Namespace, this.GetType().Name));
-        }
-
         override public void Solve()
         {
             Part1Solution = "TBD";

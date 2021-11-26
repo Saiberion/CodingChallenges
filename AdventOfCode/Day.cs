@@ -19,6 +19,7 @@ namespace AdventOfCode
         public Day()
         {
             StopWatch = new Stopwatch();
+            Load(string.Format("{0}/inputs/{1}.txt", this.GetType().Namespace, this.GetType().Name));
         }
 
         virtual public void Solve()
