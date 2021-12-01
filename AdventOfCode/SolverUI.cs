@@ -81,7 +81,7 @@ namespace AdventOfCode
                 "AoC2021",
                 new List<Day>()
                 {
-                    new AoC2021.Day01() { Enabled = false },
+                    new AoC2021.Day01() { Enabled = true },
                     new AoC2021.Day02() { Enabled = false },
                     new AoC2021.Day03() { Enabled = false },
                     new AoC2021.Day04() { Enabled = false },
