@@ -99,6 +99,7 @@
     <Compile Include="AoC2020\Day23.cs" />
     <Compile Include="AoC2020\Day24.cs" />
     <Compile Include="AoC2020\Day25.cs" />
+    <Compile Include="AoC2021\BingoBoard.cs" />
     <Compile Include="AoC2021\Day01.cs" />
     <Compile Include="AoC2021\Day02.cs" />
     <Compile Include="AoC2021\Day03.cs" />
