@@ -125,6 +125,7 @@
     <Compile Include="AoC2021\Day23.cs" />
     <Compile Include="AoC2021\Day24.cs" />
     <Compile Include="AoC2021\Day25.cs" />
+    <Compile Include="AoC2021\Line.cs" />
     <Compile Include="Day.cs" />
     <Compile Include="SolverUI.cs">
       <SubType>Form</SubType>
