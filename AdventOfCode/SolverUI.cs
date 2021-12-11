@@ -13,7 +13,7 @@ namespace AdventOfCode
 {
     public partial class FormSolverUI : Form
     {
-        private Dictionary<string, List<Day>> allAoCDays = new Dictionary<string, List<Day>>()
+        private readonly Dictionary<string, List<Day>> allAoCDays = new Dictionary<string, List<Day>>()
         {
             {
                 "AoC2019",
@@ -91,7 +91,7 @@ namespace AdventOfCode
                     new AoC2021.Day08() { Enabled = true },
                     new AoC2021.Day09() { Enabled = true },
                     new AoC2021.Day10() { Enabled = true },
-                    new AoC2021.Day11() { Enabled = false },
+                    new AoC2021.Day11() { Enabled = true },
                     new AoC2021.Day12() { Enabled = false },
                     new AoC2021.Day13() { Enabled = false },
                     new AoC2021.Day14() { Enabled = false },
