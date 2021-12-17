@@ -97,7 +97,7 @@ namespace AdventOfCode
                     new AoC2021.Day14() { Enabled = true },
                     new AoC2021.Day15() { Enabled = false },
                     new AoC2021.Day16() { Enabled = true },
-                    new AoC2021.Day17() { Enabled = false },
+                    new AoC2021.Day17() { Enabled = true },
                     new AoC2021.Day18() { Enabled = false },
                     new AoC2021.Day19() { Enabled = false },
                     new AoC2021.Day20() { Enabled = false },
