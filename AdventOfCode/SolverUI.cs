@@ -16,6 +16,37 @@ namespace AdventOfCode
         private readonly Dictionary<string, List<Day>> allAoCDays = new Dictionary<string, List<Day>>()
         {
             {
+                "AoC2015",
+                new List<Day>()
+                {
+                    new AoC2015.Day01() { Enabled = true },
+                    new AoC2015.Day02() { Enabled = true },
+                    new AoC2015.Day03() { Enabled = true },
+                    new AoC2015.Day04() { Enabled = true },
+                    new AoC2015.Day05() { Enabled = true },
+                    new AoC2015.Day06() { Enabled = true },
+                    new AoC2015.Day07() { Enabled = true },
+                    new AoC2015.Day08() { Enabled = true },
+                    new AoC2015.Day09() { Enabled = true },
+                    new AoC2015.Day10() { Enabled = true },
+                    new AoC2015.Day11() { Enabled = true },
+                    new AoC2015.Day12() { Enabled = true },
+                    new AoC2015.Day13() { Enabled = true },
+                    new AoC2015.Day14() { Enabled = true },
+                    new AoC2015.Day15() { Enabled = true },
+                    new AoC2015.Day16() { Enabled = true },
+                    new AoC2015.Day17() { Enabled = true },
+                    new AoC2015.Day18() { Enabled = true },
+                    new AoC2015.Day19() { Enabled = true },
+                    new AoC2015.Day20() { Enabled = true },
+                    new AoC2015.Day21() { Enabled = true },
+                    new AoC2015.Day22() { Enabled = true },
+                    new AoC2015.Day23() { Enabled = true },
+                    new AoC2015.Day24() { Enabled = true },
+                    new AoC2015.Day25() { Enabled = true }
+                }
+            },
+            {
                 "AoC2019",
                 new List<Day>()
                 {
