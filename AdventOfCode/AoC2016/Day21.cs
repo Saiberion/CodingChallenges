@@ -7,7 +7,7 @@ namespace AoC2016
 {
     public class Day21 : Day
     {
-        static string Scramble(string pw, List<string> input)
+        string Scramble(string pw, List<string> input)
         {
             StringBuilder result = new StringBuilder(pw);
             foreach (string instr in input)
@@ -85,7 +85,7 @@ namespace AoC2016
             return result.ToString();
         }
 
-        static string Unscramble(string pw, List<string> input)
+        string Unscramble(string pw, List<string> input)
         {
             StringBuilder result = new StringBuilder(pw);
             for (int i = input.Count - 1; i >= 0; i--)
