@@ -118,11 +118,27 @@ namespace AoC2016
             return registers['a'];
         }
 
+        long Factorial(long f)
+        {
+            if (f == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return f * Factorial(f - 1);
+            }
+        }
+
         public override void Solve()
         {
-            Part1Solution = ExecuteInstructions(new List<string>(Input), 7, 0, 0, 0).ToString();
+            /*Part1Solution = ExecuteInstructions(new List<string>(Input), 7, 0, 0, 0).ToString();
 
-            Part2Solution = ExecuteInstructions(new List<string>(Input), 12, 0, 0, 0).ToString();
+            Part2Solution = ExecuteInstructions(new List<string>(Input), 12, 0, 0, 0).ToString();*/
+
+            // By analyzing the assembunny I found out that the result of the program is a! + (72 * 75)
+            Part1Solution = (Factorial(7) + (72L * 75L)).ToString();
+            Part2Solution = (Factorial(12) + (72L * 75L)).ToString();
         }
     }
 }
