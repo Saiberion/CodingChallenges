@@ -74,6 +74,32 @@
     <Compile Include="AoC2015\Day24.cs" />
     <Compile Include="AoC2015\Day25.cs" />
     <Compile Include="AoC2015\MD5Managed.cs" />
+    <Compile Include="AoC2016\Day01.cs" />
+    <Compile Include="AoC2016\Day02.cs" />
+    <Compile Include="AoC2016\Day03.cs" />
+    <Compile Include="AoC2016\Day04.cs" />
+    <Compile Include="AoC2016\Day05.cs" />
+    <Compile Include="AoC2016\Day06.cs" />
+    <Compile Include="AoC2016\Day07.cs" />
+    <Compile Include="AoC2016\Day08.cs" />
+    <Compile Include="AoC2016\Day09.cs" />
+    <Compile Include="AoC2016\Day10.cs" />
+    <Compile Include="AoC2016\Day11.cs" />
+    <Compile Include="AoC2016\Day12.cs" />
+    <Compile Include="AoC2016\Day13.cs" />
+    <Compile Include="AoC2016\Day14.cs" />
+    <Compile Include="AoC2016\Day15.cs" />
+    <Compile Include="AoC2016\Day16.cs" />
+    <Compile Include="AoC2016\Day17.cs" />
+    <Compile Include="AoC2016\Day18.cs" />
+    <Compile Include="AoC2016\Day19.cs" />
+    <Compile Include="AoC2016\Day20.cs" />
+    <Compile Include="AoC2016\Day21.cs" />
+    <Compile Include="AoC2016\Day22.cs" />
+    <Compile Include="AoC2016\Day23.cs" />
+    <Compile Include="AoC2016\Day24.cs" />
+    <Compile Include="AoC2016\Day25.cs" />
+    <Compile Include="AoC2016\MD5Managed.cs" />
     <Compile Include="AoC2019\Coordinate.cs" />
     <Compile Include="AoC2019\Day01.cs" />
     <Compile Include="AoC2019\Day02.cs" />
@@ -154,6 +180,31 @@
     <Compile Include="AoC2021\Day25.cs" />
     <Compile Include="AoC2021\BITSPacket.cs" />
     <Compile Include="AoC2021\Line.cs" />
+    <Compile Include="AoCTemplate\Day01.cs" />
+    <Compile Include="AoCTemplate\Day02.cs" />
+    <Compile Include="AoCTemplate\Day03.cs" />
+    <Compile Include="AoCTemplate\Day04.cs" />
+    <Compile Include="AoCTemplate\Day05.cs" />
+    <Compile Include="AoCTemplate\Day06.cs" />
+    <Compile Include="AoCTemplate\Day07.cs" />
+    <Compile Include="AoCTemplate\Day08.cs" />
+    <Compile Include="AoCTemplate\Day09.cs" />
+    <Compile Include="AoCTemplate\Day10.cs" />
+    <Compile Include="AoCTemplate\Day11.cs" />
+    <Compile Include="AoCTemplate\Day12.cs" />
+    <Compile Include="AoCTemplate\Day13.cs" />
+    <Compile Include="AoCTemplate\Day14.cs" />
+    <Compile Include="AoCTemplate\Day15.cs" />
+    <Compile Include="AoCTemplate\Day16.cs" />
+    <Compile Include="AoCTemplate\Day17.cs" />
+    <Compile Include="AoCTemplate\Day18.cs" />
+    <Compile Include="AoCTemplate\Day19.cs" />
+    <Compile Include="AoCTemplate\Day20.cs" />
+    <Compile Include="AoCTemplate\Day21.cs" />
+    <Compile Include="AoCTemplate\Day22.cs" />
+    <Compile Include="AoCTemplate\Day23.cs" />
+    <Compile Include="AoCTemplate\Day24.cs" />
+    <Compile Include="AoCTemplate\Day25.cs" />
     <Compile Include="Day.cs" />
     <Compile Include="SolverUI.cs">
       <SubType>Form</SubType>
@@ -263,6 +314,81 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AoC2015\inputs\Day25.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day02.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day03.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day04.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day05.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day06.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day07.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day08.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day09.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day10.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day11.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day12.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day13.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day14.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day15.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day16.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day17.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day18.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day19.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day20.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day21.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day22.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day23.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day24.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AoC2016\inputs\Day25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AoC2019\inputs\Day01.txt">
@@ -490,6 +616,31 @@
     <Content Include="AoC2021\inputs\Day25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="AoCTemplate\inputs\Day01.txt" />
+    <Content Include="AoCTemplate\inputs\Day02.txt" />
+    <Content Include="AoCTemplate\inputs\Day03.txt" />
+    <Content Include="AoCTemplate\inputs\Day04.txt" />
+    <Content Include="AoCTemplate\inputs\Day05.txt" />
+    <Content Include="AoCTemplate\inputs\Day06.txt" />
+    <Content Include="AoCTemplate\inputs\Day07.txt" />
+    <Content Include="AoCTemplate\inputs\Day08.txt" />
+    <Content Include="AoCTemplate\inputs\Day09.txt" />
+    <Content Include="AoCTemplate\inputs\Day10.txt" />
+    <Content Include="AoCTemplate\inputs\Day11.txt" />
+    <Content Include="AoCTemplate\inputs\Day12.txt" />
+    <Content Include="AoCTemplate\inputs\Day13.txt" />
+    <Content Include="AoCTemplate\inputs\Day14.txt" />
+    <Content Include="AoCTemplate\inputs\Day15.txt" />
+    <Content Include="AoCTemplate\inputs\Day16.txt" />
+    <Content Include="AoCTemplate\inputs\Day17.txt" />
+    <Content Include="AoCTemplate\inputs\Day18.txt" />
+    <Content Include="AoCTemplate\inputs\Day19.txt" />
+    <Content Include="AoCTemplate\inputs\Day20.txt" />
+    <Content Include="AoCTemplate\inputs\Day21.txt" />
+    <Content Include="AoCTemplate\inputs\Day22.txt" />
+    <Content Include="AoCTemplate\inputs\Day23.txt" />
+    <Content Include="AoCTemplate\inputs\Day24.txt" />
+    <Content Include="AoCTemplate\inputs\Day25.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
