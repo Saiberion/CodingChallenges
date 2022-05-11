@@ -8,7 +8,7 @@ namespace AoC2018
 {
     public class Day09 : Day
     {
-        long PlayGame(int maxPlayers, int maxMarbleNumber)
+        /*long PlayGame(int maxPlayers, int maxMarbleNumber)
         {
             Dictionary<int, long> playerScores = new Dictionary<int, long>();
             LinkedList<int> marbleRing = new LinkedList<int>();
@@ -51,7 +51,7 @@ namespace AoC2018
                 maxScore = Math.Max(maxScore, kvp.Value);
             }
             return maxScore;
-        }
+        }*/
 
         public override void Solve()
         {

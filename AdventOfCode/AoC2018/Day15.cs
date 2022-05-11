@@ -316,12 +316,12 @@ namespace AoC2018
         private List<Location> GetShortestPathDistance(Location targetSquare, string[,] mapLayer)
         {
             // A* algorithm for path finding
-            Location current = null;
+            Location current;
             Location start = new Location(this.Positon.X, this.Positon.Y);
             Location target = new Location(targetSquare.X, targetSquare.Y);
             List<Location> openList = new List<Location>();
             List<Location> closedList = new List<Location>();
-            int g = 0;
+            int g;
             List<Location> reachable = new List<Location>();
 
             // add the starting position to the open list
