@@ -286,11 +286,11 @@ namespace AdventOfCode
             Day d = b.Tag as Day;
             TableLayoutPanel tbl = b.Parent as TableLayoutPanel;
             TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
-            Label l1 = tbl.GetControlFromPosition(1, pos.Row) as Label;
-            Label l2 = tbl.GetControlFromPosition(2, pos.Row) as Label;
+            TextBox t1 = tbl.GetControlFromPosition(1, pos.Row) as TextBox;
+            TextBox t2 = tbl.GetControlFromPosition(2, pos.Row) as TextBox;
             Label l3 = tbl.GetControlFromPosition(3, pos.Row) as Label;
-            l1.Text = d.Part1Solution;
-            l2.Text = d.Part2Solution;
+            t1.Text = d.Part1Solution;
+            t2.Text = d.Part2Solution;
             l3.Text = d.StopWatch.Elapsed.ToString();
         }
 
@@ -364,20 +364,30 @@ namespace AdventOfCode
                 b.Click += ButtonSolveSingleDay;
                 tableLayoutPanelDayGrid.Controls.Add(b, 0, i + 1);
 
-                tableLayoutPanelDayGrid.Controls.Add(new Label()
+                tableLayoutPanelDayGrid.Controls.Add(new TextBox()
                 {
                     Anchor = AnchorStyles.None,
-                    Name = string.Format("labelD{0}P1", i + 1),
+                    Name = string.Format("textBoxD{0}P1", i + 1),
                     Text = "",
-                    AutoSize = true
+                    AutoSize = true,
+                    ReadOnly = true,
+                    TextAlign = HorizontalAlignment.Center,
+                    BorderStyle = BorderStyle.None,
+                    Margin = new Padding(8),
+                    Width = 150
                 }, 1, i + 1);
 
-                tableLayoutPanelDayGrid.Controls.Add(new Label()
+                tableLayoutPanelDayGrid.Controls.Add(new TextBox()
                 {
                     Anchor = AnchorStyles.None,
-                    Name = string.Format("labelD{0}P2", i + 1),
+                    Name = string.Format("textBoxD{0}P2", i + 1),
                     Text = "",
-                    AutoSize = true
+                    AutoSize = true,
+                    ReadOnly = true,
+                    TextAlign = HorizontalAlignment.Center,
+                    BorderStyle = BorderStyle.None,
+                    Margin = new Padding(8),
+                    Width = 150
                 }, 2, i + 1);
 
                 tableLayoutPanelDayGrid.Controls.Add(new Label()
