@@ -78,6 +78,37 @@ namespace AdventOfCode
                 }
             },
             {
+                "AoC2017",
+                new List<Day>()
+                {
+                    new AoC2017.Day01() { Enabled = true },
+                    new AoC2017.Day02() { Enabled = false },
+                    new AoC2017.Day03() { Enabled = false },
+                    new AoC2017.Day04() { Enabled = true },
+                    new AoC2017.Day05() { Enabled = true },
+                    new AoC2017.Day06() { Enabled = true },
+                    new AoC2017.Day07() { Enabled = true },
+                    new AoC2017.Day08() { Enabled = true },
+                    new AoC2017.Day09() { Enabled = true },
+                    new AoC2017.Day10() { Enabled = true },
+                    new AoC2017.Day11() { Enabled = true },
+                    new AoC2017.Day12() { Enabled = true },
+                    new AoC2017.Day13() { Enabled = true },
+                    new AoC2017.Day14() { Enabled = true },
+                    new AoC2017.Day15() { Enabled = true },
+                    new AoC2017.Day16() { Enabled = true },
+                    new AoC2017.Day17() { Enabled = true },
+                    new AoC2017.Day18() { Enabled = true },
+                    new AoC2017.Day19() { Enabled = true },
+                    new AoC2017.Day20() { Enabled = true },
+                    new AoC2017.Day21() { Enabled = true },
+                    new AoC2017.Day22() { Enabled = false },
+                    new AoC2017.Day23() { Enabled = false },
+                    new AoC2017.Day24() { Enabled = false },
+                    new AoC2017.Day25() { Enabled = false }
+                }
+            },
+            {
                 "AoC2018",
                 new List<Day>()
                 {
