@@ -19,7 +19,7 @@ namespace AoC2015
 
             foreach (KeyValuePair<string, object> kvp in obj)
             {
-if (kvp.Value is Dictionary<string, object>)
+                if (kvp.Value is Dictionary<string, object>)
                 {
                     sum += SumUpObject(kvp.Value as Dictionary<string, object>, skipRed);
                 }
