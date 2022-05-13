@@ -98,7 +98,6 @@
     <Compile Include="AoC2016\Day23.cs" />
     <Compile Include="AoC2016\Day24.cs" />
     <Compile Include="AoC2016\Day25.cs" />
-    <Compile Include="AoC2016\MD5Managed.cs" />
     <Compile Include="AoC2017\EnumDirections.cs" />
     <Compile Include="AoC2017\KnotHash.cs" />
     <Compile Include="AoC2019\Coordinate.cs" />

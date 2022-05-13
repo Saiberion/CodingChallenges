@@ -1,12 +1,14 @@
 ﻿using AdventOfCode;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace AoC2016
 {
     public class Day14 : Day
     {
+        MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
         readonly byte[] lookup = { 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102 };
 
         byte[] ConvertToReadable(byte[] hash)
@@ -20,22 +22,15 @@ namespace AoC2016
             return b;
         }
 
-        byte[] GenerateHash(byte[] toHash)
-        {
-            MD5Managed md5 = new MD5Managed();
-
-            return md5.ComputeHash(toHash);
-        }
-
         byte[] GetHash(byte[] toHash, bool stretched)
         {
-            byte[] hash = GenerateHash(toHash);
+            byte[] hash = md5.ComputeHash(toHash);
 
             if (stretched)
             {
                 for (int i = 0; i < 2016; i++)
                 {
-                    hash = GenerateHash(ConvertToReadable(hash));
+                    hash = md5.ComputeHash(ConvertToReadable(hash));
                 }
             }
 

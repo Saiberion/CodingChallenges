@@ -1,6 +1,7 @@
 ﻿using AdventOfCode;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace AoC2016
@@ -16,7 +17,7 @@ namespace AoC2016
     {
         List<Location2> GetWalkableAdjacentSquares(int x, int y, string input, string movement)
         {
-            MD5Managed md5 = new MD5Managed();
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
             byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(input + movement));
 
             List<Location2> possibleLocations = new List<Location2>();
