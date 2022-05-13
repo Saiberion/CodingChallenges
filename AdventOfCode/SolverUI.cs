@@ -373,7 +373,7 @@ namespace AdventOfCode
                     ReadOnly = true,
                     TextAlign = HorizontalAlignment.Center,
                     BorderStyle = BorderStyle.None,
-                    Margin = new Padding(8),
+                    Padding = new Padding(0, 8, 0, 0),
                     Width = 150
                 }, 1, i + 1);
 
@@ -386,7 +386,7 @@ namespace AdventOfCode
                     ReadOnly = true,
                     TextAlign = HorizontalAlignment.Center,
                     BorderStyle = BorderStyle.None,
-                    Margin = new Padding(8),
+                    Padding = new Padding(0, 8, 0, 0),
                     Width = 150
                 }, 2, i + 1);
 
