@@ -1,6 +1,7 @@
 ﻿using AdventOfCode;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace AoC2015
@@ -9,32 +10,26 @@ namespace AoC2015
     {
         override public void Solve()
         {
-            MD5Managed md5 = new MD5Managed();
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
             string key = Input[0];
             byte[] hash;
+            bool finishedP1 = false, finishedP2 = false;
 
             int index = 1;
-            while(true)
+            while(!(finishedP1 && finishedP2))
             {
                 hash = md5.ComputeHash(Encoding.ASCII.GetBytes(key + index));
 
-                if ((hash[0] == 0) && (hash[1] == 0) && (hash[2] <= 0x0f))
+                if (!finishedP1 && (hash[0] == 0) && (hash[1] == 0) && (hash[2] <= 0x0f))
                 {
+                    finishedP1 = true;
                     Part1Solution = index.ToString();
-                    break;
                 }
 
-                index++;
-            }
-
-            while (true)
-            {
-                hash = md5.ComputeHash(Encoding.ASCII.GetBytes(key + index));
-
-                if ((hash[0] == 0) && (hash[1] == 0) && (hash[2] == 0))
+                if (!finishedP2 && (hash[0] == 0) && (hash[1] == 0) && (hash[2] == 0))
                 {
+                    finishedP2 = true;
                     Part2Solution = index.ToString();
-                    break;
                 }
 
                 index++;
