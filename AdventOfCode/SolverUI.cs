@@ -238,7 +238,6 @@ namespace AdventOfCode
         {
             InitializeComponent();
 
-            SetDoubleBuffered(tableLayoutPanelMainContainer);
             SetDoubleBuffered(tableLayoutPanelDayGrid);
         }
 
@@ -317,6 +316,7 @@ namespace AdventOfCode
         private void ComboBoxYearSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Day> days;
+            tableLayoutPanelDayGrid.SuspendLayout();
             tableLayoutPanelDayGrid.Controls.Clear();
             tableLayoutPanelDayGrid.RowStyles.Clear();
 
@@ -408,6 +408,8 @@ namespace AdventOfCode
             };
             b2.Click += ButtonSolveAllDays;
             tableLayoutPanelDayGrid.Controls.Add(b2, 0, 0);
+            tableLayoutPanelDayGrid.ResumeLayout(false);
+            tableLayoutPanelDayGrid.PerformLayout();
 
             this.CenterToScreen();
         }
@@ -416,23 +418,11 @@ namespace AdventOfCode
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)
         {
             if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+            {
                 return;
+            }
             System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             aProp.SetValue(c, true, null);
-        }
-
-        #endregion
-
-        #region .. code for Flucuring ..
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;
-                return cp;
-            }
         }
 
         #endregion

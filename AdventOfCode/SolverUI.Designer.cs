@@ -76,7 +76,7 @@ namespace AdventOfCode
             this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
             this.tableLayoutPanelDayGrid.Controls.Add(this.labelCaptionSolutionPart1, 1, 0);
             this.tableLayoutPanelDayGrid.Controls.Add(this.labelCaptionSolutionPart2, 2, 0);
             this.tableLayoutPanelDayGrid.Controls.Add(this.labelCaptionRuntime, 3, 0);
@@ -85,7 +85,7 @@ namespace AdventOfCode
             this.tableLayoutPanelDayGrid.Name = "tableLayoutPanelDayGrid";
             this.tableLayoutPanelDayGrid.RowCount = 1;
             this.tableLayoutPanelDayGrid.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDayGrid.Size = new System.Drawing.Size(558, 417);
+            this.tableLayoutPanelDayGrid.Size = new System.Drawing.Size(559, 417);
             this.tableLayoutPanelDayGrid.TabIndex = 1;
             // 
             // labelCaptionSolutionPart1
