@@ -73,7 +73,7 @@
     <Compile Include="AoC2015\Day23.cs" />
     <Compile Include="AoC2015\Day24.cs" />
     <Compile Include="AoC2015\Day25.cs" />
-    <Compile Include="AoC2016\Asmbunny.cs" />
+    <Compile Include="AoC2016\Assembunny.cs" />
     <Compile Include="AoC2016\Day01.cs" />
     <Compile Include="AoC2016\Day02.cs" />
     <Compile Include="AoC2016\Day03.cs" />
