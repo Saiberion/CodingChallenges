@@ -12,6 +12,9 @@ namespace AoC2016
         public static int ExecuteInstructions(List<string> input, int initA, int initB, int initC, int initD)
         {
             int val;
+            bool firstOut = true;
+            int lastOut = 0;
+            int repetitions = 0;
             Dictionary<char, int> registers = new Dictionary<char, int>
             {
                 { 'a', initA },
@@ -112,6 +115,54 @@ namespace AoC2016
                             }
                         }
 
+                        i++;
+                        break;
+                    case "out":
+                        if (!int.TryParse(splitted[1], out val))
+                        {
+                            val = registers[splitted[1][0]];
+                        }
+
+                        Console.WriteLine("Antenne signal: {0}", val);
+                        if (firstOut)
+                        {
+                            firstOut = false;
+                            lastOut = val;
+                            repetitions = 0;
+                        }
+                        else
+                        {
+                            if (lastOut == val)
+                            {
+                                return 0;
+                            }
+                            else
+                            {
+                                if (lastOut == 0)
+                                {
+                                    if (val != 1)
+                                    {
+                                        return 0;
+                                    }
+                                }
+                                else if (lastOut == 1)
+                                {
+                                    if (val != 0)
+                                    {
+                                        return 0;
+                                    }
+                                }
+                                else
+                                {
+                                    return 0;
+                                }
+                            }
+                            lastOut = val;
+                            if (++repetitions == 50)
+                            {
+                                return 1;
+                            }
+                        }
                         i++;
                         break;
                 }

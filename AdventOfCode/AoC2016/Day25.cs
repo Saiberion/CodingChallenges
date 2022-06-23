@@ -9,9 +9,15 @@ namespace AoC2016
     {
         public override void Solve()
         {
-            Part1Solution = "TBD";
+            int i = 0;
+            do
+            {
+                Console.WriteLine("Antenne input {0}", i);
+            }
+            while (Assembunny.ExecuteInstructions(Input, i++, 0, 0, 0) == 0) ;
+            Part1Solution = (--i).ToString();
 
-            Part2Solution = "TBD";
+            //Part2Solution = "TBD";
         }
     }
 }
