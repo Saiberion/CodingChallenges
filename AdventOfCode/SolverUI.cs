@@ -73,7 +73,7 @@ namespace AdventOfCode
                     new AoC2016.Day21() { Enabled = true },
                     new AoC2016.Day22() { Enabled = true },
                     new AoC2016.Day23() { Enabled = true },
-                    new AoC2016.Day24() { Enabled = false },
+                    new AoC2016.Day24() { Enabled = true },
                     new AoC2016.Day25() { Enabled = true }
                 }
             },
