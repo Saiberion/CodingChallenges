@@ -17,7 +17,7 @@ namespace AoC2016
             while (Assembunny.ExecuteInstructions(Input, i++, 0, 0, 0) == 0) ;
             Part1Solution = (--i).ToString();
 
-            //Part2Solution = "TBD";
+            Part2Solution = "Active";
         }
     }
 }
