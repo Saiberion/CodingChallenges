@@ -8,21 +8,18 @@ namespace AoC2017
 {
     public class Day22 : Day
     {
-        public void GridInit(Dictionary<Point, int> grid)
+        public void GridInit(int[,] grid)
         {
             int x, y;
-            grid.Clear();
+            int offsy = grid.GetLength(1) / 2 - Input.Count / 2;
+            int offsx = grid.GetLength(0) / 2 - Input[0].Length / 2;
             for (y = 0; y < Input.Count; y++)
             {
                 for (x = 0; x < Input[y].Length; x++)
                 {
                     if (Input[y][x] == '#')
                     {
-                        grid.Add(new Point(x, y), 2);
-                    }
-                    else
-                    {
-                        grid.Add(new Point(x, y), 0);
+                        grid[x + offsx, y + offsy] = 2;
                     }
                 }
             }
@@ -33,22 +30,16 @@ namespace AoC2017
             int x, y;
             int dir = 0;
             int infectionBursts = 0;
-            Dictionary<Point, int> grid = new Dictionary<Point, int>();
+            int[,] grid = new int[449, 365];
 
             GridInit(grid);
 
-            x = Input[0].Length / 2;
-            y = Input.Count / 2;
+            x = grid.GetLength(0) / 2;
+            y = grid.GetLength(1) / 2;
 
             for (int b = 0; b < bursts; b++)
             {
-                Point p = new Point(x, y);
-                if (!grid.ContainsKey(p))
-                {
-                    grid.Add(new Point(x, y), 0);
-                }
-
-                switch (grid[p])
+                switch (grid[x, y])
                 {
                     case 0:
                         dir--;
@@ -64,8 +55,8 @@ namespace AoC2017
                 }
                 dir = (dir + 4) % 4;
 
-                grid[p] = (grid[p] + mode) % 4;
-                if (grid[p] == 2)
+                grid[x, y] = (grid[x, y] + mode) % 4;
+                if (grid[x, y] == 2)
                 {
                     infectionBursts++;
                 }
