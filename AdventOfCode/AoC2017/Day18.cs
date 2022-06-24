@@ -71,6 +71,7 @@ namespace AoC2017
         public int ID { get; set; }
         public BlockingCollection<Int64> SendQueue { get; set; }
         public BlockingCollection<Int64> ReceiveQueue { get; set; }
+        public int SendCounter { get; private set; }
 
         public void ThreadFunc()
         {
@@ -78,8 +79,8 @@ namespace AoC2017
             Dictionary<string, Int64> registerMap = new Dictionary<string, Int64>();
             BlockingCollection<Int64> sndQ = this.SendQueue;
             BlockingCollection<Int64> rcvQ = this.ReceiveQueue;
-            int sendCounter = 0;
-
+            
+            SendCounter = 0;
             registerMap.Add("p", this.ID);
 
             do
@@ -111,7 +112,7 @@ namespace AoC2017
                 {
                     case EOpcodes.eOpcodeSND:
                         sndQ.Add(registerMap[instr.Register]);
-                        sendCounter++;
+                        SendCounter++;
                         programCounter++;
                         break;
                     case EOpcodes.eOpcodeSET:
@@ -153,7 +154,6 @@ namespace AoC2017
                         break;
                 }
             } while ((programCounter >= 0) && (programCounter < Program.Count));
-            System.Diagnostics.Debug.WriteLine(string.Format("Prog {0} sendCounter at dead lock: {1}", this.ID, sendCounter));
         }
     }
 
@@ -213,7 +213,7 @@ namespace AoC2017
                     case EOpcodes.eOpcodeRCV:
                         if (registerMap[instr.Register] != 0)
                         {
-                            System.Diagnostics.Debug.WriteLine(string.Format("Successfully recoverd frequency {0}", lastFrequency));
+                            Part1Solution = lastFrequency.ToString();
                             programCounter = -1;
                         }
                         programCounter++;
@@ -257,12 +257,7 @@ namespace AoC2017
             p1.Join();
             p2.Join();
 
-            Console.WriteLine(string.Format("Program ended"));
-            Console.ReadLine();
-
-
-            Part1Solution = "See debug output";
-            Part2Solution = "See debug output";
+            Part2Solution = dt2.SendCounter.ToString();
         }
     }
 }
