@@ -374,7 +374,7 @@ namespace AdventOfCode
                     TextAlign = HorizontalAlignment.Center,
                     BorderStyle = BorderStyle.None,
                     Padding = new Padding(0, 8, 0, 0),
-                    Width = 150
+                    Width = 200
                 }, 1, i + 1);
 
                 tableLayoutPanelDayGrid.Controls.Add(new TextBox()
@@ -387,7 +387,7 @@ namespace AdventOfCode
                     TextAlign = HorizontalAlignment.Center,
                     BorderStyle = BorderStyle.None,
                     Padding = new Padding(0, 8, 0, 0),
-                    Width = 150
+                    Width = 200
                 }, 2, i + 1);
 
                 tableLayoutPanelDayGrid.Controls.Add(new Label()

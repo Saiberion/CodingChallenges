@@ -53,7 +53,7 @@ namespace AdventOfCode
             this.tableLayoutPanelMainContainer.RowCount = 2;
             this.tableLayoutPanelMainContainer.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMainContainer.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMainContainer.Size = new System.Drawing.Size(564, 450);
+            this.tableLayoutPanelMainContainer.Size = new System.Drawing.Size(667, 450);
             this.tableLayoutPanelMainContainer.TabIndex = 0;
             // 
             // comboBoxYearSelect
@@ -74,9 +74,9 @@ namespace AdventOfCode
             this.tableLayoutPanelDayGrid.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanelDayGrid.ColumnCount = 4;
             this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
+            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanelDayGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanelDayGrid.Controls.Add(this.labelCaptionSolutionPart1, 1, 0);
             this.tableLayoutPanelDayGrid.Controls.Add(this.labelCaptionSolutionPart2, 2, 0);
             this.tableLayoutPanelDayGrid.Controls.Add(this.labelCaptionRuntime, 3, 0);
@@ -85,14 +85,14 @@ namespace AdventOfCode
             this.tableLayoutPanelDayGrid.Name = "tableLayoutPanelDayGrid";
             this.tableLayoutPanelDayGrid.RowCount = 1;
             this.tableLayoutPanelDayGrid.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDayGrid.Size = new System.Drawing.Size(559, 417);
+            this.tableLayoutPanelDayGrid.Size = new System.Drawing.Size(661, 417);
             this.tableLayoutPanelDayGrid.TabIndex = 1;
             // 
             // labelCaptionSolutionPart1
             // 
             this.labelCaptionSolutionPart1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCaptionSolutionPart1.AutoSize = true;
-            this.labelCaptionSolutionPart1.Location = new System.Drawing.Point(139, 202);
+            this.labelCaptionSolutionPart1.Location = new System.Drawing.Point(164, 202);
             this.labelCaptionSolutionPart1.Name = "labelCaptionSolutionPart1";
             this.labelCaptionSolutionPart1.Size = new System.Drawing.Size(76, 13);
             this.labelCaptionSolutionPart1.TabIndex = 1;
@@ -102,7 +102,7 @@ namespace AdventOfCode
             // 
             this.labelCaptionSolutionPart2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCaptionSolutionPart2.AutoSize = true;
-            this.labelCaptionSolutionPart2.Location = new System.Drawing.Point(290, 202);
+            this.labelCaptionSolutionPart2.Location = new System.Drawing.Point(365, 202);
             this.labelCaptionSolutionPart2.Name = "labelCaptionSolutionPart2";
             this.labelCaptionSolutionPart2.Size = new System.Drawing.Size(76, 13);
             this.labelCaptionSolutionPart2.TabIndex = 2;
@@ -112,7 +112,7 @@ namespace AdventOfCode
             // 
             this.labelCaptionRuntime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCaptionRuntime.AutoSize = true;
-            this.labelCaptionRuntime.Location = new System.Drawing.Point(446, 202);
+            this.labelCaptionRuntime.Location = new System.Drawing.Point(547, 202);
             this.labelCaptionRuntime.Name = "labelCaptionRuntime";
             this.labelCaptionRuntime.Size = new System.Drawing.Size(69, 13);
             this.labelCaptionRuntime.TabIndex = 3;
@@ -124,7 +124,7 @@ namespace AdventOfCode
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(564, 450);
+            this.ClientSize = new System.Drawing.Size(667, 450);
             this.Controls.Add(this.tableLayoutPanelMainContainer);
             this.Name = "FormSolverUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
