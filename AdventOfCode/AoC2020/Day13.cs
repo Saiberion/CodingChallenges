@@ -62,7 +62,6 @@ namespace AoC2020
                 }
             }
 
-            int highestBusIdIndex = 0;
             int highestBusId = 0;
 
             for (int i = 0; i < busIDs.Count; i++)
@@ -70,7 +69,6 @@ namespace AoC2020
                 if (busIDs[i] > highestBusId)
                 {
                     highestBusId = busIDs[i];
-                    highestBusIdIndex = i;
                 }
             }
 

@@ -9,13 +9,11 @@ namespace AoC2021
     {
         override public void Solve()
         {
-            int target_min_x, target_max_x, target_min_y, target_max_y;
+            int target_min_x, target_max_x;
             string[] splitted = Input[0].Split(new char[] { ' ', '=', '.', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
             target_min_x = int.Parse(splitted[3]);
             target_max_x = int.Parse(splitted[4]);
-            target_min_y = int.Parse(splitted[6]);
-            target_max_y = int.Parse(splitted[7]);
 
             int velocity_x, position_x;
             List<int> valid_x_velocities = new List<int>();

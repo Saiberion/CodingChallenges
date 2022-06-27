@@ -20,9 +20,7 @@ namespace AoC2016
                         switch (splitted[1])
                         {
                             case "position":
-                                char c = result[int.Parse(splitted[2])];
-                                result[int.Parse(splitted[2])] = result[int.Parse(splitted[5])];
-                                result[int.Parse(splitted[5])] = c;
+                                (result[int.Parse(splitted[5])], result[int.Parse(splitted[2])]) = (result[int.Parse(splitted[2])], result[int.Parse(splitted[5])]);
                                 break;
                             case "letter":
                                 for (int i = 0; i < result.Length; i++)
@@ -98,9 +96,7 @@ namespace AoC2016
                         switch (splitted[1])
                         {
                             case "position":
-                                char c = result[int.Parse(splitted[2])];
-                                result[int.Parse(splitted[2])] = result[int.Parse(splitted[5])];
-                                result[int.Parse(splitted[5])] = c;
+                                (result[int.Parse(splitted[5])], result[int.Parse(splitted[2])]) = (result[int.Parse(splitted[2])], result[int.Parse(splitted[5])]);
                                 break;
                             case "letter":
                                 for (int j = 0; j < result.Length; j++)

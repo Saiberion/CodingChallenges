@@ -11,16 +11,20 @@ namespace AoC2021
         {
             int errorScore = 0;
             List<long> completeScores = new List<long>();
-            Dictionary<char, int> errorPoints = new Dictionary<char, int>();
-            errorPoints.Add(')', 3);
-            errorPoints.Add(']', 57);
-            errorPoints.Add('}', 1197);
-            errorPoints.Add('>', 25137);
-            Dictionary<char, int> completePoints = new Dictionary<char, int>();
-            completePoints.Add('(', 1);
-            completePoints.Add('[', 2);
-            completePoints.Add('{', 3);
-            completePoints.Add('<', 4);
+            Dictionary<char, int> errorPoints = new Dictionary<char, int>
+            {
+                { ')', 3 },
+                { ']', 57 },
+                { '}', 1197 },
+                { '>', 25137 }
+            };
+            Dictionary<char, int> completePoints = new Dictionary<char, int>
+            {
+                { '(', 1 },
+                { '[', 2 },
+                { '{', 3 },
+                { '<', 4 }
+            };
 
             foreach (string s in Input)
             {

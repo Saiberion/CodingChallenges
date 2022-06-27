@@ -78,7 +78,7 @@ namespace AoC2017
             return string.Join("/", section);
         }
 
-        void CopyTo(string[] grid, string section, int size, int startRow, int startColumn)
+        void CopyTo(string[] grid, string section, int size, int startRow)
         {
             string[] rows = section.Split('/');
             for (int i = 0; i < size; i++)
@@ -101,7 +101,7 @@ namespace AoC2017
                 for (int k = 0; k * size < grid.Length; k++)
                 {
                     string section = CopyFrom(grid, j * size, k * size, size);
-                    CopyTo(newGrid, rules[section], newSize, j * newSize, k * newSize);
+                    CopyTo(newGrid, rules[section], newSize, j * newSize);
                 }
             }
 

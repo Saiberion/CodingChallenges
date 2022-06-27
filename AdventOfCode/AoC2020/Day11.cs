@@ -7,7 +7,7 @@ namespace AoC2020
 {
     public class Day11 : Day
     {
-        public int CountOccupiedSeatsInSight(int x, int y, char[,] seatingArea, int distance, int seatLimit)
+        public int CountOccupiedSeatsInSight(int x, int y, char[,] seatingArea, int distance)
         {
             int occupied = 0;
 
@@ -189,7 +189,7 @@ namespace AoC2020
             }
             else
             {
-                int neighbors = CountOccupiedSeatsInSight(x, y, seatingArea, distance, seatLimit);
+                int neighbors = CountOccupiedSeatsInSight(x, y, seatingArea, distance);
                 if (seatingArea[x,y] == 'L')
                 {
                     if (neighbors == 0)

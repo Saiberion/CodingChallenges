@@ -85,9 +85,12 @@ namespace AoC2015
                                 continue;
                             }
 
-                            Player p = new Player { Hitpoints = 100 };
-                            p.Attack = weapons[w].Damage + armors[a].Damage + rings[r1].Damage + rings[r2].Damage;
-                            p.Defense = weapons[w].Armor + armors[a].Armor + rings[r1].Armor + rings[r2].Armor;
+                            Player p = new Player
+                            {
+                                Hitpoints = 100,
+                                Attack = weapons[w].Damage + armors[a].Damage + rings[r1].Damage + rings[r2].Damage,
+                                Defense = weapons[w].Armor + armors[a].Armor + rings[r1].Armor + rings[r2].Armor
+                            };
 
                             Player b = new Player { Hitpoints = 100, Attack = 8, Defense = 2 };
                             if (Fight(p, b))

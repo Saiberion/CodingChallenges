@@ -114,7 +114,6 @@ namespace AoC2020
             }
             Part1Solution = errorRate.ToString();
 
-            int[] matchingTicketfield = new int[ticketFields.Count];
             for (int i = 0; i < ticketFields.Count; i++)
             {
                 for (int a = 0; a < nearbyValidTickets.Count; a++)

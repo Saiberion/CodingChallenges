@@ -26,15 +26,17 @@ namespace AoC2021
                 }
 
                 char A = 'Q', B = 'Q', C = 'Q', D = 'Q', E ='Q', F = 'Q', G = 'Q';
-                Dictionary<int, List<string>> segmentMapping = new Dictionary<int, List<string>>();
-                segmentMapping.Add(0, new List<string>());
-                segmentMapping.Add(1, new List<string>());
-                segmentMapping.Add(2, new List<string>());
-                segmentMapping.Add(3, new List<string>());
-                segmentMapping.Add(4, new List<string>());
-                segmentMapping.Add(5, new List<string>());
-                segmentMapping.Add(6, new List<string>());
-                segmentMapping.Add(7, new List<string>());
+                Dictionary<int, List<string>> segmentMapping = new Dictionary<int, List<string>>
+                {
+                    { 0, new List<string>() },
+                    { 1, new List<string>() },
+                    { 2, new List<string>() },
+                    { 3, new List<string>() },
+                    { 4, new List<string>() },
+                    { 5, new List<string>() },
+                    { 6, new List<string>() },
+                    { 7, new List<string>() }
+                };
 
                 foreach (string s3 in splitted3)
                 {

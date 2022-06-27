@@ -9,7 +9,7 @@ namespace AoC2021
     {
         override public void Solve()
         {
-            string enhanceAlgo = Input[0];
+            //string enhanceAlgo = Input[0];
             char[,] image = new char[Input[1].Length, Input.Count - 2];
 
             for(int y = 0; y < image.GetLength(1); y++)
@@ -23,7 +23,7 @@ namespace AoC2021
             for (int i = 0; i < 2; i++)
             {
                 //image = EnhanceImage(image, enhanceAlgo);
-                char[,] newimg = new char[image.GetLength(0) + 2, image.GetLength(1) + 2];
+                //char[,] newimg = new char[image.GetLength(0) + 2, image.GetLength(1) + 2];
                 
                 for (int y = -1; y <= image.GetLength(1); y++)
                 {

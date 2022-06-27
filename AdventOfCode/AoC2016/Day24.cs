@@ -154,7 +154,10 @@ namespace AoC2016
                 {
                     j = 0;
                 }
-                SwapValues(values, i, j);
+                if (i != j)
+                {
+                    (values[j], values[i]) = (values[i], values[j]);
+                }
                 route.Add(new List<Point>(values));
                 i = 1;
                 while (p[i] == 0)
@@ -166,21 +169,11 @@ namespace AoC2016
             return route;
         }
 
-        private void SwapValues(List<Point> values, int pos1, int pos2)
-        {
-            if (pos1 != pos2)
-            {
-                Point tmp = values[pos1];
-                values[pos1] = values[pos2];
-                values[pos2] = tmp;
-            }
-        }
-
         public override void Solve()
         {
             List<Point> wires = new List<Point>();
             int[,] hvac = new int[Input[0].Length, Input.Count];
-            List<List<Point>> routes = new List<List<Point>>();
+            List<List<Point>> routes;
 
             for (int y = 0; y < Input.Count; y++)
             {

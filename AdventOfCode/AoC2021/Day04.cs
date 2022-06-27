@@ -20,12 +20,14 @@ namespace AoC2021
 
             for (int i = 2; i < Input.Count; i += 6)
             {
-                List<string> bingoBoardLines = new List<string>();
-                bingoBoardLines.Add(Input[i]);
-                bingoBoardLines.Add(Input[i + 1]);
-                bingoBoardLines.Add(Input[i + 2]);
-                bingoBoardLines.Add(Input[i + 3]);
-                bingoBoardLines.Add(Input[i + 4]);
+                List<string> bingoBoardLines = new List<string>
+                {
+                    Input[i],
+                    Input[i + 1],
+                    Input[i + 2],
+                    Input[i + 3],
+                    Input[i + 4]
+                };
                 boards.Add(new BingoBoard(bingoBoardLines));
             }
 

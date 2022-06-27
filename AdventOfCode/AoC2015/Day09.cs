@@ -23,13 +23,6 @@ namespace AoC2015
     {
         internal List<List<string>> tracks = new List<List<string>>();
 
-        void SwapElements(ref string a, ref string b)
-        {
-            string tmp = a;
-            a = b;
-            b = tmp;
-        }
-
         void GetAllCombinations(string[] input, int k, int m)
         {
             if (k == m)
@@ -45,9 +38,9 @@ namespace AoC2015
             {
                 for (int i = k; i <= m; i++)
                 {
-                    SwapElements(ref input[k], ref input[i]);
+                    (input[i], input[k]) = (input[k], input[i]);
                     GetAllCombinations(input, k + 1, m);
-                    SwapElements(ref input[k], ref input[i]);
+                    (input[i], input[k]) = (input[k], input[i]);
                 }
             }
         }

@@ -7,7 +7,7 @@ namespace AoC2020
 {
     public class Day01 : Day
     {
-        private string findMatching2Entries(List<int> l)
+        private string FindMatching2Entries(List<int> l)
         {
             for (int i = 0; i < l.Count; i++)
             {
@@ -25,7 +25,7 @@ namespace AoC2020
             return "Error";
         }
 
-        private string findMatching3Entries(List<int> l)
+        private string FindMatching3Entries(List<int> l)
         {
             for (int i = 0; i < l.Count; i++)
             {
@@ -53,8 +53,8 @@ namespace AoC2020
             {
                 accountingList.Add(int.Parse(s));
             }
-            Part1Solution = findMatching2Entries(accountingList);
-            Part2Solution = findMatching3Entries(accountingList);
+            Part1Solution = FindMatching2Entries(accountingList);
+            Part2Solution = FindMatching3Entries(accountingList);
         }
     }
 }

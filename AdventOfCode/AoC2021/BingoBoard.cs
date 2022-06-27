@@ -8,8 +8,8 @@ namespace AoC2021
 {
     public class BingoBoard
     {
-        int[,] numbers = new int[5, 5];
-        bool[,] marked = new bool[5, 5];
+        readonly int[,] numbers = new int[5, 5];
+        readonly bool[,] marked = new bool[5, 5];
 
         public BingoBoard(List<string> boardData)
         {

@@ -33,7 +33,6 @@ namespace AoC2021
                     {
                         if (heightMap[x - 1, y] <= heightMap[x, y])
                         {
-                            isLowPoint = false;
                             continue;
                         }
                     }
@@ -41,7 +40,6 @@ namespace AoC2021
                     {
                         if (heightMap[x, y - 1] <= heightMap[x, y])
                         {
-                            isLowPoint = false;
                             continue;
                         }
                     }
@@ -49,7 +47,6 @@ namespace AoC2021
                     {
                         if (heightMap[x + 1, y] <= heightMap[x, y])
                         {
-                            isLowPoint = false;
                             continue;
                         }
                     }
@@ -57,7 +54,6 @@ namespace AoC2021
                     {
                         if (heightMap[x, y + 1] <= heightMap[x, y])
                         {
-                            isLowPoint = false;
                             continue;
                         }
                     }

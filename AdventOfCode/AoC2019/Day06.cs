@@ -50,7 +50,6 @@ namespace AoC2019
             Part1Solution = fragments[0].GetOrbits().ToString();
 
             TreeNode startOrbit = fragments[0].GetTreeNodeByName("YOU").Parent;
-            TreeNode endOrbit = fragments[0].GetTreeNodeByName("SAN").Parent;
 
             int orbitalTransfers = 0;
             TreeNode currentOrbit = startOrbit;
