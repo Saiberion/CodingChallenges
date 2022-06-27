@@ -7,11 +7,114 @@ namespace AoC2017
 {
     public class Day24 : Day
     {
+        class BridgePart
+        {
+            public List<int> PortStrength { get; set; }
+
+            public BridgePart(string bp)
+            {
+                string[] s = bp.Split('/');
+                PortStrength = new List<int>();
+                PortStrength.Add(int.Parse(s[0]));
+                PortStrength.Add(int.Parse(s[1]));
+            }
+        }
+
+        void buildBridge(List<BridgePart> bridgeParts)
+        {
+            int nextConnector = 0;
+            List<BridgePart> bps = new List<BridgePart>(bridgeParts);
+            List<BridgePart> bridge = new List<BridgePart>();
+            for (int i = 0; i < bps.Count; i++)
+            {
+                if (bps[i].PortStrength.Contains(nextConnector))
+                {
+                    bridge.Add(bps[i]);
+                    if (bps[i].PortStrength[0] == nextConnector)
+                    {
+                        nextConnector = bps[i].PortStrength[1];
+                    }
+                    else
+                    {
+                        nextConnector = bps[i].PortStrength[0];
+                    }
+                    bps.Remove(bps[i]);
+                    i = -1;
+                }
+            }
+        }
+
+        void createBridges(List<List<BridgePart>> bridges, List<BridgePart> currentBridge, List<BridgePart> bridgeParts, int nextConnector)
+        {
+            List<BridgePart> bps = new List<BridgePart>(bridgeParts);
+            int next;
+
+            for (int i = 0; i < bps.Count; i++)
+            {
+                if (bps[i].PortStrength.Contains(nextConnector))
+                {
+                    if (bps[i].PortStrength[0] == nextConnector)
+                    {
+                        next = bps[i].PortStrength[1];
+                    }
+                    else
+                    {
+                        next = bps[i].PortStrength[0];
+                    }
+                    List<BridgePart> curBridge = new List<BridgePart>(currentBridge);
+                    curBridge.Add(bps[i]);
+                    List<BridgePart> remainingParts = new List<BridgePart>(bps);
+                    remainingParts.Remove(bps[i]);
+                    bridges.Add(curBridge);
+                    createBridges(bridges, curBridge, remainingParts, next);
+                }
+            }
+        }
+
         public override void Solve()
         {
-            Part1Solution = "TBD";
+            List<BridgePart> bridgeParts = new List<BridgePart>();
+            List<List<BridgePart>> bridges = new List<List<BridgePart>>();
+            int bestBridgeStrength = int.MinValue;
+            int bestBridgeStrengthLongest = int.MinValue;
+            int longestBridge = int.MinValue;
 
-            Part2Solution = "TBD";
+            foreach (string line in Input)
+            {
+                bridgeParts.Add(new BridgePart(line));
+            }
+
+            createBridges(bridges, new List<BridgePart>(), bridgeParts, 0);
+
+            foreach (List<BridgePart> bps in bridges)
+            {
+                int strength = 0;
+                foreach (BridgePart bp in bps)
+                {
+                    strength += bp.PortStrength[0];
+                    strength += bp.PortStrength[1];
+                }
+                if (strength > bestBridgeStrength)
+                {
+                    bestBridgeStrength = strength;
+                }
+                if (bps.Count > longestBridge)
+                {
+                    longestBridge = bps.Count;
+                    bestBridgeStrengthLongest = strength;
+                }
+                else if (bps.Count == longestBridge)
+                {
+                    if (strength > bestBridgeStrengthLongest)
+                    {
+                        bestBridgeStrengthLongest = strength;
+                    }
+                }
+            }
+
+            Part1Solution = bestBridgeStrength.ToString();
+
+            Part2Solution = bestBridgeStrengthLongest.ToString();
         }
     }
 }
