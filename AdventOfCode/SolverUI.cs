@@ -105,7 +105,7 @@ namespace AdventOfCode
                     new AoC2017.Day22() { Enabled = true },
                     new AoC2017.Day23() { Enabled = true },
                     new AoC2017.Day24() { Enabled = true },
-                    new AoC2017.Day25() { Enabled = false }
+                    new AoC2017.Day25() { Enabled = true }
                 }
             },
             {
