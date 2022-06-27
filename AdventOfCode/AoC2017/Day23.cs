@@ -169,12 +169,10 @@ namespace AoC2017
             }
         }
 
-        int aocAssemblerAsCSharp()
+        int AocAssemblerAsCSharp()
         {
-            int b = 0, d = 0, e = 0, h = 0;
+            int b, d, e, h = 0;
             bool f;
-
-            b = 108100;
 
             for (b = 108100; b <= (108100 + 17000); b += 17)
             {
@@ -231,7 +229,7 @@ namespace AoC2017
 
             Part1Solution = cp1.MulCounter.ToString();
 
-            Part2Solution = aocAssemblerAsCSharp().ToString();
+            Part2Solution = AocAssemblerAsCSharp().ToString();
         }
     }
 }
