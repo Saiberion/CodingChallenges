@@ -14,37 +14,15 @@ namespace AoC2017
             public BridgePart(string bp)
             {
                 string[] s = bp.Split('/');
-                PortStrength = new List<int>();
-                PortStrength.Add(int.Parse(s[0]));
-                PortStrength.Add(int.Parse(s[1]));
-            }
-        }
-
-        void buildBridge(List<BridgePart> bridgeParts)
-        {
-            int nextConnector = 0;
-            List<BridgePart> bps = new List<BridgePart>(bridgeParts);
-            List<BridgePart> bridge = new List<BridgePart>();
-            for (int i = 0; i < bps.Count; i++)
-            {
-                if (bps[i].PortStrength.Contains(nextConnector))
+                PortStrength = new List<int>
                 {
-                    bridge.Add(bps[i]);
-                    if (bps[i].PortStrength[0] == nextConnector)
-                    {
-                        nextConnector = bps[i].PortStrength[1];
-                    }
-                    else
-                    {
-                        nextConnector = bps[i].PortStrength[0];
-                    }
-                    bps.Remove(bps[i]);
-                    i = -1;
-                }
+                    int.Parse(s[0]),
+                    int.Parse(s[1])
+                };
             }
         }
 
-        void createBridges(List<List<BridgePart>> bridges, List<BridgePart> currentBridge, List<BridgePart> bridgeParts, int nextConnector)
+        void CreateBridges(List<List<BridgePart>> bridges, List<BridgePart> currentBridge, List<BridgePart> bridgeParts, int nextConnector)
         {
             List<BridgePart> bps = new List<BridgePart>(bridgeParts);
             int next;
@@ -61,12 +39,14 @@ namespace AoC2017
                     {
                         next = bps[i].PortStrength[0];
                     }
-                    List<BridgePart> curBridge = new List<BridgePart>(currentBridge);
-                    curBridge.Add(bps[i]);
+                    List<BridgePart> curBridge = new List<BridgePart>(currentBridge)
+                    {
+                        bps[i]
+                    };
                     List<BridgePart> remainingParts = new List<BridgePart>(bps);
                     remainingParts.Remove(bps[i]);
                     bridges.Add(curBridge);
-                    createBridges(bridges, curBridge, remainingParts, next);
+                    CreateBridges(bridges, curBridge, remainingParts, next);
                 }
             }
         }
@@ -84,7 +64,7 @@ namespace AoC2017
                 bridgeParts.Add(new BridgePart(line));
             }
 
-            createBridges(bridges, new List<BridgePart>(), bridgeParts, 0);
+            CreateBridges(bridges, new List<BridgePart>(), bridgeParts, 0);
 
             foreach (List<BridgePart> bps in bridges)
             {
