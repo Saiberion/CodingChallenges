@@ -7,164 +7,136 @@ namespace AoC2017
 {
 	class TowerElement
 	{
-		public string name;
-		public int weight;
-		public List<TowerElement> subs = new List<TowerElement>();
-		public int totalWeight;
+		public string Name { get; internal set; }
+		public int Weight { get; set; }
+		public List<TowerElement> Disc { get; internal set; }
+		public int TotalWeight { get; set; }
+		public bool IsBalanced { get; internal set; }
+		public TowerElement Parent { get; internal set; }
+
+		public TowerElement(string name)
+		{
+			Name = name;
+			Weight = 0;
+			Disc = new List<TowerElement>();
+			TotalWeight = 0;
+			IsBalanced = true;
+			Parent = null;
+		}
 	}
 
 	public class Day07 : Day
     {
-		bool AddToTower(List<TowerElement> tower, TowerElement t)
+		void DetermineTotalWeights(TowerElement t)
 		{
-			if (tower.Count == 0)
+			if (t.Disc.Count == 0)
+            {
+				t.TotalWeight = t.Weight;
+            }
+			else
+            {
+				DetermineTotalWeights(t.Disc[0]);
+				int w = t.Disc[0].TotalWeight;
+				int refw = w;
+				for (int i = 1; i < t.Disc.Count; i++)
+                {
+                    DetermineTotalWeights(t.Disc[i]);
+					w += t.Disc[i].TotalWeight;
+					if (refw != t.Disc[i].TotalWeight)
+					{
+						t.IsBalanced = false;
+					}
+				}
+				t.TotalWeight = w + t.Weight;
+            }
+		}
+
+		int FindUnbalancedElement(TowerElement tower)
+		{
+			Dictionary<int, int> d = new Dictionary<int, int>();
+			foreach(TowerElement t in tower.Disc)
+            {
+				if (!d.ContainsKey(t.TotalWeight))
+                {
+					d.Add(t.TotalWeight, 0);
+                }
+				d[t.TotalWeight]++;
+            }
+			if (d.Count == 1)
 			{
-				tower.Add(t);
-				return true;
+				foreach (TowerElement te2 in tower.Parent.Disc)
+                {
+					if (tower.TotalWeight != te2.TotalWeight)
+                    {
+						int nw = tower.TotalWeight - tower.Weight;
+						nw = Math.Abs(nw - te2.TotalWeight);
+						return nw;
+                    }
+                }
+				return 0;
 			}
 			else
 			{
-				foreach (TowerElement te in tower)
+				foreach (KeyValuePair<int, int> kvp in d)
 				{
-					if (te.subs.Count > 0)
-					{
-						for (int i = 0; i < te.subs.Count; i++)
-						{
-							if (te.subs[i].name.Equals(t.name))
-							{
-								te.subs[i] = t;
-								return true;
+					if (kvp.Value == 1)
+                    {
+						foreach(TowerElement te in tower.Disc)
+                        {
+							if (te.TotalWeight == kvp.Key)
+                            {
+								return FindUnbalancedElement(te);
 							}
-							else
-							{
-								if (te.subs[i].subs.Count > 0)
-								{
-									if (AddToTower(te.subs[i].subs, t))
-									{
-										return true;
-									}
-								}
-							}
-						}
-						if (AddToTower(te.subs, t))
-						{
-							return true;
-						}
+                        }
 					}
-					else
-					{
-						if (te.name.Equals(t.name))
-						{
-							tower.Remove(te);
-							tower.Add(t);
-							return true;
-						}
-					}
+					return 0;
 				}
-			}
-			return false;
-		}
-
-		bool AddFromTower(List<TowerElement> tower, TowerElement t)
-		{
-			if (tower.Count == 0)
-			{
-				return false;
-			}
-			else
-			{
-				for (int i = 0; i < t.subs.Count; i++)
-				{
-					foreach (TowerElement te in tower)
-					{
-						if (te.name.Equals(t.subs[i].name))
-						{
-							t.subs[i] = te;
-							tower.Remove(te);
-							break;
-						}
-					}
-				}
-			}
-			return false;
-		}
-
-		void TowerWeight(TowerElement t)
-		{
-			if (t.subs.Count > 0)
-			{
-				t.totalWeight = t.weight;
-				foreach (TowerElement te in t.subs)
-				{
-					TowerWeight(te);
-				}
-				foreach (TowerElement te in t.subs)
-				{
-					t.totalWeight += te.totalWeight;
-				}
-			}
-			else
-			{
-				t.totalWeight = t.weight;
+				return 0;
 			}
 		}
-
-		/*void FindUnbalancedElement(TowerElement tower)
-		{
-			int compare = 0;
-			for (int i = 0; i < tower.subs.Count; i++)
-			{
-				if (i == 0)
-				{
-					compare = tower.subs[i].totalWeight;
-				}
-				else
-				{
-					if (compare != tower.subs[i].totalWeight)
-					{
-
-					}
-				}
-			}
-		}*/
 
 		public override void Solve()
         {
-			List<TowerElement> tower = new List<TowerElement>();
+			Dictionary<string, TowerElement> programs = new Dictionary<string, TowerElement>();
+			TowerElement root = null;
 
 			foreach (string line in Input)
 			{
-				string[] s = line.Replace(" ", "").Split(new string[] { "(", ")", "->" }, StringSplitOptions.RemoveEmptyEntries);
-				TowerElement t = new TowerElement()
+				TowerElement t;
+				string[] s = line.Split(new string[] { "(", ")", "->", ",", " " }, StringSplitOptions.RemoveEmptyEntries);
+				
+				if (!programs.ContainsKey(s[0]))
+                {
+					t = new TowerElement(s[0]);
+					programs.Add(s[0], t);
+                }
+				t = programs[s[0]];
+				t.Weight = int.Parse(s[1]);
+				for (int i = 2; i < s.Length; i++)
 				{
-					name = s[0],
-					weight = int.Parse(s[1])
-				};
-				if (s.Length > 2)
-				{
-					string[] csv = s[2].Split(',');
-					foreach (string n in csv)
+					if (!programs.ContainsKey(s[i]))
 					{
-						TowerElement te = new TowerElement()
-						{
-							name = n
-						};
-						t.subs.Add(te);
+						programs.Add(s[i], new TowerElement(s[i]));
 					}
-					AddFromTower(tower, t);
-				}
-
-				if (!AddToTower(tower, t))
-				{
-					// Turm hat schon eine Basis, kann nirgends eingehängt werden
-					tower.Add(t);
+					TowerElement te = programs[s[i]];
+					t.Disc.Add(te);
+					te.Parent = t;
 				}
 			}
 
-			TowerWeight(tower[0]);
-			Part1Solution = tower[0].name;
+			foreach(KeyValuePair<string, TowerElement> kvp in programs)
+            {
+				if (kvp.Value.Parent == null)
+                {
+					root = kvp.Value;
+                }
+            }
 
-            Part2Solution = "TBD";
-        }
-    }
+			Part1Solution = root.Name;
+
+			DetermineTotalWeights(root);
+
+			Part2Solution = FindUnbalancedElement(root).ToString();
+		}
+	}
 }
