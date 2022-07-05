@@ -14,22 +14,7 @@ namespace AoC2019
             Part1Solution = sif.GetCheckMultiply(layerIndexLeastZeroes, '1', '2').ToString();
             int[,] message = sif.Render();
             
-            for (int h = 0; h < sif.Height; h++)
-            {
-                for (int w = 0; w < sif.Width; w++)
-                {
-                    if (message[w, h] == 1)
-                    {
-                        System.Diagnostics.Debug.Write("#"); 
-                    }
-                    else
-                    {
-                        System.Diagnostics.Debug.Write(" ");
-                    }
-                }
-                System.Diagnostics.Debug.WriteLine("");
-            }
-            Part2Solution = "See debug output";
+            Part2Solution = DotmatrixToString.Render(message);
         }
     }
 

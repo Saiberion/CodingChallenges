@@ -257,6 +257,7 @@
     <Compile Include="AoCTemplate\Day24.cs" />
     <Compile Include="AoCTemplate\Day25.cs" />
     <Compile Include="Day.cs" />
+    <Compile Include="DotmatrixToString.cs" />
     <Compile Include="SolverUI.cs">
       <SubType>Form</SubType>
     </Compile>
