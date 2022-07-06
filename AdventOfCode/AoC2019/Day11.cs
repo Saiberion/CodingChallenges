@@ -85,24 +85,35 @@ namespace AoC2019
                 maxY = Math.Max(maxY, p.Y);
             }
 
+            List<List<int>> disp = new List<List<int>>();
             for (int x = minX; x <= maxX; x++)
             {
-                for (int y = maxY; y >= minY; y--) 
+                List<int> line = new List<int>();
+                for (int y = maxY - 1; y > minY + 1; y--) 
                 {
                     Point p = new Point(x, y);
                     if (hull.ContainsKey(p) && (hull[new Point(x, y)] == 1))
                     {
-                        Debug.Write("#");
+                        line.Add(1);
                     }
                     else
                     {
-                        Debug.Write(" ");
+                        line.Add(0);
                     }
                 }
-                Debug.WriteLine("");
+                disp.Add(line);
             }
 
-            Part2Solution = "See debug output";
+            int[,] display = new int[disp[0].Count, disp.Count];
+            for (int y = 0; y < disp.Count; y++)
+            {
+                for(int x = 0; x < disp[y].Count; x++)
+                {
+                    display[x, y] = disp[y][x];
+                }
+            }
+
+            Part2Solution = DotmatrixToString.Render(display);
         }
     }
 
