@@ -70,7 +70,7 @@ namespace AdventOfCode
                 {
                     displayedText.Append("K");
                 }
-                else if ((textCols[i + 0] == 63) && (textCols[i + 1] == 8) && (textCols[i + 2] == 1) && (textCols[i + 3] == 1))
+                else if ((textCols[i + 0] == 63) && (textCols[i + 1] == 1) && (textCols[i + 2] == 1) && (textCols[i + 3] == 1))
                 {
                     displayedText.Append("L");
                 }
