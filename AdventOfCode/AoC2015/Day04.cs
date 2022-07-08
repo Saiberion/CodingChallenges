@@ -10,7 +10,7 @@ namespace AoC2015
     {
         override public void Solve()
         {
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            MD5 md5 = MD5.Create();
             string key = Input[0];
             byte[] hash;
             bool finishedP1 = false, finishedP2 = false;

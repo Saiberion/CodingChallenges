@@ -12,7 +12,7 @@ namespace AoC2016
         {
             StringBuilder pwLeftRight = new StringBuilder();
             Dictionary<int, string> pwPosDetect = new Dictionary<int, string>();
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            MD5 md5 = MD5.Create();
 
             int index = 0;
             while (pwPosDetect.Count < 8)
