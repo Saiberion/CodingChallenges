@@ -30,7 +30,7 @@ namespace AdventOfCode
                     new AoC2015.Day09() { Enabled = true },
                     new AoC2015.Day10() { Enabled = true },
                     new AoC2015.Day11() { Enabled = true },
-                    new AoC2015.Day12() { Enabled = true },
+                    new AoC2015.Day12() { Enabled = false },
                     new AoC2015.Day13() { Enabled = true },
                     new AoC2015.Day14() { Enabled = true },
                     new AoC2015.Day15() { Enabled = true },
@@ -309,7 +309,10 @@ namespace AdventOfCode
         {
             foreach(string dir in Directory.GetDirectories(Directory.GetCurrentDirectory()).Reverse())
             {
-                comboBoxYearSelect.Items.Add(Path.GetFileName(dir));
+                if (Path.GetFileName(dir).StartsWith("AoC"))
+                {
+                    comboBoxYearSelect.Items.Add(Path.GetFileName(dir));
+                }
             }
         }
 

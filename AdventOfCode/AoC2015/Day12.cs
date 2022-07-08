@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Web.Script.Serialization;
+using System.Text.Json;
 
 namespace AoC2015
 {
@@ -62,8 +62,8 @@ namespace AoC2015
         override public void Solve()
         {
             int sum = 0;
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            object jsonInput = serializer.DeserializeObject(Input[0]);
+            //JsonSerializer serializer = new JavaScriptSerializer();
+            object jsonInput = JsonSerializer.Deserialize<Dictionary<string, dynamic>>(Input[0]);
 
             if (jsonInput is Dictionary<string, object>)
             {
