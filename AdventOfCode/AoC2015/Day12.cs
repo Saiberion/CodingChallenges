@@ -8,51 +8,53 @@ namespace AoC2015
 {
     public class Day12 : Day
     {
-        int SumUpObject(Dictionary<string, object> obj, bool skipRed)
+        int SumUpObject(JsonElement obj, bool skipRed)
         {
             int sum = 0;
 
-            if (skipRed && obj.ContainsValue("red"))
+            foreach (JsonProperty jp in obj.EnumerateObject())
             {
-                return 0;
-            }
-
-            foreach (KeyValuePair<string, object> kvp in obj)
-            {
-                if (kvp.Value is Dictionary<string, object>)
+                if (jp.Value.ValueKind == JsonValueKind.Object)
                 {
-                    sum += SumUpObject(kvp.Value as Dictionary<string, object>, skipRed);
+                    sum += SumUpObject(jp.Value, skipRed);
                 }
-                else if (kvp.Value is object[])
+                else if (jp.Value.ValueKind == JsonValueKind.Array)
                 {
-                    sum += SumUpArray(kvp.Value as object[], skipRed);
+                    sum += SumUpArray(jp.Value, skipRed);
                 }
-                else if (kvp.Value is int i)
+                else if (jp.Value.ValueKind == JsonValueKind.Number)
                 {
-                    sum += i;
+                    sum += jp.Value.GetInt32();
+                }
+                else if (skipRed && (jp.Value.ValueKind == JsonValueKind.String))
+                {
+                    if (jp.Value.GetString().Equals("red"))
+                    {
+                        return 0;
+                    }
                 }
             }
 
             return sum;
         }
 
-        int SumUpArray(object[] arr, bool skipRed)
+        int SumUpArray(JsonElement arr, bool skipRed)
         {
             int sum = 0;
 
-            foreach(object o in arr)
+            for(int i = 0; i < arr.GetArrayLength(); i++)
             {
-                if (o is Dictionary<string, object>)
+                if (arr[i].ValueKind == JsonValueKind.Object)
                 {
-                    sum += SumUpObject(o as Dictionary<string, object>, skipRed);
+                    sum += SumUpObject(arr[i], skipRed);
                 }
-                else if (o is object[])
+                else if (arr[i].ValueKind == JsonValueKind.Array)
                 {
-                    sum += SumUpArray(o as object[], skipRed);
+                    sum += SumUpArray(arr[i], skipRed);
                 }
-                else if (o is int i)
+                else if (arr[i].ValueKind == JsonValueKind.Number)
                 {
-                    sum += i;
+                    sum += arr[i].GetInt32();
                 }
             }
 
@@ -62,27 +64,26 @@ namespace AoC2015
         override public void Solve()
         {
             int sum = 0;
-            //JsonSerializer serializer = new JavaScriptSerializer();
-            object jsonInput = JsonSerializer.Deserialize<Dictionary<string, dynamic>>(Input[0]);
+            JsonElement jsonInput = JsonSerializer.Deserialize<dynamic>(Input[0]);
 
-            if (jsonInput is Dictionary<string, object>)
+            if (jsonInput.ValueKind == JsonValueKind.Object)
             {
-                sum += SumUpObject(jsonInput as Dictionary<string, object>, false);
+                sum += SumUpObject(jsonInput, false);
             }
-            else if (jsonInput is object[])
+            else if (jsonInput.ValueKind == JsonValueKind.Array)
             {
-                sum += SumUpArray(jsonInput as object[], false);
+                sum += SumUpArray(jsonInput, false);
             }
             Part1Solution = sum.ToString();
 
             sum = 0;
-            if (jsonInput is Dictionary<string, object>)
+            if (jsonInput.ValueKind == JsonValueKind.Object)
             {
-                sum += SumUpObject(jsonInput as Dictionary<string, object>, true);
+                sum += SumUpObject(jsonInput, true);
             }
-            else if (jsonInput is object[])
+            else if (jsonInput.ValueKind == JsonValueKind.Array)
             {
-                sum += SumUpArray(jsonInput as object[], true);
+                sum += SumUpArray(jsonInput, true);
             }
             Part2Solution = sum.ToString();
         }
