@@ -84,10 +84,6 @@ namespace AoC2017
 				}
 			}
 
-			Console.WriteLine(string.Format("End Distance: {0}", goal.Distance(start)));
-			Console.WriteLine(string.Format("Max Distance: {0}", maxDistance));
-			Console.ReadLine();
-
 			Part1Solution = goal.Distance(start).ToString();
             Part2Solution = maxDistance.ToString();
         }
