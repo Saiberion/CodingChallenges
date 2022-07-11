@@ -54,26 +54,28 @@ namespace AoC2018
 
     public class Day10 : Day
     {
-        private void LightPlotter(List<MovingLight> lights)
+        private string LightPlotter(List<MovingLight> lights)
         {
             LightArea la = new LightArea(lights);
 
-            bool[,] plot = new bool[la.DistanceX + 1, la.DistanceY + 1];
+            int[,] plot = new int[la.DistanceX + 1, la.DistanceY + 1];
 
             foreach (MovingLight m in lights)
             {
-                plot[m.PosX - la.MinX, m.PosY - la.MinY] = true;
+                plot[m.PosX - la.MinX, m.PosY - la.MinY] = 1;
             }
 
             for (int y = 0; y < plot.GetLength(1); y++)
             {
                 for (int x = 0; x < plot.GetLength(0); x++)
                 {
-                    System.Diagnostics.Debug.Write(string.Format("{0}", plot[x, y] ? "#" : "."));
+                    System.Diagnostics.Debug.Write(string.Format("{0}", plot[x, y] == 1 ? "#" : "."));
                 }
                 System.Diagnostics.Debug.WriteLine("");
             }
             System.Diagnostics.Debug.WriteLine("");
+
+            return DotmatrixToString.Render(plot);
         }
 
         public override void Solve()
@@ -117,9 +119,7 @@ namespace AoC2018
                 }
             }
 
-            LightPlotter(movingLights);
-
-            Part1Solution = "look Debug Out";
+            Part1Solution = LightPlotter(movingLights);
             Part2Solution = ticks.ToString();
         }
     }
