@@ -161,7 +161,7 @@ namespace AdventOfCode
                     new AoC2019.Day16() { Enabled = false },
                     new AoC2019.Day17() { Enabled = true },
                     new AoC2019.Day18() { Enabled = false },
-                    new AoC2019.Day19() { Enabled = false },
+                    new AoC2019.Day19() { Enabled = true },
                     new AoC2019.Day20() { Enabled = false },
                     new AoC2019.Day21() { Enabled = false },
                     new AoC2019.Day22() { Enabled = false },
