@@ -76,6 +76,7 @@ namespace AoC2019
         override public void Solve()
         {
             Part1Solution = ShuffleAndFollowCard(2019, 10007, 1).ToString();
+            Part2Solution = "TBD";
             //Part2Solution = ShuffleAndFollowPosition(2020, 119315717514047L).ToString();
         }
     }
