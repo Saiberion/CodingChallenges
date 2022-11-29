@@ -7,6 +7,7 @@ namespace AoC2020
 {
     public class Day13 : Day
     {
+        // TODO fix the broken solver
         private static long GCD(long a, long b)
         {
             if (a == 0)
