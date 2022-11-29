@@ -231,6 +231,37 @@ namespace AdventOfCode
                     new AoC2021.Day24() { Enabled = false },
                     new AoC2021.Day25() { Enabled = false }
                 }
+            },
+            {
+                "AoC2022",
+                new List<Day>()
+                {
+                    new AoC2022.Day01() { Enabled = false },
+                    new AoC2022.Day02() { Enabled = false },
+                    new AoC2022.Day03() { Enabled = false },
+                    new AoC2022.Day04() { Enabled = false },
+                    new AoC2022.Day05() { Enabled = false },
+                    new AoC2022.Day06() { Enabled = false },
+                    new AoC2022.Day07() { Enabled = false },
+                    new AoC2022.Day08() { Enabled = false },
+                    new AoC2022.Day09() { Enabled = false },
+                    new AoC2022.Day10() { Enabled = false },
+                    new AoC2022.Day11() { Enabled = false },
+                    new AoC2022.Day12() { Enabled = false },
+                    new AoC2022.Day13() { Enabled = false },
+                    new AoC2022.Day14() { Enabled = false },
+                    new AoC2022.Day15() { Enabled = false },
+                    new AoC2022.Day16() { Enabled = false },
+                    new AoC2022.Day17() { Enabled = false },
+                    new AoC2022.Day18() { Enabled = false },
+                    new AoC2022.Day19() { Enabled = false },
+                    new AoC2022.Day20() { Enabled = false },
+                    new AoC2022.Day21() { Enabled = false },
+                    new AoC2022.Day22() { Enabled = false },
+                    new AoC2022.Day23() { Enabled = false },
+                    new AoC2022.Day24() { Enabled = false },
+                    new AoC2022.Day25() { Enabled = false }
+                }
             }
         };
 
