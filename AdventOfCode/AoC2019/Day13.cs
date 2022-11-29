@@ -11,7 +11,7 @@ namespace AoC2019
     {
         override public void Solve()
         {
-            // TODO solved on AdventOfCode, but not working here
+            // TODO Part 2 answer is somehow influenced with other running solve threads, only works (and takes quite long) if run alone
             Queue<long> input = new Queue<long>();
             Queue<long> output = new Queue<long>();
             // First value of input already set to starting value for part 2
