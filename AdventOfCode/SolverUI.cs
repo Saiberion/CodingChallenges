@@ -236,7 +236,7 @@ namespace AdventOfCode
                 "AoC2022",
                 new List<Day>()
                 {
-                    new AoC2022.Day01() { Enabled = false },
+                    new AoC2022.Day01() { Enabled = true },
                     new AoC2022.Day02() { Enabled = false },
                     new AoC2022.Day03() { Enabled = false },
                     new AoC2022.Day04() { Enabled = false },
