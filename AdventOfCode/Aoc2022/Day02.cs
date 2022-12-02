@@ -22,49 +22,13 @@ namespace AoC2022
             // X: Rock      1   Loose
             // Y: Paper     2   Draw
             // Z: Scissors  3   Win
-
+            // ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
             foreach (string s in Input)
             {
-                switch(s)
-                {
-                    case "A X":
-                        totalScoreP1 += 1 + 3;
-                        totalScoreP2 += 3 + 0;
-                        break;
-                    case "A Y":
-                        totalScoreP1 += 2 + 6;
-                        totalScoreP2 += 1 + 3;
-                        break;
-                    case "A Z":
-                        totalScoreP1 += 3 + 0;
-                        totalScoreP2 += 2 + 6;
-                        break;
-                    case "B X":
-                        totalScoreP1 += 1 + 0;
-                        totalScoreP2 += 1 + 0;
-                        break;
-                    case "B Y":
-                        totalScoreP1 += 2 + 3;
-                        totalScoreP2 += 2 + 3;
-                        break;
-                    case "B Z":
-                        totalScoreP1 += 3 + 6;
-                        totalScoreP2 += 3 + 6;
-                        break;
-                    case "C X":
-                        totalScoreP1 += 1 + 6;
-                        totalScoreP2 += 2 + 0;
-                        break;
-                    case "C Y":
-                        totalScoreP1 += 2 + 0;
-                        totalScoreP2 += 3 + 3;
-                        break;
-                    case "C Z":
-                        totalScoreP1 += 3 + 3;
-                        totalScoreP2 += 1 + 6;
-                        break;
-                }
+                totalScoreP1 += s[2] - 'W' + ((s[2] - s[0] - ('W' - 'A') + 3) % 3) * 3;
+
+                totalScoreP2 += (s[0] - 'A' + s[2] - 'Y' + 3) % 3 + 1 + (s[2] - 'Y' + 1) * 3;
             }
 
             Part1Solution = totalScoreP1.ToString();
