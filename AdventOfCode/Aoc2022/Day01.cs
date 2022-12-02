@@ -8,16 +8,6 @@ namespace AoC2022
 {
     public class Day01 : Day
     {
-        private static int SumUp(List<int> backpack)
-        {
-            int c = 0;
-            foreach(int i in backpack)
-            {
-                c += i;
-            }
-            return c;
-        }
-
         private int GetCaloriesTopElves(List<int> sortedWeights, int topCount)
         {
             int sum = 0;
@@ -31,35 +21,29 @@ namespace AoC2022
 
         public override void Solve()
         {
-            List<List<int>> elves = new();
-            List<int> backpack = new();
-            List<int> totalCalories = new();
+            List<int> elves = new();
+
+            int calories = 0;
 
             foreach (string s in Input)
             {
                 if (string.IsNullOrEmpty(s))
                 {
-                    elves.Add(backpack);
-                    backpack = new List<int>();
+                    elves.Add(calories);
+                    calories = 0;
                 }
                 else
                 {
-                    backpack.Add(int.Parse(s));
+                    calories += int.Parse(s);
                 }
             }
 
-            foreach(List<int> e in elves)
-            {
-                int cal = SumUp(e);
-                totalCalories.Add(cal);
-            }
+            elves.Sort();
+            elves.Reverse();
 
-            totalCalories.Sort();
-            totalCalories.Reverse();
+            Part1Solution = GetCaloriesTopElves(elves, 1).ToString();
 
-            Part1Solution = GetCaloriesTopElves(totalCalories, 1).ToString();
-
-            Part2Solution = GetCaloriesTopElves(totalCalories, 3).ToString();
+            Part2Solution = GetCaloriesTopElves(elves, 3).ToString();
         }
     }
 }
