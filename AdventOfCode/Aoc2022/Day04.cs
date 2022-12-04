@@ -11,18 +11,24 @@ namespace AoC2022
         {
             int includedCounter = 0;
             int overlapCounter = 0;
-            foreach(string s in Input)
+            int minRange1;
+            int maxRange1;
+            int minRange2;
+            int maxRange2;
+            foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { '-', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                minRange1 = int.Parse(splitted[0]);
+                maxRange1 = int.Parse(splitted[1]);
+                minRange2 = int.Parse(splitted[2]);
+                maxRange2 = int.Parse(splitted[3]);
 
-                if (((int.Parse(splitted[0]) >= int.Parse(splitted[2])) && (int.Parse(splitted[1]) <= int.Parse(splitted[3]))) ||
-                   ((int.Parse(splitted[2]) >= int.Parse(splitted[0])) && (int.Parse(splitted[3]) <= int.Parse(splitted[1])))) 
+                if (((minRange1 >= minRange2) && (maxRange1 <= maxRange2)) || ((minRange2 >= minRange1) && (maxRange2 <= maxRange1))) 
                 {
                     includedCounter++;
                 }
 
-                if (!((int.Parse(splitted[1]) < int.Parse(splitted[2])) ||
-                    (int.Parse(splitted[3]) < int.Parse(splitted[0]))))
+                if (!((maxRange1 < minRange2) || (maxRange2 < minRange1)))
                 {
                     overlapCounter++;
                 }
