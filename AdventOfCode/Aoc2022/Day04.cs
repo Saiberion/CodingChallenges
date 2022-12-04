@@ -9,9 +9,27 @@ namespace AoC2022
     {
         public override void Solve()
         {
-            Part1Solution = "TBD";
+            int includedCounter = 0;
+            int overlapCounter = 0;
+            foreach(string s in Input)
+            {
+                string[] splitted = s.Split(new char[] { '-', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
-            Part2Solution = "TBD";
+                if (((int.Parse(splitted[0]) >= int.Parse(splitted[2])) && (int.Parse(splitted[1]) <= int.Parse(splitted[3]))) ||
+                   ((int.Parse(splitted[2]) >= int.Parse(splitted[0])) && (int.Parse(splitted[3]) <= int.Parse(splitted[1])))) 
+                {
+                    includedCounter++;
+                }
+
+                if (!((int.Parse(splitted[1]) < int.Parse(splitted[2])) ||
+                    (int.Parse(splitted[3]) < int.Parse(splitted[0]))))
+                {
+                    overlapCounter++;
+                }
+            }
+            Part1Solution = includedCounter.ToString();
+
+            Part2Solution = overlapCounter.ToString();
         }
     }
 }
