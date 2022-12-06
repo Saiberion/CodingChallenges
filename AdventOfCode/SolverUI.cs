@@ -13,7 +13,7 @@ namespace AdventOfCode
 {
     public partial class FormSolverUI : Form
     {
-        private readonly Dictionary<string, List<Day>> allAoCDays = new Dictionary<string, List<Day>>()
+        private readonly Dictionary<string, List<Day>> allAoCDays = new()
         {
             {
                 "AoC2015",
@@ -286,7 +286,7 @@ namespace AdventOfCode
 
         private void ButtonSolveSingleDay(object sender, EventArgs e)
         {
-            BackgroundWorker bw = new BackgroundWorker();
+            BackgroundWorker bw = new();
             bw.DoWork += BackgroundWorkerDaySolver;
             bw.RunWorkerCompleted += BackgroundWorkerDaySolverCompleted;
             bw.ProgressChanged += BackgroundWorkerDaySolverProgressChanged;
@@ -386,7 +386,7 @@ namespace AdventOfCode
                 tableLayoutPanelDayGrid.RowCount++;
                 tableLayoutPanelDayGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
 
-                Button b = new Button
+                Button b = new()
                 {
                     Anchor = AnchorStyles.None,
                     Name = string.Format("buttonSolveDay{0}", i + 1),
@@ -433,7 +433,7 @@ namespace AdventOfCode
                 }, 3, i + 1);
             }
 
-            Button b2 = new Button
+            Button b2 = new()
             {
                 Anchor = AnchorStyles.None,
                 Name = "buttonSolveAll",
