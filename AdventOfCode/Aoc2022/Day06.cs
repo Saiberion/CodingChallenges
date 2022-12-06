@@ -10,26 +10,29 @@ namespace AoC2022
         private int PositionAfterDistinctChars(int distinct)
         {
             int i;
+            bool nextChar;
+            List<char> uniques = new();
             for (i = distinct; i < Input[0].Length; i++)
             {
-                char[] c = new char[distinct];
-                for (int k = 0; k < distinct; k++)
-                {
-                    c[k] = Input[0][i - k - 1];
-                }
-                Dictionary<char, int> uniqueKeys = new();
-                uniqueKeys.Add(c[0], 1);
-                try
-                {
-                    for (int j = 1; j < distinct; j++)
-                    {
-                        uniqueKeys.Add(c[j], 1);
-                    }
-                    break;
-                }
-                catch (Exception)
-                {
+                uniques.Clear();
+                nextChar = false;
 
+                uniques.Add(Input[0][i - 1]);
+                for (int j = 1; j < distinct; j++)
+                {
+                    if (uniques.Contains(Input[0][i - j - 1]))
+                    {
+                        nextChar = true;
+                        break;
+                    }
+                    else
+                    {
+                        uniques.Add(Input[0][i - j - 1]);
+                    }
+                }
+                if (!nextChar)
+                {
+                    break;
                 }
             }
             return i;
