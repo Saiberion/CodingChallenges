@@ -62,15 +62,7 @@ namespace AoC2022
             }
             Part1Solution = signalStregnth.ToString();
 
-            for(int y = 0; y < 6; y++)
-            {
-                Debug.WriteLine("");
-                for (int x = 0; x < 40; x++)
-                {
-                    Debug.Write(crt[x, y] == 1 ? "#" : ".");
-                }
-            }
-            Part2Solution = DotmatrixToString.Render(crt); ;
+            Part2Solution = DotmatrixToString.Render(crt);
         }
     }
 }
