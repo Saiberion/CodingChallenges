@@ -67,11 +67,10 @@ namespace AoC2022
                         {
                             head.Y--;
                             TailFollow(head, ref tail);
-                            try
+                            if (!tailVisits.ContainsKey(tail))
                             {
                                 tailVisits.Add(tail, 1);
                             }
-                            catch (Exception) { }
                         }
                         break;
                     case "D":
@@ -79,11 +78,10 @@ namespace AoC2022
                         {
                             head.Y++;
                             TailFollow(head, ref tail);
-                            try
+                            if (!tailVisits.ContainsKey(tail))
                             {
                                 tailVisits.Add(tail, 1);
                             }
-                            catch (Exception) { }
                         }
                         break;
                     case "L":
@@ -91,11 +89,10 @@ namespace AoC2022
                         {
                             head.X--;
                             TailFollow(head, ref tail);
-                            try
+                            if (!tailVisits.ContainsKey(tail))
                             {
                                 tailVisits.Add(tail, 1);
                             }
-                            catch (Exception) { }
                         }
                         break;
                     case "R":
@@ -103,11 +100,10 @@ namespace AoC2022
                         {
                             head.X++;
                             TailFollow(head, ref tail);
-                            try
+                            if (!tailVisits.ContainsKey(tail))
                             {
                                 tailVisits.Add(tail, 1);
                             }
-                            catch (Exception) { }
                         }
                         break;
                 }
