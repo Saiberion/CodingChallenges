@@ -9,109 +9,101 @@ namespace AoC2022
 {
     public class Day09 : Day
     {
-        private void TailFollow(Point h,ref Point t)
+        private static void TailFollow(Point[] rope)
         {
-            if ((h.X - t.X) < -1)
+            for (int i = 1; i < rope.Length; i++)
             {
-                t.X--;
-                if (h.Y != t.Y)
+                int diffx = rope[i - 1].X - rope[i].X;
+                int diffy = rope[i - 1].Y - rope[i].Y;
+
+                if (Math.Abs(diffx) > 1)
                 {
-                    t.Y = h.Y;
+                    // diagonal movement
+                    rope[i].X += Math.Sign(diffx);
+                    rope[i].Y += Math.Sign(diffy);
                 }
-            }
-            else if ((h.X - t.X) > 1)
-            {
-                t.X++;
-                if (h.Y != t.Y)
+                else
                 {
-                    t.Y = h.Y;
-                }
-            }
-            else
-            {
-                if ((h.Y - t.Y) < -1)
-                {
-                    t.Y--;
-                    if (h.X != t.X)
+                    if (Math.Abs(diffy) > 1)
                     {
-                        t.X = h.X;
-                    }
-                }
-                else if ((h.Y - t.Y) > 1)
-                {
-                    t.Y++;
-                    if (h.X != t.X)
-                    {
-                        t.X = h.X;
+                        rope[i].Y += Math.Sign(diffy);
+                        rope[i].X += Math.Sign(diffx);
                     }
                 }
             }
         }
 
-        public override void Solve()
+        public int Move(int ropeLength)
         {
             Dictionary<Point, int> tailVisits = new();
             int i;
-            Point head = new(0, 0);
-            Point tail = new(0, 0);
 
-            tailVisits.Add(tail, 1);
+            Point[] rope = new Point[ropeLength];
+            for (i = 0; i < rope.Length; i++)
+            {
+                rope[i] = new Point(0, 0);
+            }
+            tailVisits.Add(rope[^1], 1);
 
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                switch(splitted[0])
+                switch (splitted[0])
                 {
                     case "U":
-                        for(i = 0; i < int.Parse(splitted[1]); i++)
+                        for (i = 0; i < int.Parse(splitted[1]); i++)
                         {
-                            head.Y--;
-                            TailFollow(head, ref tail);
-                            if (!tailVisits.ContainsKey(tail))
+                            rope[0].Y--;
+                            TailFollow(rope);
+                            if (!tailVisits.ContainsKey(rope[^1]))
                             {
-                                tailVisits.Add(tail, 1);
+                                tailVisits.Add(rope[^1], 1);
                             }
                         }
                         break;
                     case "D":
                         for (i = 0; i < int.Parse(splitted[1]); i++)
                         {
-                            head.Y++;
-                            TailFollow(head, ref tail);
-                            if (!tailVisits.ContainsKey(tail))
+                            rope[0].Y++;
+                            TailFollow(rope);
+                            if (!tailVisits.ContainsKey(rope[^1]))
                             {
-                                tailVisits.Add(tail, 1);
+                                tailVisits.Add(rope[^1], 1);
                             }
                         }
                         break;
                     case "L":
                         for (i = 0; i < int.Parse(splitted[1]); i++)
                         {
-                            head.X--;
-                            TailFollow(head, ref tail);
-                            if (!tailVisits.ContainsKey(tail))
+                            rope[0].X--;
+                            TailFollow(rope);
+                            if (!tailVisits.ContainsKey(rope[^1]))
                             {
-                                tailVisits.Add(tail, 1);
+                                tailVisits.Add(rope[^1], 1);
                             }
                         }
                         break;
                     case "R":
                         for (i = 0; i < int.Parse(splitted[1]); i++)
                         {
-                            head.X++;
-                            TailFollow(head, ref tail);
-                            if (!tailVisits.ContainsKey(tail))
+                            rope[0].X++;
+                            TailFollow(rope);
+                            if (!tailVisits.ContainsKey(rope[^1]))
                             {
-                                tailVisits.Add(tail, 1);
+                                tailVisits.Add(rope[^1], 1);
                             }
                         }
                         break;
                 }
             }
+            return tailVisits.Keys.Count;
+        }
 
-            Part1Solution = tailVisits.Keys.Count.ToString();
+        public override void Solve()
+        {
+            Part1Solution = Move(2).ToString();
 
-            Part2Solution = "TBD";
+            Part2Solution = Move(10).ToString();
         }
     }
 }
