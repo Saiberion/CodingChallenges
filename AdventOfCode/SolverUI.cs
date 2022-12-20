@@ -247,7 +247,7 @@ namespace AdventOfCode
                     new AoC2022.Day09() { Enabled = true },
                     new AoC2022.Day10() { Enabled = true },
                     new AoC2022.Day11() { Enabled = true },
-                    new AoC2022.Day12() { Enabled = false },
+                    new AoC2022.Day12() { Enabled = true },
                     new AoC2022.Day13() { Enabled = false },
                     new AoC2022.Day14() { Enabled = false },
                     new AoC2022.Day15() { Enabled = false },
