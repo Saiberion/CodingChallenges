@@ -70,7 +70,6 @@ namespace AoC2022
             List<Location> openList = new();
             List<Location> closedList = new();
             int g;
-            bool targetReached = false;
 
             // add the starting position to the open list
             openList.Add(start);
@@ -96,7 +95,6 @@ namespace AoC2022
                 // if we added the destination to the closed list, we've found a path
                 if ((current.X == target.X) && (current.Y == target.Y))
                 {
-                    targetReached = true;
                     break;
                 }
 
@@ -137,7 +135,95 @@ namespace AoC2022
                 }
             }
 
-            return targetReached ? current.G : int.MaxValue;
+            return current.G;
+        }
+
+        private static int GetShorestPathDistance(int targetx, int targety, char[,] heightmap)
+        {
+            // A* algorithm for path finding
+            Location current = null;
+            //Location start = new() { X = startx, Y = starty };
+            Location target = new() { X = targetx, Y = targety };
+            List<Location> openList = new();
+            List<Location> closedList = new();
+            int g;
+
+            for (int y = 0; y < heightmap.GetLength(1); y++)
+            {
+                for (int x = 0; x < heightmap.GetLength(0); x++)
+                {
+                    if (heightmap[x, y] == 'a')
+                    {
+                        openList.Add(new() { X = x, Y = y });
+                    }
+                }
+            }
+
+            // add the starting position to the open list
+            //openList.Add(start);
+
+            while (openList.Count > 0)
+            {
+                // get the square with the lowest F score from openList
+                current = openList[0];
+                for (int i = 1; i < openList.Count; i++)
+                {
+                    if (openList[i].F < current.F)
+                    {
+                        current = openList[i];
+                    }
+                }
+
+                // add the current square to the closed list
+                closedList.Add(current);
+
+                // remove it from the open list
+                openList.Remove(current);
+
+                // if we added the destination to the closed list, we've found a path
+                if ((current.X == target.X) && (current.Y == target.Y))
+                {
+                    break;
+                }
+
+                List<Location> adjacentSquares = GetWalkableAdjacentSquares(current.X, current.Y, heightmap);
+                g = current.G + 1;
+
+                foreach (Location adjacentSquare in adjacentSquares)
+                {
+                    // if this adjacent square is already in the closed list, ignore it
+                    if (IsInList(adjacentSquare, closedList))
+                    {
+                        continue;
+                    }
+
+                    // if it's not in the open list...
+                    if (!IsInList(adjacentSquare, openList))
+                    {
+                        // compute its score, set the parent
+                        adjacentSquare.G = g;
+                        //adjacentSquare.H = ComputeHScore(adjacentSquare.X, adjacentSquare.Y, target.X, target.Y);
+                        adjacentSquare.F = adjacentSquare.G /*+ adjacentSquare.H*/;
+                        adjacentSquare.Parent = current;
+
+                        // and add it to the open list
+                        openList.Insert(0, adjacentSquare);
+                    }
+                    else
+                    {
+                        // test if using the current G score makes the adjacent square's F score
+                        // lower, if yes update the parent because it means it's a better path
+                        if (g /*+ adjacentSquare.H*/ < adjacentSquare.F)
+                        {
+                            adjacentSquare.G = g;
+                            adjacentSquare.F = adjacentSquare.G /*+ adjacentSquare.H*/;
+                            adjacentSquare.Parent = current;
+                        }
+                    }
+                }
+            }
+
+            return current.G;
         }
 
         public override void Solve()
@@ -173,15 +259,7 @@ namespace AoC2022
 
             Part1Solution = GetShorestPathDistance(startx, starty, endx, endy, heightmap).ToString();
 
-            List<int> distances = new();
-            foreach(Location l in startPoints)
-            {
-                distances.Add(GetShorestPathDistance(l.X, l.Y, endx, endy, heightmap));
-            }
-
-            distances.Sort();
-
-            Part2Solution = distances[0].ToString();
+            Part2Solution = GetShorestPathDistance(endx, endy, heightmap).ToString();
         }
     }
 }
