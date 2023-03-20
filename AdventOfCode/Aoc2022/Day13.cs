@@ -138,8 +138,8 @@ namespace AoC2022
 
             distressSignal.AddRange(packetPairs[0]);
             distressSignal.AddRange(packetPairs[1]);
-            List<object> divPacket1 = new List<object> { new List<object> { 2 } };
-            List<object> divPacket2 = new List<object> { new List<object> { 6 } };
+            List<object> divPacket1 = new() { new List<object> { 2 } };
+            List<object> divPacket2 = new() { new List<object> { 6 } };
             distressSignal.Add(divPacket1);
             distressSignal.Add(divPacket2);
 
