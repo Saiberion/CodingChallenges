@@ -32,7 +32,7 @@ namespace AdventOfCode
 
         internal void Load(string filename)
         {
-            StreamReader file = new StreamReader(filename);
+            StreamReader file = new(filename);
             Input = new List<string>();
             string line;
 
