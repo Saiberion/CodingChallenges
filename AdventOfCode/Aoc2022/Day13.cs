@@ -18,7 +18,7 @@ namespace AoC2022
                 {
                     List<object> l = new();
                     parent.Add(l);
-                    int skip = CreatePacket(l, s.Substring(i + 1));
+                    int skip = CreatePacket(l, s[(i + 1)..]);
                     i += skip;
                     counter += skip + 1;
                 }
