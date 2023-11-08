@@ -262,6 +262,37 @@ namespace AdventOfCode
                     new AoC2022.Day24() { Enabled = false },
                     new AoC2022.Day25() { Enabled = false }
                 }
+            },
+            {
+                "AoC2023",
+                new List<Day>()
+                {
+                    new AoC2023.Day01() { Enabled = false },
+                    new AoC2023.Day02() { Enabled = false },
+                    new AoC2023.Day03() { Enabled = false },
+                    new AoC2023.Day04() { Enabled = false },
+                    new AoC2023.Day05() { Enabled = false },
+                    new AoC2023.Day06() { Enabled = false },
+                    new AoC2023.Day07() { Enabled = false },
+                    new AoC2023.Day08() { Enabled = false },
+                    new AoC2023.Day09() { Enabled = false },
+                    new AoC2023.Day10() { Enabled = false },
+                    new AoC2023.Day11() { Enabled = false },
+                    new AoC2023.Day12() { Enabled = false },
+                    new AoC2023.Day13() { Enabled = false },
+                    new AoC2023.Day14() { Enabled = false },
+                    new AoC2023.Day15() { Enabled = false },
+                    new AoC2023.Day16() { Enabled = false },
+                    new AoC2023.Day17() { Enabled = false },
+                    new AoC2023.Day18() { Enabled = false },
+                    new AoC2023.Day19() { Enabled = false },
+                    new AoC2023.Day20() { Enabled = false },
+                    new AoC2023.Day21() { Enabled = false },
+                    new AoC2023.Day22() { Enabled = false },
+                    new AoC2023.Day23() { Enabled = false },
+                    new AoC2023.Day24() { Enabled = false },
+                    new AoC2023.Day25() { Enabled = false }
+                }
             }
         };
 
