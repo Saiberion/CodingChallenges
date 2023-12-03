@@ -269,7 +269,7 @@ namespace AdventOfCode
                 {
                     new AoC2023.Day01() { Enabled = true },
                     new AoC2023.Day02() { Enabled = true },
-                    new AoC2023.Day03() { Enabled = false },
+                    new AoC2023.Day03() { Enabled = true },
                     new AoC2023.Day04() { Enabled = false },
                     new AoC2023.Day05() { Enabled = false },
                     new AoC2023.Day06() { Enabled = false },
