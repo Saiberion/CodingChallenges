@@ -7,7 +7,7 @@ namespace AoC2023
 {
     public class Day01 : Day
     {
-        private List<int> GetDigitsFromString(string s, bool part2)
+        private static List<int> GetDigitsFromString(string s, bool part2)
         {
             List<int> digits = new();
 
@@ -69,7 +69,7 @@ namespace AoC2023
 
                 if (digits.Count > 0)
                 {
-                    twodigitnumber = digits[0] * 10 + digits[digits.Count - 1];
+                    twodigitnumber = digits[0] * 10 + digits[^1];
                     sumP1 += twodigitnumber;
                 }
             }
@@ -81,7 +81,7 @@ namespace AoC2023
 
                 if (digits.Count > 0)
                 {
-                    twodigitnumber = digits[0] * 10 + digits[digits.Count - 1];
+                    twodigitnumber = digits[0] * 10 + digits[^1];
                     sumP2 += twodigitnumber;
                 }
             }
