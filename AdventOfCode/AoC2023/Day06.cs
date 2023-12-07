@@ -9,7 +9,7 @@ namespace AoC2023
     {
         public override void Solve()
         {
-            Part1Solution = "TBD";
+            Part1Solution = "Solved manually with Excel";
 
             Part2Solution = "TBD";
         }
