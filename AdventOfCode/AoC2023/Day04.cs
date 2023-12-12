@@ -11,7 +11,7 @@ namespace AoC2023
         {
             int sumP1 = 0;
             List<int> cardMatches = new() { 0 };
-            List<int> analyzeCards = new();
+            List<int> cardCount = new() { 0 };
 
             foreach (string s in Input)
             {
@@ -45,26 +45,27 @@ namespace AoC2023
                 {
                     sumP1 += 1 << (numberMatches - 1);
                 }
-                analyzeCards.Add(cardID);
+                cardCount.Add(1);
             }
 
             Part1Solution = sumP1.ToString();
 
-            /*int countScratchCards = analyzeCards.Count;
-            while (analyzeCards.Count > 0)
+            for (int i = 1; i < cardCount.Count; i++)
             {
-                int card = analyzeCards[0];
-                analyzeCards.RemoveAt(0);
-                countScratchCards += cardMatches[card];
-                int addcard = 1;
-                while (addcard <= cardMatches[card])
+                int matches = cardMatches[i];
+                for (int j = i + 1; matches > 0; j++, matches--)
                 {
-                    analyzeCards.Add(card + addcard++);
+                    cardCount[j] += cardCount[i];
                 }
             }
 
-            Part2Solution = countScratchCards.ToString();*/
-            Part2Solution = "TBD";
+            int sumP2 = 0;
+            foreach(int n in cardCount)
+            {
+                sumP2 += n;
+            }
+
+            Part2Solution = sumP2.ToString();
         }
     }
 }
