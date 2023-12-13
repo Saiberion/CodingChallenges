@@ -10,6 +10,7 @@ namespace AoC2023
         public override void Solve()
         {
             long sumP1 = 0;
+            long sumP2 = 0;
             List<List<long>> histories = new();
 
             foreach(string line in Input)
@@ -44,18 +45,24 @@ namespace AoC2023
                     differenceTree.Add(differences);
                 } while (allZeroes == false);
 
-                long newExtrapolate = 0;
-                differenceTree[^1].Add(newExtrapolate);
+                differenceTree[^1].Add(0);
                 for (int t = differenceTree.Count - 2; t >= 0; t--)
                 {
                     differenceTree[t].Add(differenceTree[t][^1] + differenceTree[t + 1][^1]);
                 }
                 sumP1 += differenceTree[0][^1];
+
+                differenceTree[^1].Insert(0, 0);
+                for (int t = differenceTree.Count - 2; t >= 0; t--)
+                {
+                    differenceTree[t].Insert(0, differenceTree[t][0] - differenceTree[t + 1][0]);
+                }
+                sumP2 += differenceTree[0][0];
             }
 
             Part1Solution = sumP1.ToString();
 
-            Part2Solution = "TBD";
+            Part2Solution = sumP2.ToString();
         }
     }
 }
