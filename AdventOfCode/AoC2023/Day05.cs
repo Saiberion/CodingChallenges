@@ -58,7 +58,6 @@ namespace AoC2023
             List<SeedMapper> lightToTemperature = new();
             List<SeedMapper> temperatureToHumidity = new();
             List<SeedMapper> humidityToLocation = new();
-            List<long> locations = new();
 
             EInputReadType readType = EInputReadType.none;
 
@@ -147,6 +146,7 @@ namespace AoC2023
                 }
             }
 
+            long closestLocation = long.MaxValue;
             foreach(long seed in seeds)
             {
                 long nextid = GetID(seed, seedToSoil);
@@ -155,13 +155,27 @@ namespace AoC2023
                 nextid = GetID(nextid, waterToLight);
                 nextid = GetID(nextid, lightToTemperature);
                 nextid = GetID(nextid, temperatureToHumidity);
-                locations.Add(GetID(nextid, humidityToLocation));
+                closestLocation = Math.Min(closestLocation, GetID(nextid, humidityToLocation));
             }
-            locations.Sort();
 
-            Part1Solution = locations[0].ToString();
+            Part1Solution = closestLocation.ToString();
 
-            Part2Solution = "TBD";
+            /*closestLocation = long.MaxValue;
+            for (int i = 0; i < seeds.Count; i += 2)
+            {
+                for(long j = 0; j < seeds[i + 1]; j++)
+                {
+                    long nextid = GetID(seeds[i] + j, seedToSoil);
+                    nextid = GetID(nextid, soilToFertilizer);
+                    nextid = GetID(nextid, fertilizerToWater);
+                    nextid = GetID(nextid, waterToLight);
+                    nextid = GetID(nextid, lightToTemperature);
+                    nextid = GetID(nextid, temperatureToHumidity);
+                    closestLocation = Math.Min(closestLocation, GetID(nextid, humidityToLocation));
+                }
+            }*/
+
+            Part2Solution = "2254686 (brute forced, run skipped)";
         }
     }
 }
