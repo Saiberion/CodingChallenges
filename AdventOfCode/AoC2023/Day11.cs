@@ -13,7 +13,7 @@ namespace AoC2023
             return Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y);
         }
 
-        public long GetSumOfDistances(List<List<char>> universe, int expansion)
+        public static long GetSumOfDistances(List<List<char>> universe, int expansion)
         {
             long sumPaths = 0;
             List<Point> galaxies = new();
