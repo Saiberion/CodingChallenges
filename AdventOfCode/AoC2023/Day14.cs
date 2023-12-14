@@ -1,4 +1,5 @@
 ﻿using AdventOfCode;
+using AoC2021;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -8,6 +9,36 @@ namespace AoC2023
 {
     public class Day14 : Day
     {
+        private void Tilt(List<List<char>> dish, int direction)
+        {
+            switch(direction)
+            {
+                case 0:
+                    for (int n = 1; n < dish.Count; n++)
+                    {
+                        for (int x = 0; x < dish[n].Count; x++)
+                        {
+                            if (dish[n][x] == 'O')
+                            {
+                                for (int y = n; y > 0; y--)
+                                {
+                                    if (dish[y - 1][x] == '.')
+                                    {
+                                        dish[y - 1][x] = 'O';
+                                        dish[y][x] = '.';
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
+
         public override void Solve()
         {
             List<List<char>> reflectorDish = new();
@@ -20,29 +51,9 @@ namespace AoC2023
                     reflectorLine.Add(c);
                 }
                 reflectorDish.Add(reflectorLine);
-
-                if (reflectorDish.Count != 0)
-                {
-                    for (int x = 0; x < line.Length; x++)
-                    {
-                        if (line[x] == 'O')
-                        {
-                            for (int y = reflectorDish.Count - 1; y > 0; y--)
-                            {
-                                if (reflectorDish[y - 1][x] == '.')
-                                {
-                                    reflectorDish[y][x] = '.';
-                                    reflectorDish[y - 1][x] = 'O';
-                                }
-                                else
-                                {
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
             }
+
+            Tilt(reflectorDish, 0);
 
             int load = 0;
             for (int i = 0; i < reflectorDish.Count; i++)
