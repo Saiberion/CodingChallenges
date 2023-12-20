@@ -183,14 +183,14 @@ namespace AoC2020
         {
             char nextSeatState;
 
-            if (seatingArea[x,y] == '.')
+            if (seatingArea[x, y] == '.')
             {
                 nextSeatState = '.';
             }
             else
             {
                 int neighbors = CountOccupiedSeatsInSight(x, y, seatingArea, distance);
-                if (seatingArea[x,y] == 'L')
+                if (seatingArea[x, y] == 'L')
                 {
                     if (neighbors == 0)
                     {
@@ -222,7 +222,7 @@ namespace AoC2020
             char[,] newSeatingArea;
             char[,] oldSeatingArea = null;
             int occupiedSeats = 0;
-            
+
             newSeatingArea = seatingArea.Clone() as char[,];
             bool somethingChanged = true;
             while (somethingChanged)
@@ -259,7 +259,7 @@ namespace AoC2020
         override public void Solve()
         {
             char[,] seatingArea = new char[Input[0].Length, Input.Count];
-            
+
             for (int y = 0; y < Input.Count; y++)
             {
                 for (int x = 0; x < Input[y].Length; x++)

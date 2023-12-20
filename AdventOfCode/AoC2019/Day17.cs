@@ -17,7 +17,7 @@ namespace AoC2019
 
             List<long> cameraview = new();
 
-            while(output.Count > 0)
+            while (output.Count > 0)
             {
                 cameraview.Add(output.Dequeue());
             }
@@ -27,7 +27,7 @@ namespace AoC2019
             long[,] cameraMap = new long[lineLength, rowCount];
             int x = 0;
             int y = 0;
-            foreach(long l in cameraview)
+            foreach (long l in cameraview)
             {
                 if (l == 10)
                 {
@@ -72,7 +72,7 @@ namespace AoC2019
             string movementFunctionB = "L,8,L,8,R,12,L,8,L,8";
             string movementFunctionC = "L,10,R,8,R,12";
 
-            foreach(char c in mainMovementRoutine)
+            foreach (char c in mainMovementRoutine)
             {
                 input.Enqueue(Convert.ToInt64(c));
             }
@@ -98,7 +98,7 @@ namespace AoC2019
             ic.ExecuteAsync(input, output, 2);
             while (!ic.IsProgramHalted()) ;
             long dust = 0;
-            foreach(long l in output)
+            foreach (long l in output)
             {
                 dust = l;
             }

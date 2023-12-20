@@ -31,7 +31,7 @@ namespace AoC2019
         public override void Solve()
         {
             int fuel = 0;
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 fuel += CalculateFuel(int.Parse(s), false);
             }
@@ -42,7 +42,7 @@ namespace AoC2019
 
             foreach (string s in Input)
             {
-                
+
                 fuel += CalculateFuel(int.Parse(s), true);
             }
 

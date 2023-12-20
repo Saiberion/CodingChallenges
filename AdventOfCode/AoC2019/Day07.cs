@@ -51,7 +51,7 @@ namespace AoC2019
             };
             GetAllCombinations(phaseSettings.ToArray(), 0, phaseSettings.Count - 1);
 
-            foreach(List<int> ps in phaseCombinations)
+            foreach (List<int> ps in phaseCombinations)
             {
                 long sig = 0;
                 for (int i = 0; i < ps.Count; i++)
@@ -64,7 +64,7 @@ namespace AoC2019
             }
 
             long maxThrusterSignal = long.MinValue;
-            foreach(long ts in thrusterSignals)
+            foreach (long ts in thrusterSignals)
             {
                 maxThrusterSignal = Math.Max(maxThrusterSignal, ts);
             }

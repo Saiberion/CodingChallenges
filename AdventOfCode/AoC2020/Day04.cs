@@ -54,7 +54,7 @@ namespace AoC2020
             {
                 return false;
             }
-            
+
             if (p["hcl"].Length != 7)
             {
                 return false;
@@ -130,7 +130,7 @@ namespace AoC2020
             }
             passports.Add(passport);
 
-            foreach(Dictionary<string, string> p in passports)
+            foreach (Dictionary<string, string> p in passports)
             {
                 if (IsPassportValid(p))
                 {

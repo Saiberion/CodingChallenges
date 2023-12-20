@@ -5,8 +5,8 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day06 : Day
-    {
+	public class Day06 : Day
+	{
 		static int CalculateSignature(List<int> l)
 		{
 			StringBuilder sb = new();
@@ -39,7 +39,7 @@ namespace AoC2017
 		}
 
 		public override void Solve()
-        {
+		{
 			List<int> memoryBanks = new();
 			List<int> uniqueSignatures = new();
 			int steps;
@@ -85,7 +85,7 @@ namespace AoC2017
 			}
 
 			Part1Solution = steps.ToString();
-            Part2Solution = loopsize.ToString();
-        }
-    }
+			Part2Solution = loopsize.ToString();
+		}
+	}
 }

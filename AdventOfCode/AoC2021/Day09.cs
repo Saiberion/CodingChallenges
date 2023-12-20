@@ -16,7 +16,7 @@ namespace AoC2021
 
             int[,] heightMap = new int[x, y];
 
-            for(y = 0; y < heightMap.GetLength(1); y++)
+            for (y = 0; y < heightMap.GetLength(1); y++)
             {
                 for (x = 0; x < heightMap.GetLength(0); x++)
                 {
@@ -70,13 +70,13 @@ namespace AoC2021
 
             List<int> basinAreas = new();
 
-            foreach(int[] baspos in basins)
+            foreach (int[] baspos in basins)
             {
                 Stack<int[]> flood = new();
                 flood.Push(baspos);
 
                 int area = 0;
-                while(flood.Count > 0)
+                while (flood.Count > 0)
                 {
                     int[] fillpos = flood.Pop();
                     if ((fillpos[0] >= 0) && (fillpos[0] < heightMap.GetLength(0)) &&

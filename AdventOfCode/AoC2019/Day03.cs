@@ -82,11 +82,11 @@ namespace AoC2019
         override public void Solve()
         {
             List<List<string>> wires = new();
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 List<string> sl = new();
                 string[] splitted = s.Split(new char[] { ',' });
-                foreach(string spl in splitted)
+                foreach (string spl in splitted)
                 {
                     sl.Add(spl);
                 }

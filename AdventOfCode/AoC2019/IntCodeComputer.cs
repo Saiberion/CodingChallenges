@@ -218,7 +218,7 @@ namespace AoC2019
             bool running = true;
             long[] parameterModes = new long[3];
             long opcode;
-            
+
             relativeBase = 0;
 
             while (running)
@@ -361,7 +361,7 @@ namespace AoC2019
             runningTask.Wait();
 
             long result = long.MinValue;
-            while(output.Count > 0)
+            while (output.Count > 0)
             {
                 result = output.Dequeue();
             }

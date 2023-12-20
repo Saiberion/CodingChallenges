@@ -23,7 +23,7 @@ namespace AoC2017
         public override void Solve()
         {
             List<string> maze = new(Input);
-            
+
             // Maze walker
             int x = FindMazeStart(maze);
             int y = 0;

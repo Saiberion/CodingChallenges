@@ -25,7 +25,7 @@ namespace AoC2023
                 {
                     case "U":
                         //diggerPos.Y -= steps;
-                        for(int i = steps; i > 0; i--)
+                        for (int i = steps; i > 0; i--)
                         {
                             diggerPos.Y--;
                             lagoon[diggerPos.X, diggerPos.Y] = 1;
@@ -71,7 +71,7 @@ namespace AoC2023
             Queue<Point> fillPoints = new();
             fillPoints.Enqueue(fillStart);
 
-            while( fillPoints.Count > 0)
+            while (fillPoints.Count > 0)
             {
                 Point p = fillPoints.Dequeue();
                 if (lagoon[p.X, p.Y] == 0)

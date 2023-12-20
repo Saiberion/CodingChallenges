@@ -11,7 +11,7 @@ namespace AoC2023
     {
         private static void Tilt(List<List<char>> dish, int direction)
         {
-            switch(direction)
+            switch (direction)
             {
                 case 0:
                     for (int n = 1; n < dish.Count; n++)

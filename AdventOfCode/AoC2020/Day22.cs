@@ -153,7 +153,7 @@ namespace AoC2020
             int playerIdx = -1;
             string[] splitted;
 
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 if (!string.IsNullOrEmpty(s))
                 {

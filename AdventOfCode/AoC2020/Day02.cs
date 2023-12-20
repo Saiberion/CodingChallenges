@@ -10,7 +10,7 @@ namespace AoC2020
         private static bool IsValidPassword(string pw, int min, int max, char pol)
         {
             int countedPol = 0;
-            for(int i = 0; i < pw.Length; i++)
+            for (int i = 0; i < pw.Length; i++)
             {
                 if (pw[i] == pol)
                 {

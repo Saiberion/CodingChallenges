@@ -68,7 +68,7 @@ namespace AoC2023
                 List<Lens> l = boxes[labelHash];
                 if (lens.Operation < 0)
                 {
-                    for(int i = 0; i < l.Count; i++)
+                    for (int i = 0; i < l.Count; i++)
                     {
                         if (l[i].Label.Equals(lens.Label))
                         {
@@ -107,7 +107,7 @@ namespace AoC2023
                 {
                     totalFocus += (b + 1) * (l + 1) * boxes[b][l].FocalLength;
                 }
-                
+
             }
 
             Part2Solution = totalFocus.ToString();

@@ -14,7 +14,7 @@ namespace AoC2021
             List<int> hpos = new();
             string[] splitted = Input[0].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach(string s in splitted)
+            foreach (string s in splitted)
             {
                 int i = int.Parse(s);
                 max = Math.Max(i, max);
@@ -24,7 +24,7 @@ namespace AoC2021
             for (int i = 0; i <= max; i++)
             {
                 int fuel = 0;
-                foreach(int p in hpos)
+                foreach (int p in hpos)
                 {
                     fuel += Math.Abs(p - i);
                 }

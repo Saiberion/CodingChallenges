@@ -65,9 +65,9 @@ namespace AoC2017
 	}
 
 	public class Day11 : Day
-    {
-        public override void Solve()
-        {
+	{
+		public override void Solve()
+		{
 			HexGridPosition start = new();
 			HexGridPosition goal = new();
 			string[] directions = Input[0].Split(',');
@@ -85,7 +85,7 @@ namespace AoC2017
 			}
 
 			Part1Solution = goal.Distance(start).ToString();
-            Part2Solution = maxDistance.ToString();
-        }
-    }
+			Part2Solution = maxDistance.ToString();
+		}
+	}
 }

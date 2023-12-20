@@ -59,7 +59,7 @@ namespace AoC2020
             int result = 0;
             Bag bag = FindOrCreateBag(bagName, bags);
 
-            foreach(KeyValuePair<string,int> kvp in bag.Content)
+            foreach (KeyValuePair<string, int> kvp in bag.Content)
             {
                 result += kvp.Value;
                 result += kvp.Value * CountBags(kvp.Key, bags);

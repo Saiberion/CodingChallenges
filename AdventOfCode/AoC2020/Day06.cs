@@ -20,7 +20,7 @@ namespace AoC2020
                     // blank line --> new group
                     sumOfYesAnswersPerGroup += groupAnswers.Count;
 
-                    foreach(KeyValuePair<char, int> kvp in groupAnswers)
+                    foreach (KeyValuePair<char, int> kvp in groupAnswers)
                     {
                         if (kvp.Value == personCounter)
                         {

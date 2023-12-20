@@ -6,8 +6,8 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day12 : Day
-    {
+	public class Day12 : Day
+	{
 		static int CountIDs(Dictionary<int, List<int>> pipes, List<int> groupIDs, int searchID)
 		{
 			int ret = 0;
@@ -24,7 +24,7 @@ namespace AoC2017
 		}
 
 		public override void Solve()
-        {
+		{
 			Dictionary<int, List<int>> progPipes = new();
 			List<int> groups = new();
 
@@ -51,7 +51,7 @@ namespace AoC2017
 			}
 
 			Part1Solution = groups[0].ToString();
-            Part2Solution = groups.Count.ToString();
-        }
-    }
+			Part2Solution = groups.Count.ToString();
+		}
+	}
 }

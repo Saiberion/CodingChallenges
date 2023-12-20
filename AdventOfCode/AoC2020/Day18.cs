@@ -16,7 +16,7 @@ namespace AoC2020
             int operation = 0;
             for (int i = exprIdx; i < expr.Length; i++)
             {
-                switch(expr[i])
+                switch (expr[i])
                 {
                     case ' ':
                         break;

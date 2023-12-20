@@ -79,7 +79,7 @@ namespace AoC2017
             Dictionary<string, Int64> registerMap = new();
             BlockingCollection<Int64> sndQ = this.SendQueue;
             BlockingCollection<Int64> rcvQ = this.ReceiveQueue;
-            
+
             SendCounter = 0;
             registerMap.Add("p", this.ID);
 

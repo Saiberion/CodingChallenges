@@ -19,7 +19,7 @@ namespace AoC2020
                 char navinstr = Input[i][0];
                 int navval = int.Parse(Input[i].Remove(0, 1));
 
-                switch(navinstr)
+                switch (navinstr)
                 {
                     case 'E':
                         posx += navval;
@@ -58,7 +58,7 @@ namespace AoC2020
                         }
                         break;
                     case 'F':
-                        switch(facing)
+                        switch (facing)
                         {
                             case 0:
                                 posx += navval;

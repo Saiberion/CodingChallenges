@@ -10,7 +10,7 @@ namespace AoC2021
         override public void Solve()
         {
             int gammaRate = GetGammaRate(new List<string>(Input.ToArray()));
-            
+
             Part1Solution = (gammaRate * (~gammaRate & ((int)Math.Pow(2, Input[0].Length) - 1))).ToString();
 
             int o2Rate = GetO2GenRate(new List<string>(Input.ToArray()));
@@ -59,7 +59,7 @@ namespace AoC2021
             }
 
             int o2 = 0;
-            for(int l = 0; l < o2Rate.Length; l++)
+            for (int l = 0; l < o2Rate.Length; l++)
             {
                 o2 <<= 1;
                 if (o2Rate[l] == '1')

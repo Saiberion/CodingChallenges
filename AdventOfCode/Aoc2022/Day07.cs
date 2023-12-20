@@ -83,7 +83,7 @@ namespace AoC2022
                 totalsize = dir.TotalSize;
             }
 
-            foreach(FilesystemDirectory d in dir.dirs.Values)
+            foreach (FilesystemDirectory d in dir.dirs.Values)
             {
                 totalsize += FindMaxTotalSize(d, filesize);
             }

@@ -25,9 +25,9 @@ namespace AoC2021
             while ((playerScore[0] < 1000) && (playerScore[1] < 1000))
             {
                 int moves = 0;
-                for(int i = 0; i < 3; i++)
+                for (int i = 0; i < 3; i++)
                 {
-                    if(++deterministicDie > 100)
+                    if (++deterministicDie > 100)
                     {
                         deterministicDie -= 100;
                     }

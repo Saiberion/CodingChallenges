@@ -140,7 +140,7 @@ namespace AoC2017
                     }
                 }*/
             }
-            
+
             Part1Solution = particles[particleClosestToOrigin].ID.ToString();
             Part2Solution = Calculate2();
         }

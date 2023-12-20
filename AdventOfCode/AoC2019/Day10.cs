@@ -41,7 +41,7 @@ namespace AoC2019
                         dx /= gcd;
                         dy /= gcd;
                         bool pathClear = true;
-                        while(intermediateSteps > 0)
+                        while (intermediateSteps > 0)
                         {
                             if (asteroidMap[a.Position.X + intermediateSteps * dx, a.Position.Y + intermediateSteps * dy] != null)
                             {
@@ -59,7 +59,7 @@ namespace AoC2019
             }
 
             int mostVisible = int.MinValue;
-            foreach(Asteroid a in asteroids)
+            foreach (Asteroid a in asteroids)
             {
                 mostVisible = Math.Max(mostVisible, a.VisibleAsteroids);
             }

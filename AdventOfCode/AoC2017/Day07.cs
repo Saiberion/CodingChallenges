@@ -26,21 +26,21 @@ namespace AoC2017
 	}
 
 	public class Day07 : Day
-    {
+	{
 		static void DetermineTotalWeights(TowerElement t)
 		{
 			if (t.Disc.Count == 0)
-            {
+			{
 				t.TotalWeight = t.Weight;
-            }
+			}
 			else
-            {
+			{
 				DetermineTotalWeights(t.Disc[0]);
 				int w = t.Disc[0].TotalWeight;
 				int refw = w;
 				for (int i = 1; i < t.Disc.Count; i++)
-                {
-                    DetermineTotalWeights(t.Disc[i]);
+				{
+					DetermineTotalWeights(t.Disc[i]);
 					w += t.Disc[i].TotalWeight;
 					if (refw != t.Disc[i].TotalWeight)
 					{
@@ -48,31 +48,31 @@ namespace AoC2017
 					}
 				}
 				t.TotalWeight = w + t.Weight;
-            }
+			}
 		}
 
 		static int FindUnbalancedElement(TowerElement tower)
 		{
 			Dictionary<int, int> d = new();
-			foreach(TowerElement t in tower.Disc)
-            {
+			foreach (TowerElement t in tower.Disc)
+			{
 				if (!d.ContainsKey(t.TotalWeight))
-                {
+				{
 					d.Add(t.TotalWeight, 0);
-                }
+				}
 				d[t.TotalWeight]++;
-            }
+			}
 			if (d.Count == 1)
 			{
 				foreach (TowerElement te2 in tower.Parent.Disc)
-                {
+				{
 					if (tower.TotalWeight != te2.TotalWeight)
-                    {
+					{
 						int nw = tower.TotalWeight - tower.Weight;
 						nw = Math.Abs(nw - te2.TotalWeight);
 						return nw;
-                    }
-                }
+					}
+				}
 				return 0;
 			}
 			else
@@ -80,14 +80,14 @@ namespace AoC2017
 				foreach (KeyValuePair<int, int> kvp in d)
 				{
 					if (kvp.Value == 1)
-                    {
-						foreach(TowerElement te in tower.Disc)
-                        {
+					{
+						foreach (TowerElement te in tower.Disc)
+						{
 							if (te.TotalWeight == kvp.Key)
-                            {
+							{
 								return FindUnbalancedElement(te);
 							}
-                        }
+						}
 					}
 					return 0;
 				}
@@ -96,7 +96,7 @@ namespace AoC2017
 		}
 
 		public override void Solve()
-        {
+		{
 			Dictionary<string, TowerElement> programs = new();
 			TowerElement root = null;
 
@@ -104,12 +104,12 @@ namespace AoC2017
 			{
 				TowerElement t;
 				string[] s = line.Split(new string[] { "(", ")", "->", ",", " " }, StringSplitOptions.RemoveEmptyEntries);
-				
+
 				if (!programs.ContainsKey(s[0]))
-                {
+				{
 					t = new TowerElement(s[0]);
 					programs.Add(s[0], t);
-                }
+				}
 				t = programs[s[0]];
 				t.Weight = int.Parse(s[1]);
 				for (int i = 2; i < s.Length; i++)
@@ -124,13 +124,13 @@ namespace AoC2017
 				}
 			}
 
-			foreach(KeyValuePair<string, TowerElement> kvp in programs)
-            {
+			foreach (KeyValuePair<string, TowerElement> kvp in programs)
+			{
 				if (kvp.Value.Parent == null)
-                {
+				{
 					root = kvp.Value;
-                }
-            }
+				}
+			}
 
 			Part1Solution = root.Name;
 

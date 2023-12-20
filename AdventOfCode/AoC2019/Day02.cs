@@ -10,7 +10,7 @@ namespace AoC2019
         override public void Solve()
         {
             IntCodeComputer ic = new(Input[0]);
-            
+
             Part1Solution = ic.Execute(12, 02).ToString();
 
             for (int noun = 0; noun <= 99; noun++)

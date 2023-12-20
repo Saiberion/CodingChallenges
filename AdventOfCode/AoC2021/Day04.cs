@@ -13,7 +13,7 @@ namespace AoC2021
             List<int> drawPool = new();
             List<BingoBoard> boards = new();
             string[] splitted = Input[0].Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach(string s in splitted)
+            foreach (string s in splitted)
             {
                 drawPool.Add(int.Parse(s));
             }
@@ -31,9 +31,9 @@ namespace AoC2021
                 boards.Add(new BingoBoard(bingoBoardLines));
             }
 
-            for(int i = 0; i < drawPool.Count; i++)
+            for (int i = 0; i < drawPool.Count; i++)
             {
-                foreach(BingoBoard b in boards)
+                foreach (BingoBoard b in boards)
                 {
                     if (b.IsDone == false)
                     {

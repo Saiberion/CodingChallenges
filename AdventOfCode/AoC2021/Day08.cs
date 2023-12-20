@@ -12,7 +12,7 @@ namespace AoC2021
             int countUnique = 0;
             int sumUp = 0;
 
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
                 string[] splitted2 = splitted[1].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -25,7 +25,7 @@ namespace AoC2021
                     }
                 }
 
-                char A = 'Q', B = 'Q', C = 'Q', D = 'Q', E ='Q', F = 'Q', G = 'Q';
+                char A = 'Q', B = 'Q', C = 'Q', D = 'Q', E = 'Q', F = 'Q', G = 'Q';
                 Dictionary<int, List<string>> segmentMapping = new()
                 {
                     { 0, new List<string>() },
@@ -50,7 +50,7 @@ namespace AoC2021
                 A = step2[0];
 
 
-                foreach(string sixSegs in segmentMapping[6])
+                foreach (string sixSegs in segmentMapping[6])
                 {
                     if ((sixSegs.Contains(segmentMapping[2][0][0].ToString()) && sixSegs.Contains(segmentMapping[2][0][1].ToString())) == false)
                     {
@@ -72,7 +72,7 @@ namespace AoC2021
                 foreach (string sixSegs in segmentMapping[6])
                 {
                     string reduced = sixSegs;
-                    for(int i = 0; i < segmentMapping[4][0].Length; i++)
+                    for (int i = 0; i < segmentMapping[4][0].Length; i++)
                     {
                         if (reduced.Contains(segmentMapping[4][0][i].ToString()))
                         {

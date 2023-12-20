@@ -57,7 +57,7 @@ namespace AoC2019
             }
             Part1Solution = blockTiles.ToString();
 
-            while(!ic.IsProgramHalted() && (blockTiles > 0))
+            while (!ic.IsProgramHalted() && (blockTiles > 0))
             {
                 if (paddleXCoord < ballXCoord)
                 {

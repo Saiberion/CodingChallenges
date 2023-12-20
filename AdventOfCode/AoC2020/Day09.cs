@@ -22,7 +22,7 @@ namespace AoC2020
             return false;
         }
 
-        private static long FindEncryptionWeakness(long nr, List<long>l)
+        private static long FindEncryptionWeakness(long nr, List<long> l)
         {
             long sum;
             for (int a = 0; a < (l.Count - 1); a++)

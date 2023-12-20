@@ -29,7 +29,7 @@ namespace AoC2022
                 string compartment1 = Input[i][..(Input[i].Length / 2)];
                 string compartment2 = Input[i].Substring(Input[i].Length / 2, Input[i].Length / 2);
 
-                foreach(char c in compartment1)
+                foreach (char c in compartment1)
                 {
                     if (compartment2.Contains(c))
                     {

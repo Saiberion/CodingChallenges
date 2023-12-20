@@ -74,9 +74,9 @@ namespace AoC2020
             }
 
             List<int> validNumbers = new();
-            foreach(TicketField t in ticketFields)
+            foreach (TicketField t in ticketFields)
             {
-                for(int i = t.Min1; i <= t.Max1; i++)
+                for (int i = t.Min1; i <= t.Max1; i++)
                 {
                     if (!validNumbers.Contains(i))
                     {
@@ -95,10 +95,10 @@ namespace AoC2020
             validNumbers.Sort();
 
             int errorRate = 0;
-            foreach(List<int> l in nearbyTickets)
+            foreach (List<int> l in nearbyTickets)
             {
                 bool isValid = true;
-                foreach(int i in l)
+                foreach (int i in l)
                 {
                     if (!validNumbers.Contains(i))
                     {
@@ -123,11 +123,11 @@ namespace AoC2020
                         if (((nearbyValidTickets[a][b] >= ticketFields[i].Min1) && (nearbyValidTickets[a][b] <= ticketFields[i].Max1)) ||
                             ((nearbyValidTickets[a][b] >= ticketFields[i].Min2) && (nearbyValidTickets[a][b] <= ticketFields[i].Max2)))
                         {
-                            
+
                         }
                         else
                         {
-                            
+
                         }
                     }
                 }

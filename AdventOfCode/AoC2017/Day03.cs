@@ -23,7 +23,7 @@ namespace AoC2017
                 new Point (x - 1, y)
             };
 
-            foreach(Point p in possibleAdjecent)
+            foreach (Point p in possibleAdjecent)
             {
                 if (grid.ContainsKey(p))
                 {
@@ -47,7 +47,7 @@ namespace AoC2017
 
             while (count < input)
             {
-                switch(dir)
+                switch (dir)
                 {
                     case 0:
                         x++;

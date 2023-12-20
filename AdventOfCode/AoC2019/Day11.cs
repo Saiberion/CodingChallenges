@@ -19,7 +19,7 @@ namespace AoC2019
 
             ic.ExecuteAsync(input, output);
 
-            while(!ic.IsProgramHalted())
+            while (!ic.IsProgramHalted())
             {
                 if (!hull.ContainsKey(pr.Position))
                 {
@@ -77,7 +77,7 @@ namespace AoC2019
             int maxX = int.MinValue;
             int minY = int.MaxValue;
             int maxY = int.MinValue;
-            foreach(Point p in hull.Keys)
+            foreach (Point p in hull.Keys)
             {
                 minX = Math.Min(minX, p.X);
                 maxX = Math.Max(maxX, p.X);
@@ -89,7 +89,7 @@ namespace AoC2019
             for (int x = minX; x <= maxX; x++)
             {
                 List<int> line = new();
-                for (int y = maxY - 1; y > minY + 1; y--) 
+                for (int y = maxY - 1; y > minY + 1; y--)
                 {
                     Point p = new(x, y);
                     if (hull.ContainsKey(p) && (hull[new(x, y)] == 1))
@@ -107,7 +107,7 @@ namespace AoC2019
             int[,] display = new int[disp[0].Count, disp.Count];
             for (int y = 0; y < disp.Count; y++)
             {
-                for(int x = 0; x < disp[y].Count; x++)
+                for (int x = 0; x < disp[y].Count; x++)
                 {
                     display[x, y] = disp[y][x];
                 }
@@ -156,7 +156,7 @@ namespace AoC2019
 
         public void Move()
         {
-            switch(Direction)
+            switch (Direction)
             {
                 case 0:
                     Position = new Point(Position.X, Position.Y - 1);

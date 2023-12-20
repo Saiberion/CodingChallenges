@@ -24,7 +24,7 @@ namespace AoC2020
             adapters.Add(0);
             adapters.Sort();
 
-            for(int i = 0; i < (adapters.Count - 1); i++)
+            for (int i = 0; i < (adapters.Count - 1); i++)
             {
                 differences.Add(adapters[i + 1] - adapters[i]);
                 switch (adapters[i + 1] - adapters[i])

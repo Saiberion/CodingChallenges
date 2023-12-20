@@ -85,8 +85,8 @@ namespace AoC2019
             int rangeEnd = int.Parse(Input[1]);
 
             List<int> validPasswords = new();
-            
-            for(int i = rangeStart; i <= rangeEnd; i++)
+
+            for (int i = rangeStart; i <= rangeEnd; i++)
             {
                 if (IsValidPassword(i))
                 {

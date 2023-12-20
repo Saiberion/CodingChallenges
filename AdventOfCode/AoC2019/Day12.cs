@@ -10,7 +10,7 @@ namespace AoC2019
         override public void Solve()
         {
             List<Moon> moons = new();
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 moons.Add(new Moon(s));
             }

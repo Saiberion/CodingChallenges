@@ -13,7 +13,7 @@ namespace AoC2017
             int sumdiv = 0;
             List<List<int>> spreadsheet = new();
 
-            foreach(string line in Input)
+            foreach (string line in Input)
             {
                 List<int> row = new();
                 string[] splitted = line.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
@@ -30,7 +30,7 @@ namespace AoC2017
                 spreadsheet.Add(row);
             }
 
-            foreach(List<int> l in spreadsheet)
+            foreach (List<int> l in spreadsheet)
             {
                 bool keepRunning = true;
                 for (int dividend = 0; (dividend < l.Count) && keepRunning; dividend++)

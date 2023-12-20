@@ -18,7 +18,7 @@ namespace AoC2021
             int velocity_x, position_x;
             List<int> valid_x_velocities = new();
 
-            for (int i = 1; i <= target_max_x ; i++)
+            for (int i = 1; i <= target_max_x; i++)
             {
                 velocity_x = i;
                 position_x = 0;

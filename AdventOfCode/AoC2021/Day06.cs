@@ -13,12 +13,12 @@ namespace AoC2021
             long[] lanternFishDays = new long[9];
             string[] splitted = Input[0].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach(string s in splitted)
+            foreach (string s in splitted)
             {
                 lanternFishDays[int.Parse(s)]++;
             }
 
-            for(int d = 0; d < 256; d++)
+            for (int d = 0; d < 256; d++)
             {
                 if (d == 80)
                 {

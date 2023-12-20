@@ -11,7 +11,7 @@ namespace AoC2019
         {
             List<TreeNode> fragments = new();
 
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { ')' });
 
@@ -22,17 +22,17 @@ namespace AoC2019
                 fragments.Add(t1);
             }
 
-            while(fragments.Count > 1)
+            while (fragments.Count > 1)
             {
                 TreeNode f = fragments[0];
                 fragments.RemoveAt(0);
                 bool added = false;
-                foreach(TreeNode t in fragments)
+                foreach (TreeNode t in fragments)
                 {
                     TreeNode t1 = t.GetTreeNodeByName(f.Name);
                     if (t1 != null)
                     {
-                        foreach(TreeNode c in f.Children)
+                        foreach (TreeNode c in f.Children)
                         {
                             t1.AddChild(c);
                             added = true;
@@ -55,7 +55,7 @@ namespace AoC2019
             TreeNode currentOrbit = startOrbit;
 
             bool searchOrbit = true;
-            while(searchOrbit)
+            while (searchOrbit)
             {
                 if (currentOrbit.GetTreeNodeByName("SAN") != null)
                 {
@@ -126,7 +126,7 @@ namespace AoC2019
         public void SetOrbits(int parentOrbits)
         {
             Orbits = parentOrbits;
-            foreach(TreeNode c in Children)
+            foreach (TreeNode c in Children)
             {
                 c.SetOrbits(parentOrbits + 1);
             }

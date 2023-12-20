@@ -21,7 +21,7 @@ namespace AoC2022
 
             public void Inspect(ulong commonDivisor)
             {
-                for(int i = 0; i < items.Count; i++)
+                for (int i = 0; i < items.Count; i++)
                 {
                     ulong operand;
                     if (worryValue.Equals("old"))
@@ -33,7 +33,7 @@ namespace AoC2022
                         operand = uint.Parse(worryValue);
                     }
 
-                    switch(worryOperation)
+                    switch (worryOperation)
                     {
                         case "+":
                             items[i] += operand;

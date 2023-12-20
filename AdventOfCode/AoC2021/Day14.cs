@@ -12,7 +12,7 @@ namespace AoC2021
             string polymer = Input[0];
             Dictionary<string, string> polypair = new();
 
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 if (s.Contains(" -> "))
                 {
@@ -21,7 +21,7 @@ namespace AoC2021
                 }
             }
 
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 for (int l = 0; l < (polymer.Length - 1); l += 2)
                 {
@@ -32,7 +32,7 @@ namespace AoC2021
 
             Dictionary<char, int> distribution = new();
 
-            foreach(char c in polymer)
+            foreach (char c in polymer)
             {
                 if (distribution.ContainsKey(c))
                 {
@@ -46,7 +46,7 @@ namespace AoC2021
 
             int min = int.MaxValue;
             int max = int.MinValue;
-            foreach(int i in distribution.Values)
+            foreach (int i in distribution.Values)
             {
                 min = Math.Min(min, i);
                 max = Math.Max(max, i);

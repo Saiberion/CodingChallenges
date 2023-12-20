@@ -26,7 +26,7 @@ namespace AoC2023
                 string[] winningNumbersSplit = numberSplit[0].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                 List<int> winningNumbers = new();
-                foreach(string wns in winningNumbersSplit)
+                foreach (string wns in winningNumbersSplit)
                 {
                     winningNumbers.Add(int.Parse(wns));
                 }
@@ -60,7 +60,7 @@ namespace AoC2023
             }
 
             int sumP2 = 0;
-            foreach(int n in cardCount)
+            foreach (int n in cardCount)
             {
                 sumP2 += n;
             }

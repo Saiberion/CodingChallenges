@@ -38,7 +38,7 @@ namespace AoC2021
             {
                 // decipher literal
                 // but for now just skip over those
-                while(binmsg[pckidx] == '1')
+                while (binmsg[pckidx] == '1')
                 {
                     pckidx += 5;
                 }
@@ -50,7 +50,7 @@ namespace AoC2021
                 {
                     string subpkglen = binmsg.Substring(++pckidx, 15);
                     int len = 0;
-                    foreach(char c in subpkglen)
+                    foreach (char c in subpkglen)
                     {
                         len <<= 1;
                         len |= c - 0x30;
@@ -87,9 +87,9 @@ namespace AoC2021
         {
             StringBuilder sb = new();
 
-            foreach(char c in hex)
+            foreach (char c in hex)
             {
-                switch(c)
+                switch (c)
                 {
                     case '0':
                         sb.Append("0000");

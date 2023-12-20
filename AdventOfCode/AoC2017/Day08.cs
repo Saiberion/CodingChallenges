@@ -84,7 +84,7 @@ namespace AoC2017
 	}
 
 	public class Day08 : Day
-    {
+	{
 		static int ExecuteInstructions(Dictionary<string, int> registers, List<Instruction> instructionList)
 		{
 			int ret = int.MinValue;
@@ -116,7 +116,7 @@ namespace AoC2017
 		}
 
 		public override void Solve()
-        {
+		{
 			Dictionary<string, int> registers = new();
 			List<Instruction> instructionList = new();
 			int largestEver;
@@ -134,7 +134,7 @@ namespace AoC2017
 			largestEver = ExecuteInstructions(registers, instructionList);
 
 			Part1Solution = GetLargestValue(registers).ToString();
-            Part2Solution = largestEver.ToString();
-        }
-    }
+			Part2Solution = largestEver.ToString();
+		}
+	}
 }
