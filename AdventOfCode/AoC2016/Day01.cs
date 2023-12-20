@@ -8,16 +8,16 @@ namespace AoC2016
 {
     public class Day01 : Day
     {
-        Point[] FollowDirections(List<string> input)
+        static Point[] FollowDirections(List<string> input)
         {
-            HashSet<Point> visitedCoords = new HashSet<Point>();
+            HashSet<Point> visitedCoords = new();
             Point[] c = new Point[2];
-            c[0] = new Point();
-            c[1] = new Point();
+            c[0] = new();
+            c[1] = new();
             int facing = 0;
             bool c1Set = false;
 
-            visitedCoords.Add(new Point(0, 0));
+            visitedCoords.Add(new(0, 0));
 
             string[] splitted = input[0].Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 

@@ -7,9 +7,9 @@ namespace AoC2017
 {
     public class Day06 : Day
     {
-		int CalculateSignature(List<int> l)
+		static int CalculateSignature(List<int> l)
 		{
-			StringBuilder sb = new StringBuilder();
+			StringBuilder sb = new();
 
 			sb.Append(l.Count);
 
@@ -21,7 +21,7 @@ namespace AoC2017
 			return sb.ToString().GetHashCode();
 		}
 
-		int FindMaxBlocks(List<int> l)
+		static int FindMaxBlocks(List<int> l)
 		{
 			int maxblocks = -1;
 			int index = 0;
@@ -40,8 +40,8 @@ namespace AoC2017
 
 		public override void Solve()
         {
-			List<int> memoryBanks = new List<int>();
-			List<int> uniqueSignatures = new List<int>();
+			List<int> memoryBanks = new();
+			List<int> uniqueSignatures = new();
 			int steps;
 			int loopsize;
 

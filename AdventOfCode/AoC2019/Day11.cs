@@ -11,11 +11,11 @@ namespace AoC2019
     {
         override public void Solve()
         {
-            Queue<long> input = new Queue<long>();
-            Queue<long> output = new Queue<long>();
-            IntCodeComputer ic = new IntCodeComputer(Input[0]);
-            PaintingRobot pr = new PaintingRobot();
-            Dictionary<Point, long> hull = new Dictionary<Point, long>();
+            Queue<long> input = new();
+            Queue<long> output = new();
+            IntCodeComputer ic = new(Input[0]);
+            PaintingRobot pr = new();
+            Dictionary<Point, long> hull = new();
 
             ic.ExecuteAsync(input, output);
 
@@ -85,14 +85,14 @@ namespace AoC2019
                 maxY = Math.Max(maxY, p.Y);
             }
 
-            List<List<int>> disp = new List<List<int>>();
+            List<List<int>> disp = new();
             for (int x = minX; x <= maxX; x++)
             {
-                List<int> line = new List<int>();
+                List<int> line = new();
                 for (int y = maxY - 1; y > minY + 1; y--) 
                 {
-                    Point p = new Point(x, y);
-                    if (hull.ContainsKey(p) && (hull[new Point(x, y)] == 1))
+                    Point p = new(x, y);
+                    if (hull.ContainsKey(p) && (hull[new(x, y)] == 1))
                     {
                         line.Add(1);
                     }

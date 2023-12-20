@@ -7,7 +7,7 @@ namespace AoC2017
 {
     public class Day19 : Day
     {
-        int FindMazeStart(List<string> maze)
+        static int FindMazeStart(List<string> maze)
         {
             int x;
             for (x = 0; x < maze[0].Length; x++)
@@ -22,14 +22,14 @@ namespace AoC2017
 
         public override void Solve()
         {
-            List<string> maze = new List<string>(Input);
+            List<string> maze = new(Input);
             
             // Maze walker
             int x = FindMazeStart(maze);
             int y = 0;
             EDirections dir = EDirections.eDown;
             int steps = 0;
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             while (true)
             {

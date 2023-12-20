@@ -18,10 +18,10 @@ namespace AoC2021
             Part2Solution = (o2Rate * co2Rate).ToString();
         }
 
-        private int GetO2GenRate(List<string> diag)
+        private static int GetO2GenRate(List<string> diag)
         {
             int counter;
-            StringBuilder o2Rate = new StringBuilder();
+            StringBuilder o2Rate = new();
 
             for (int bitpos = 0; (bitpos < diag[0].Length) && (diag.Count > 1); bitpos++)
             {
@@ -40,14 +40,14 @@ namespace AoC2021
 
                 if (counter >= 0)
                 {
-                    o2Rate.Append("1");
+                    o2Rate.Append('1');
                 }
                 else if (counter < 0)
                 {
-                    o2Rate.Append("0");
+                    o2Rate.Append('0');
                 }
 
-                List<string> newdiag = new List<string>();
+                List<string> newdiag = new();
                 for (int l = 0; l < diag.Count; l++)
                 {
                     if (diag[l].StartsWith(o2Rate.ToString()))
@@ -70,10 +70,10 @@ namespace AoC2021
             return o2;
         }
 
-        private int GetCO2GenRate(List<string> diag)
+        private static int GetCO2GenRate(List<string> diag)
         {
             int counter;
-            StringBuilder co2Rate = new StringBuilder();
+            StringBuilder co2Rate = new();
 
             for (int bitpos = 0; (bitpos < diag[0].Length) && (diag.Count > 1); bitpos++)
             {
@@ -92,14 +92,14 @@ namespace AoC2021
 
                 if (counter >= 0)
                 {
-                    co2Rate.Append("0");
+                    co2Rate.Append('0');
                 }
                 else if (counter < 0)
                 {
-                    co2Rate.Append("1");
+                    co2Rate.Append('1');
                 }
 
-                List<string> newdiag = new List<string>();
+                List<string> newdiag = new();
                 for (int l = 0; l < diag.Count; l++)
                 {
                     if (diag[l].StartsWith(co2Rate.ToString()))
@@ -122,7 +122,7 @@ namespace AoC2021
             return co2;
         }
 
-        private int GetGammaRate(List<string> diag)
+        private static int GetGammaRate(List<string> diag)
         {
             int counter;
             int gammaRate = 0;

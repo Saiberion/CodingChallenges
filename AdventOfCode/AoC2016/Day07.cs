@@ -7,7 +7,7 @@ namespace AoC2016
 {
     public class Day07 : Day
     {
-        bool IPv7HasTLS(string ipv7)
+        static bool IPv7HasTLS(string ipv7)
         {
             bool isHypernet = false;
             bool hasABBA = false;
@@ -44,7 +44,7 @@ namespace AoC2016
             return hasABBA && !hasABBAinHypernet;
         }
 
-        bool IPv7HasSSL(string ipv7)
+        static bool IPv7HasSSL(string ipv7)
         {
             string[] splitted = ipv7.Split(new char[] { '[', ']' }, StringSplitOptions.RemoveEmptyEntries);
             bool ret = false;
@@ -72,7 +72,7 @@ namespace AoC2016
             return ret;
         }
 
-        int CountTLSIPv7(List<string> input)
+        static int CountTLSIPv7(List<string> input)
         {
             int ret = 0;
 
@@ -86,7 +86,7 @@ namespace AoC2016
             return ret;
         }
 
-        int CountSSLIPv7(List<string> input)
+        static int CountSSLIPv7(List<string> input)
         {
             int ret = 0;
 

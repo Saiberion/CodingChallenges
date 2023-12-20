@@ -16,16 +16,16 @@ namespace AoC2016
 
     public class Day22 : Day
     {
-        List<StorageNode> BuildGrid(List<string> input)
+        static List<StorageNode> BuildGrid(List<string> input)
         {
-            List<StorageNode> grid = new List<StorageNode>();
+            List<StorageNode> grid = new();
 
             foreach (string line in input)
             {
                 if (line.StartsWith("/"))
                 {
                     string[] splitted = line.Split(new char[] { ' ', '-', 'x', 'y', '/', 'T' }, StringSplitOptions.RemoveEmptyEntries);
-                    StorageNode node = new StorageNode
+                    StorageNode node = new()
                     {
                         Coords = new Point(int.Parse(splitted[3]), int.Parse(splitted[4])),
                         Size = int.Parse(splitted[5]),
@@ -39,7 +39,7 @@ namespace AoC2016
             return grid;
         }
 
-        int CountViable(StorageNode a, StorageNode b)
+        static int CountViable(StorageNode a, StorageNode b)
         {
             int res = 0;
 
@@ -62,7 +62,7 @@ namespace AoC2016
             return res;
         }
 
-        int ViablePairs(List<string> input)
+        static int ViablePairs(List<string> input)
         {
             int viable = 0;
             List<StorageNode> grid = BuildGrid(input);
@@ -78,7 +78,7 @@ namespace AoC2016
             return viable;
         }
 
-        int DataRetrieval(List<string> input)
+        static int DataRetrieval(List<string> input)
         {
             List<StorageNode> grid = BuildGrid(input);
             int x_size = int.MinValue, y_size = int.MinValue;
@@ -123,10 +123,7 @@ namespace AoC2016
                     }
                     else if (n.Size > 250)
                     {
-                        if (wStart == null)
-                        {
-                            wStart = nodes[x - 1, y];
-                        }
+                        wStart ??= nodes[x - 1, y];
                         Console.Write("#");
                     }
                     else

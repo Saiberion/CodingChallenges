@@ -7,7 +7,7 @@ namespace AoC2017
 {
     public class Day01 : Day
     {
-        int SumUp(string input, int compareSkip)
+        static int SumUp(string input, int compareSkip)
         {
             int result = 0;
             for (int i = 0; i < input.Length; i++)

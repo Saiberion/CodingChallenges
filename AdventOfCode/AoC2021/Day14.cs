@@ -10,7 +10,7 @@ namespace AoC2021
         override public void Solve()
         {
             string polymer = Input[0];
-            Dictionary<string, string> polypair = new Dictionary<string, string>();
+            Dictionary<string, string> polypair = new();
 
             foreach(string s in Input)
             {
@@ -30,7 +30,7 @@ namespace AoC2021
                 }
             }
 
-            Dictionary<char, int> distribution = new Dictionary<char, int>();
+            Dictionary<char, int> distribution = new();
 
             foreach(char c in polymer)
             {

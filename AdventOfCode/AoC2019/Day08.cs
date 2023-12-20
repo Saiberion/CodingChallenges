@@ -9,7 +9,7 @@ namespace AoC2019
     {
         override public void Solve()
         {
-            SIF sif = new SIF(Input[0], 25, 6);
+            SIF sif = new(Input[0], 25, 6);
             int layerIndexLeastZeroes = sif.GetLayerWithLeastDigitCount('0');
             Part1Solution = sif.GetCheckMultiply(layerIndexLeastZeroes, '1', '2').ToString();
             int[,] message = sif.Render();

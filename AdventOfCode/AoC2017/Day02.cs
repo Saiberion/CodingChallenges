@@ -11,11 +11,11 @@ namespace AoC2017
         {
             int sum = 0;
             int sumdiv = 0;
-            List<List<int>> spreadsheet = new List<List<int>>();
+            List<List<int>> spreadsheet = new();
 
             foreach(string line in Input)
             {
-                List<int> row = new List<int>();
+                List<int> row = new();
                 string[] splitted = line.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                 int min = int.MaxValue;
                 int max = int.MinValue;

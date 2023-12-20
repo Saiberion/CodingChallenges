@@ -7,11 +7,11 @@ namespace AoC2016
 {
     public class Day18 : Day
     {
-        int TrapRoom(List<string> input, int rows)
+        static int TrapRoom(List<string> input, int rows)
         {
             int safeTiles = 0;
 
-            foreach (char c in input[input.Count - 1])
+            foreach (char c in input[^1])
             {
                 if (c == '.')
                 {
@@ -20,9 +20,9 @@ namespace AoC2016
             }
             while (input.Count < rows)
             {
-                StringBuilder sb = new StringBuilder();
+                StringBuilder sb = new();
 
-                for (int i = 0; i < input[input.Count - 1].Length; i++)
+                for (int i = 0; i < input[^1].Length; i++)
                 {
                     bool left, center, right;
                     if (i == 0)
@@ -31,16 +31,16 @@ namespace AoC2016
                     }
                     else
                     {
-                        left = input[input.Count - 1][i - 1] == '^';
+                        left = input[^1][i - 1] == '^';
                     }
-                    center = input[input.Count - 1][i] == '^';
-                    if (i == (input[input.Count - 1].Length - 1))
+                    center = input[^1][i] == '^';
+                    if (i == (input[^1].Length - 1))
                     {
                         right = false;
                     }
                     else
                     {
-                        right = input[input.Count - 1][i + 1] == '^';
+                        right = input[^1][i + 1] == '^';
                     }
 
                     if ((!left && !center && right)
@@ -48,11 +48,11 @@ namespace AoC2016
                         || (left && !center && !right)
                         || (left && center && !right))
                     {
-                        sb.Append("^");
+                        sb.Append('^');
                     }
                     else
                     {
-                        sb.Append(".");
+                        sb.Append('.');
                         safeTiles++;
                     }
                 }

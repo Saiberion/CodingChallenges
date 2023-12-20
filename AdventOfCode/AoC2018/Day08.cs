@@ -19,10 +19,10 @@ namespace AoC2018
 
     public class Day08 : Day
     {
-        Node CreateNode(List<int> data)
+        static Node CreateNode(List<int> data)
         {
             int c, m;
-            Node n = new Node();
+            Node n = new();
             c = data[0];
             m = data[1];
             data.RemoveRange(0, 2);
@@ -38,9 +38,9 @@ namespace AoC2018
             return n;
         }
 
-        Node CreateNodeTree(string input)
+        static Node CreateNodeTree(string input)
         {
-            List<int> data = new List<int>();
+            List<int> data = new();
             string[] splitted = input.Split(new char[] { ' ' });
 
             for (int i = 0; i < splitted.Length; i++)
@@ -51,7 +51,7 @@ namespace AoC2018
             return CreateNode(data);
         }
 
-        int SumAllMeta(Node rootNode)
+        static int SumAllMeta(Node rootNode)
         {
             int result = 0;
             for (int i = 0; i < rootNode.MetaData.Count; i++)
@@ -65,7 +65,7 @@ namespace AoC2018
             return result;
         }
 
-        int SumOfNode(Node rootNode)
+        static int SumOfNode(Node rootNode)
         {
             int result = 0;
 

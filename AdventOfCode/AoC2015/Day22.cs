@@ -98,14 +98,14 @@ namespace AoC2015
         }
     }
 
-    public class Day22: Day
+    public class Day22 : Day
     {
-        private int SimulateGames(bool hardMode)
+        private static int SimulateGames(bool hardMode)
         {
             int minimumManaUsageForVictory = int.MaxValue;
             GameState currentState;
 
-            List<Spell> spells = new List<Spell>()
+            List<Spell> spells = new()
             {
                 new Spell() { ManaCost = 53, Type = ESpellType.eMagicMissile },
                 new Spell() { ManaCost = 73, Type = ESpellType.eDrain },
@@ -114,15 +114,15 @@ namespace AoC2015
                 new Spell() { ManaCost = 229, Type = ESpellType.eRecharge }
             };
 
-            GameState initial = new GameState
+            GameState initial = new()
             {
                 wizard = new Wizard(50, 500),
                 boss = new Boss(51, 9),
                 IsWizwardTurn = true,
-                ActiveEffects = new List<Effect>()
+                ActiveEffects = new()
             };
 
-            List<GameState> checkStates = new List<GameState>()
+            List<GameState> checkStates = new()
             {
                 initial
             };
@@ -177,7 +177,7 @@ namespace AoC2015
                             }
                             if (!isActive)
                             {
-                                GameState nextState = new GameState
+                                GameState nextState = new()
                                 {
                                     wizard = new Wizard(currentState.wizard.Hitpoints, currentState.wizard.Mana - s.ManaCost),
                                     boss = new Boss(currentState.boss.Hitpoints, currentState.boss.Damage),
@@ -241,7 +241,7 @@ namespace AoC2015
                     }
                     else
                     {
-                        GameState g = new GameState
+                        GameState g = new()
                         {
                             wizard = new Wizard(currentState.wizard.Hitpoints, currentState.wizard.Mana),
                             boss = new Boss(currentState.boss.Hitpoints, currentState.boss.Damage),

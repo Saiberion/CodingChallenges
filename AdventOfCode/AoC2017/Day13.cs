@@ -60,7 +60,7 @@ namespace AoC2017
 
 		public override void Solve()
         {
-			Dictionary<int, FirewallLayer> firewall = new Dictionary<int, FirewallLayer>();
+			Dictionary<int, FirewallLayer> firewall = new();
 			int packetLayerPosition = -1;
 			int severity = 0;
 			int maxKeyValue = int.MinValue;

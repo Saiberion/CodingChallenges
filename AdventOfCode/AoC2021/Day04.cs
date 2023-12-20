@@ -10,8 +10,8 @@ namespace AoC2021
         override public void Solve()
         {
             bool firstWin = false;
-            List<int> drawPool = new List<int>();
-            List<BingoBoard> boards = new List<BingoBoard>();
+            List<int> drawPool = new();
+            List<BingoBoard> boards = new();
             string[] splitted = Input[0].Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
             foreach(string s in splitted)
             {
@@ -20,7 +20,7 @@ namespace AoC2021
 
             for (int i = 2; i < Input.Count; i += 6)
             {
-                List<string> bingoBoardLines = new List<string>
+                List<string> bingoBoardLines = new()
                 {
                     Input[i],
                     Input[i + 1],

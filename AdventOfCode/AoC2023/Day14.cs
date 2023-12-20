@@ -9,7 +9,7 @@ namespace AoC2023
 {
     public class Day14 : Day
     {
-        private void Tilt(List<List<char>> dish, int direction)
+        private static void Tilt(List<List<char>> dish, int direction)
         {
             switch(direction)
             {

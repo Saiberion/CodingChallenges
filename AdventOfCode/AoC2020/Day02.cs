@@ -7,7 +7,7 @@ namespace AoC2020
 {
     public class Day02 : Day
     {
-        private bool IsValidPassword(string pw, int min, int max, char pol)
+        private static bool IsValidPassword(string pw, int min, int max, char pol)
         {
             int countedPol = 0;
             for(int i = 0; i < pw.Length; i++)
@@ -20,7 +20,7 @@ namespace AoC2020
             return ((countedPol >= min) && (countedPol <= max));
         }
 
-        private bool IsValidPasswordAdvanced(string pw, int idx1, int idx2, char pol)
+        private static bool IsValidPasswordAdvanced(string pw, int idx1, int idx2, char pol)
         {
             return ((pw[idx1] == pol) && (pw[idx2] != pol)) || ((pw[idx1] != pol) && (pw[idx2] == pol));
         }

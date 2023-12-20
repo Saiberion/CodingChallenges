@@ -7,18 +7,18 @@ namespace AoC2016
 {
     public class Day20 : Day
     {
-        Tuple<long, long> MinimumFreeIP(List<string> input)
+        static Tuple<long, long> MinimumFreeIP(List<string> input)
         {
             long validIPs = 0;
             long minResult = -1;
-            List<long[]> ranges = new List<long[]>();
+            List<long[]> ranges = new();
             foreach (string s in input)
             {
                 string[] splitted = s.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
                 ranges.Add(new long[] { long.Parse(splitted[0]), long.Parse(splitted[1]) });
             }
 
-            long minAllowed = uint.MaxValue;
+            long minAllowed;
 
             long minimumBlocked = uint.MaxValue;
             long[] minRange = null;

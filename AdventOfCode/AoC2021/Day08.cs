@@ -26,7 +26,7 @@ namespace AoC2021
                 }
 
                 char A = 'Q', B = 'Q', C = 'Q', D = 'Q', E ='Q', F = 'Q', G = 'Q';
-                Dictionary<int, List<string>> segmentMapping = new Dictionary<int, List<string>>
+                Dictionary<int, List<string>> segmentMapping = new()
                 {
                     { 0, new List<string>() },
                     { 1, new List<string>() },
@@ -175,7 +175,7 @@ namespace AoC2021
                 }
 
 
-                Dictionary<string, int> numberMapping = new Dictionary<string, int>();
+                Dictionary<string, int> numberMapping = new();
                 StringBuilder sb;
 
                 sb = new StringBuilder();

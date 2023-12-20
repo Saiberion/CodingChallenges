@@ -7,7 +7,7 @@ namespace AoC2021
 {
     public class Day11 : Day
     {
-        private readonly Stack<int[]> FlashList = new Stack<int[]>();
+        private readonly Stack<int[]> FlashList = new();
 
         override public void Solve()
         {

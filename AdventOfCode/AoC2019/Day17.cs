@@ -9,13 +9,13 @@ namespace AoC2019
     {
         override public void Solve()
         {
-            Queue<long> input = new Queue<long>();
+            Queue<long> input = new();
             Queue<long> output;
-            IntCodeComputer ic = new IntCodeComputer(Input[0]);
+            IntCodeComputer ic = new(Input[0]);
 
             output = ic.Execute();
 
-            List<long> cameraview = new List<long>();
+            List<long> cameraview = new();
 
             while(output.Count > 0)
             {

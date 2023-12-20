@@ -11,7 +11,7 @@ namespace AoC2022
     {
         public class Monkey
         {
-            public List<ulong> items = new List<ulong>();
+            public List<ulong> items = new();
             public ulong testValue;
             public int trueTarget;
             public int falseTarget;
@@ -122,7 +122,7 @@ namespace AoC2022
 
         public static ulong GetMonkeyBusiness(List<Monkey> monkies)
         {
-            List<ulong> monkeyBusiness = new List<ulong>();
+            List<ulong> monkeyBusiness = new();
             foreach (Monkey m in monkies)
             {
                 monkeyBusiness.Add(m.inspectionCount);

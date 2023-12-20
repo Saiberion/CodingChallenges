@@ -19,15 +19,15 @@ namespace AoC2015
         }
     }
 
-    public class Day09: Day
+    public class Day09 : Day
     {
-        internal List<List<string>> tracks = new List<List<string>>();
+        internal List<List<string>> tracks = new();
 
         void GetAllCombinations(string[] input, int k, int m)
         {
             if (k == m)
             {
-                List<string> combination = new List<string>();
+                List<string> combination = new();
                 for (int i = 0; i <= m; i++)
                 {
                     combination.Add(input[i]);
@@ -47,9 +47,9 @@ namespace AoC2015
 
         override public void Solve()
         {
-            List<Distance> distances = new List<Distance>();
-            List<string> locations = new List<string>();
-            Dictionary<List<string>, int> trackDistances = new Dictionary<List<string>, int>();
+            List<Distance> distances = new();
+            List<string> locations = new();
+            Dictionary<List<string>, int> trackDistances = new();
             foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -63,17 +63,17 @@ namespace AoC2015
                     locations.Add(splitted[2]);
                 }
 
-                Distance d = new Distance(splitted[0], splitted[2], int.Parse(splitted[4]));
+                Distance d = new(splitted[0], splitted[2], int.Parse(splitted[4]));
                 distances.Add(d);
             }
             GetAllCombinations(locations.ToArray(), 0, locations.Count - 1);
 
-            foreach(List<string> t in tracks)
+            foreach (List<string> t in tracks)
             {
                 int dist = 0;
-                for(int i = 0; i < t.Count - 1; i++)
+                for (int i = 0; i < t.Count - 1; i++)
                 {
-                    foreach(Distance d in distances)
+                    foreach (Distance d in distances)
                     {
                         if ((t[i].Equals(d.location1) && t[i + 1].Equals(d.location2)) ||
                             (t[i].Equals(d.location2) && t[i + 1].Equals(d.location1)))

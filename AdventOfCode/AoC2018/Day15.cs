@@ -43,7 +43,7 @@ namespace AoC2018
         public override void Solve()
         {
             string[,] mapLayer = new string[Input[0].Length, Input.Count];
-            List<Unit> units = new List<Unit>();
+            List<Unit> units = new();
             for (int y = 0; y < Input.Count; y++)
             {
                 for (int x = 0; x < Input[y].Length; x++)
@@ -124,7 +124,7 @@ namespace AoC2018
         private bool IsEnemyInRange(string[,] mapLayer)
         {
             bool result = false;
-            List<string> adjecentSquares = new List<string>
+            List<string> adjecentSquares = new()
             {
                 mapLayer[this.Positon.X, this.Positon.Y - 1],
                 mapLayer[this.Positon.X + 1, this.Positon.Y],
@@ -155,7 +155,7 @@ namespace AoC2018
 
         private List<Location> GetFreeAdjacentSqures(string[,] mapLayer)
         {
-            List<Location> freeSquares = new List<Location>();
+            List<Location> freeSquares = new();
 
             if (mapLayer[this.Positon.X, this.Positon.Y - 1].Equals("."))
             {
@@ -180,7 +180,7 @@ namespace AoC2018
         public void Turn(List<Unit> allUnits, string[,] mapLayer)
         {
             // Identify possible targets
-            List<Unit> targets = new List<Unit>();
+            List<Unit> targets = new();
             foreach (Unit u in allUnits)
             {
                 if (this.Type != u.Type)
@@ -196,7 +196,7 @@ namespace AoC2018
             {
                 if (!IsEnemyInRange(mapLayer))
                 {
-                    List<Location> targetSquares = new List<Location>();
+                    List<Location> targetSquares = new();
                     foreach (Unit t in targets)
                     {
                         targetSquares.AddRange(t.GetFreeAdjacentSqures(mapLayer));
@@ -204,7 +204,7 @@ namespace AoC2018
 
                     if (targetSquares.Count > 0)
                     {
-                        List<Location> reachable = new List<Location>();
+                        List<Location> reachable = new();
                         foreach (Location l in targetSquares)
                         {
                             reachable.AddRange(GetShortestPathDistance(l, mapLayer));
@@ -214,7 +214,7 @@ namespace AoC2018
                         {
                             minimumDistance = Math.Min(minimumDistance, r.G);
                         }
-                        List<Location> closest = new List<Location>();
+                        List<Location> closest = new();
                         foreach (Location r in reachable)
                         {
                             if (r.G == minimumDistance)
@@ -248,7 +248,7 @@ namespace AoC2018
 
         private void Attack(List<Unit> allTargets, string[,] mapLayer)
         {
-            List<Unit> possibleTargets = new List<Unit>();
+            List<Unit> possibleTargets = new();
             foreach (Unit t in allTargets)
             {
                 if (IsTargetInRange(t))
@@ -317,12 +317,12 @@ namespace AoC2018
         {
             // A* algorithm for path finding
             Location current;
-            Location start = new Location(this.Positon.X, this.Positon.Y);
-            Location target = new Location(targetSquare.X, targetSquare.Y);
-            List<Location> openList = new List<Location>();
-            List<Location> closedList = new List<Location>();
+            Location start = new(this.Positon.X, this.Positon.Y);
+            Location target = new(targetSquare.X, targetSquare.Y);
+            List<Location> openList = new();
+            List<Location> closedList = new();
             int g;
-            List<Location> reachable = new List<Location>();
+            List<Location> reachable = new();
 
             // add the starting position to the open list
             openList.Add(start);
@@ -399,16 +399,16 @@ namespace AoC2018
             return reachable;
         }
 
-        private List<Location> GetWalkableAdjacentSquares(int x, int y, string[,] mapLayer)
+        static private List<Location> GetWalkableAdjacentSquares(int x, int y, string[,] mapLayer)
         {
-            List<Location> proposedLocations = new List<Location>()
+            List<Location> proposedLocations = new()
             {
-                new Location(x, y - 1),
-                new Location(x - 1, y),
-                new Location(x + 1, y),
-                new Location(x, y + 1),
+                new(x, y - 1),
+                new(x - 1, y),
+                new(x + 1, y),
+                new(x, y + 1),
             };
-            List<Location> possibleLocations = new List<Location>();
+            List<Location> possibleLocations = new();
 
             foreach (Location l in proposedLocations)
             {
@@ -421,7 +421,7 @@ namespace AoC2018
             return possibleLocations;
         }
 
-        private bool IsInList(Location l, List<Location> list)
+        static private bool IsInList(Location l, List<Location> list)
         {
             bool ret = false;
             foreach (Location loc in list)
@@ -435,7 +435,7 @@ namespace AoC2018
             return ret;
         }
 
-        private int ComputeHScore(int x, int y, int targetX, int targetY)
+        static private int ComputeHScore(int x, int y, int targetX, int targetY)
         {
             return Math.Abs(targetX - x) + Math.Abs(targetY - y);
         }

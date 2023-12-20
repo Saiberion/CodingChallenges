@@ -7,7 +7,7 @@ namespace AoC2020
 {
     public class Day11 : Day
     {
-        public int CountOccupiedSeatsInSight(int x, int y, char[,] seatingArea, int distance)
+        public static int CountOccupiedSeatsInSight(int x, int y, char[,] seatingArea, int distance)
         {
             int occupied = 0;
 
@@ -179,7 +179,7 @@ namespace AoC2020
             return occupied;
         }
 
-        public char GetNextSeatState(int x, int y, char[,] seatingArea, int distance, int seatLimit)
+        public static char GetNextSeatState(int x, int y, char[,] seatingArea, int distance, int seatLimit)
         {
             char nextSeatState;
 
@@ -217,7 +217,7 @@ namespace AoC2020
             return nextSeatState;
         }
 
-        private int RunSeating(int distance, int seatLimit, char[,] seatingArea)
+        private static int RunSeating(int distance, int seatLimit, char[,] seatingArea)
         {
             char[,] newSeatingArea;
             char[,] oldSeatingArea = null;

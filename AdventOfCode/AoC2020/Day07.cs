@@ -16,7 +16,7 @@ namespace AoC2020
     {
         private List<string> OuterBagNames;
 
-        private Bag FindOrCreateBag(string name, List<Bag> bags)
+        private static Bag FindOrCreateBag(string name, List<Bag> bags)
         {
             Bag bag = null;
             foreach (Bag g in bags)
@@ -54,7 +54,7 @@ namespace AoC2020
             }
         }
 
-        private int CountBags(string bagName, List<Bag> bags)
+        private static int CountBags(string bagName, List<Bag> bags)
         {
             int result = 0;
             Bag bag = FindOrCreateBag(bagName, bags);
@@ -69,7 +69,7 @@ namespace AoC2020
 
         override public void Solve()
         {
-            List<Bag> bags = new List<Bag>();
+            List<Bag> bags = new();
             Bag bag, bagContainer;
 
             foreach (string s in Input)

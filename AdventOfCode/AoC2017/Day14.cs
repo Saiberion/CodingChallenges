@@ -7,7 +7,7 @@ namespace AoC2017
 {
     public class Day14 : Day
     {
-        void FillRegion(int regionNumber, int x, int y, List<int[]> grid)
+        static void FillRegion(int regionNumber, int x, int y, List<int[]> grid)
         {
             grid[y][x] = regionNumber;
 
@@ -32,8 +32,8 @@ namespace AoC2017
         public override void Solve()
         {
             string baseKey = Input[0];
-            KnotHash knotHash = new KnotHash();
-            List<int[]> diskGrid = new List<int[]>();
+            KnotHash knotHash = new();
+            List<int[]> diskGrid = new();
             int usedGridCells = 0;
             int regionCount = 0;
 

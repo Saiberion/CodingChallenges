@@ -5,13 +5,13 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day08: Day
+    public class Day08 : Day
     {
         override public void Solve()
         {
             int lengthInput = 0;
             int lengthDecoded = 0;
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             foreach (string s in Input)
             {
                 lengthInput += s.Length;
@@ -33,16 +33,16 @@ namespace AoC2015
                 }
                 lengthDecoded += str.Length;
 
-                sb.Append("\"");
+                sb.Append('\"');
                 for (int i = 0; i < s.Length; i++)
                 {
                     if ((s[i] == '\\') || (s[i] == '\"'))
                     {
-                        sb.Append("\\");
+                        sb.Append('\\');
                     }
                     sb.Append(s[i]);
                 }
-                sb.Append("\"");
+                sb.Append('\"');
             }
             Part1Solution = (lengthInput - lengthDecoded).ToString();
             Part2Solution = (sb.Length - lengthInput).ToString();

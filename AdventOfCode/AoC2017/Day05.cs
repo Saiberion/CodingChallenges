@@ -7,11 +7,11 @@ namespace AoC2017
 {
     public class Day05 : Day
     {
-        int ListWalkerPart1(List<int> jumpList)
+        static int ListWalkerPart1(List<int> jumpList)
         {
             int steps = 0;
             int index = 0;
-            List<int> jList = new List<int>(jumpList);
+            List<int> jList = new(jumpList);
 
             while (true)
             {
@@ -24,11 +24,11 @@ namespace AoC2017
             }
         }
 
-        int ListWalkerPart2(List<int> jumpList)
+        static int ListWalkerPart2(List<int> jumpList)
         {
             int steps = 0;
             int index = 0;
-            List<int> jList = new List<int>(jumpList);
+            List<int> jList = new(jumpList);
 
             while (true)
             {
@@ -52,7 +52,7 @@ namespace AoC2017
 
         public override void Solve()
         {
-            List<int> jumpList = new List<int>();
+            List<int> jumpList = new();
             foreach (string line in Input)
             {
                 jumpList.Add(int.Parse(line));

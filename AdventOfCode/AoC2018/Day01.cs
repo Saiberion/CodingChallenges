@@ -18,7 +18,7 @@ namespace AoC2018
 
             result = 0;
             bool foundDuplicate = false;
-            HashSet<int> previousFrequencies = new HashSet<int>
+            HashSet<int> previousFrequencies = new()
             {
                 result
             };

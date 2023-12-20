@@ -9,7 +9,7 @@ namespace AoC2017
     {
         public override void Solve()
         {
-            KnotHash knotHash = new KnotHash();
+            KnotHash knotHash = new();
 
             Part1Solution = knotHash.GetHashChecksum(Input[0]).ToString();
             Part2Solution = knotHash.GetHashString(Input[0]);

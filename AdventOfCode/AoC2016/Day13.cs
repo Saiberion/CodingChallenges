@@ -17,7 +17,7 @@ namespace AoC2016
 
     public class Day13 : Day
     {
-        bool GetParity(int n)
+        static bool GetParity(int n)
         {
             bool parity = false;
             while (n != 0)
@@ -29,16 +29,16 @@ namespace AoC2016
 
         }
 
-        List<Location> GetWalkableAdjacentSquares(int x, int y, int input)
+        static List<Location> GetWalkableAdjacentSquares(int x, int y, int input)
         {
-            List<Location> proposedLocations = new List<Location>()
+            List<Location> proposedLocations = new()
             {
                 new Location { X = x, Y = y - 1 },
                 new Location { X = x, Y = y + 1 },
                 new Location { X = x - 1, Y = y },
                 new Location { X = x + 1, Y = y },
             };
-            List<Location> possibleLocations = new List<Location>();
+            List<Location> possibleLocations = new();
 
             foreach (Location l in proposedLocations)
             {
@@ -54,7 +54,7 @@ namespace AoC2016
             return possibleLocations;
         }
 
-        bool IsInList(Location l, List<Location> list)
+        static bool IsInList(Location l, List<Location> list)
         {
             bool ret = false;
             foreach (Location loc in list)
@@ -68,19 +68,19 @@ namespace AoC2016
             return ret;
         }
 
-        int ComputeHScore(int x, int y, int targetX, int targetY)
+        static int ComputeHScore(int x, int y, int targetX, int targetY)
         {
             return Math.Abs(targetX - x) + Math.Abs(targetY - y);
         }
 
-        int GetShorestPathDistance(int startx, int starty, int targetx, int targety, int input)
+        static int GetShorestPathDistance(int startx, int starty, int targetx, int targety, int input)
         {
             // A* algorithm for path finding
             Location current = null;
-            Location start = new Location { X = startx, Y = starty };
-            Location target = new Location { X = targetx, Y = targety };
-            List<Location> openList = new List<Location>();
-            List<Location> closedList = new List<Location>();
+            Location start = new() { X = startx, Y = starty };
+            Location target = new() { X = targetx, Y = targety };
+            List<Location> openList = new();
+            List<Location> closedList = new();
             int g;
 
             // add the starting position to the open list
@@ -150,13 +150,13 @@ namespace AoC2016
             return current.G;
         }
 
-        int GetNumberLocationsUpToDistance(int startx, int starty, int input)
+        static int GetNumberLocationsUpToDistance(int startx, int starty, int input)
         {
             // A* algorithm for path finding
             Location current;
-            Location start = new Location { X = startx, Y = starty };
-            List<Location> openList = new List<Location>();
-            List<Location> closedList = new List<Location>();
+            Location start = new() { X = startx, Y = starty };
+            List<Location> openList = new();
+            List<Location> closedList = new();
             int g;
 
             // add the starting position to the open list

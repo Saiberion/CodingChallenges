@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day24: Day
+    public class Day24 : Day
     {
         private static Tuple<long, int> Balance(List<int> weights, int pos, int remWt, long currQe, int currCt)
         {
@@ -37,7 +37,7 @@ namespace AoC2015
 
         override public void Solve()
         {
-            List<int> weights = new List<int>();
+            List<int> weights = new();
             int totalWeight = 0;
             long minQE;
 

@@ -27,7 +27,7 @@ namespace AoC2017
 
 	public class Day07 : Day
     {
-		void DetermineTotalWeights(TowerElement t)
+		static void DetermineTotalWeights(TowerElement t)
 		{
 			if (t.Disc.Count == 0)
             {
@@ -51,9 +51,9 @@ namespace AoC2017
             }
 		}
 
-		int FindUnbalancedElement(TowerElement tower)
+		static int FindUnbalancedElement(TowerElement tower)
 		{
-			Dictionary<int, int> d = new Dictionary<int, int>();
+			Dictionary<int, int> d = new();
 			foreach(TowerElement t in tower.Disc)
             {
 				if (!d.ContainsKey(t.TotalWeight))
@@ -97,7 +97,7 @@ namespace AoC2017
 
 		public override void Solve()
         {
-			Dictionary<string, TowerElement> programs = new Dictionary<string, TowerElement>();
+			Dictionary<string, TowerElement> programs = new();
 			TowerElement root = null;
 
 			foreach (string line in Input)

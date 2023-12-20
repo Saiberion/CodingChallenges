@@ -11,7 +11,7 @@ namespace AoC2019
         override public void Solve()
         {
             Asteroid[,] asteroidMap = new Asteroid[Input[0].Length, Input.Count];
-            List<Asteroid> asteroids = new List<Asteroid>();
+            List<Asteroid> asteroids = new();
             for (int i = 0; i < Input.Count; i++)
             {
                 for (int k = 0; k < Input[i].Length; k++)

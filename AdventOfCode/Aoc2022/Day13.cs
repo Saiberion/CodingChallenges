@@ -7,7 +7,7 @@ namespace AoC2022
 {
     public class Day13 : Day
     {
-        private int CreatePacket(List<object> parent, string s)
+        private static int CreatePacket(List<object> parent, string s)
         {
             int counter = 0;
             StringBuilder sb = new();

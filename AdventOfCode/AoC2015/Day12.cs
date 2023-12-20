@@ -42,7 +42,7 @@ namespace AoC2015
         {
             int sum = 0;
 
-            for(int i = 0; i < arr.GetArrayLength(); i++)
+            for (int i = 0; i < arr.GetArrayLength(); i++)
             {
                 if (arr[i].ValueKind == JsonValueKind.Object)
                 {

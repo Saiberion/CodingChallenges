@@ -15,12 +15,12 @@ namespace AoC2016
 
     public class Day17 : Day
     {
-        List<Location2> GetWalkableAdjacentSquares(int x, int y, string input, string movement)
+        static List<Location2> GetWalkableAdjacentSquares(int x, int y, string input, string movement)
         {
             MD5 md5 = MD5.Create();
             byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(input + movement));
 
-            List<Location2> possibleLocations = new List<Location2>();
+            List<Location2> possibleLocations = new();
 
             if ((((hash[0] >> 4) & 0xf) > 10) && (y > 0))
             {
@@ -42,17 +42,17 @@ namespace AoC2016
             return possibleLocations;
         }
 
-        Tuple<string, int> MazeRunner(string passcode)
+        static Tuple<string, int> MazeRunner(string passcode)
         {
             Location2 current;
-            Location2 start = new Location2 { X = 0, Y = 0 };
-            Location2 target = new Location2 { X = 3, Y = 3 };
-            List<Location2> openList = new List<Location2>
+            Location2 start = new() { X = 0, Y = 0 };
+            Location2 target = new() { X = 3, Y = 3 };
+            List<Location2> openList = new()
             {
                 // add the starting position to the open list
                 start
             };
-            List<Location2> targetList = new List<Location2>();
+            List<Location2> targetList = new();
 
             while (openList.Count > 0)
             {

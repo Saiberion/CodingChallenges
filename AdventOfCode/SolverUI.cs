@@ -369,7 +369,7 @@ namespace AdventOfCode
 
         private void SolverUI_Load(object sender, EventArgs e)
         {
-            foreach(string dir in Directory.GetDirectories(Directory.GetCurrentDirectory()).Reverse())
+            foreach (string dir in Directory.GetDirectories(Directory.GetCurrentDirectory()).Reverse())
             {
                 if (Path.GetFileName(dir).StartsWith("AoC"))
                 {

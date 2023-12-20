@@ -10,7 +10,7 @@ namespace AoC2020
         override public void Solve()
         {
             long maskAND = 0, maskOR = 0;
-            Dictionary<long, long> memory = new Dictionary<long, long>();
+            Dictionary<long, long> memory = new();
             foreach(string s in Input)
             {
                 if (s.StartsWith("mask"))

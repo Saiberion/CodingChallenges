@@ -10,7 +10,7 @@ namespace AoC2020
         override public void Solve()
         {
             int maxSeatId = 0;
-            List<int> seats = new List<int>();
+            List<int> seats = new();
             foreach(string s in Input)
             {
                 string bin = s.Replace('F', '0').Replace('B', '1').Replace('L', '0').Replace('R', '1');

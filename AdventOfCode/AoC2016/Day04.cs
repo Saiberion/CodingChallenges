@@ -7,11 +7,11 @@ namespace AoC2016
 {
     public class Day04 : Day
     {
-        string GetRoomChecksum(List<string> roomName)
+        static string GetRoomChecksum(List<string> roomName)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
-            SortedDictionary<char, int> letterOccurance = new SortedDictionary<char, int>();
+            SortedDictionary<char, int> letterOccurance = new();
 
             foreach (string namePart in roomName)
             {
@@ -47,9 +47,9 @@ namespace AoC2016
             return sb.ToString();
         }
 
-        string DecryptRoomName(List<string> roomName, int sectorId)
+        static string DecryptRoomName(List<string> roomName, int sectorId)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             int shifts = sectorId % 26;
             string lookupAlphabet = "abcdefghijklmnopqrstuvwxyz";
 
@@ -68,17 +68,17 @@ namespace AoC2016
             return sb.ToString().Trim();
         }
 
-        int[] SumIdRealRooms(List<string> input)
+        static int[] SumIdRealRooms(List<string> input)
         {
             int[] results = new int[2];
-            List<string> decryptedRoomNames = new List<string>();
+            List<string> decryptedRoomNames = new();
 
             foreach (string line in input)
             {
                 string[] roomCode = line.Split(new char[] { '-', '[', ']' }, StringSplitOptions.RemoveEmptyEntries);
-                string checksumGiven = roomCode[roomCode.Length - 1];
-                int sectorId = int.Parse(roomCode[roomCode.Length - 2]);
-                List<string> roomName = new List<string>(roomCode);
+                string checksumGiven = roomCode[^1];
+                int sectorId = int.Parse(roomCode[^2]);
+                List<string> roomName = new(roomCode);
                 roomName.RemoveAt(roomName.Count - 1);
                 roomName.RemoveAt(roomName.Count - 1);
                 string checksumCalculated = GetRoomChecksum(roomName);

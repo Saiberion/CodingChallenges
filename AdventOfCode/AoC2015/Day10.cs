@@ -7,9 +7,9 @@ namespace AoC2015
 {
     public class Day10 : Day
     {
-        string LookAndSay(string origin, int iterations)
+        static string LookAndSay(string origin, int iterations)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             for (int iter = 0; iter < iterations; iter++)
             {
                 for (int i = 0; i < origin.Length; i++)

@@ -21,7 +21,7 @@ namespace AoC2017
         {
             int position = 0;
             EStates state = EStates.eA;
-            Dictionary<int, int> tape = new Dictionary<int, int>();
+            Dictionary<int, int> tape = new();
             int checksum = 0;
 
             tape.Add(0, 0);

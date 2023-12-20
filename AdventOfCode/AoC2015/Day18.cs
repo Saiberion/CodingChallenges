@@ -5,9 +5,9 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day18: Day
+    public class Day18 : Day
     {
-        int GetActiveNeighbors(int[,] grid, int x, int y)
+        static int GetActiveNeighbors(int[,] grid, int x, int y)
         {
             int active = 0;
 
@@ -74,7 +74,7 @@ namespace AoC2015
             return grid;
         }
 
-        void Animate(int[,] grid, int frames, bool part2)
+        static void Animate(int[,] grid, int frames, bool part2)
         {
             int[,] gridCpy;
             for (int steps = 0; steps < frames; steps++)
@@ -110,7 +110,7 @@ namespace AoC2015
             }
         }
 
-        int GetActiveLights(int[,] grid)
+        static int GetActiveLights(int[,] grid)
         {
             int activeLights = 0;
             for (int y = 0; y < grid.GetLength(1); y++)
@@ -125,9 +125,9 @@ namespace AoC2015
 
         override public void Solve()
         {
-            
+
             int[,] lights;
-            
+
             // Part 1
             lights = InitializeGrid();
             Animate(lights, 100, false);

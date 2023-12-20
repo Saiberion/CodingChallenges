@@ -10,15 +10,15 @@ namespace AoC2021
         override public void Solve()
         {
             int errorScore = 0;
-            List<long> completeScores = new List<long>();
-            Dictionary<char, int> errorPoints = new Dictionary<char, int>
+            List<long> completeScores = new();
+            Dictionary<char, int> errorPoints = new()
             {
                 { ')', 3 },
                 { ']', 57 },
                 { '}', 1197 },
                 { '>', 25137 }
             };
-            Dictionary<char, int> completePoints = new Dictionary<char, int>
+            Dictionary<char, int> completePoints = new()
             {
                 { '(', 1 },
                 { '[', 2 },
@@ -28,7 +28,7 @@ namespace AoC2021
 
             foreach (string s in Input)
             {
-                Stack<char> openingBrackets = new Stack<char>();
+                Stack<char> openingBrackets = new();
                 openingBrackets.Push(s[0]);
                 bool aborted = false;
                 for (int i = 1; i < s.Length; i++)

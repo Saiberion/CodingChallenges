@@ -5,9 +5,9 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day17: Day
+    public class Day17 : Day
     {
-        public static List<List<int>> combinations = new List<List<int>>();
+        private static readonly List<List<int>> combinations = new();
 
         private static void SumUpRecursive(List<int> numbers, int target, List<int> partial)
         {
@@ -26,14 +26,14 @@ namespace AoC2015
 
             for (int i = 0; i < numbers.Count; i++)
             {
-                List<int> remaining = new List<int>();
+                List<int> remaining = new();
                 int n = numbers[i];
                 for (int j = i + 1; j < numbers.Count; j++)
                 {
                     remaining.Add(numbers[j]);
                 }
 
-                List<int> partial_rec = new List<int>(partial)
+                List<int> partial_rec = new(partial)
                 {
                     n
                 };
@@ -49,7 +49,7 @@ namespace AoC2015
         override public void Solve()
         {
             int target = 150;
-            List<int> bottles = new List<int>();
+            List<int> bottles = new();
             foreach (string s in Input)
             {
                 bottles.Add(int.Parse(s));
@@ -59,7 +59,7 @@ namespace AoC2015
             Part1Solution = combinations.Count.ToString();
 
             int minContainer = int.MaxValue;
-            foreach(List<int> l in combinations)
+            foreach (List<int> l in combinations)
             {
                 minContainer = Math.Min(minContainer, l.Count);
             }

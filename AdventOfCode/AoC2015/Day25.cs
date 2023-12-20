@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day25: Day
+    public class Day25 : Day
     {
         override public void Solve()
         {
@@ -16,7 +16,7 @@ namespace AoC2015
             int maxrow = 1;
             long code = 20151125;
 
-            while(!((r == row) && (c == col)))
+            while (!((r == row) && (c == col)))
             {
                 r--;
                 c++;

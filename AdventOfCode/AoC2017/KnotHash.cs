@@ -56,8 +56,8 @@ namespace AoC2017
 
         public int GetHashChecksum(string stream)
         {
-            List<byte> inputLengths = new List<byte>();
-            List<byte> knotHash = new List<byte>();
+            List<byte> inputLengths = new();
+            List<byte> knotHash = new();
 
             this.Reset();
 
@@ -78,9 +78,9 @@ namespace AoC2017
 
         public string GetHashString(string input)
         {
-            List<byte> inputLengths = new List<byte>();
-            List<byte> knotHash = new List<byte>();
-            List<byte> denseHash = new List<byte>();
+            List<byte> inputLengths = new();
+            List<byte> knotHash = new();
+            List<byte> denseHash = new();
 
             this.Reset();
 
@@ -111,7 +111,7 @@ namespace AoC2017
                 denseHash.Add(xorblock);
             }
 
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             foreach (byte b in denseHash)
             {
                 sb.Append(string.Format("{0:x2}", b));

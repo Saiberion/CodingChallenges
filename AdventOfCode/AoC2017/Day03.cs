@@ -8,10 +8,10 @@ namespace AoC2017
 {
     public class Day03 : Day
     {
-        public int SumAdjecent(Dictionary<Point, int> grid, int x, int y)
+        public static int SumAdjecent(Dictionary<Point, int> grid, int x, int y)
         {
             int sum = 0;
-            List<Point> possibleAdjecent = new List<Point>()
+            List<Point> possibleAdjecent = new()
             {
                 new Point (x - 1, y - 1),
                 new Point (x, y - 1),
@@ -36,7 +36,7 @@ namespace AoC2017
 
         public override void Solve()
         {
-            Dictionary<Point, int> grid = new Dictionary<Point, int>();
+            Dictionary<Point, int> grid = new();
             int x = 0, y = 0;
             int dir = 0;
             int count = 1;

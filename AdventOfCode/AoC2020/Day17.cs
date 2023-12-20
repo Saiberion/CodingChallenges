@@ -11,7 +11,7 @@ namespace AoC2020
         override public void Solve()
         {
             // TODO finish up
-            Dictionary<Vector3, bool> pocketDimension = new Dictionary<Vector3, bool>();
+            Dictionary<Vector3, bool> pocketDimension = new();
 
             for (int y = 0; y < Input.Count; y++)
             {

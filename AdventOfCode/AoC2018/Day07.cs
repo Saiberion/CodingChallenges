@@ -21,9 +21,9 @@ namespace AoC2018
 
     public class Day07 : Day
     {
-        Dictionary<string, List<string>> GetInstructionOrder(List<string> input)
+        static Dictionary<string, List<string>> GetInstructionOrder(List<string> input)
         {
-            Dictionary<string, List<string>> instructionNodes = new Dictionary<string, List<string>>();
+            Dictionary<string, List<string>> instructionNodes = new();
             foreach (string s in input)
             {
                 string[] splitted = s.Split(new char[] { ' ' });
@@ -46,13 +46,13 @@ namespace AoC2018
             return instructionNodes;
         }
 
-        string GetInstructionOrder(Dictionary<string, List<string>> instructionNodes)
+        static string GetInstructionOrder(Dictionary<string, List<string>> instructionNodes)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             while (instructionNodes.Count > 0)
             {
-                List<string> availableInstructions = new List<string>();
+                List<string> availableInstructions = new();
                 foreach (KeyValuePair<string, List<string>> kvp in instructionNodes)
                 {
                     if (kvp.Value.Count == 0)
@@ -74,7 +74,7 @@ namespace AoC2018
             return sb.ToString();
         }
 
-        Worker GetAvailableWorker(List<Worker> worker)
+        static Worker GetAvailableWorker(List<Worker> worker)
         {
             Worker work = null;
 
@@ -90,10 +90,10 @@ namespace AoC2018
             return work;
         }
 
-        int GetInstructionTime(Dictionary<string, List<string>> instructionNodes, int baseTime, int workerCount)
+        static int GetInstructionTime(Dictionary<string, List<string>> instructionNodes, int baseTime, int workerCount)
         {
             int timeCounter = 0;
-            List<Worker> worker = new List<Worker>();
+            List<Worker> worker = new();
 
             for (int i = 0; i < workerCount; i++)
             {
@@ -102,7 +102,7 @@ namespace AoC2018
 
             while (true)
             {
-                List<string> availableInstructions = new List<string>();
+                List<string> availableInstructions = new();
                 foreach (KeyValuePair<string, List<string>> kvp in instructionNodes)
                 {
                     if (kvp.Value.Count == 0)

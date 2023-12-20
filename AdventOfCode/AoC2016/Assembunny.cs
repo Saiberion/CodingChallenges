@@ -15,7 +15,7 @@ namespace AoC2016
             bool firstOut = true;
             int lastOut = 0;
             int repetitions = 0;
-            Dictionary<char, int> registers = new Dictionary<char, int>
+            Dictionary<char, int> registers = new()
             {
                 { 'a', initA },
                 { 'b', initB },

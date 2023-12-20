@@ -94,7 +94,7 @@ namespace AoC2017
     {
         public override void Solve()
         {
-            List<Particle> particles = new List<Particle>();
+            List<Particle> particles = new();
 
             int count = 0;
             foreach (string line in Input)
@@ -149,7 +149,7 @@ namespace AoC2017
         {
             //Console.WriteLine("Day20 part 2");
             var lines = Input;
-            List<Particle2> particles = new List<Particle2>();
+            List<Particle2> particles = new();
             for (int x = 0; x < lines.Count; x++)
             {
                 var line = lines[x];
@@ -176,7 +176,7 @@ namespace AoC2017
             {
                 particles.ForEach(p => p.Tick());
                 var collisions = particles.GroupBy(x => x.GetPosition()).Where(x => x.Count() > 1).ToDictionary(g => g.Key, g => g.ToList());
-                if (collisions.Count() == 0)
+                if (collisions.Count == 0)
                 {
                     count++;
                     if (count > 500)
@@ -197,7 +197,7 @@ namespace AoC2017
                     minParticle = newMin;
                 }
             }
-            return particles.Count().ToString();
+            return particles.Count.ToString();
         }
     }
 

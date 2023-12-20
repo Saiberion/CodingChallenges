@@ -5,12 +5,12 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day23: Day
+    public class Day23 : Day
     {
-        private int RunProgram(List<string[]> instructions, bool part2)
+        private static int RunProgram(List<string[]> instructions, bool part2)
         {
             int offset;
-            Dictionary<string, int> registers = new Dictionary<string, int>
+            Dictionary<string, int> registers = new()
             {
                 { "a", 0 },
                 { "b", 0 }
@@ -60,7 +60,7 @@ namespace AoC2015
 
         override public void Solve()
         {
-            List<string[]> instructions = new List<string[]>();
+            List<string[]> instructions = new();
 
             foreach (string s in Input)
             {

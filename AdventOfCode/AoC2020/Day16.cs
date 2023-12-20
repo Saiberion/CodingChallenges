@@ -28,10 +28,10 @@ namespace AoC2020
         override public void Solve()
         {
             int readSection = 0;
-            List<TicketField> ticketFields = new List<TicketField>();
-            List<int> myTicketValues = new List<int>();
-            List<List<int>> nearbyTickets = new List<List<int>>();
-            List<List<int>> nearbyValidTickets = new List<List<int>>();
+            List<TicketField> ticketFields = new();
+            List<int> myTicketValues = new();
+            List<List<int>> nearbyTickets = new();
+            List<List<int>> nearbyValidTickets = new();
             foreach (string s in Input)
             {
                 if (string.IsNullOrEmpty(s))
@@ -60,7 +60,7 @@ namespace AoC2020
                         case 2:
                             if (!s.StartsWith("nearby"))
                             {
-                                List<int> ticket = new List<int>();
+                                List<int> ticket = new();
                                 splitted = s.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                                 foreach (string s2 in splitted)
                                 {
@@ -73,7 +73,7 @@ namespace AoC2020
                 }
             }
 
-            List<int> validNumbers = new List<int>();
+            List<int> validNumbers = new();
             foreach(TicketField t in ticketFields)
             {
                 for(int i = t.Min1; i <= t.Max1; i++)

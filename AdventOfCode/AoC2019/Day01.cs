@@ -7,7 +7,7 @@ namespace AoC2019
 {
     public class Day01 : Day
     {
-        int CalculateFuel(int mass, bool morePrecise)
+        static int CalculateFuel(int mass, bool morePrecise)
         {
             if (!morePrecise)
             {

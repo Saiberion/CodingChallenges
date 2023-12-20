@@ -7,10 +7,10 @@ namespace AoC2017
 {
     public class Day04 : Day
     {
-        int IsValidPassphrasePart1(string line)
+        static int IsValidPassphrasePart1(string line)
         {
-            List<string> wordList = new List<string>(line.Split(' '));
-            List<string> compareList = new List<string>(wordList);
+            List<string> wordList = new(line.Split(' '));
+            List<string> compareList = new(wordList);
 
             foreach (string word in wordList)
             {
@@ -23,7 +23,7 @@ namespace AoC2017
             return 1;
         }
 
-        bool IsAnagram(string w1, string w2)
+        static bool IsAnagram(string w1, string w2)
         {
             if (w1.Length == w2.Length)
             {
@@ -47,10 +47,10 @@ namespace AoC2017
             return false;
         }
 
-        int IsValidPassphrasePart2(string line)
+        static int IsValidPassphrasePart2(string line)
         {
-            List<string> wordList = new List<string>(line.Split(' '));
-            List<string> compareList = new List<string>(wordList);
+            List<string> wordList = new(line.Split(' '));
+            List<string> compareList = new(wordList);
 
             foreach (string word in wordList)
             {

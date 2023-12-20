@@ -9,10 +9,10 @@ namespace AoC2020
     {
         override public void Solve()
         {
-            List<int> adapters = new List<int>();
+            List<int> adapters = new();
             int diff1 = 0, diff3 = 1;
-            List<int> differences = new List<int>();
-            List<int> oneblocks = new List<int>();
+            List<int> differences = new();
+            List<int> oneblocks = new();
             int count = 0;
             int[] combinations = { 1, 2, 4, 7 };
             long totalCombinations = 1;

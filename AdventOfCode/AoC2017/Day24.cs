@@ -22,9 +22,9 @@ namespace AoC2017
             }
         }
 
-        void CreateBridges(List<List<BridgePart>> bridges, List<BridgePart> currentBridge, List<BridgePart> bridgeParts, int nextConnector)
+        static void CreateBridges(List<List<BridgePart>> bridges, List<BridgePart> currentBridge, List<BridgePart> bridgeParts, int nextConnector)
         {
-            List<BridgePart> bps = new List<BridgePart>(bridgeParts);
+            List<BridgePart> bps = new(bridgeParts);
             int next;
 
             for (int i = 0; i < bps.Count; i++)
@@ -39,11 +39,11 @@ namespace AoC2017
                     {
                         next = bps[i].PortStrength[0];
                     }
-                    List<BridgePart> curBridge = new List<BridgePart>(currentBridge)
+                    List<BridgePart> curBridge = new(currentBridge)
                     {
                         bps[i]
                     };
-                    List<BridgePart> remainingParts = new List<BridgePart>(bps);
+                    List<BridgePart> remainingParts = new(bps);
                     remainingParts.Remove(bps[i]);
                     bridges.Add(curBridge);
                     CreateBridges(bridges, curBridge, remainingParts, next);
@@ -53,8 +53,8 @@ namespace AoC2017
 
         public override void Solve()
         {
-            List<BridgePart> bridgeParts = new List<BridgePart>();
-            List<List<BridgePart>> bridges = new List<List<BridgePart>>();
+            List<BridgePart> bridgeParts = new();
+            List<List<BridgePart>> bridges = new();
             int bestBridgeStrength = int.MinValue;
             int bestBridgeStrengthLongest = int.MinValue;
             int longestBridge = int.MinValue;
@@ -64,7 +64,7 @@ namespace AoC2017
                 bridgeParts.Add(new BridgePart(line));
             }
 
-            CreateBridges(bridges, new List<BridgePart>(), bridgeParts, 0);
+            CreateBridges(bridges, new(), bridgeParts, 0);
 
             foreach (List<BridgePart> bps in bridges)
             {

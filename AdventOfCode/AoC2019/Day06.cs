@@ -9,14 +9,14 @@ namespace AoC2019
     {
         override public void Solve()
         {
-            List<TreeNode> fragments = new List<TreeNode>();
+            List<TreeNode> fragments = new();
 
             foreach(string s in Input)
             {
                 string[] splitted = s.Split(new char[] { ')' });
 
-                TreeNode t1 = new TreeNode(splitted[0]);
-                TreeNode t2 = new TreeNode(splitted[1]);
+                TreeNode t1 = new(splitted[0]);
+                TreeNode t2 = new(splitted[1]);
 
                 t1.AddChild(t2);
                 fragments.Add(t1);

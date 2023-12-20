@@ -7,7 +7,7 @@ namespace AoC2016
 {
     public class Day03 : Day
     {
-        int GetPossibleTrianglesByLine(List<string> input)
+        static int GetPossibleTrianglesByLine(List<string> input)
         {
             int possible = 0;
 
@@ -33,10 +33,10 @@ namespace AoC2016
             return possible;
         }
 
-        int GetPossibleTrianglesByColumn(List<string> input)
+        static int GetPossibleTrianglesByColumn(List<string> input)
         {
             int possible = 0;
-            List<int[]> triangleData = new List<int[]>();
+            List<int[]> triangleData = new();
 
             foreach (string line in input)
             {

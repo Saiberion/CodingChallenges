@@ -24,9 +24,9 @@ namespace AoC2016
 
     public class Day15 : Day
     {
-        int DiscMazePassThrough(List<string> input, bool second)
+        static int DiscMazePassThrough(List<string> input, bool second)
         {
-            List<Disc> discs = new List<Disc>();
+            List<Disc> discs = new();
             foreach (string line in input)
             {
                 string[] splitted = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);

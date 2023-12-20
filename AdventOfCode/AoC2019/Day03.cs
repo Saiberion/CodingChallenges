@@ -19,7 +19,7 @@ namespace AoC2019
     }
     public class Day03 : Day
     {
-        internal List<Point> crossings = new List<Point>();
+        internal List<Point> crossings = new();
 
         void UpdateGridPos(Dictionary<Point, Wire> wireGrid, Point currentPos, int wireID, int steps)
         {
@@ -40,7 +40,7 @@ namespace AoC2019
 
         void DrawWire(Dictionary<Point, Wire> wireGrid, int wireID, List<string> directions)
         {
-            Point currentPos = new Point(0, 0);
+            Point currentPos = new(0, 0);
             int steps = 0;
             foreach (string direction in directions)
             {
@@ -81,10 +81,10 @@ namespace AoC2019
 
         override public void Solve()
         {
-            List<List<string>> wires = new List<List<string>>();
+            List<List<string>> wires = new();
             foreach(string s in Input)
             {
-                List<string> sl = new List<string>();
+                List<string> sl = new();
                 string[] splitted = s.Split(new char[] { ',' });
                 foreach(string spl in splitted)
                 {
@@ -93,7 +93,7 @@ namespace AoC2019
                 wires.Add(sl);
             }
 
-            Dictionary<Point, Wire> wireGrid = new Dictionary<Point, Wire>
+            Dictionary<Point, Wire> wireGrid = new()
             {
                 { new Point(0, 0), new Wire(0, 0) }
             };

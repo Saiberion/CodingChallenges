@@ -9,7 +9,7 @@ namespace AoC2023
 {
     public class Day08 : Day
     {
-        Dictionary<string, List<string>> network = new();
+        readonly Dictionary<string, List<string>> network = new();
 
         private long StepsToEnd(string node)
         {
@@ -49,7 +49,7 @@ namespace AoC2023
 
             //jumps = 0;
             //List<string> nodeWalker = new();
-            List<long> nodeWalker = new();
+            //List<long> nodeWalker = new();
             long prod = 1;
             foreach(string k in network.Keys)
             {

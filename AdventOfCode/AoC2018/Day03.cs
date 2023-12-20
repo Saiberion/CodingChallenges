@@ -22,14 +22,14 @@ namespace AoC2018
 
     public class Day03 : Day
     {
-        int GetOverlappingArea(List<string> input)
+        static int GetOverlappingArea(List<string> input)
         {
             int[,] cloth = new int[2000, 2000];
             int area = 0;
 
             foreach (string s in input)
             {
-                Claim claim = new Claim(s);
+                Claim claim = new(s);
                 for (int y = claim.Area.Y; y < (claim.Area.Y + claim.Area.Height); y++)
                 {
                     for (int x = claim.Area.X; x < (claim.Area.X + claim.Area.Width); x++)
@@ -52,9 +52,9 @@ namespace AoC2018
             return area;
         }
 
-        int FindUniqueClaim(List<string> input)
+        static int FindUniqueClaim(List<string> input)
         {
-            List<Claim> claims = new List<Claim>();
+            List<Claim> claims = new();
             foreach (string s in input)
             {
                 claims.Add(new Claim(s));

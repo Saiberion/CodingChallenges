@@ -7,7 +7,7 @@ namespace AoC2020
 {
     public class Day01 : Day
     {
-        private string FindMatching2Entries(List<int> l)
+        private static string FindMatching2Entries(List<int> l)
         {
             for (int i = 0; i < l.Count; i++)
             {
@@ -25,7 +25,7 @@ namespace AoC2020
             return "Error";
         }
 
-        private string FindMatching3Entries(List<int> l)
+        private static string FindMatching3Entries(List<int> l)
         {
             for (int i = 0; i < l.Count; i++)
             {
@@ -48,7 +48,7 @@ namespace AoC2020
 
         override public void Solve()
         {
-            List<int> accountingList = new List<int>();
+            List<int> accountingList = new();
             foreach (string s in Input)
             {
                 accountingList.Add(int.Parse(s));

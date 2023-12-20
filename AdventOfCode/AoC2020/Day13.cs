@@ -32,7 +32,7 @@ namespace AoC2020
         override public void Solve()
         {
             int earliestDepartureTime = int.Parse(Input[0]);
-            List<int> busIDs = new List<int>();
+            List<int> busIDs = new();
             string[] splitted = Input[1].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             foreach(string s in splitted)
             {
@@ -73,7 +73,7 @@ namespace AoC2020
                 }
             }
 
-            List<int> indexedBusIDs = new List<int>();
+            List<int> indexedBusIDs = new();
             for(int i = 0; i < busIDs.Count; i++)
             {
                 if (busIDs[i] != -1)

@@ -41,27 +41,27 @@ namespace AoC2017
         {
             string dance = Input[0];
 
-            List<char> dancers = new List<char>();
+            List<char> dancers = new();
             for (int i = 0; i < 16; i++)
             {
                 dancers.Add(Convert.ToChar('a' + i));
             }
             string[] danceMoves = dance.Split(',');
-            List<DanceMove> listDanceMoves = new List<DanceMove>();
+            List<DanceMove> listDanceMoves = new();
             for (int i = 0; i < danceMoves.Length; i++)
             {
                 listDanceMoves.Add(new DanceMove(danceMoves[i]));
             }
 
-            List<string> dancePattern = new List<string>();
-            StringBuilder sb = new StringBuilder();
+            List<string> dancePattern = new();
+            StringBuilder sb = new();
             int indA, indB;
             char tmp;
             int repeatsAfter = 0;
 
             for (int i = 0; i < dancers.Count; i++)
             {
-                sb.Append(dancers[i].ToString());
+                sb.Append(dancers[i]);
             }
             dancePattern.Add(sb.ToString());
 
@@ -99,7 +99,7 @@ namespace AoC2017
                 sb.Clear();
                 for (int i = 0; i < dancers.Count; i++)
                 {
-                    sb.Append(dancers[i].ToString());
+                    sb.Append(dancers[i]);
                 }
                 dancePattern.Add(sb.ToString());
             } while (!dancePattern[0].Equals(dancePattern[++repeatsAfter]));

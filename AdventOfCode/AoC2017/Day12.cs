@@ -8,7 +8,7 @@ namespace AoC2017
 {
     public class Day12 : Day
     {
-		int CountIDs(Dictionary<int, List<int>> pipes, List<int> groupIDs, int searchID)
+		static int CountIDs(Dictionary<int, List<int>> pipes, List<int> groupIDs, int searchID)
 		{
 			int ret = 0;
 			if (!groupIDs.Contains(searchID))
@@ -25,14 +25,14 @@ namespace AoC2017
 
 		public override void Solve()
         {
-			Dictionary<int, List<int>> progPipes = new Dictionary<int, List<int>>();
-			List<int> groups = new List<int>();
+			Dictionary<int, List<int>> progPipes = new();
+			List<int> groups = new();
 
 			foreach (string line in Input)
 			{
 				List<int> canTalkTo;
 				string[] s = line.Replace(" ", "").Split(new string[] { "<->", "," }, StringSplitOptions.RemoveEmptyEntries);
-				canTalkTo = new List<int>();
+				canTalkTo = new();
 				for (int i = 1; i < s.Length; i++)
 				{
 					canTalkTo.Add(int.Parse(s[i]));
@@ -42,7 +42,7 @@ namespace AoC2017
 
 			while (progPipes.Count > 0)
 			{
-				List<int> groupIDs = new List<int>();
+				List<int> groupIDs = new();
 				groups.Add(CountIDs(progPipes, groupIDs, progPipes.First().Key));
 				foreach (int i in groupIDs)
 				{

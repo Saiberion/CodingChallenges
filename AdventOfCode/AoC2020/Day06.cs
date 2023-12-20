@@ -10,7 +10,7 @@ namespace AoC2020
         override public void Solve()
         {
             int personCounter = 0;
-            Dictionary<char, int> groupAnswers = new Dictionary<char, int>();
+            Dictionary<char, int> groupAnswers = new();
             int sumOfYesAnswersPerGroup = 0;
             int sumOfYesAnswersPerGroupAdvanced = 0;
             for (int i = 0; i < Input.Count; i++)
