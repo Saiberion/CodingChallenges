@@ -29,14 +29,14 @@ namespace AoC2023
 
             int nextDir = -1;
             bool loopDone = false;
-            while(!loopDone)
+            while (!loopDone)
             {
-                switch(nextDir)
+                switch (nextDir)
                 {
                     case 0: // north
                         currentPosition.Y--;
                         steps++;
-                        switch(pipefield[currentPosition.X, currentPosition.Y])
+                        switch (pipefield[currentPosition.X, currentPosition.Y])
                         {
                             case '7':
                                 nextDir = 1;
