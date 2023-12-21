@@ -287,7 +287,7 @@ namespace AdventOfCode
                     new AoC2023.Day18() { Enabled = true },
                     new AoC2023.Day19() { Enabled = false },
                     new AoC2023.Day20() { Enabled = false },
-                    new AoC2023.Day21() { Enabled = false },
+                    new AoC2023.Day21() { Enabled = true },
                     new AoC2023.Day22() { Enabled = false },
                     new AoC2023.Day23() { Enabled = false },
                     new AoC2023.Day24() { Enabled = false },
