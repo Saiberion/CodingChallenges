@@ -38,7 +38,7 @@ namespace AoC2023
 
         public static long GetID(long fromID, List<SeedMapper> map)
         {
-            foreach(SeedMapper mapping in map)
+            foreach (SeedMapper mapping in map)
             {
                 if ((fromID >= mapping.SourceStart) && (fromID < (mapping.SourceStart + mapping.RangeLength)))
                 {
@@ -147,7 +147,7 @@ namespace AoC2023
             }
 
             long closestLocation = long.MaxValue;
-            foreach(long seed in seeds)
+            foreach (long seed in seeds)
             {
                 long nextid = GetID(seed, seedToSoil);
                 nextid = GetID(nextid, soilToFertilizer);

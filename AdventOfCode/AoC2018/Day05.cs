@@ -8,7 +8,7 @@ namespace AoC2018
 {
     public class Day05 : Day
     {
-        string PolymerReaction(string polymer)
+        static string PolymerReaction(string polymer)
         {
             int length = polymer.Length;
             for (int i = 0; i < length - 1; i++)
@@ -53,14 +53,14 @@ namespace AoC2018
 
         public override void Solve()
         {
-            Dictionary<char, int> availablePolyUnits = new Dictionary<char, int>();
-            List<char> availablePolyUnitsKeys = new List<char>();
+            Dictionary<char, int> availablePolyUnits = new();
+            List<char> availablePolyUnitsKeys = new();
 
             string poly = PolymerReaction(Input[0]);
 
             foreach (char c in Input[0])
             {
-                if (!availablePolyUnits.Keys.Contains(char.ToLower(c)))
+                if (!availablePolyUnits.ContainsKey(char.ToLower(c)))
                 {
                     availablePolyUnits.Add(char.ToLower(c), 0);
                     availablePolyUnitsKeys.Add(char.ToLower(c));

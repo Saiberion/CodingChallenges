@@ -12,8 +12,8 @@ namespace AoC2019
             // TODO I did solve part 1 of this but it seems I lost the code
             Part2Solution = "TBD";
 
-            IntCodeComputer ic = new IntCodeComputer(Input[0]);
-            Queue<long> input = new Queue<long>();
+            IntCodeComputer ic = new(Input[0]);
+            Queue<long> input = new();
 
             long countAffected = 0;
             for (int y = 0; y < 50; y++)

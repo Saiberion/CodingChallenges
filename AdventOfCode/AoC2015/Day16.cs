@@ -5,15 +5,15 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day16: Day
+    public class Day16 : Day
     {
         override public void Solve()
         {
-            List<Dictionary<string, int>> sues = new List<Dictionary<string, int>>();
+            List<Dictionary<string, int>> sues = new();
 
             foreach (string s in Input)
             {
-                Dictionary<string, int> properties = new Dictionary<string, int>();
+                Dictionary<string, int> properties = new();
                 string[] splitted = s.Split(new char[] { ' ', ',', ':' }, StringSplitOptions.RemoveEmptyEntries);
 
                 properties.Add(splitted[0], int.Parse(splitted[1]));
@@ -23,7 +23,7 @@ namespace AoC2015
                 sues.Add(properties);
             }
 
-            for(int i = 0; i < sues.Count; i++)
+            for (int i = 0; i < sues.Count; i++)
             {
                 if (sues[i].ContainsKey("children"))
                 {
@@ -123,7 +123,7 @@ namespace AoC2015
 
             foreach (string s in Input)
             {
-                Dictionary<string, int> properties = new Dictionary<string, int>();
+                Dictionary<string, int> properties = new();
                 string[] splitted = s.Split(new char[] { ' ', ',', ':' }, StringSplitOptions.RemoveEmptyEntries);
 
                 properties.Add(splitted[0], int.Parse(splitted[1]));

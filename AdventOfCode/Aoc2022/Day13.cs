@@ -7,12 +7,12 @@ namespace AoC2022
 {
     public class Day13 : Day
     {
-        private int CreatePacket(List<object> parent, string s)
+        private static int CreatePacket(List<object> parent, string s)
         {
             int counter = 0;
             StringBuilder sb = new();
 
-            for(int i = 0; i < s.Length; i++)
+            for (int i = 0; i < s.Length; i++)
             {
                 if (s[i] == '[')
                 {
@@ -125,7 +125,7 @@ namespace AoC2022
                 CreatePacket(packetPairs[1], Input[i + 1]);
             }
 
-            for(int i = 0; i < packetPairs[0].Count; i++)
+            for (int i = 0; i < packetPairs[0].Count; i++)
             {
                 int res = IsPacketInOrder(packetPairs[0][i], packetPairs[1][i]);
                 if (res == -1)

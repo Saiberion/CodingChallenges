@@ -9,7 +9,7 @@ namespace AoC2017
 {
     public class Day21 : Day
     {
-        string FlipHorizontal(string grid)
+        static string FlipHorizontal(string grid)
         {
             // .#./..#/###
             string[] rows = grid.Split('/');
@@ -23,7 +23,7 @@ namespace AoC2017
             return string.Join<string>("/", newRows);
         }
 
-        string FlipVertical(string grid)
+        static string FlipVertical(string grid)
         {
             // .#./..#/###
             string[] rows = grid.Split('/');
@@ -37,7 +37,7 @@ namespace AoC2017
             return string.Join<string>("/", newRows);
         }
 
-        string Rotate(string grid)
+        static string Rotate(string grid)
         {
             // .#./..#/###
             string[] rows = grid.Split('/');
@@ -64,7 +64,7 @@ namespace AoC2017
             return result;
         }
 
-        string CopyFrom(string[] grid, int startRow, int startColumn, int num)
+        static string CopyFrom(string[] grid, int startRow, int startColumn, int num)
         {
             string[] section = new string[num];
             for (int i = 0; i < num; i++)
@@ -78,7 +78,7 @@ namespace AoC2017
             return string.Join("/", section);
         }
 
-        void CopyTo(string[] grid, string section, int size, int startRow)
+        static void CopyTo(string[] grid, string section, int size, int startRow)
         {
             string[] rows = section.Split('/');
             for (int i = 0; i < size; i++)
@@ -90,7 +90,7 @@ namespace AoC2017
             }
         }
 
-        string[] EnhanceStep(string[] grid, ConcurrentDictionary<string, string> rules, int size)
+        static string[] EnhanceStep(string[] grid, ConcurrentDictionary<string, string> rules, int size)
         {
             int newSize = size + 1;
 
@@ -108,7 +108,7 @@ namespace AoC2017
             return newGrid;
         }
 
-        string[] Enhance(int iterations, string[] grid, ConcurrentDictionary<string, string> rules)
+        static string[] Enhance(int iterations, string[] grid, ConcurrentDictionary<string, string> rules)
         {
             for (int i = 0; i < iterations; i++)
             {
@@ -125,7 +125,7 @@ namespace AoC2017
             return grid;
         }
 
-        int CountOn(string[] grid)
+        static int CountOn(string[] grid)
         {
             int countOn = 0;
             for (int i = 0; i < grid.Length; i++)
@@ -148,7 +148,7 @@ namespace AoC2017
 
             var separators = new char[] { ' ', '=', '>' };
 
-            ConcurrentDictionary<string, string> rulesMap = new ConcurrentDictionary<string, string>();
+            ConcurrentDictionary<string, string> rulesMap = new();
 
             foreach (var rule in rules)
             {

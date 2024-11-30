@@ -7,10 +7,10 @@ namespace AoC2016
 {
     public class Day09 : Day
     {
-        Int64 DecompressV1(string input)
+        static Int64 DecompressV1(string input)
         {
             int decompressedLength = 0;
-            StringBuilder marker = new StringBuilder();
+            StringBuilder marker = new();
             int scanMode = 0;
             int charsToRead = 1, repetitions = 0;
 
@@ -70,10 +70,10 @@ namespace AoC2016
             return decompressedLength;
         }
 
-        Int64 DecompressV2(string input)
+        static Int64 DecompressV2(string input)
         {
             Int64 decompressedLength = 0;
-            StringBuilder marker = new StringBuilder();
+            StringBuilder marker = new();
             int scanMode = 0;
             int charsToRead = 1, repetitions = 0;
 
@@ -120,7 +120,7 @@ namespace AoC2016
                         marker.Append(input[i]);
                         if (--charsToRead == 0)
                         {
-                            if (marker.ToString().Contains("("))
+                            if (marker.ToString().Contains('('))
                             {
                                 decompressedLength += repetitions * DecompressV2(marker.ToString());
                             }

@@ -9,8 +9,8 @@ namespace AoC2019
     {
         override public void Solve()
         {
-            IntCodeComputer ic = new IntCodeComputer(Input[0]);
-            Queue<long> input = new Queue<long>();
+            IntCodeComputer ic = new(Input[0]);
+            Queue<long> input = new();
             input.Enqueue(1);
             Part1Solution = ic.Execute(input).ToString();
             input.Enqueue(2);

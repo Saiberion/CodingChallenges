@@ -5,8 +5,8 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day13 : Day
-    {
+	public class Day13 : Day
+	{
 		class FirewallLayer
 		{
 			public int Depth { get; set; }
@@ -59,8 +59,8 @@ namespace AoC2017
 		}
 
 		public override void Solve()
-        {
-			Dictionary<int, FirewallLayer> firewall = new Dictionary<int, FirewallLayer>();
+		{
+			Dictionary<int, FirewallLayer> firewall = new();
 			int packetLayerPosition = -1;
 			int severity = 0;
 			int maxKeyValue = int.MinValue;
@@ -147,5 +147,5 @@ namespace AoC2017
 			Part1Solution = severity.ToString();
 			Part2Solution = startDelay.ToString();
 		}
-    }
+	}
 }

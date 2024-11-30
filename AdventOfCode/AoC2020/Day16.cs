@@ -28,10 +28,10 @@ namespace AoC2020
         override public void Solve()
         {
             int readSection = 0;
-            List<TicketField> ticketFields = new List<TicketField>();
-            List<int> myTicketValues = new List<int>();
-            List<List<int>> nearbyTickets = new List<List<int>>();
-            List<List<int>> nearbyValidTickets = new List<List<int>>();
+            List<TicketField> ticketFields = new();
+            List<int> myTicketValues = new();
+            List<List<int>> nearbyTickets = new();
+            List<List<int>> nearbyValidTickets = new();
             foreach (string s in Input)
             {
                 if (string.IsNullOrEmpty(s))
@@ -60,7 +60,7 @@ namespace AoC2020
                         case 2:
                             if (!s.StartsWith("nearby"))
                             {
-                                List<int> ticket = new List<int>();
+                                List<int> ticket = new();
                                 splitted = s.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                                 foreach (string s2 in splitted)
                                 {
@@ -73,10 +73,10 @@ namespace AoC2020
                 }
             }
 
-            List<int> validNumbers = new List<int>();
-            foreach(TicketField t in ticketFields)
+            List<int> validNumbers = new();
+            foreach (TicketField t in ticketFields)
             {
-                for(int i = t.Min1; i <= t.Max1; i++)
+                for (int i = t.Min1; i <= t.Max1; i++)
                 {
                     if (!validNumbers.Contains(i))
                     {
@@ -95,10 +95,10 @@ namespace AoC2020
             validNumbers.Sort();
 
             int errorRate = 0;
-            foreach(List<int> l in nearbyTickets)
+            foreach (List<int> l in nearbyTickets)
             {
                 bool isValid = true;
-                foreach(int i in l)
+                foreach (int i in l)
                 {
                     if (!validNumbers.Contains(i))
                     {
@@ -123,11 +123,11 @@ namespace AoC2020
                         if (((nearbyValidTickets[a][b] >= ticketFields[i].Min1) && (nearbyValidTickets[a][b] <= ticketFields[i].Max1)) ||
                             ((nearbyValidTickets[a][b] >= ticketFields[i].Min2) && (nearbyValidTickets[a][b] <= ticketFields[i].Max2)))
                         {
-                            
+
                         }
                         else
                         {
-                            
+
                         }
                     }
                 }

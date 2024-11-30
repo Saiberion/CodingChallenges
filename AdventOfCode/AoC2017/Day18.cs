@@ -76,10 +76,10 @@ namespace AoC2017
         public void ThreadFunc()
         {
             Int64 programCounter = 0;
-            Dictionary<string, Int64> registerMap = new Dictionary<string, Int64>();
+            Dictionary<string, Int64> registerMap = new();
             BlockingCollection<Int64> sndQ = this.SendQueue;
             BlockingCollection<Int64> rcvQ = this.ReceiveQueue;
-            
+
             SendCounter = 0;
             registerMap.Add("p", this.ID);
 
@@ -161,8 +161,8 @@ namespace AoC2017
     {
         public override void Solve()
         {
-            List<InstructionD18> program = new List<InstructionD18>();
-            Dictionary<string, Int64> registerMap = new Dictionary<string, Int64>();
+            List<InstructionD18> program = new();
+            Dictionary<string, Int64> registerMap = new();
             Int64 programCounter = 0;
             Int64 lastFrequency = 0;
 
@@ -233,11 +233,11 @@ namespace AoC2017
 
             // Damn snd and rcv do something completely different :-)
 
-            DuetThread dt1 = new DuetThread();
-            DuetThread dt2 = new DuetThread();
+            DuetThread dt1 = new();
+            DuetThread dt2 = new();
 
-            System.Threading.Thread p1 = new System.Threading.Thread(new System.Threading.ThreadStart(dt1.ThreadFunc));
-            System.Threading.Thread p2 = new System.Threading.Thread(new System.Threading.ThreadStart(dt2.ThreadFunc));
+            System.Threading.Thread p1 = new(new System.Threading.ThreadStart(dt1.ThreadFunc));
+            System.Threading.Thread p2 = new(new System.Threading.ThreadStart(dt2.ThreadFunc));
 
             dt1.Program = program;
             dt2.Program = program;

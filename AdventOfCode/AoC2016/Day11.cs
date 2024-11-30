@@ -8,7 +8,7 @@ namespace AoC2016
 {
     public class Day11 : Day
     {
-        int StepsTaken(int[] floorTest)
+        static int StepsTaken(int[] floorTest)
         {
             int moveCount = 0;
             int totalPieces = floorTest.Sum();

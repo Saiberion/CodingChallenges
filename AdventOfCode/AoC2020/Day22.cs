@@ -7,7 +7,7 @@ namespace AoC2020
 {
     public class Day22 : Day
     {
-        private bool SequenceIsEqal(List<int> l1, List<int> l2)
+        private static bool SequenceIsEqal(List<int> l1, List<int> l2)
         {
             if (l1.Count == l2.Count)
             {
@@ -26,10 +26,10 @@ namespace AoC2020
             }
         }
 
-        private int StartGame(List<int> p1, List<int> p2, bool recursive)
+        private static int StartGame(List<int> p1, List<int> p2, bool recursive)
         {
-            List<List<int>> prevRoundsP1 = new List<List<int>>();
-            List<List<int>> prevRoundsP2 = new List<List<int>>();
+            List<List<int>> prevRoundsP1 = new();
+            List<List<int>> prevRoundsP2 = new();
             if (!recursive)
             {
                 while ((p1.Count > 0) && (p2.Count > 0))
@@ -129,7 +129,7 @@ namespace AoC2020
             }
         }
 
-        private int GetScore(List<int> p1, List<int> p2, int winnerIdx)
+        private static int GetScore(List<int> p1, List<int> p2, int winnerIdx)
         {
             List<int>[] new_deck = new List<int>[2];
             new_deck[0] = p1;
@@ -153,7 +153,7 @@ namespace AoC2020
             int playerIdx = -1;
             string[] splitted;
 
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 if (!string.IsNullOrEmpty(s))
                 {
@@ -169,13 +169,13 @@ namespace AoC2020
                 }
             }
 
-            List<int> p1 = new List<int>(decks[0].ToArray());
-            List<int> p2 = new List<int>(decks[1].ToArray());
+            List<int> p1 = new(decks[0].ToArray());
+            List<int> p2 = new(decks[1].ToArray());
             playerIdx = StartGame(p1, p2, false);
             Part1Solution = GetScore(p1, p2, playerIdx).ToString();
 
-            p1 = new List<int>(decks[0].ToArray());
-            p2 = new List<int>(decks[1].ToArray());
+            p1 = new(decks[0].ToArray());
+            p2 = new(decks[1].ToArray());
             playerIdx = StartGame(p1, p2, true);
             Part2Solution = GetScore(p1, p2, playerIdx).ToString();
         }

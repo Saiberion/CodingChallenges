@@ -9,7 +9,7 @@ namespace AoC2022
     {
         public override void Solve()
         {
-            FilesystemDirectory rootDir = new FilesystemDirectory
+            FilesystemDirectory rootDir = new()
             {
                 Name = "/",
                 Parent = null
@@ -50,9 +50,11 @@ namespace AoC2022
                 }
                 else
                 {
-                    FilesystemFile file = new();
-                    file.Name = splitted[1];
-                    file.Size = int.Parse(splitted[0]);
+                    FilesystemFile file = new()
+                    {
+                        Name = splitted[1],
+                        Size = int.Parse(splitted[0])
+                    };
                     currentDir.files.Add(file);
                     AddUpSizeToAllParents(currentDir, file.Size);
                 }
@@ -63,7 +65,7 @@ namespace AoC2022
             Part2Solution = FindClosestTotalSize(rootDir, 30000000 - (70000000 - rootDir.TotalSize), rootDir.TotalSize).ToString();
         }
 
-        public void AddUpSizeToAllParents(FilesystemDirectory dir, int filesize)
+        public static void AddUpSizeToAllParents(FilesystemDirectory dir, int filesize)
         {
             dir.TotalSize += filesize;
             if (dir.Parent != null)
@@ -72,7 +74,7 @@ namespace AoC2022
             }
         }
 
-        public int FindMaxTotalSize(FilesystemDirectory dir, int filesize)
+        public static int FindMaxTotalSize(FilesystemDirectory dir, int filesize)
         {
             int totalsize = 0;
 
@@ -81,7 +83,7 @@ namespace AoC2022
                 totalsize = dir.TotalSize;
             }
 
-            foreach(FilesystemDirectory d in dir.dirs.Values)
+            foreach (FilesystemDirectory d in dir.dirs.Values)
             {
                 totalsize += FindMaxTotalSize(d, filesize);
             }
@@ -89,7 +91,7 @@ namespace AoC2022
             return totalsize;
         }
 
-        public int FindClosestTotalSize(FilesystemDirectory dir, int filesize, int closestSize)
+        public static int FindClosestTotalSize(FilesystemDirectory dir, int filesize, int closestSize)
         {
             if ((dir.TotalSize > filesize) && (dir.TotalSize < closestSize))
             {

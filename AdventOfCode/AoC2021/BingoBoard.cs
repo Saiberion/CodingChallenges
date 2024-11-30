@@ -13,7 +13,7 @@ namespace AoC2021
 
         public BingoBoard(List<string> boardData)
         {
-            for(int y = 0; y < boardData.Count; y++)
+            for (int y = 0; y < boardData.Count; y++)
             {
                 string[] splitted = boardData[y].Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
                 for (int x = 0; x < splitted.Length; x++)
@@ -42,7 +42,7 @@ namespace AoC2021
         private bool CheckBingo(int x, int y)
         {
             bool bingo = true;
-            for(int a = 0; a < 5; a++)
+            for (int a = 0; a < 5; a++)
             {
                 if (marked[a, y] == false)
                 {

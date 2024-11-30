@@ -8,10 +8,10 @@ namespace AoC2016
 {
     public class Day05 : Day
     {
-        string[] GeneratePassword(string input)
+        static string[] GeneratePassword(string input)
         {
-            StringBuilder pwLeftRight = new StringBuilder();
-            Dictionary<int, string> pwPosDetect = new Dictionary<int, string>();
+            StringBuilder pwLeftRight = new();
+            Dictionary<int, string> pwPosDetect = new();
             MD5 md5 = MD5.Create();
 
             int index = 0;

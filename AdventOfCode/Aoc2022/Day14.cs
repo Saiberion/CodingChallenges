@@ -36,7 +36,7 @@ namespace AoC2022
                         {
                             ydiff = -1;
                         }
-                        for(int y = lineStart.Y; y != p.Y; y += ydiff, maxy = Math.Max(maxy, y))
+                        for (int y = lineStart.Y; y != p.Y; y += ydiff, maxy = Math.Max(maxy, y))
                         {
                             cave[new(p.X, y)] = true;
                         }
@@ -63,7 +63,7 @@ namespace AoC2022
                 }
             }
 
-            for(p = new(500, 0); p.Y < maxy; )
+            for (p = new(500, 0); p.Y < maxy;)
             {
                 if (cave.TryGetValue(new(p.X, p.Y + 1), out _))
                 {

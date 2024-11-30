@@ -152,7 +152,7 @@ namespace AoC2020
     {
         override public void Solve()
         {
-            BootCode code = new BootCode();
+            BootCode code = new();
             for (int i = 0; i < Input.Count; i++)
             {
                 code.AddInstruction(Input[i]);

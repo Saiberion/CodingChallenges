@@ -7,7 +7,7 @@ namespace AoC2018
 {
     public class Day11 : Day
     {
-        int GetFuelCellPower(int x, int y, int gridSerial)
+        static int GetFuelCellPower(int x, int y, int gridSerial)
         {
             int rackID = x + 10;
             int startingPowerLevel = rackID * y;
@@ -25,7 +25,7 @@ namespace AoC2018
             return powerLevel - 5;
         }
 
-        int[,] GetFilledGrid(int gridSerial)
+        static int[,] GetFilledGrid(int gridSerial)
         {
             int[,] grid = new int[300, 300];
 
@@ -40,7 +40,7 @@ namespace AoC2018
             return grid;
         }
 
-        int[] GetHighestPowerCells(int[,] grid, int squaresize)
+        static int[] GetHighestPowerCells(int[,] grid, int squaresize)
         {
             int[] result = new int[3];
             int maxPower = int.MinValue;
@@ -83,7 +83,7 @@ namespace AoC2018
             return result;
         }
 
-        int[] GetHighestPowerCellsSquare(int[,] grid)
+        static int[] GetHighestPowerCellsSquare(int[,] grid)
         {
             int[] result = new int[3];
             int maxPower = int.MinValue;
@@ -101,7 +101,7 @@ namespace AoC2018
             return result;
         }
 
-        int[,] GetSumGrid(int[,] grid)
+        static int[,] GetSumGrid(int[,] grid)
         {
             int[,] sum = new int[grid.GetLength(0), grid.GetLength(1)];
             // Copy first row of grid[,] to sum[,] 

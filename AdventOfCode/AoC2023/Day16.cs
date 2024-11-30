@@ -175,7 +175,7 @@ namespace AoC2023
             }
 
             int maxEnergizedTiles = int.MinValue;
-            foreach(Beam b in startingPositions)
+            foreach (Beam b in startingPositions)
             {
                 maxEnergizedTiles = Math.Max(maxEnergizedTiles, EnergizeTiles(lightMaze, b));
             }

@@ -11,15 +11,15 @@ namespace AoC2019
     {
         override public void Solve()
         {
-            Queue<long> input = new Queue<long>();
-            Queue<long> output = new Queue<long>();
-            IntCodeComputer ic = new IntCodeComputer(Input[0]);
-            PaintingRobot pr = new PaintingRobot();
-            Dictionary<Point, long> hull = new Dictionary<Point, long>();
+            Queue<long> input = new();
+            Queue<long> output = new();
+            IntCodeComputer ic = new(Input[0]);
+            PaintingRobot pr = new();
+            Dictionary<Point, long> hull = new();
 
             ic.ExecuteAsync(input, output);
 
-            while(!ic.IsProgramHalted())
+            while (!ic.IsProgramHalted())
             {
                 if (!hull.ContainsKey(pr.Position))
                 {
@@ -77,7 +77,7 @@ namespace AoC2019
             int maxX = int.MinValue;
             int minY = int.MaxValue;
             int maxY = int.MinValue;
-            foreach(Point p in hull.Keys)
+            foreach (Point p in hull.Keys)
             {
                 minX = Math.Min(minX, p.X);
                 maxX = Math.Max(maxX, p.X);
@@ -85,14 +85,14 @@ namespace AoC2019
                 maxY = Math.Max(maxY, p.Y);
             }
 
-            List<List<int>> disp = new List<List<int>>();
+            List<List<int>> disp = new();
             for (int x = minX; x <= maxX; x++)
             {
-                List<int> line = new List<int>();
-                for (int y = maxY - 1; y > minY + 1; y--) 
+                List<int> line = new();
+                for (int y = maxY - 1; y > minY + 1; y--)
                 {
-                    Point p = new Point(x, y);
-                    if (hull.ContainsKey(p) && (hull[new Point(x, y)] == 1))
+                    Point p = new(x, y);
+                    if (hull.ContainsKey(p) && (hull[new(x, y)] == 1))
                     {
                         line.Add(1);
                     }
@@ -107,7 +107,7 @@ namespace AoC2019
             int[,] display = new int[disp[0].Count, disp.Count];
             for (int y = 0; y < disp.Count; y++)
             {
-                for(int x = 0; x < disp[y].Count; x++)
+                for (int x = 0; x < disp[y].Count; x++)
                 {
                     display[x, y] = disp[y][x];
                 }
@@ -156,7 +156,7 @@ namespace AoC2019
 
         public void Move()
         {
-            switch(Direction)
+            switch (Direction)
             {
                 case 0:
                     Position = new Point(Position.X, Position.Y - 1);

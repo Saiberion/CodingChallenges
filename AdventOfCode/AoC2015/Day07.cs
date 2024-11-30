@@ -22,15 +22,15 @@ namespace AoC2015
         public EInstruction instruction;
     }
 
-    public class Day07: Day
+    public class Day07 : Day
     {
         private List<Instruction> ReadInstructionList()
         {
-            List<Instruction> instructions = new List<Instruction>();
+            List<Instruction> instructions = new();
             foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
-                Instruction instr = new Instruction();
+                Instruction instr = new();
                 switch (splitted.Length)
                 {
                     case 3:
@@ -69,10 +69,10 @@ namespace AoC2015
             return instructions;
         }
 
-        private ushort SimulateCircuit(List<Instruction> allInstructions)
+        private static ushort SimulateCircuit(List<Instruction> allInstructions)
         {
-            List<Instruction> executable = new List<Instruction>();
-            Dictionary<string, ushort> wires = new Dictionary<string, ushort>();
+            List<Instruction> executable = new();
+            Dictionary<string, ushort> wires = new();
             int val = 0, in1, in2;
 
             while (allInstructions.Count > 0)
@@ -200,7 +200,7 @@ namespace AoC2015
             ushort presetB = SimulateCircuit(allInstructions);
             Part1Solution = presetB.ToString();
             allInstructions = ReadInstructionList();
-            foreach(Instruction i in allInstructions)
+            foreach (Instruction i in allInstructions)
             {
                 if (i.output.Equals("b"))
                 {

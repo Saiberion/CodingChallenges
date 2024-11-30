@@ -22,8 +22,8 @@ namespace AoC2016
     {
         void ParseInstructions(List<string> input)
         {
-            Dictionary<int, Bot> bots = new Dictionary<int, Bot>();
-            Dictionary<int, List<int>> outputs = new Dictionary<int, List<int>>();
+            Dictionary<int, Bot> bots = new();
+            Dictionary<int, List<int>> outputs = new();
 
             foreach (string s in input)
             {

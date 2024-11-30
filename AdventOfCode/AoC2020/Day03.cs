@@ -11,7 +11,7 @@ namespace AoC2020
         {
             int x;
             int y;
-            List<int[]> slopes = new List<int[]>()
+            List<int[]> slopes = new()
             {
                 new int[] { 1, 1 },
                 new int[] { 3, 1 },

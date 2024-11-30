@@ -7,7 +7,7 @@ namespace AoC2019
 {
     public class Day04 : Day
     {
-        bool IsValidPassword(int pw)
+        static bool IsValidPassword(int pw)
         {
             bool valid = true;
             int[] digits = new int[6];
@@ -35,7 +35,7 @@ namespace AoC2019
             return valid && hasDoubleDigit;
         }
 
-        bool IsValidPasswordExtended(int pw)
+        static bool IsValidPasswordExtended(int pw)
         {
             bool notDecrementingDigits = true;
             bool hasValidDoubleDigit = false;
@@ -84,9 +84,9 @@ namespace AoC2019
             int rangeStart = int.Parse(Input[0]);
             int rangeEnd = int.Parse(Input[1]);
 
-            List<int> validPasswords = new List<int>();
-            
-            for(int i = rangeStart; i <= rangeEnd; i++)
+            List<int> validPasswords = new();
+
+            for (int i = rangeStart; i <= rangeEnd; i++)
             {
                 if (IsValidPassword(i))
                 {

@@ -8,7 +8,7 @@ namespace AoC2022
 {
     public class Day01 : Day
     {
-        private int GetCaloriesTopElves(List<int> sortedWeights, int topCount)
+        private static int GetCaloriesTopElves(List<int> sortedWeights, int topCount)
         {
             int sum = 0;
 

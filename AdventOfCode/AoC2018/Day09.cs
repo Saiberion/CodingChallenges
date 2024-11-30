@@ -114,7 +114,7 @@ namespace AoC2018
 
             int activePlayer = 0;
 
-            CircularLinkedList list = new CircularLinkedList();
+            CircularLinkedList list = new();
 
             for (long marble = 1L; marble <= lastMarble; marble++)
             {

@@ -43,14 +43,14 @@ namespace AoC2018
 
     public class Day04 : Day
     {
-        List<GuardLog> FillGuardLog(List<string> input)
+        static List<GuardLog> FillGuardLog(List<string> input)
         {
-            List<GuardLog> sortedGuardLog = new List<GuardLog>();
+            List<GuardLog> sortedGuardLog = new();
 
             foreach (string s in input)
             {
                 int i;
-                GuardLog gl = new GuardLog(s);
+                GuardLog gl = new(s);
 
                 for (i = 0; i < sortedGuardLog.Count; i++)
                 {
@@ -77,9 +77,9 @@ namespace AoC2018
             return sortedGuardLog;
         }
 
-        Dictionary<int, int[]> CreateGuardSleepChart(List<GuardLog> log)
+        static Dictionary<int, int[]> CreateGuardSleepChart(List<GuardLog> log)
         {
-            Dictionary<int, int[]> dict = new Dictionary<int, int[]>();
+            Dictionary<int, int[]> dict = new();
 
             int sleepStart = 0;
             int sleepEnd;
@@ -90,7 +90,7 @@ namespace AoC2018
                 {
                     case EGuardAction.eGuardActionBeginsShift:
                         currentGuard = gl.GuardID;
-                        if (!dict.Keys.Contains(currentGuard))
+                        if (!dict.ContainsKey(currentGuard))
                         {
                             dict.Add(currentGuard, new int[60]);
                         }
@@ -112,9 +112,9 @@ namespace AoC2018
             return dict;
         }
 
-        int[] GetMostAsleepStrat1(Dictionary<int, int[]> sleepChart)
+        static int[] GetMostAsleepStrat1(Dictionary<int, int[]> sleepChart)
         {
-            Dictionary<int, int> sleepTime = new Dictionary<int, int>();
+            Dictionary<int, int> sleepTime = new();
 
             foreach (int g in sleepChart.Keys)
             {
@@ -151,7 +151,7 @@ namespace AoC2018
             return new int[] { sleepyGuard, sleepyMinute };
         }
 
-        int[] GetMostAsleepStrat2(Dictionary<int, int[]> sleepChart)
+        static int[] GetMostAsleepStrat2(Dictionary<int, int[]> sleepChart)
         {
             int sleepyMinuteTime = -1;
             int sleepyMinute = -1;

@@ -12,9 +12,9 @@ namespace AoC2015
             int floor = 0;
             int stepsTaken = 0;
             bool enteredBasement = false;
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
-                foreach(char c in s)
+                foreach (char c in s)
                 {
                     if (c == '(')
                     {

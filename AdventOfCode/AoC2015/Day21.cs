@@ -19,9 +19,9 @@ namespace AoC2015
         public int Defense { get; set; }
     }
 
-    public class Day21: Day
+    public class Day21 : Day
     {
-        private bool Fight(Player p, Player b)
+        private static bool Fight(Player p, Player b)
         {
             int dmgDealtP = p.Attack - b.Defense;
             if (dmgDealtP <= 0)
@@ -39,7 +39,7 @@ namespace AoC2015
 
         override public void Solve()
         {
-            List<Item> weapons = new List<Item>()
+            List<Item> weapons = new()
             {
                 new Item {Cost = 8, Damage = 4, Armor = 0 },
                 new Item {Cost = 10, Damage = 5, Armor = 0 },
@@ -48,7 +48,7 @@ namespace AoC2015
                 new Item {Cost = 74, Damage = 8, Armor = 0 }
             };
 
-            List<Item> armors = new List<Item>()
+            List<Item> armors = new()
             {
                 new Item {Cost = 0, Damage = 0, Armor = 0 },
                 new Item {Cost = 13, Damage = 0, Armor = 1 },
@@ -58,7 +58,7 @@ namespace AoC2015
                 new Item {Cost = 102, Damage = 0, Armor = 5 }
             };
 
-            List<Item> rings = new List<Item>()
+            List<Item> rings = new()
             {
                 new Item {Cost = 0, Damage = 0, Armor = 0 },
                 new Item {Cost = 25, Damage = 1, Armor = 0 },
@@ -69,8 +69,8 @@ namespace AoC2015
                 new Item {Cost = 80, Damage = 0, Armor = 3 }
             };
 
-            List<int> costsWin = new List<int>();
-            List<int> costsLose = new List<int>();
+            List<int> costsWin = new();
+            List<int> costsLose = new();
 
             for (int w = 0; w < weapons.Count; w++)
             {
@@ -85,14 +85,14 @@ namespace AoC2015
                                 continue;
                             }
 
-                            Player p = new Player
+                            Player p = new()
                             {
                                 Hitpoints = 100,
                                 Attack = weapons[w].Damage + armors[a].Damage + rings[r1].Damage + rings[r2].Damage,
                                 Defense = weapons[w].Armor + armors[a].Armor + rings[r1].Armor + rings[r2].Armor
                             };
 
-                            Player b = new Player { Hitpoints = 100, Attack = 8, Defense = 2 };
+                            Player b = new() { Hitpoints = 100, Attack = 8, Defense = 2 };
                             if (Fight(p, b))
                             {
                                 costsWin.Add(weapons[w].Cost + armors[a].Cost + rings[r1].Cost + rings[r2].Cost);
@@ -107,7 +107,7 @@ namespace AoC2015
             }
 
             int min = int.MaxValue;
-            foreach(int c in costsWin)
+            foreach (int c in costsWin)
             {
                 min = Math.Min(min, c);
             }

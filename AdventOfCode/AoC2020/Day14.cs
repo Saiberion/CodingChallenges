@@ -10,8 +10,8 @@ namespace AoC2020
         override public void Solve()
         {
             long maskAND = 0, maskOR = 0;
-            Dictionary<long, long> memory = new Dictionary<long, long>();
-            foreach(string s in Input)
+            Dictionary<long, long> memory = new();
+            foreach (string s in Input)
             {
                 if (s.StartsWith("mask"))
                 {
@@ -36,7 +36,7 @@ namespace AoC2020
             }
 
             long sum = 0;
-            foreach(KeyValuePair<long, long> kvp in memory)
+            foreach (KeyValuePair<long, long> kvp in memory)
             {
                 sum += kvp.Value;
             }

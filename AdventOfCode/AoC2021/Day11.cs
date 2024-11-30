@@ -7,7 +7,7 @@ namespace AoC2021
 {
     public class Day11 : Day
     {
-        private readonly Stack<int[]> FlashList = new Stack<int[]>();
+        private readonly Stack<int[]> FlashList = new();
 
         override public void Solve()
         {
@@ -24,7 +24,7 @@ namespace AoC2021
             }
 
             int i = 0;
-            while(true)
+            while (true)
             {
                 for (int y = 0; y < 10; y++)
                 {
@@ -34,7 +34,7 @@ namespace AoC2021
                     }
                 }
 
-                while(FlashList.Count > 0)
+                while (FlashList.Count > 0)
                 {
                     int[] pos = FlashList.Pop();
                     if (octopus[pos[0], pos[1]] != -1)

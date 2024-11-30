@@ -23,11 +23,11 @@ namespace AoC2015
         }
     }
 
-    public class Day15: Day
+    public class Day15 : Day
     {
         override public void Solve()
         {
-            List<Ingredient> ingredients = new List<Ingredient>();
+            List<Ingredient> ingredients = new();
             int bestCookieScore = int.MinValue;
             int bestLightCookieScore = int.MinValue;
 

@@ -8,10 +8,10 @@ namespace AoC2016
 {
     public class Day02 : Day
     {
-        string KeypadNormal(List<string> input)
+        static string KeypadNormal(List<string> input)
         {
-            StringBuilder sb = new StringBuilder();
-            Point p = new Point(1, 1);
+            StringBuilder sb = new();
+            Point p = new(1, 1);
             foreach (string line in input)
             {
                 foreach (char c in line)
@@ -50,9 +50,9 @@ namespace AoC2016
             return sb.ToString();
         }
 
-        string KeypadSpecial(List<string> input)
+        static string KeypadSpecial(List<string> input)
         {
-            Dictionary<Point, char> keypad = new Dictionary<Point, char>
+            Dictionary<Point, char> keypad = new()
             {
                 { new Point(0, 0), 'X' },
                 { new Point(1, 0), 'X' },
@@ -85,9 +85,9 @@ namespace AoC2016
                 { new Point(4, 4), 'X' }
             };
 
-            Point p = new Point(0, 2);
+            Point p = new(0, 2);
 
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             foreach (string line in input)
             {

@@ -250,7 +250,7 @@ namespace AoC2022
                         endy = y;
                         heightmap[x, y] = 'z';
                     }
-                    else if (heightmap[x,y] == 'a')
+                    else if (heightmap[x, y] == 'a')
                     {
                         startPoints.Add(new() { X = x, Y = y });
                     }

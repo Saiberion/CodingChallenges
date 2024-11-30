@@ -7,7 +7,7 @@ namespace AoC2022
 {
     public class Day03 : Day
     {
-        private int GetPriority(char c)
+        private static int GetPriority(char c)
         {
             if (char.IsLower(c))
             {
@@ -26,10 +26,10 @@ namespace AoC2022
 
             for (int i = 0; i < Input.Count; i++)
             {
-                string compartment1 = Input[i].Substring(0, Input[i].Length / 2);
+                string compartment1 = Input[i][..(Input[i].Length / 2)];
                 string compartment2 = Input[i].Substring(Input[i].Length / 2, Input[i].Length / 2);
 
-                foreach(char c in compartment1)
+                foreach (char c in compartment1)
                 {
                     if (compartment2.Contains(c))
                     {

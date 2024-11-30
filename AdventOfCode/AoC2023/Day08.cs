@@ -9,7 +9,7 @@ namespace AoC2023
 {
     public class Day08 : Day
     {
-        Dictionary<string, List<string>> network = new();
+        readonly Dictionary<string, List<string>> network = new();
 
         private long StepsToEnd(string node)
         {
@@ -36,7 +36,7 @@ namespace AoC2023
 
         public override void Solve()
         {
-            for(int i = 2; i < Input.Count; i++)
+            for (int i = 2; i < Input.Count; i++)
             {
                 string[] splitted = Input[i].Split(new char[] { ' ', '=', '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -44,14 +44,14 @@ namespace AoC2023
             }
 
             string node = "AAA";
-            
+
             Part1Solution = StepsToEnd(node).ToString();
 
             //jumps = 0;
             //List<string> nodeWalker = new();
-            List<long> nodeWalker = new();
+            //List<long> nodeWalker = new();
             long prod = 1;
-            foreach(string k in network.Keys)
+            foreach (string k in network.Keys)
             {
                 if (k.EndsWith("A"))
                 {

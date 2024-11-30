@@ -10,8 +10,8 @@ namespace AoC2020
         override public void Solve()
         {
             int maxSeatId = 0;
-            List<int> seats = new List<int>();
-            foreach(string s in Input)
+            List<int> seats = new();
+            foreach (string s in Input)
             {
                 string bin = s.Replace('F', '0').Replace('B', '1').Replace('L', '0').Replace('R', '1');
                 int seat = Convert.ToInt32(bin, 2);
@@ -19,9 +19,9 @@ namespace AoC2020
                 maxSeatId = Math.Max(maxSeatId, seat);
             }
             Part1Solution = maxSeatId.ToString();
-            
+
             seats.Sort();
-            for(int i = 0; i < seats.Count - 1; i++)
+            for (int i = 0; i < seats.Count - 1; i++)
             {
                 if ((seats[i] + 1) != seats[i + 1])
                 {

@@ -5,12 +5,12 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day05: Day
+    public class Day05 : Day
     {
-        private bool HasEnoughVowels(string s)
+        private static bool HasEnoughVowels(string s)
         {
             int vowelCount = 0;
-            foreach(char c in s)
+            foreach (char c in s)
             {
                 if ((c == 'a') || (c == 'e') || (c == 'i') || (c == 'o') || (c == 'u'))
                 {
@@ -20,7 +20,7 @@ namespace AoC2015
             return vowelCount >= 3;
         }
 
-        private bool HasDoubleLetter(string s)
+        private static bool HasDoubleLetter(string s)
         {
             for (int i = 0; i < s.Length - 1; i++)
             {
@@ -32,7 +32,7 @@ namespace AoC2015
             return false;
         }
 
-        private bool HasNoBannedStrings(string s)
+        private static bool HasNoBannedStrings(string s)
         {
             if (s.Contains("ab") || s.Contains("cd") || s.Contains("pq") || s.Contains("xy"))
             {
@@ -41,7 +41,7 @@ namespace AoC2015
             return true;
         }
 
-        private bool HasMultipleDoubles(string s)
+        private static bool HasMultipleDoubles(string s)
         {
             for (int i = 0; i < s.Length - 1; i++)
             {
@@ -54,7 +54,7 @@ namespace AoC2015
             return false;
         }
 
-        private bool HasPatternABA(string s)
+        private static bool HasPatternABA(string s)
         {
             for (int i = 0; i < s.Length - 2; i++)
             {

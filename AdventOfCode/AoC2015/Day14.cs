@@ -50,11 +50,11 @@ namespace AoC2015
         }
     }
 
-    public class Day14: Day
+    public class Day14 : Day
     {
         override public void Solve()
         {
-            List<Reindeer> reindeers = new List<Reindeer>();
+            List<Reindeer> reindeers = new();
             int winningDistance = int.MinValue;
             int winningPoints = int.MinValue;
 
@@ -74,7 +74,7 @@ namespace AoC2015
                 }
 
                 leading = reindeers[0];
-                for(int r = 1; r < reindeers.Count; r++)
+                for (int r = 1; r < reindeers.Count; r++)
                 {
                     if (reindeers[r].TraveledDistance > leading.TraveledDistance)
                     {

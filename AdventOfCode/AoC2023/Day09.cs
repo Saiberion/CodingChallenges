@@ -13,7 +13,7 @@ namespace AoC2023
             long sumP2 = 0;
             List<List<long>> histories = new();
 
-            foreach(string line in Input)
+            foreach (string line in Input)
             {
                 List<long> history = new();
                 string[] splitted = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -24,7 +24,7 @@ namespace AoC2023
                 histories.Add(history);
             }
 
-            foreach(List<long> hist in histories)
+            foreach (List<long> hist in histories)
             {
                 List<List<long>> differenceTree = new() { hist };
                 bool allZeroes = true;

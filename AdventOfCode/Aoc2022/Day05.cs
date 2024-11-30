@@ -15,7 +15,7 @@ namespace AoC2022
 
         private void StacksInitialize(Stack<char>[] stacks)
         {
-            foreach(Stack<char> s in stacks)
+            foreach (Stack<char> s in stacks)
             {
                 s.Clear();
             }

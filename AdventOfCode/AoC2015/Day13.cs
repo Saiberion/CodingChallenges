@@ -19,15 +19,15 @@ namespace AoC2015
         }
     }
 
-    public class Day13: Day
+    public class Day13 : Day
     {
-        internal List<List<string>> seatingOrder = new List<List<string>>();
+        internal List<List<string>> seatingOrder = new();
 
         void GetAllCombinations(string[] input, int k, int m)
         {
             if (k == m)
             {
-                List<string> combination = new List<string>();
+                List<string> combination = new();
                 for (int i = 0; i <= m; i++)
                 {
                     combination.Add(input[i]);
@@ -49,9 +49,9 @@ namespace AoC2015
         {
             int maxHappiness = int.MinValue;
 
-            List<Happiness> happinesses = new List<Happiness>();
-            List<string> persons = new List<string>();
-            Dictionary<List<string>, int> seatingHappines = new Dictionary<List<string>, int>();
+            List<Happiness> happinesses = new();
+            List<string> persons = new();
+            Dictionary<List<string>, int> seatingHappines = new();
             foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { ' ', '.' }, StringSplitOptions.RemoveEmptyEntries);
@@ -66,16 +66,16 @@ namespace AoC2015
                 }
 
                 int sign = splitted[2].Equals("lose") ? -1 : 1;
-                Happiness h = new Happiness(splitted[0], splitted[10], int.Parse(splitted[3]) * sign);
+                Happiness h = new(splitted[0], splitted[10], int.Parse(splitted[3]) * sign);
                 happinesses.Add(h);
             }
-            
+
             if (includeYourself)
             {
-                foreach(string s in persons)
+                foreach (string s in persons)
                 {
-                    happinesses.Add(new Happiness("myself", s, 0));
-                    happinesses.Add(new Happiness(s, "myself", 0));
+                    happinesses.Add(new("myself", s, 0));
+                    happinesses.Add(new(s, "myself", 0));
                 }
                 persons.Add("myself");
             }
@@ -98,7 +98,7 @@ namespace AoC2015
                 }
                 foreach (Happiness h in happinesses)
                 {
-                    if (t[t.Count - 1].Equals(h.person1) && t[0].Equals(h.person2))
+                    if (t[^1].Equals(h.person1) && t[0].Equals(h.person2))
                     {
                         happ += h.happiness;
                     }
@@ -117,7 +117,7 @@ namespace AoC2015
                 }
                 foreach (Happiness h in happinesses)
                 {
-                    if (t[0].Equals(h.person1) && t[t.Count - 1].Equals(h.person2))
+                    if (t[0].Equals(h.person1) && t[^1].Equals(h.person2))
                     {
                         happ += h.happiness;
                     }

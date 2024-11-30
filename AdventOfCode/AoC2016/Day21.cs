@@ -7,9 +7,9 @@ namespace AoC2016
 {
     public class Day21 : Day
     {
-        string Scramble(string pw, List<string> input)
+        static string Scramble(string pw, List<string> input)
         {
-            StringBuilder result = new StringBuilder(pw);
+            StringBuilder result = new(pw);
             foreach (string instr in input)
             {
                 string[] splitted = instr.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -42,14 +42,12 @@ namespace AoC2016
                         {
                             case "left":
                                 result = new StringBuilder(
-                                    result.ToString().Substring(int.Parse(splitted[2])) +
-                                    result.ToString().Substring(0, int.Parse(splitted[2]))
+                                    string.Concat(result.ToString().AsSpan(int.Parse(splitted[2])), result.ToString().AsSpan(0, int.Parse(splitted[2])))
                                 );
                                 break;
                             case "right":
                                 result = new StringBuilder(
-                                    result.ToString().Substring(result.Length - int.Parse(splitted[2])) +
-                                    result.ToString().Substring(0, result.Length - int.Parse(splitted[2]))
+                                    string.Concat(result.ToString().AsSpan(result.Length - int.Parse(splitted[2])), result.ToString().AsSpan(0, result.Length - int.Parse(splitted[2])))
                                 );
                                 break;
                             case "based":
@@ -57,19 +55,18 @@ namespace AoC2016
                                 steps = steps + 1 + (steps >= 4 ? 1 : 0);
                                 steps %= result.Length;
                                 result = new StringBuilder(
-                                    result.ToString().Substring(result.Length - steps) +
-                                    result.ToString().Substring(0, result.Length - steps)
+                                    string.Concat(result.ToString().AsSpan(result.Length - steps), result.ToString().AsSpan(0, result.Length - steps))
                                 );
                                 break;
                         }
                         break;
                     case "reverse":
-                        StringBuilder tmp = new StringBuilder();
-                        tmp.Append(result.ToString().Substring(0, int.Parse(splitted[2])));
+                        StringBuilder tmp = new();
+                        tmp.Append(result.ToString().AsSpan(0, int.Parse(splitted[2])));
                         char[] arr = result.ToString().Substring(int.Parse(splitted[2]), int.Parse(splitted[4]) - int.Parse(splitted[2]) + 1).ToCharArray();
                         Array.Reverse(arr);
                         tmp.Append(arr);
-                        tmp.Append(result.ToString().Substring(int.Parse(splitted[4]) + 1));
+                        tmp.Append(result.ToString().AsSpan(int.Parse(splitted[4]) + 1));
                         result = tmp;
                         break;
                     case "move":
@@ -83,9 +80,9 @@ namespace AoC2016
             return result.ToString();
         }
 
-        string Unscramble(string pw, List<string> input)
+        static string Unscramble(string pw, List<string> input)
         {
-            StringBuilder result = new StringBuilder(pw);
+            StringBuilder result = new(pw);
             for (int i = input.Count - 1; i >= 0; i--)
             {
                 string[] splitted = input[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -118,14 +115,12 @@ namespace AoC2016
                         {
                             case "left":
                                 result = new StringBuilder(
-                                    result.ToString().Substring(result.Length - int.Parse(splitted[2])) +
-                                    result.ToString().Substring(0, result.Length - int.Parse(splitted[2]))
+                                    string.Concat(result.ToString().AsSpan(result.Length - int.Parse(splitted[2])), result.ToString().AsSpan(0, result.Length - int.Parse(splitted[2])))
                                 );
                                 break;
                             case "right":
                                 result = new StringBuilder(
-                                    result.ToString().Substring(int.Parse(splitted[2])) +
-                                    result.ToString().Substring(0, int.Parse(splitted[2]))
+                                    string.Concat(result.ToString().AsSpan(int.Parse(splitted[2])), result.ToString().AsSpan(0, int.Parse(splitted[2])))
                                 );
                                 break;
                             case "based":
@@ -169,19 +164,18 @@ namespace AoC2016
                                         break;
                                 }
                                 result = new StringBuilder(
-                                    result.ToString().Substring(shifts) +
-                                    result.ToString().Substring(0, shifts)
+                                    string.Concat(result.ToString().AsSpan(shifts), result.ToString().AsSpan(0, shifts))
                                 );
                                 break;
                         }
                         break;
                     case "reverse":
-                        StringBuilder tmp = new StringBuilder();
-                        tmp.Append(result.ToString().Substring(0, int.Parse(splitted[2])));
+                        StringBuilder tmp = new();
+                        tmp.Append(result.ToString().AsSpan(0, int.Parse(splitted[2])));
                         char[] arr = result.ToString().Substring(int.Parse(splitted[2]), int.Parse(splitted[4]) - int.Parse(splitted[2]) + 1).ToCharArray();
                         Array.Reverse(arr);
                         tmp.Append(arr);
-                        tmp.Append(result.ToString().Substring(int.Parse(splitted[4]) + 1));
+                        tmp.Append(result.ToString().AsSpan(int.Parse(splitted[4]) + 1));
                         result = tmp;
                         break;
                     case "move":

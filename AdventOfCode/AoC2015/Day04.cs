@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day04: Day
+    public class Day04 : Day
     {
         override public void Solve()
         {
@@ -16,7 +16,7 @@ namespace AoC2015
             bool finishedP1 = false, finishedP2 = false;
 
             int index = 1;
-            while(!(finishedP1 && finishedP2))
+            while (!(finishedP1 && finishedP2))
             {
                 hash = md5.ComputeHash(Encoding.ASCII.GetBytes(key + index));
 

@@ -6,21 +6,21 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day03: Day
+    public class Day03 : Day
     {
         override public void Solve()
         {
-            Dictionary<Point, int> houses = new Dictionary<Point, int>();
+            Dictionary<Point, int> houses = new();
             int[] x = { 0, 0 }, y = { 0, 0 };
             int move = 0;
 
             houses.Add(new Point(x[0], y[0]), 1);
 
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
-                foreach(char c in s)
+                foreach (char c in s)
                 {
-                    switch(c)
+                    switch (c)
                     {
                         case '^':
                             y[0]--;

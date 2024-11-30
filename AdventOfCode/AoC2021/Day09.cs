@@ -9,14 +9,14 @@ namespace AoC2021
     {
         override public void Solve()
         {
-            List<int[]> basins = new List<int[]>();
+            List<int[]> basins = new();
             int y = Input.Count;
             int x = Input[0].Length;
             int risklevel = 0;
 
             int[,] heightMap = new int[x, y];
 
-            for(y = 0; y < heightMap.GetLength(1); y++)
+            for (y = 0; y < heightMap.GetLength(1); y++)
             {
                 for (x = 0; x < heightMap.GetLength(0); x++)
                 {
@@ -68,15 +68,15 @@ namespace AoC2021
 
             Part1Solution = risklevel.ToString();
 
-            List<int> basinAreas = new List<int>();
+            List<int> basinAreas = new();
 
-            foreach(int[] baspos in basins)
+            foreach (int[] baspos in basins)
             {
-                Stack<int[]> flood = new Stack<int[]>();
+                Stack<int[]> flood = new();
                 flood.Push(baspos);
 
                 int area = 0;
-                while(flood.Count > 0)
+                while (flood.Count > 0)
                 {
                     int[] fillpos = flood.Pop();
                     if ((fillpos[0] >= 0) && (fillpos[0] < heightMap.GetLength(0)) &&

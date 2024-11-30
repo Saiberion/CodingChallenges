@@ -38,7 +38,7 @@ namespace AoC2021
             {
                 // decipher literal
                 // but for now just skip over those
-                while(binmsg[pckidx] == '1')
+                while (binmsg[pckidx] == '1')
                 {
                     pckidx += 5;
                 }
@@ -50,7 +50,7 @@ namespace AoC2021
                 {
                     string subpkglen = binmsg.Substring(++pckidx, 15);
                     int len = 0;
-                    foreach(char c in subpkglen)
+                    foreach (char c in subpkglen)
                     {
                         len <<= 1;
                         len |= c - 0x30;
@@ -75,7 +75,7 @@ namespace AoC2021
                     pckidx += 11;
                     for (int s = 0; s < cnt; s++)
                     {
-                        binmsg = PacketParser(binmsg.Substring(pckidx));
+                        binmsg = PacketParser(binmsg[pckidx..]);
                         pckidx = 0;
                     }
                 }
@@ -83,13 +83,13 @@ namespace AoC2021
             return binmsg.Remove(0, pckidx);
         }
 
-        private string ConvertHexToBinaryText(string hex)
+        private static string ConvertHexToBinaryText(string hex)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
-            foreach(char c in hex)
+            foreach (char c in hex)
             {
-                switch(c)
+                switch (c)
                 {
                     case '0':
                         sb.Append("0000");

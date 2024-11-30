@@ -54,9 +54,9 @@ namespace AoC2018
 
     public class Day10 : Day
     {
-        private string LightPlotter(List<MovingLight> lights)
+        static private string LightPlotter(List<MovingLight> lights)
         {
-            LightArea la = new LightArea(lights);
+            LightArea la = new(lights);
 
             int[,] plot = new int[la.DistanceX + 1, la.DistanceY + 1];
 
@@ -80,7 +80,7 @@ namespace AoC2018
 
         public override void Solve()
         {
-            List<MovingLight> movingLights = new List<MovingLight>();
+            List<MovingLight> movingLights = new();
 
             foreach (string s in Input)
             {
@@ -93,7 +93,7 @@ namespace AoC2018
                     VelY = int.Parse(splitted[5])
                 });
             }
-            LightArea la = new LightArea(movingLights);
+            LightArea la = new(movingLights);
             long minArea = la.Area;
             int ticks = 0;
 

@@ -9,7 +9,7 @@ namespace AoC2021
     {
         override public void Solve()
         {
-            List<Line> vents = new List<Line>();
+            List<Line> vents = new();
             int maxX = int.MinValue, maxY = int.MinValue;
             int[,] field;
 

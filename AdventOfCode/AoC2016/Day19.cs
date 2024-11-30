@@ -15,9 +15,9 @@ namespace AoC2016
 
     public class Day19 : Day
     {
-        int StealingPart1(int maxElves)
+        static int StealingPart1(int maxElves)
         {
-            Elf root = new Elf { Seat = 1, Presents = 1 };
+            Elf root = new() { Seat = 1, Presents = 1 };
             Elf elf = root;
             Elf target = null;
 
@@ -55,9 +55,9 @@ namespace AoC2016
             return elf.Seat;
         }
 
-        int StealingPart2(int maxElves)
+        static int StealingPart2(int maxElves)
         {
-            Elf root = new Elf { Seat = 1, Presents = 1 };
+            Elf root = new() { Seat = 1, Presents = 1 };
             Elf elf = root;
             Elf target = null;
             int remaining = maxElves;

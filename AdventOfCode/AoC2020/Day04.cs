@@ -7,12 +7,12 @@ namespace AoC2020
 {
     public class Day04 : Day
     {
-        private bool IsPassportValid(Dictionary<string, string> p)
+        private static bool IsPassportValid(Dictionary<string, string> p)
         {
             return p.ContainsKey("byr") && p.ContainsKey("iyr") && p.ContainsKey("eyr") && p.ContainsKey("hgt") && p.ContainsKey("hcl") && p.ContainsKey("ecl") && p.ContainsKey("pid");
         }
 
-        private bool IsPassportDataValid(Dictionary<string, string> p)
+        private static bool IsPassportDataValid(Dictionary<string, string> p)
         {
             int i;
 
@@ -54,7 +54,7 @@ namespace AoC2020
             {
                 return false;
             }
-            
+
             if (p["hcl"].Length != 7)
             {
                 return false;
@@ -97,7 +97,7 @@ namespace AoC2020
 
         override public void Solve()
         {
-            List<Dictionary<string, string>> passports = new List<Dictionary<string, string>>();
+            List<Dictionary<string, string>> passports = new();
             Dictionary<string, string> passport;
             int validPassports = 0;
             int validPassportsAdvanced = 0;
@@ -130,7 +130,7 @@ namespace AoC2020
             }
             passports.Add(passport);
 
-            foreach(Dictionary<string, string> p in passports)
+            foreach (Dictionary<string, string> p in passports)
             {
                 if (IsPassportValid(p))
                 {

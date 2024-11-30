@@ -23,7 +23,7 @@ namespace AoC2022
                 minRange2 = int.Parse(splitted[2]);
                 maxRange2 = int.Parse(splitted[3]);
 
-                if (((minRange1 >= minRange2) && (maxRange1 <= maxRange2)) || ((minRange2 >= minRange1) && (maxRange2 <= maxRange1))) 
+                if (((minRange1 >= minRange2) && (maxRange1 <= maxRange2)) || ((minRange2 >= minRange1) && (maxRange2 <= maxRange1)))
                 {
                     includedCounter++;
                 }

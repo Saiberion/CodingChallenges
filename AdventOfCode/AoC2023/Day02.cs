@@ -23,7 +23,7 @@ namespace AoC2023
                 foreach (string set in sets)
                 {
                     string[] cubes = set.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    foreach(string shownCubes in cubes)
+                    foreach (string shownCubes in cubes)
                     {
                         string[] cubecount = shownCubes.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                         switch (cubecount[1])

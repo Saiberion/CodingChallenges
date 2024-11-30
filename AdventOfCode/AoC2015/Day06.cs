@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day06: Day
+    public class Day06 : Day
     {
         override public void Solve()
         {
@@ -16,7 +16,7 @@ namespace AoC2015
             foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
-                switch(splitted[0])
+                switch (splitted[0])
                 {
                     case "turn":
                         if (splitted[1].Equals("on"))
@@ -28,7 +28,7 @@ namespace AoC2015
                             changeVal = 0;
                         }
 
-                        for(int y = int.Parse(splitted[3]); y <= int.Parse(splitted[6]); y++)
+                        for (int y = int.Parse(splitted[3]); y <= int.Parse(splitted[6]); y++)
                         {
                             for (int x = int.Parse(splitted[2]); x <= int.Parse(splitted[5]); x++)
                             {

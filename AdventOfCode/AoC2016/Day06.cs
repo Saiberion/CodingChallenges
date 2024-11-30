@@ -9,8 +9,8 @@ namespace AoC2016
     {
         public override void Solve()
         {
-            StringBuilder sbP1 = new StringBuilder();
-            StringBuilder sbP2 = new StringBuilder();
+            StringBuilder sbP1 = new();
+            StringBuilder sbP2 = new();
 
             Dictionary<char, int>[] charCountingByPosition = new Dictionary<char, int>[Input[0].Length];
 

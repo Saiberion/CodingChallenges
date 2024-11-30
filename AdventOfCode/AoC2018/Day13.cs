@@ -91,10 +91,7 @@ namespace AoC2018
             {
                 updateCarts[x, y] = null;
                 CartLayer[x, y] = null;
-                if (CrashLocation == null)
-                {
-                    CrashLocation = new Coordinate(x, y);
-                }
+                CrashLocation ??= new Coordinate(x, y);
                 return true;
             }
         }
@@ -161,9 +158,9 @@ namespace AoC2018
 
     public class Day13 : Day
     {
-        MinecartTrackSystem GetInitialTrackState(List<string> input)
+        static MinecartTrackSystem GetInitialTrackState(List<string> input)
         {
-            MinecartTrackSystem tracks = new MinecartTrackSystem
+            MinecartTrackSystem tracks = new()
             {
                 TrackLayer = new char[input[0].Length, input.Count],
                 CartLayer = new Cart[input[0].Length, input.Count]

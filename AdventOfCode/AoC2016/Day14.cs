@@ -46,7 +46,7 @@ namespace AoC2016
         int GenerateOTPs(string salt, int count, bool stretched)
         {
             int generatedKeys = 0;
-            Dictionary<int, byte[]> precreatedHashes = new Dictionary<int, byte[]>();
+            Dictionary<int, byte[]> precreatedHashes = new();
             byte[] hash;
 
             int index = 0;

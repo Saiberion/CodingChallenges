@@ -11,12 +11,12 @@ namespace AoC2018
         {
             string currentState = "";
             string previousState = "";
-            Dictionary<string, string> replacements = new Dictionary<string, string>();
+            Dictionary<string, string> replacements = new();
             foreach (string s in Input)
             {
                 if (s.StartsWith("initial state"))
                 {
-                    currentState = s.Substring(15);
+                    currentState = s[15..];
                 }
                 else if (s.Length > 0)
                 {
@@ -39,7 +39,7 @@ namespace AoC2018
                 currentState = string.Format("....{0}....", currentState);
                 leftmostPotNumber -= 2;
 
-                StringBuilder sb = new StringBuilder();
+                StringBuilder sb = new();
                 for (int j = 2; j < currentState.Length - 2; j++)
                 {
                     string r = currentState.Substring(j - 2, 5);
@@ -49,7 +49,7 @@ namespace AoC2018
                     }
                     else
                     {
-                        sb.Append(".");
+                        sb.Append('.');
                     }
                 }
                 currentState = sb.ToString();

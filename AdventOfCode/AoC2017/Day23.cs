@@ -83,7 +83,7 @@ namespace AoC2017
             public void ThreadFunc()
             {
                 Int64 programCounter = 0;
-                Dictionary<string, Int64> registerMap = new Dictionary<string, Int64>();
+                Dictionary<string, Int64> registerMap = new();
 
                 if (!DebugMode)
                 {
@@ -169,7 +169,7 @@ namespace AoC2017
             }
         }
 
-        int AocAssemblerAsCSharp()
+        static int AocAssemblerAsCSharp()
         {
             int b, d, e, h = 0;
             bool f;
@@ -206,15 +206,15 @@ namespace AoC2017
 
         public override void Solve()
         {
-            List<Instruction> program = new List<Instruction>();
+            List<Instruction> program = new();
 
             foreach (string line in Input)
             {
                 program.Add(new Instruction(line));
             }
 
-            CoProcessor cp1 = new CoProcessor();
-            System.Threading.Thread p1 = new System.Threading.Thread(new System.Threading.ThreadStart(cp1.ThreadFunc));
+            CoProcessor cp1 = new();
+            System.Threading.Thread p1 = new(new System.Threading.ThreadStart(cp1.ThreadFunc));
             cp1.Program = program;
             cp1.DebugMode = true;
             p1.Start();

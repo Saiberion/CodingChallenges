@@ -12,10 +12,10 @@ namespace AoC2021
             int depth = 0;
             int movpos = 0;
 
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                switch(splitted[0])
+                switch (splitted[0])
                 {
                     case "forward":
                         movpos += int.Parse(splitted[1]);
@@ -54,7 +54,7 @@ namespace AoC2021
 
                 }
             }
-            
+
             Part2Solution = (depth * movpos).ToString();
         }
     }

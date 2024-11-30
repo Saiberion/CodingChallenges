@@ -9,11 +9,11 @@ namespace AoC2019
     {
         override public void Solve()
         {
-            SIF sif = new SIF(Input[0], 25, 6);
+            SIF sif = new(Input[0], 25, 6);
             int layerIndexLeastZeroes = sif.GetLayerWithLeastDigitCount('0');
             Part1Solution = sif.GetCheckMultiply(layerIndexLeastZeroes, '1', '2').ToString();
             int[,] message = sif.Render();
-            
+
             Part2Solution = DotmatrixToString.Render(message);
         }
     }
@@ -61,7 +61,7 @@ namespace AoC2019
             int[,] result = new int[Width, Height];
             int idx = 0;
 
-            for(int h = 0; h < Height; h++)
+            for (int h = 0; h < Height; h++)
             {
                 for (int w = 0; w < Width; w++)
                 {

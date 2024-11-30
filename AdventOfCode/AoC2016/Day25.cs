@@ -14,7 +14,7 @@ namespace AoC2016
             {
                 Console.WriteLine("Antenne input {0}", i);
             }
-            while (Assembunny.ExecuteInstructions(Input, i++, 0, 0, 0) == 0) ;
+            while (Assembunny.ExecuteInstructions(Input, i++, 0, 0, 0) == 0);
             Part1Solution = (--i).ToString();
 
             Part2Solution = "Active";

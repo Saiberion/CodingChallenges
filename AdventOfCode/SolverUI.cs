@@ -276,7 +276,7 @@ namespace AdventOfCode
                     new AoC2023.Day07() { Enabled = true },
                     new AoC2023.Day08() { Enabled = true },
                     new AoC2023.Day09() { Enabled = true },
-                    new AoC2023.Day10() { Enabled = false },
+                    new AoC2023.Day10() { Enabled = true },
                     new AoC2023.Day11() { Enabled = true },
                     new AoC2023.Day12() { Enabled = false },
                     new AoC2023.Day13() { Enabled = false },
@@ -287,11 +287,42 @@ namespace AdventOfCode
                     new AoC2023.Day18() { Enabled = true },
                     new AoC2023.Day19() { Enabled = false },
                     new AoC2023.Day20() { Enabled = false },
-                    new AoC2023.Day21() { Enabled = false },
+                    new AoC2023.Day21() { Enabled = true },
                     new AoC2023.Day22() { Enabled = false },
                     new AoC2023.Day23() { Enabled = false },
                     new AoC2023.Day24() { Enabled = false },
                     new AoC2023.Day25() { Enabled = false }
+                }
+            },
+            {
+                "AoC2024",
+                new List<Day>()
+                {
+                    new AoC2024.Day01() { Enabled = false },
+                    new AoC2024.Day02() { Enabled = false },
+                    new AoC2024.Day03() { Enabled = false },
+                    new AoC2024.Day04() { Enabled = false },
+                    new AoC2024.Day05() { Enabled = false },
+                    new AoC2024.Day06() { Enabled = false },
+                    new AoC2024.Day07() { Enabled = false },
+                    new AoC2024.Day08() { Enabled = false },
+                    new AoC2024.Day09() { Enabled = false },
+                    new AoC2024.Day10() { Enabled = false },
+                    new AoC2024.Day11() { Enabled = false },
+                    new AoC2024.Day12() { Enabled = false },
+                    new AoC2024.Day13() { Enabled = false },
+                    new AoC2024.Day14() { Enabled = false },
+                    new AoC2024.Day15() { Enabled = false },
+                    new AoC2024.Day16() { Enabled = false },
+                    new AoC2024.Day17() { Enabled = false },
+                    new AoC2024.Day18() { Enabled = false },
+                    new AoC2024.Day19() { Enabled = false },
+                    new AoC2024.Day20() { Enabled = false },
+                    new AoC2024.Day21() { Enabled = false },
+                    new AoC2024.Day22() { Enabled = false },
+                    new AoC2024.Day23() { Enabled = false },
+                    new AoC2024.Day24() { Enabled = false },
+                    new AoC2024.Day25() { Enabled = false }
                 }
             }
         };
@@ -369,7 +400,7 @@ namespace AdventOfCode
 
         private void SolverUI_Load(object sender, EventArgs e)
         {
-            foreach(string dir in Directory.GetDirectories(Directory.GetCurrentDirectory()).Reverse())
+            foreach (string dir in Directory.GetDirectories(Directory.GetCurrentDirectory()).Reverse())
             {
                 if (Path.GetFileName(dir).StartsWith("AoC"))
                 {

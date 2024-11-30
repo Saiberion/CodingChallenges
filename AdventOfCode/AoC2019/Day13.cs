@@ -12,12 +12,12 @@ namespace AoC2019
         override public void Solve()
         {
             // TODO Part 2 answer is somehow influenced with other running solve threads, only works (and takes quite long) if run alone
-            Queue<long> input = new Queue<long>();
-            Queue<long> output = new Queue<long>();
+            Queue<long> input = new();
+            Queue<long> output = new();
             // First value of input already set to starting value for part 2
             // the Intcode computer still outputs the initial gamescreen that is needed for part 1
-            IntCodeComputer ic = new IntCodeComputer(Input[0]);
-            Dictionary<Point, long> gameScreen = new Dictionary<Point, long>();
+            IntCodeComputer ic = new(Input[0]);
+            Dictionary<Point, long> gameScreen = new();
 
             ic.ExecuteAsync(input, output);
 
@@ -26,7 +26,7 @@ namespace AoC2019
             long blockTiles = 0;
             while (output.Count > 0)
             {
-                Point p = new Point((int)output.Dequeue(), (int)output.Dequeue());
+                Point p = new((int)output.Dequeue(), (int)output.Dequeue());
                 if (!gameScreen.ContainsKey(p))
                 {
                     gameScreen.Add(p, output.Dequeue());
@@ -57,7 +57,7 @@ namespace AoC2019
             }
             Part1Solution = blockTiles.ToString();
 
-            while(!ic.IsProgramHalted() && (blockTiles > 0))
+            while (!ic.IsProgramHalted() && (blockTiles > 0))
             {
                 if (paddleXCoord < ballXCoord)
                 {
@@ -79,7 +79,7 @@ namespace AoC2019
 
                 while (output.Count > 2)
                 {
-                    Point p = new Point((int)output.Dequeue(), (int)output.Dequeue());
+                    Point p = new((int)output.Dequeue(), (int)output.Dequeue());
                     long tile = output.Dequeue();
                     if (!gameScreen.ContainsKey(p))
                     {
@@ -122,7 +122,7 @@ namespace AoC2019
             {
                 for (int x = 0; x <= 36; x++)
                 {
-                    Point p = new Point(x, y);
+                    Point p = new(x, y);
                     long t = gameScreen[p];
                     switch (t)
                     {

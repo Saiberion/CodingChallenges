@@ -11,13 +11,13 @@ namespace AoC2015
         public string To { get; set; }
     }
 
-    public class Day19: Day
+    public class Day19 : Day
     {
         override public void Solve()
         {
             string startingMolecule = "";
-            List<ReplacementRule> replacementRules = new List<ReplacementRule>();
-            HashSet<string> uniqueMolecules = new HashSet<string>();
+            List<ReplacementRule> replacementRules = new();
+            HashSet<string> uniqueMolecules = new();
 
             foreach (string s in Input)
             {
@@ -34,14 +34,14 @@ namespace AoC2015
                 }
             }
 
-            foreach(ReplacementRule r in replacementRules)
+            foreach (ReplacementRule r in replacementRules)
             {
                 int searchIndex = 0;
                 int foundIndex;
 
-                while((foundIndex = startingMolecule.IndexOf(r.From, searchIndex)) >= 0)
+                while ((foundIndex = startingMolecule.IndexOf(r.From, searchIndex)) >= 0)
                 {
-                    string n = startingMolecule.Substring(0, foundIndex) + r.To + startingMolecule.Substring(foundIndex + r.From.Length);
+                    string n = string.Concat(startingMolecule.AsSpan(0, foundIndex), r.To, startingMolecule.AsSpan(foundIndex + r.From.Length));
                     uniqueMolecules.Add(n);
                     searchIndex = foundIndex + r.From.Length;
                 }
@@ -59,7 +59,7 @@ namespace AoC2015
 
                     if ((foundIndex = startingMolecule.IndexOf(r.To, searchIndex)) >= 0)
                     {
-                        string n = startingMolecule.Substring(0, foundIndex) + r.From + startingMolecule.Substring(foundIndex + r.To.Length);
+                        string n = string.Concat(startingMolecule.AsSpan(0, foundIndex), r.From, startingMolecule.AsSpan(foundIndex + r.To.Length));
                         cnt++;
                         startingMolecule = n;
                     }

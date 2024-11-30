@@ -7,7 +7,7 @@ namespace AoC2020
 {
     public class Day09 : Day
     {
-        private bool IsValidNumber(long nr, List<long> l)
+        private static bool IsValidNumber(long nr, List<long> l)
         {
             for (int a = 0; a < (l.Count - 1); a++)
             {
@@ -22,7 +22,7 @@ namespace AoC2020
             return false;
         }
 
-        private long FindEncryptionWeakness(long nr, List<long>l)
+        private static long FindEncryptionWeakness(long nr, List<long> l)
         {
             long sum;
             for (int a = 0; a < (l.Count - 1); a++)
@@ -50,8 +50,8 @@ namespace AoC2020
         override public void Solve()
         {
             long nextNr = 0;
-            List<long> encoding = new List<long>();
-            List<long> encodingComplete = new List<long>();
+            List<long> encoding = new();
+            List<long> encodingComplete = new();
             for (int i = 0; i < Input.Count; i++)
             {
                 encodingComplete.Add(long.Parse(Input[i]));

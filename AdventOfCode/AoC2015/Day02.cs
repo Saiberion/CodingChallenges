@@ -5,17 +5,17 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day02: Day
+    public class Day02 : Day
     {
         override public void Solve()
         {
             int wrappingPaper = 0;
             int ribbon = 0;
-            foreach(string s in Input)
+            foreach (string s in Input)
             {
                 string[] splitted = s.Split(new char[] { 'x' }, StringSplitOptions.RemoveEmptyEntries);
-                
-                List<int> sides = new List<int>
+
+                List<int> sides = new()
                 {
                     int.Parse(splitted[0]),
                     int.Parse(splitted[1]),
@@ -23,7 +23,7 @@ namespace AoC2015
                 };
                 sides.Sort();
 
-                List<int> areas = new List<int>
+                List<int> areas = new()
                 {
                     sides[0] * sides[1],
                     sides[0] * sides[2],

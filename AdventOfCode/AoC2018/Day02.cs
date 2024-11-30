@@ -7,9 +7,9 @@ namespace AoC2018
 {
     public class Day02 : Day
     {
-        int Find2MatchingDigits(string input)
+        static int Find2MatchingDigits(string input)
         {
-            Dictionary<char, int> matches = new Dictionary<char, int>();
+            Dictionary<char, int> matches = new();
             foreach (char c in input)
             {
                 if (!matches.ContainsKey(c))
@@ -28,9 +28,9 @@ namespace AoC2018
             return 0;
         }
 
-        int Find3MatchingDigits(string input)
+        static int Find3MatchingDigits(string input)
         {
-            Dictionary<char, int> matches = new Dictionary<char, int>();
+            Dictionary<char, int> matches = new();
             foreach (char c in input)
             {
                 if (!matches.ContainsKey(c))
@@ -49,7 +49,7 @@ namespace AoC2018
             return 0;
         }
 
-        int CalculateChecksum(List<string> input)
+        static int CalculateChecksum(List<string> input)
         {
             int[] chkPart = new int[2]; // 0: Exactly 2 matching digits - 1: Exactly 3 matching digits
 
@@ -62,7 +62,7 @@ namespace AoC2018
             return chkPart[0] * chkPart[1];
         }
 
-        string FindClosestIDCommons(List<string> input)
+        static string FindClosestIDCommons(List<string> input)
         {
             for (int i = 0; i < input.Count; i++)
             {
@@ -91,7 +91,7 @@ namespace AoC2018
                     }
                     if (fromStart == fromEnd)
                     {
-                        string s = new string(c1);
+                        string s = new(c1);
                         return s.Remove(fromStart, 1);
                     }
                 }

@@ -32,9 +32,9 @@ namespace AoC2020
         override public void Solve()
         {
             int earliestDepartureTime = int.Parse(Input[0]);
-            List<int> busIDs = new List<int>();
+            List<int> busIDs = new();
             string[] splitted = Input[1].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach(string s in splitted)
+            foreach (string s in splitted)
             {
                 if (s.Equals("x"))
                 {
@@ -49,7 +49,7 @@ namespace AoC2020
             bool resultFound = false;
             for (int time = earliestDepartureTime; resultFound == false; time++)
             {
-                foreach(int b in busIDs)
+                foreach (int b in busIDs)
                 {
                     if (b != -1)
                     {
@@ -73,8 +73,8 @@ namespace AoC2020
                 }
             }
 
-            List<int> indexedBusIDs = new List<int>();
-            for(int i = 0; i < busIDs.Count; i++)
+            List<int> indexedBusIDs = new();
+            for (int i = 0; i < busIDs.Count; i++)
             {
                 if (busIDs[i] != -1)
                 {
@@ -84,7 +84,7 @@ namespace AoC2020
 
             long kgv = indexedBusIDs[0];
             indexedBusIDs.RemoveAt(0);
-            while(indexedBusIDs.Count > 0)
+            while (indexedBusIDs.Count > 0)
             {
                 kgv = LCM(kgv, indexedBusIDs[0]);
                 indexedBusIDs.RemoveAt(0);
@@ -105,7 +105,7 @@ namespace AoC2020
                     }
                 }
             }*/
-            
+
             Part2Solution = kgv.ToString();
         }
     }

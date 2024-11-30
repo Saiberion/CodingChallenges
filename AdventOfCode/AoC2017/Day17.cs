@@ -9,7 +9,7 @@ namespace AoC2017
     {
         public override void Solve()
         {
-            List<int> spinLock = new List<int>();
+            List<int> spinLock = new();
             int currentPosition = 0;
             int valueAt1 = 0;
 

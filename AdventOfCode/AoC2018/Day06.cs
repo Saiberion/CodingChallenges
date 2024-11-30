@@ -20,19 +20,19 @@ namespace AoC2018
 
     public class Day06 : Day
     {
-        List<Coordinate> GetCoordinates(List<string> input)
+        static List<Coordinate> GetCoordinates(List<string> input)
         {
-            List<Coordinate> result = new List<Coordinate>();
+            List<Coordinate> result = new();
             foreach (string line in input)
             {
                 string[] splitted = line.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                Coordinate coordinate = new Coordinate(int.Parse(splitted[0]), int.Parse(splitted[1]));
+                Coordinate coordinate = new(int.Parse(splitted[0]), int.Parse(splitted[1]));
                 result.Add(coordinate);
             }
             return result;
         }
 
-        int GetHighestXCoord(List<Coordinate> coordinates)
+        static int GetHighestXCoord(List<Coordinate> coordinates)
         {
             int result = 0;
 
@@ -47,7 +47,7 @@ namespace AoC2018
             return result + 1;
         }
 
-        int GetHighestYCoord(List<Coordinate> coordinates)
+        static int GetHighestYCoord(List<Coordinate> coordinates)
         {
             int result = 0;
 
@@ -62,7 +62,7 @@ namespace AoC2018
             return result + 1;
         }
 
-        int CalculateDistance(int row1, int col1, int row2, int col2)
+        static int CalculateDistance(int row1, int col1, int row2, int col2)
         {
             int distance = Math.Abs(row1 - row2) + Math.Abs(col1 - col2);
             return distance;
@@ -70,7 +70,7 @@ namespace AoC2018
 
         public override void Solve()
         {
-            HashSet<int> Infinites = new HashSet<int>();
+            HashSet<int> Infinites = new();
 
 
             List<Coordinate> coordinates = GetCoordinates(Input);
@@ -104,7 +104,7 @@ namespace AoC2018
                 }
             }
 
-            Dictionary<int, int> AreaSizes = new Dictionary<int, int>();
+            Dictionary<int, int> AreaSizes = new();
 
             for (int i = 0; i < grid.GetLength(0); i++)
             {

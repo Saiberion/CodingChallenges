@@ -7,20 +7,18 @@ namespace AoC2019
 {
     public class Day07 : Day
     {
-        internal List<List<int>> phaseCombinations = new List<List<int>>();
+        internal List<List<int>> phaseCombinations = new();
         
-        void SwapElements(ref int a, ref int b)
+        static void SwapElements(ref int a, ref int b)
         {
-            int tmp = a;
-            a = b;
-            b = tmp;
+            (b, a) = (a, b);
         }
 
         void GetAllCombinations(int[] input, int k, int m)
         {
             if (k == m)
             {
-                List<int> combination = new List<int>();
+                List<int> combination = new();
                 for (int i = 0; i <= m; i++)
                 {
                     combination.Add(input[i]);
@@ -40,11 +38,10 @@ namespace AoC2019
 
         override public void Solve()
         {
-            Queue<long> input = new Queue<long>();
-            Queue<long> output = new Queue<long>();
-            IntCodeComputer ic = new IntCodeComputer(Input[0]);
-            List<long> thrusterSignals = new List<long>();
-            List<int> phaseSettings = new List<int>
+            Queue<long> input = new();
+            IntCodeComputer ic = new(Input[0]);
+            List<long> thrusterSignals = new();
+            List<int> phaseSettings = new()
             {
                 0,
                 1,
@@ -54,7 +51,7 @@ namespace AoC2019
             };
             GetAllCombinations(phaseSettings.ToArray(), 0, phaseSettings.Count - 1);
 
-            foreach(List<int> ps in phaseCombinations)
+            foreach (List<int> ps in phaseCombinations)
             {
                 long sig = 0;
                 for (int i = 0; i < ps.Count; i++)
@@ -66,24 +63,24 @@ namespace AoC2019
                 thrusterSignals.Add(sig);
             }
 
-            int maxThrusterSignal = int.MinValue;
-            foreach(int ts in thrusterSignals)
+            long maxThrusterSignal = long.MinValue;
+            foreach (long ts in thrusterSignals)
             {
                 maxThrusterSignal = Math.Max(maxThrusterSignal, ts);
             }
             Part1Solution = maxThrusterSignal.ToString();
 
             thrusterSignals.Clear();
-            Queue<long> outA = new Queue<long>();
-            Queue<long> outB = new Queue<long>();
-            Queue<long> outC = new Queue<long>();
-            Queue<long> outD = new Queue<long>();
-            Queue<long> outE = new Queue<long>();
-            IntCodeComputer ampA = new IntCodeComputer(Input[0]);
-            IntCodeComputer ampB = new IntCodeComputer(Input[0]);
-            IntCodeComputer ampC = new IntCodeComputer(Input[0]);
-            IntCodeComputer ampD = new IntCodeComputer(Input[0]);
-            IntCodeComputer ampE = new IntCodeComputer(Input[0]);
+            Queue<long> outA = new();
+            Queue<long> outB = new();
+            Queue<long> outC = new();
+            Queue<long> outD = new();
+            Queue<long> outE = new();
+            IntCodeComputer ampA = new(Input[0]);
+            IntCodeComputer ampB = new(Input[0]);
+            IntCodeComputer ampC = new(Input[0]);
+            IntCodeComputer ampD = new(Input[0]);
+            IntCodeComputer ampE = new(Input[0]);
 
             foreach (List<int> ps in phaseCombinations)
             {
@@ -103,8 +100,8 @@ namespace AoC2019
                 thrusterSignals.Add(outE.Dequeue());
             }
 
-            maxThrusterSignal = int.MinValue;
-            foreach (int ts in thrusterSignals)
+            maxThrusterSignal = long.MinValue;
+            foreach (long ts in thrusterSignals)
             {
                 maxThrusterSignal = Math.Max(maxThrusterSignal, ts);
             }

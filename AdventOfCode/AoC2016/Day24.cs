@@ -9,16 +9,16 @@ namespace AoC2016
 {
     public class Day24 : Day
     {
-        List<Location> GetWalkableAdjacentSquares(int x, int y, int[,] grid)
+        static List<Location> GetWalkableAdjacentSquares(int x, int y, int[,] grid)
         {
-            List<Location> proposedLocations = new List<Location>()
+            List<Location> proposedLocations = new()
             {
                 new Location { X = x, Y = y - 1 },
                 new Location { X = x, Y = y + 1 },
                 new Location { X = x - 1, Y = y },
                 new Location { X = x + 1, Y = y },
             };
-            List<Location> possibleLocations = new List<Location>();
+            List<Location> possibleLocations = new();
 
             foreach (Location l in proposedLocations)
             {
@@ -34,7 +34,7 @@ namespace AoC2016
             return possibleLocations;
         }
 
-        bool IsInList(Location l, List<Location> list)
+        static bool IsInList(Location l, List<Location> list)
         {
             bool ret = false;
             foreach (Location loc in list)
@@ -48,19 +48,19 @@ namespace AoC2016
             return ret;
         }
 
-        int ComputeHScore(int x, int y, int targetX, int targetY)
+        static int ComputeHScore(int x, int y, int targetX, int targetY)
         {
             return Math.Abs(targetX - x) + Math.Abs(targetY - y);
         }
 
-        int GetShorestPathDistance(int startx, int starty, int targetx, int targety, int[,] grid)
+        static int GetShorestPathDistance(int startx, int starty, int targetx, int targety, int[,] grid)
         {
             // A* algorithm for path finding
             Location current = null;
-            Location start = new Location { X = startx, Y = starty };
-            Location target = new Location { X = targetx, Y = targety };
-            List<Location> openList = new List<Location>();
-            List<Location> closedList = new List<Location>();
+            Location start = new() { X = startx, Y = starty };
+            Location target = new() { X = targetx, Y = targety };
+            List<Location> openList = new();
+            List<Location> closedList = new();
             int g;
 
             // add the starting position to the open list
@@ -130,11 +130,11 @@ namespace AoC2016
             return current.G;
         }
 
-        public List<List<Point>> Permutations(List<Point> values)
+        public static List<List<Point>> Permutations(List<Point> values)
         {
-            List<List<Point>> route = new List<List<Point>>();
+            List<List<Point>> route = new();
             int[] p = new int[values.Count + 1];
-            for(int pi = 0; pi < p.Length; pi++)
+            for (int pi = 0; pi < p.Length; pi++)
             {
                 p[pi] = pi;
             }
@@ -142,7 +142,7 @@ namespace AoC2016
             route.Add(new List<Point>(values));
 
             int i = 1;
-            while(i < values.Count)
+            while (i < values.Count)
             {
                 p[i]--;
                 int j;
@@ -171,7 +171,7 @@ namespace AoC2016
 
         public override void Solve()
         {
-            List<Point> wires = new List<Point>();
+            List<Point> wires = new();
             int[,] hvac = new int[Input[0].Length, Input.Count];
             List<List<Point>> routes;
 
@@ -202,7 +202,7 @@ namespace AoC2016
                 }
             }
 
-            Dictionary<Tuple<Point, Point>, int> distances = new Dictionary<Tuple<Point, Point>, int>();
+            Dictionary<Tuple<Point, Point>, int> distances = new();
 
             for (int i = 0; i < wires.Count; i++)
             {
@@ -217,12 +217,12 @@ namespace AoC2016
             routes = Permutations(wires.GetRange(1, wires.Count - 1));
 
             int min = Int32.MaxValue;
-            foreach(List<Point> l in routes)
+            foreach (List<Point> l in routes)
             {
                 int dist = 0;
-                List<Point> l2 = new List<Point>(l);
+                List<Point> l2 = new(l);
                 l2.Insert(0, wires[0]);
-                for(int c = 0; c < l2.Count - 1; c++)
+                for (int c = 0; c < l2.Count - 1; c++)
                 {
                     dist += distances[new Tuple<Point, Point>(l2[c], l2[c + 1])];
                 }
@@ -234,7 +234,7 @@ namespace AoC2016
             foreach (List<Point> l in routes)
             {
                 int dist = 0;
-                List<Point> l2 = new List<Point>(l);
+                List<Point> l2 = new(l);
                 l2.Insert(0, wires[0]);
                 l2.Add(wires[0]);
                 for (int c = 0; c < l2.Count - 1; c++)

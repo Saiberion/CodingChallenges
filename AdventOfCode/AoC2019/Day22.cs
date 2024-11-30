@@ -40,14 +40,14 @@ namespace AoC2019
                             }
                             else
                             {
-                                posOfCard = posOfCard - cutAmount;
+                                posOfCard -= cutAmount;
                             }
                         }
                         else
                         {
                             if (posOfCard < (deckSize + cutAmount))
                             {
-                                posOfCard = posOfCard - cutAmount;
+                                posOfCard -= cutAmount;
                             }
                             else
                             {
@@ -61,7 +61,7 @@ namespace AoC2019
             return posOfCard;
         }
 
-        private long ShuffleAndFollowPosition(long card, long deckSize)
+        /*private long ShuffleAndFollowPosition(long card, long deckSize)
         {
             for (long l = 0; l < deckSize; l++)
             {
@@ -71,7 +71,7 @@ namespace AoC2019
                 }
             }
             return -1;
-        }
+        }*/
 
         override public void Solve()
         {

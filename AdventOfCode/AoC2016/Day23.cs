@@ -7,7 +7,7 @@ namespace AoC2016
 {
     public class Day23 : Day
     {
-        long Factorial(long f)
+        static long Factorial(long f)
         {
             if (f == 0)
             {

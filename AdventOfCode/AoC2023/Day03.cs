@@ -60,7 +60,7 @@ namespace AoC2023
                         {
                             isPartNumber |= FindSpecialChar(x, y + 1);
                         }
-                        if ((x < (Input[y].Length - 1)) &&(y < (Input.Count - 1)))
+                        if ((x < (Input[y].Length - 1)) && (y < (Input.Count - 1)))
                         {
                             isPartNumber |= FindSpecialChar(x + 1, y + 1);
                         }
@@ -115,7 +115,7 @@ namespace AoC2023
 
             Part1Solution = sumP1.ToString();
 
-            foreach(List<int> l in gears.Values)
+            foreach (List<int> l in gears.Values)
             {
                 if (l.Count == 2)
                 {

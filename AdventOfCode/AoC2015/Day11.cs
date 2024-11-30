@@ -7,7 +7,7 @@ namespace AoC2015
 {
     public class Day11 : Day
     {
-        bool HasStraight(string pw)
+        static bool HasStraight(string pw)
         {
             bool result = false;
 
@@ -22,11 +22,11 @@ namespace AoC2015
             return result;
         }
 
-        bool AllCharsValid(string pw)
+        static bool AllCharsValid(string pw)
         {
             bool result = true;
 
-            if (pw.Contains("i") || pw.Contains("o") || pw.Contains("l"))
+            if (pw.Contains('i') || pw.Contains('o') || pw.Contains('l'))
             {
                 result = false;
             }
@@ -34,7 +34,7 @@ namespace AoC2015
             return result;
         }
 
-        bool HasDifferentDoubleLetters(string pw)
+        static bool HasDifferentDoubleLetters(string pw)
         {
             bool result;
             int doubleCount = 0;
@@ -63,7 +63,7 @@ namespace AoC2015
             return result;
         }
 
-        bool IsValidPassword(string pw)
+        static bool IsValidPassword(string pw)
         {
             bool result;
 
@@ -74,9 +74,9 @@ namespace AoC2015
             return result;
         }
 
-        string IncrementPW(string pw)
+        static string IncrementPW(string pw)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             int carry = 1;
             int index = pw.Length - 1;
 

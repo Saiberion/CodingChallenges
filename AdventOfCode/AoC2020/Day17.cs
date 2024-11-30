@@ -11,7 +11,7 @@ namespace AoC2020
         override public void Solve()
         {
             // TODO finish up
-            Dictionary<Vector3, bool> pocketDimension = new Dictionary<Vector3, bool>();
+            Dictionary<Vector3, bool> pocketDimension = new();
 
             for (int y = 0; y < Input.Count; y++)
             {
@@ -25,7 +25,7 @@ namespace AoC2020
             }
 
             float minx = float.MaxValue, maxx = float.MinValue, miny = float.MaxValue, maxy = float.MinValue, minz = float.MaxValue, maxz = float.MinValue;
-            foreach(Vector3 p in pocketDimension.Keys)
+            foreach (Vector3 p in pocketDimension.Keys)
             {
                 minx = Math.Min(minx, p.X) - 1;
                 miny = Math.Min(miny, p.Y) - 1;
@@ -35,7 +35,7 @@ namespace AoC2020
                 maxy = Math.Max(maxy, p.Y) + 1;
                 maxz = Math.Max(maxz, p.Z) + 1;
             }
-            
+
             Part1Solution = "TBD";
             Part2Solution = "TBD";
         }

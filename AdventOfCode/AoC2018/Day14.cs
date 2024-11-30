@@ -7,7 +7,7 @@ namespace AoC2018
 {
     public class Day14 : Day
     {
-        int CreateRecipes(List<int> recipes, ref int elf1, ref int elf2)
+        static int CreateRecipes(List<int> recipes, ref int elf1, ref int elf2)
         {
             int recs = 1;
             int newScore = recipes[elf1] + recipes[elf2];
@@ -25,7 +25,7 @@ namespace AoC2018
             return recs;
         }
 
-        int CreateRecipesTillMatch(List<int> recipes, ref int elf1, ref int elf2, int skillLevel)
+        static int CreateRecipesTillMatch(List<int> recipes, ref int elf1, ref int elf2, int skillLevel)
         {
             string sequence = skillLevel.ToString();
             long result;
@@ -48,7 +48,7 @@ namespace AoC2018
                 result = 0;
                 for (int i = sequence.Length; i > 0; i--)
                 {
-                    result = result * 10 + recipes[recipes.Count - i];
+                    result = result * 10 + recipes[^i];
                 }
                 if (skillLevel == result)
                 {
@@ -62,7 +62,7 @@ namespace AoC2018
             long result = 0;
             int skillLevel = int.Parse(Input[0]);
 
-            List<int> recipes = new List<int>() { 3, 7 };
+            List<int> recipes = new() { 3, 7 };
             int elf1 = 0;
             int elf2 = 1;
 
@@ -77,7 +77,7 @@ namespace AoC2018
 
             for (int i = 10; i > 0; i--)
             {
-                result = result * 10 + recipes[recipes.Count - i];
+                result = result * 10 + recipes[^i];
             }
             Part1Solution = result.ToString();
 

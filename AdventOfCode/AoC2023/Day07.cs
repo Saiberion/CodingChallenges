@@ -36,7 +36,7 @@ namespace AoC2023
                 }
                 else
                 {
-                    switch(c)
+                    switch (c)
                     {
                         case 'A':
                             CardValues.Add(14);
@@ -64,7 +64,7 @@ namespace AoC2023
                     cardCounts.Add(c, 1);
                 }
 
-                switch(cardCounts.Count)
+                switch (cardCounts.Count)
                 {
                     case 5:
                         Type = HandType.HighCard;
@@ -74,7 +74,7 @@ namespace AoC2023
                         break;
                     case 3:
                         bool isThreeOfAKind = false;
-                        foreach(int i in cardCounts.Values)
+                        foreach (int i in cardCounts.Values)
                         {
                             if (i == 3)
                             {
@@ -131,7 +131,7 @@ namespace AoC2023
         {
             if (this.Type == other.Type)
             {
-                for(int i = 0; i < this.CardValues.Count; i++)
+                for (int i = 0; i < this.CardValues.Count; i++)
                 {
                     if (this.CardValues[i] < other.CardValues[i])
                     {
@@ -172,7 +172,7 @@ namespace AoC2023
             hands.Sort();
 
             int winnings = 0;
-            for(int i = 0; i < hands.Count; i++)
+            for (int i = 0; i < hands.Count; i++)
             {
                 winnings += (i + 1) * hands[i].Bid;
             }
