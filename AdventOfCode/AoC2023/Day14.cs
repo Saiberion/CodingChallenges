@@ -9,7 +9,7 @@ namespace AoC2023
 {
     public class Day14 : Day
     {
-        private void Tilt(List<List<char>> dish, int direction)
+        private static void Tilt(List<List<char>> dish, int direction)
         {
             switch(direction)
             {
@@ -39,6 +39,24 @@ namespace AoC2023
             }
         }
 
+        private static int GetLoad(List<List<char>> reflectorDish)
+        {
+            int load = 0;
+            for (int i = 0; i < reflectorDish.Count; i++)
+            {
+                int roundrock = 0;
+                foreach (char c in reflectorDish[i])
+                {
+                    if (c == 'O')
+                    {
+                        roundrock++;
+                    }
+                }
+                load += (reflectorDish.Count - i) * roundrock;
+            }
+            return load;
+        }
+
         public override void Solve()
         {
             List<List<char>> reflectorDish = new();
@@ -55,23 +73,21 @@ namespace AoC2023
 
             Tilt(reflectorDish, 0);
 
-            int load = 0;
-            for (int i = 0; i < reflectorDish.Count; i++)
+            Part1Solution = GetLoad(reflectorDish).ToString();
+
+            Tilt(reflectorDish, 1);
+            Tilt(reflectorDish, 2);
+            Tilt(reflectorDish, 3);
+
+            /*for (int i = 1; i < 1000000000; i++)
             {
-                int roundrock = 0;
-                foreach (char c in reflectorDish[i])
-                {
-                    if (c == 'O')
-                    {
-                        roundrock++;
-                    }
-                }
-                load += (reflectorDish.Count - i) * roundrock;
-            }
+                Tilt(reflectorDish, 0);
+                Tilt(reflectorDish, 1);
+                Tilt(reflectorDish, 2);
+                Tilt(reflectorDish, 3);
+            }*/
 
-            Part1Solution = load.ToString();
-
-            Part2Solution = "TBD";
+            Part2Solution = GetLoad(reflectorDish).ToString();
         }
     }
 }
