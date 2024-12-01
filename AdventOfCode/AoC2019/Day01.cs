@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2019
 {
-    public class Day01 : Day
+    public class Day01 : AoCDay
     {
         static int CalculateFuel(int mass, bool morePrecise)
         {

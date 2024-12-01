@@ -17,7 +17,7 @@ namespace AoC2019
             Steps = steps;
         }
     }
-    public class Day03 : Day
+    public class Day03 : AoCDay
     {
         internal List<Point> crossings = new();
 

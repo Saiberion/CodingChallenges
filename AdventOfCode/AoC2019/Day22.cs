@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2019
 {
-    public class Day22 : Day
+    public class Day22 : AoCDay
     {
         private long ShuffleAndFollowCard(long card, long deckSize, long iterations)
         {

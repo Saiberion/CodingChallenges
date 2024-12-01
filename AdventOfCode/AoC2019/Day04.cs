@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2019
 {
-    public class Day04 : Day
+    public class Day04 : AoCDay
     {
         static bool IsValidPassword(int pw)
         {

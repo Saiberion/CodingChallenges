@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2019
 {
-    public class Day07 : Day
+    public class Day07 : AoCDay
     {
         internal List<List<int>> phaseCombinations = new();
         
