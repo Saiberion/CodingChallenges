@@ -9,9 +9,42 @@ namespace AoC2024
     {
         public override void Solve()
         {
-            Part1Solution = "TBD";
+            List<int> left = [];
+            List<int> right = [];
+            foreach (string s in Input)
+            {
+                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                left.Add(int.Parse(splitted[0]));
+                right.Add(int.Parse(splitted[1]));
+            }
 
-            Part2Solution = "TBD";
+            left.Sort();
+            right.Sort();
+
+            int sumOfDifferences = 0;
+
+            for(int i = 0; i < left.Count; i++)
+            {
+                sumOfDifferences += Math.Abs(right[i] - left[i]);
+            }
+
+            Part1Solution = sumOfDifferences.ToString();
+
+            int similarityScore = 0;
+            for (int i = 0; i < left.Count; i++)
+            {
+                int score = 0;
+                for (int j = 0; j < right.Count; j++)
+                {
+                    if (left[i] == right[j])
+                    {
+                        score += left[i];
+                    }
+                }
+                similarityScore += score;
+            }
+
+            Part2Solution = similarityScore.ToString();
         }
     }
 }

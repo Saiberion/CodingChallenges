@@ -298,7 +298,7 @@ namespace AdventOfCode
                 "AoC2024",
                 new List<Day>()
                 {
-                    new AoC2024.Day01() { Enabled = false },
+                    new AoC2024.Day01() { Enabled = true },
                     new AoC2024.Day02() { Enabled = false },
                     new AoC2024.Day03() { Enabled = false },
                     new AoC2024.Day04() { Enabled = false },
