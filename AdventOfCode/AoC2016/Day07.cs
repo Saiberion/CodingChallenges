@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day07 : Day
+    public class Day07 : AoCDay
     {
         static bool IPv7HasTLS(string ipv7)
         {

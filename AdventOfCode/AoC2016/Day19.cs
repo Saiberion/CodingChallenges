@@ -13,7 +13,7 @@ namespace AoC2016
         public Elf Prev { get; set; }
     }
 
-    public class Day19 : Day
+    public class Day19 : AoCDay
     {
         static int StealingPart1(int maxElves)
         {

@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace AoC2016
 {
-    public class Day24 : Day
+    public class Day24 : AoCDay
     {
         static List<Location> GetWalkableAdjacentSquares(int x, int y, int[,] grid)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day18 : Day
+    public class Day18 : AoCDay
     {
         static int TrapRoom(List<string> input, int rows)
         {

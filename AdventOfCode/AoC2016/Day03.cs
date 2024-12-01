@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day03 : Day
+    public class Day03 : AoCDay
     {
         static int GetPossibleTrianglesByLine(List<string> input)
         {

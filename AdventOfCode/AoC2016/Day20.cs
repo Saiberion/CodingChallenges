@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day20 : Day
+    public class Day20 : AoCDay
     {
         static Tuple<long, long> MinimumFreeIP(List<string> input)
         {

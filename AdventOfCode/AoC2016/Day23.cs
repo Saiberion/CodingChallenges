@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day23 : Day
+    public class Day23 : AoCDay
     {
         static long Factorial(long f)
         {

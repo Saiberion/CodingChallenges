@@ -13,7 +13,7 @@ namespace AoC2016
         public string Movement;
     }
 
-    public class Day17 : Day
+    public class Day17 : AoCDay
     {
         static List<Location2> GetWalkableAdjacentSquares(int x, int y, string input, string movement)
         {

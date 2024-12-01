@@ -22,7 +22,7 @@ namespace AoC2016
         }
     }
 
-    public class Day15 : Day
+    public class Day15 : AoCDay
     {
         static int DiscMazePassThrough(List<string> input, bool second)
         {

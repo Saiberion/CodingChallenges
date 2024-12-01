@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day02 : Day
+    public class Day02 : AoCDay
     {
         static string KeypadNormal(List<string> input)
         {

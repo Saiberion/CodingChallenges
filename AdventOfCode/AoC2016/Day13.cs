@@ -15,7 +15,7 @@ namespace AoC2016
         public Location Parent;
     }
 
-    public class Day13 : Day
+    public class Day13 : AoCDay
     {
         static bool GetParity(int n)
         {

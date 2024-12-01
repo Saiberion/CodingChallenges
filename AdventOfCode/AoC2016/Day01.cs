@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day01 : Day
+    public class Day01 : AoCDay
     {
         static Point[] FollowDirections(List<string> input)
         {

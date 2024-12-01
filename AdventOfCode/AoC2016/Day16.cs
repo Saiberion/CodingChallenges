@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day16 : Day
+    public class Day16 : AoCDay
     {
         static string DragonChecksum(string input)
         {

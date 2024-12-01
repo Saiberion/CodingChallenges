@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day08 : Day
+    public class Day08 : AoCDay
     {
         string displayedText;
         int DisplayControl(List<string> input)

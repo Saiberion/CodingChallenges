@@ -14,7 +14,7 @@ namespace AoC2016
         public Point Coords { get; set; }
     }
 
-    public class Day22 : Day
+    public class Day22 : AoCDay
     {
         static List<StorageNode> BuildGrid(List<string> input)
         {

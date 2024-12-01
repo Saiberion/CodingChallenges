@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day09 : Day
+    public class Day09 : AoCDay
     {
         static Int64 DecompressV1(string input)
         {

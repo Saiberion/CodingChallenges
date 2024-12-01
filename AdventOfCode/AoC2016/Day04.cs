@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2016
 {
-    public class Day04 : Day
+    public class Day04 : AoCDay
     {
         static string GetRoomChecksum(List<string> roomName)
         {

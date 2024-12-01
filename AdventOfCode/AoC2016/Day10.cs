@@ -18,7 +18,7 @@ namespace AoC2016
         }
     }
 
-    public class Day10 : Day
+    public class Day10 : AoCDay
     {
         void ParseInstructions(List<string> input)
         {
