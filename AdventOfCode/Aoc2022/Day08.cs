@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2022
 {
-    public class Day08 : Day
+    public class Day08 : AoCDay
     {
         private int[] AnalyzePlantation(int[,] plantation)
         {

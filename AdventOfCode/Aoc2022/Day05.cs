@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2022
 {
-    public class Day05 : Day
+    public class Day05 : AoCDay
     {
         private static int GetStackCount(string stackIDs)
         {

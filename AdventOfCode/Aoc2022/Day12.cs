@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2022
 {
-    public class Day12 : Day
+    public class Day12 : AoCDay
     {
         class Location
         {

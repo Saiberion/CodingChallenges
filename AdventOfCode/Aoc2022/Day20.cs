@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2022
 {
-    public class Day20 : Day
+    public class Day20 : AoCDay
     {
         public class MixItem
         {

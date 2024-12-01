@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2022
 {
-    public class Day04 : Day
+    public class Day04 : AoCDay
     {
         public override void Solve()
         {

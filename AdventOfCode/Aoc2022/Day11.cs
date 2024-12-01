@@ -7,7 +7,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace AoC2022
 {
-    public class Day11 : Day
+    public class Day11 : AoCDay
     {
         public class Monkey
         {

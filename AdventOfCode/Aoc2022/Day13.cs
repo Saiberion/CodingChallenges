@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2022
 {
-    public class Day13 : Day
+    public class Day13 : AoCDay
     {
         private static int CreatePacket(List<object> parent, string s)
         {

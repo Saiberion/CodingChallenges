@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2022
 {
-    public class Day06 : Day
+    public class Day06 : AoCDay
     {
         private int PositionAfterDistinctChars(int distinct)
         {

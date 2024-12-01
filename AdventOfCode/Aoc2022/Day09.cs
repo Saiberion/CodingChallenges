@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AoC2022
 {
-    public class Day09 : Day
+    public class Day09 : AoCDay
     {
         private static void TailFollow(Point[] rope)
         {

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2022
 {
-    public class Day01 : Day
+    public class Day01 : AoCDay
     {
         private static int GetCaloriesTopElves(List<int> sortedWeights, int topCount)
         {
