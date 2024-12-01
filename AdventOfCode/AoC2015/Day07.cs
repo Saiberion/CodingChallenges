@@ -18,7 +18,7 @@ namespace AoC2015
     class Instruction
     {
         public string[] input = new string[2];
-        public string output;
+        public string output = "";
         public EInstruction instruction;
     }
 

@@ -59,10 +59,10 @@ namespace AoC2015
 
     class GameState
     {
-        public Wizard wizard;
-        public Boss boss;
+        public required Wizard wizard;
+        public required Boss boss;
         public bool IsWizwardTurn;
-        public List<Effect> ActiveEffects;
+        public required List<Effect> ActiveEffects;
         public int ManaUsage;
 
         public void ApplyEffects()

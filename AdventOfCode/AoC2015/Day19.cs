@@ -7,8 +7,8 @@ namespace AoC2015
 {
     class ReplacementRule
     {
-        public string From { get; set; }
-        public string To { get; set; }
+        public required string From { get; set; }
+        public required string To { get; set; }
     }
 
     public class Day19 : AoCDay
