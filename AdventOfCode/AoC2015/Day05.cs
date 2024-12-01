@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day05 : Day
+    public class Day05 : AoCDay
     {
         private static bool HasEnoughVowels(string s)
         {

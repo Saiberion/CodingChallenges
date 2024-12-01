@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day23 : Day
+    public class Day23 : AoCDay
     {
         private static int RunProgram(List<string[]> instructions, bool part2)
         {

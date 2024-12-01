@@ -50,7 +50,7 @@ namespace AoC2015
         }
     }
 
-    public class Day14 : Day
+    public class Day14 : AoCDay
     {
         override public void Solve()
         {

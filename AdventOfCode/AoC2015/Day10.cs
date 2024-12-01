@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day10 : Day
+    public class Day10 : AoCDay
     {
         static string LookAndSay(string origin, int iterations)
         {

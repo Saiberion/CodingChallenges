@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day17 : Day
+    public class Day17 : AoCDay
     {
         private static readonly List<List<int>> combinations = new();
 

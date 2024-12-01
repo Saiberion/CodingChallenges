@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day11 : Day
+    public class Day11 : AoCDay
     {
         static bool HasStraight(string pw)
         {

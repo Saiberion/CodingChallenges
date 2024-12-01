@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day18 : Day
+    public class Day18 : AoCDay
     {
         static int GetActiveNeighbors(int[,] grid, int x, int y)
         {

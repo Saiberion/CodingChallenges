@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace AoC2015
 {
-    public class Day12 : Day
+    public class Day12 : AoCDay
     {
         int SumUpObject(JsonElement obj, bool skipRed)
         {

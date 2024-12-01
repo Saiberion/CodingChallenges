@@ -98,7 +98,7 @@ namespace AoC2015
         }
     }
 
-    public class Day22 : Day
+    public class Day22 : AoCDay
     {
         private static int SimulateGames(bool hardMode)
         {

@@ -19,7 +19,7 @@ namespace AoC2015
         public int Defense { get; set; }
     }
 
-    public class Day21 : Day
+    public class Day21 : AoCDay
     {
         private static bool Fight(Player p, Player b)
         {

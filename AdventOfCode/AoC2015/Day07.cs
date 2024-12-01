@@ -22,7 +22,7 @@ namespace AoC2015
         public EInstruction instruction;
     }
 
-    public class Day07 : Day
+    public class Day07 : AoCDay
     {
         private List<Instruction> ReadInstructionList()
         {

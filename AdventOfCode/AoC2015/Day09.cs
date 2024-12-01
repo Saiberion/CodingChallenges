@@ -19,7 +19,7 @@ namespace AoC2015
         }
     }
 
-    public class Day09 : Day
+    public class Day09 : AoCDay
     {
         internal List<List<string>> tracks = new();
 

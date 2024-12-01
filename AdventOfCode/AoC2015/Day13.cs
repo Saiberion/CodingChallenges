@@ -19,7 +19,7 @@ namespace AoC2015
         }
     }
 
-    public class Day13 : Day
+    public class Day13 : AoCDay
     {
         internal List<List<string>> seatingOrder = new();
 

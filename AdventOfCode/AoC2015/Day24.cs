@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2015
 {
-    public class Day24 : Day
+    public class Day24 : AoCDay
     {
         private static Tuple<long, int> Balance(List<int> weights, int pos, int remWt, long currQe, int currCt)
         {

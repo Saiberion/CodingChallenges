@@ -11,7 +11,7 @@ namespace AoC2015
         public string To { get; set; }
     }
 
-    public class Day19 : Day
+    public class Day19 : AoCDay
     {
         override public void Solve()
         {

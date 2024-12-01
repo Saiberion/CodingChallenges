@@ -23,7 +23,7 @@ namespace AoC2015
         }
     }
 
-    public class Day15 : Day
+    public class Day15 : AoCDay
     {
         override public void Solve()
         {
