@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2021
 {
-    public class Day11 : Day
+    public class Day11 : AoCDay
     {
         private readonly Stack<int[]> FlashList = new();
 
