@@ -12,7 +12,7 @@ namespace AoC2020
         public Dictionary<string, int> Content { get; set; }
     }
 
-    public class Day07 : Day
+    public class Day07 : AoCDay
     {
         private List<string> OuterBagNames;
 

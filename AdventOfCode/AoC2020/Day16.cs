@@ -23,7 +23,7 @@ namespace AoC2020
         }
     }
 
-    public class Day16 : Day
+    public class Day16 : AoCDay
     {
         override public void Solve()
         {

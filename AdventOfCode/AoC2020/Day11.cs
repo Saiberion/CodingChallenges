@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2020
 {
-    public class Day11 : Day
+    public class Day11 : AoCDay
     {
         public static int CountOccupiedSeatsInSight(int x, int y, char[,] seatingArea, int distance)
         {

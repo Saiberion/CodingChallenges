@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2020
 {
-    public class Day22 : Day
+    public class Day22 : AoCDay
     {
         private static bool SequenceIsEqal(List<int> l1, List<int> l2)
         {

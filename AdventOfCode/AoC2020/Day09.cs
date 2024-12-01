@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2020
 {
-    public class Day09 : Day
+    public class Day09 : AoCDay
     {
         private static bool IsValidNumber(long nr, List<long> l)
         {

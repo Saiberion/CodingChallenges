@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2020
 {
-    public class Day01 : Day
+    public class Day01 : AoCDay
     {
         private static string FindMatching2Entries(List<int> l)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2020
 {
-    public class Day13 : Day
+    public class Day13 : AoCDay
     {
         // TODO fix the broken solver
         private static long GCD(long a, long b)

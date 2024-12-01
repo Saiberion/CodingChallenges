@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2020
 {
-    public class Day18 : Day
+    public class Day18 : AoCDay
     {
         private int exprIdx = 0;
         private long Evaluate(string expr)
