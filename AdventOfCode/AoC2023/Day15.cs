@@ -30,7 +30,7 @@ namespace AoC2023
         }
     }
 
-    public class Day15 : Day
+    public class Day15 : AoCDay
     {
         public static int GetHash(string sequence)
         {

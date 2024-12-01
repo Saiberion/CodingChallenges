@@ -21,7 +21,7 @@ namespace AoC2023
         }
     }
 
-    public class Day05 : Day
+    public class Day05 : AoCDay
     {
         private enum EInputReadType
         {

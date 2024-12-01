@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AoC2023
 {
-    public class Day14 : Day
+    public class Day14 : AoCDay
     {
         private static void Tilt(List<List<char>> dish, int direction)
         {

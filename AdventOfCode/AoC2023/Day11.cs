@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2023
 {
-    public class Day11 : Day
+    public class Day11 : AoCDay
     {
         public static int GetDistance(Point a, Point b)
         {

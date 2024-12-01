@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2023
 {
-    public class Day01 : Day
+    public class Day01 : AoCDay
     {
         private static List<int> GetDigitsFromString(string s, bool part2)
         {

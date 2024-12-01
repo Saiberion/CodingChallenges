@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2023
 {
-    public class Day16 : Day
+    public class Day16 : AoCDay
     {
         public enum EDirections
         {

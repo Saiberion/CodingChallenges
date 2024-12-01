@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AoC2023
 {
-    public class Day03 : Day
+    public class Day03 : AoCDay
     {
         private Point gearCoords = new(-1, -1);
 

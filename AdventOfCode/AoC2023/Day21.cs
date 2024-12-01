@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2023
 {
-    public class Day21 : Day
+    public class Day21 : AoCDay
     {
         private static bool IsValidLocation(char[,] g, Point p)
         {

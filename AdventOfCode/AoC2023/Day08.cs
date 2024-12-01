@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AoC2023
 {
-    public class Day08 : Day
+    public class Day08 : AoCDay
     {
         readonly Dictionary<string, List<string>> network = new();
 
