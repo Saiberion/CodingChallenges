@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day04 : Day
+    public class Day04 : AoCDay
     {
         static int IsValidPassphrasePart1(string line)
         {

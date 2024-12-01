@@ -83,7 +83,7 @@ namespace AoC2017
 		}
 	}
 
-	public class Day08 : Day
+	public class Day08 : AoCDay
 	{
 		static int ExecuteInstructions(Dictionary<string, int> registers, List<Instruction> instructionList)
 		{

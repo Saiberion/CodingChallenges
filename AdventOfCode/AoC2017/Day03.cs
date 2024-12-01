@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day03 : Day
+    public class Day03 : AoCDay
     {
         public static int SumAdjecent(Dictionary<Point, int> grid, int x, int y)
         {

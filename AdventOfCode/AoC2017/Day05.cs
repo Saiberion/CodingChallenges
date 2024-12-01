@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day05 : Day
+    public class Day05 : AoCDay
     {
         static int ListWalkerPart1(List<int> jumpList)
         {

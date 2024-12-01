@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day25 : Day
+    public class Day25 : AoCDay
     {
         enum EStates
         {

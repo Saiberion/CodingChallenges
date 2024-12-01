@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day19 : Day
+    public class Day19 : AoCDay
     {
         static int FindMazeStart(List<string> maze)
         {

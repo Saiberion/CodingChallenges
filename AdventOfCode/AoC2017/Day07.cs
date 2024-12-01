@@ -25,7 +25,7 @@ namespace AoC2017
 		}
 	}
 
-	public class Day07 : Day
+	public class Day07 : AoCDay
 	{
 		static void DetermineTotalWeights(TowerElement t)
 		{

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day14 : Day
+    public class Day14 : AoCDay
     {
         static void FillRegion(int regionNumber, int x, int y, List<int[]> grid)
         {

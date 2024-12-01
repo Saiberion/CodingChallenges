@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day23 : Day
+    public class Day23 : AoCDay
     {
         enum EOpcodes
         {

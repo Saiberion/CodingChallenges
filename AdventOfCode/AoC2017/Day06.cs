@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2017
 {
-	public class Day06 : Day
+	public class Day06 : AoCDay
 	{
 		static int CalculateSignature(List<int> l)
 		{

@@ -90,7 +90,7 @@ namespace AoC2017
         }
     }
 
-    public class Day20 : Day
+    public class Day20 : AoCDay
     {
         public override void Solve()
         {

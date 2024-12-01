@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day22 : Day
+    public class Day22 : AoCDay
     {
         public void GridInit(int[,] grid)
         {

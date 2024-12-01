@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AoC2017
 {
-    public class Day21 : Day
+    public class Day21 : AoCDay
     {
         static string FlipHorizontal(string grid)
         {

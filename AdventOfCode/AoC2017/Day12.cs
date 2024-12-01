@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2017
 {
-	public class Day12 : Day
+	public class Day12 : AoCDay
 	{
 		static int CountIDs(Dictionary<int, List<int>> pipes, List<int> groupIDs, int searchID)
 		{
