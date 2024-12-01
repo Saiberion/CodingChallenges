@@ -13,11 +13,11 @@ namespace AdventOfCode
 {
     public partial class FormSolverUI : Form
     {
-        private readonly Dictionary<string, List<Day>> allAoCDays = new()
+        private readonly Dictionary<string, List<AoCDay>> allAoCDays = new()
         {
             {
                 "AoC2015",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2015.Day01() { Enabled = true },
                     new AoC2015.Day02() { Enabled = true },
@@ -48,7 +48,7 @@ namespace AdventOfCode
             },
             {
                 "AoC2016",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2016.Day01() { Enabled = true },
                     new AoC2016.Day02() { Enabled = true },
@@ -79,7 +79,7 @@ namespace AdventOfCode
             },
             {
                 "AoC2017",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2017.Day01() { Enabled = true },
                     new AoC2017.Day02() { Enabled = true },
@@ -110,7 +110,7 @@ namespace AdventOfCode
             },
             {
                 "AoC2018",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2018.Day01() { Enabled = true },
                     new AoC2018.Day02() { Enabled = true },
@@ -141,7 +141,7 @@ namespace AdventOfCode
             },
             {
                 "AoC2019",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2019.Day01() { Enabled = true },
                     new AoC2019.Day02() { Enabled = true },
@@ -172,7 +172,7 @@ namespace AdventOfCode
             },
             {
                 "AoC2020",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2020.Day01() { Enabled = true },
                     new AoC2020.Day02() { Enabled = true },
@@ -203,7 +203,7 @@ namespace AdventOfCode
             },
             {
                 "AoC2021",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2021.Day01() { Enabled = true },
                     new AoC2021.Day02() { Enabled = true },
@@ -234,7 +234,7 @@ namespace AdventOfCode
             },
             {
                 "AoC2022",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2022.Day01() { Enabled = true },
                     new AoC2022.Day02() { Enabled = true },
@@ -265,7 +265,7 @@ namespace AdventOfCode
             },
             {
                 "AoC2023",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2023.Day01() { Enabled = true },
                     new AoC2023.Day02() { Enabled = true },
@@ -296,7 +296,7 @@ namespace AdventOfCode
             },
             {
                 "AoC2024",
-                new List<Day>()
+                new List<AoCDay>()
                 {
                     new AoC2024.Day01() { Enabled = true },
                     new AoC2024.Day02() { Enabled = false },
@@ -334,19 +334,18 @@ namespace AdventOfCode
             SetDoubleBuffered(tableLayoutPanelDayGrid);
         }
 
-        private void ButtonSolveAllDays(object sender, EventArgs e)
+        private void ButtonSolveAllDays(object? sender, EventArgs e)
         {
             for (int i = 1; i < tableLayoutPanelDayGrid.RowCount; i++)
             {
-                Button b = tableLayoutPanelDayGrid.GetControlFromPosition(0, i) as Button;
-                if (b.Enabled)
+                if ((tableLayoutPanelDayGrid.GetControlFromPosition(0, i) is Button b) && (b.Enabled))
                 {
                     ButtonSolveSingleDay(b, new EventArgs());
                 }
             }
         }
 
-        private void ButtonSolveSingleDay(object sender, EventArgs e)
+        private void ButtonSolveSingleDay(object? sender, EventArgs e)
         {
             BackgroundWorker bw = new();
             bw.DoWork += BackgroundWorkerDaySolver;
@@ -355,47 +354,63 @@ namespace AdventOfCode
             bw.WorkerReportsProgress = true;
             bw.RunWorkerAsync(sender);
 
-            Button b = sender as Button;
-            TableLayoutPanel tbl = b.Parent as TableLayoutPanel;
-            TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
-            Label l3 = tbl.GetControlFromPosition(3, pos.Row) as Label;
-            l3.Text = "initialised";
+            if ((sender is Button b) && (b.Parent is TableLayoutPanel tbl))
+            {
+                TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
+                if (tbl.GetControlFromPosition(3, pos.Row) is Label l3)
+                {
+                    l3.Text = "initialised";
+                }
+            }
+
             bw.Dispose();
         }
 
-        private void BackgroundWorkerDaySolverProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BackgroundWorkerDaySolverProgressChanged(object? sender, ProgressChangedEventArgs e)
         {
-            Button b = e.UserState as Button;
-            TableLayoutPanel tbl = b.Parent as TableLayoutPanel;
-            TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
-            Label l3 = tbl.GetControlFromPosition(3, pos.Row) as Label;
-            l3.Text = "Running";
+            if ((e.UserState is Button b) && (b.Parent is TableLayoutPanel tbl))
+            {
+                TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
+                if (tbl.GetControlFromPosition(3, pos.Row) is Label l3)
+                {
+                    l3.Text = "Running";
+                }
+            }
         }
 
-        private void BackgroundWorkerDaySolverCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackgroundWorkerDaySolverCompleted(object? sender, RunWorkerCompletedEventArgs e)
         {
-            Button b = e.Result as Button;
-            Day d = b.Tag as Day;
-            TableLayoutPanel tbl = b.Parent as TableLayoutPanel;
-            TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
-            TextBox t1 = tbl.GetControlFromPosition(1, pos.Row) as TextBox;
-            TextBox t2 = tbl.GetControlFromPosition(2, pos.Row) as TextBox;
-            Label l3 = tbl.GetControlFromPosition(3, pos.Row) as Label;
-            t1.Text = d.Part1Solution;
-            t2.Text = d.Part2Solution;
-            l3.Text = d.StopWatch.Elapsed.ToString();
+            if ((e.Result is Button b) && (b.Tag is AoCDay d) && (b.Parent is TableLayoutPanel tbl))
+            {
+                TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
+                if (tbl.GetControlFromPosition(1, pos.Row) is TextBox t1)
+                {
+                    t1.Text = d.Part1Solution;
+                }
+                if (tbl.GetControlFromPosition(2, pos.Row) is TextBox t2)
+                {
+                    t2.Text = d.Part2Solution;
+                }
+                if (tbl.GetControlFromPosition(3, pos.Row) is Label l3)
+                {
+                    l3.Text = d.StopWatch.Elapsed.ToString();
+                }
+            }
         }
 
-        private void BackgroundWorkerDaySolver(object sender, DoWorkEventArgs e)
+        private void BackgroundWorkerDaySolver(object? sender, DoWorkEventArgs e)
         {
-            Button b = e.Argument as Button;
-            BackgroundWorker bw = sender as BackgroundWorker;
-            bw.ReportProgress(0, b);
-            Day d = b.Tag as Day;
-            d.StopWatch.Restart();
-            d.Solve();
-            d.StopWatch.Stop();
-            e.Result = b;
+            if ((e.Argument is Button b) && (sender is BackgroundWorker bw))
+            {
+                bw.ReportProgress(0, b);
+                if (b.Tag is AoCDay d)
+                {
+                    d.StopWatch.Restart();
+                    d.Solve();
+                    d.StopWatch.Stop();
+                    e.Result = b;
+                }
+            }
         }
 
         private void SolverUI_Load(object sender, EventArgs e)
@@ -411,7 +426,7 @@ namespace AdventOfCode
 
         private void ComboBoxYearSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Day> days;
+            List<AoCDay> days;
             tableLayoutPanelDayGrid.SuspendLayout();
             tableLayoutPanelDayGrid.Controls.Clear();
             tableLayoutPanelDayGrid.RowStyles.Clear();
@@ -441,59 +456,67 @@ namespace AdventOfCode
             }, 3, 0);
             tableLayoutPanelDayGrid.RowCount = 1;
 
-            days = allAoCDays[comboBoxYearSelect.SelectedItem.ToString()];
-
-            for (int i = 0; i < days.Count; i++)
+            if (comboBoxYearSelect.SelectedItem != null)
             {
-                tableLayoutPanelDayGrid.RowCount++;
-                tableLayoutPanelDayGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-
-                Button b = new()
+                string? key = comboBoxYearSelect.SelectedItem.ToString();
+                if (key != null)
                 {
-                    Anchor = AnchorStyles.None,
-                    Name = string.Format("buttonSolveDay{0}", i + 1),
-                    Text = string.Format("Solve day {0}", i + 1),
-                    Size = new Size(90, 25),
-                    Tag = days[i],
-                    Enabled = days[i].Enabled
-                };
-                b.Click += ButtonSolveSingleDay;
-                tableLayoutPanelDayGrid.Controls.Add(b, 0, i + 1);
+                    days = allAoCDays[key];
 
-                tableLayoutPanelDayGrid.Controls.Add(new TextBox()
-                {
-                    Anchor = AnchorStyles.None,
-                    Name = string.Format("textBoxD{0}P1", i + 1),
-                    Text = "",
-                    AutoSize = true,
-                    ReadOnly = true,
-                    TextAlign = HorizontalAlignment.Center,
-                    BorderStyle = BorderStyle.None,
-                    Padding = new Padding(0, 8, 0, 0),
-                    Width = 200
-                }, 1, i + 1);
+                    for (int i = 0; i < days.Count; i++)
+                    {
+                        tableLayoutPanelDayGrid.RowCount++;
+                        tableLayoutPanelDayGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
 
-                tableLayoutPanelDayGrid.Controls.Add(new TextBox()
-                {
-                    Anchor = AnchorStyles.None,
-                    Name = string.Format("textBoxD{0}P2", i + 1),
-                    Text = "",
-                    AutoSize = true,
-                    ReadOnly = true,
-                    TextAlign = HorizontalAlignment.Center,
-                    BorderStyle = BorderStyle.None,
-                    Padding = new Padding(0, 8, 0, 0),
-                    Width = 200
-                }, 2, i + 1);
+                        Button b = new()
+                        {
+                            Anchor = AnchorStyles.None,
+                            Name = string.Format("buttonSolveDay{0}", i + 1),
+                            Text = string.Format("Solve day {0}", i + 1),
+                            Size = new Size(90, 25),
+                            Tag = days[i],
+                            Enabled = days[i].Enabled
+                        };
+                        b.Click += ButtonSolveSingleDay;
+                        tableLayoutPanelDayGrid.Controls.Add(b, 0, i + 1);
 
-                tableLayoutPanelDayGrid.Controls.Add(new Label()
-                {
-                    Anchor = AnchorStyles.None,
-                    Name = string.Format("labelD{0}Perf", i + 1),
-                    Text = "",
-                    AutoSize = true
-                }, 3, i + 1);
-            }
+                        tableLayoutPanelDayGrid.Controls.Add(new TextBox()
+                        {
+                            Anchor = AnchorStyles.None,
+                            Name = string.Format("textBoxD{0}P1", i + 1),
+                            Text = "",
+                            AutoSize = true,
+                            ReadOnly = true,
+                            TextAlign = HorizontalAlignment.Center,
+                            BorderStyle = BorderStyle.None,
+                            Padding = new Padding(0, 8, 0, 0),
+                            Width = 200
+                        }, 1, i + 1);
+
+                        tableLayoutPanelDayGrid.Controls.Add(new TextBox()
+                        {
+                            Anchor = AnchorStyles.None,
+                            Name = string.Format("textBoxD{0}P2", i + 1),
+                            Text = "",
+                            AutoSize = true,
+                            ReadOnly = true,
+                            TextAlign = HorizontalAlignment.Center,
+                            BorderStyle = BorderStyle.None,
+                            Padding = new Padding(0, 8, 0, 0),
+                            Width = 200
+                        }, 2, i + 1);
+
+                        tableLayoutPanelDayGrid.Controls.Add(new Label()
+                        {
+                            Anchor = AnchorStyles.None,
+                            Name = string.Format("labelD{0}Perf", i + 1),
+                            Text = "",
+                            AutoSize = true
+                        }, 3, i + 1);
+                    }
+                }            }
+
+            
 
             Button b2 = new()
             {
@@ -517,8 +540,11 @@ namespace AdventOfCode
             {
                 return;
             }
-            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            aProp.SetValue(c, true, null);
+            System.Reflection.PropertyInfo? aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            if (aProp != null)
+            {
+                aProp.SetValue(c, true, null);
+            }
         }
 
         #endregion
