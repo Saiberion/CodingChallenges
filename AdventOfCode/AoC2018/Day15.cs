@@ -38,7 +38,7 @@ namespace AoC2018
         }
     }
 
-    public class Day15 : Day
+    public class Day15 : AoCDay
     {
         public override void Solve()
         {

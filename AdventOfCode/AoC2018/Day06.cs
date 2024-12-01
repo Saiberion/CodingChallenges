@@ -18,7 +18,7 @@ namespace AoC2018
         }
     }
 
-    public class Day06 : Day
+    public class Day06 : AoCDay
     {
         static List<Coordinate> GetCoordinates(List<string> input)
         {

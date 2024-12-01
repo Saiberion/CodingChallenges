@@ -20,7 +20,7 @@ namespace AoC2018
         }
     }
 
-    public class Day03 : Day
+    public class Day03 : AoCDay
     {
         static int GetOverlappingArea(List<string> input)
         {

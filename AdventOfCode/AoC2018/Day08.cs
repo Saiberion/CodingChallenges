@@ -17,7 +17,7 @@ namespace AoC2018
         }
     }
 
-    public class Day08 : Day
+    public class Day08 : AoCDay
     {
         static Node CreateNode(List<int> data)
         {

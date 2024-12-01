@@ -19,7 +19,7 @@ namespace AoC2018
         }
     }
 
-    public class Day07 : Day
+    public class Day07 : AoCDay
     {
         static Dictionary<string, List<string>> GetInstructionOrder(List<string> input)
         {

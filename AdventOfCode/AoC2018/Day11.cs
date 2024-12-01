@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2018
 {
-    public class Day11 : Day
+    public class Day11 : AoCDay
     {
         static int GetFuelCellPower(int x, int y, int gridSerial)
         {

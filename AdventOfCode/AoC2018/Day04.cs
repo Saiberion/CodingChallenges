@@ -41,7 +41,7 @@ namespace AoC2018
         }
     }
 
-    public class Day04 : Day
+    public class Day04 : AoCDay
     {
         static List<GuardLog> FillGuardLog(List<string> input)
         {

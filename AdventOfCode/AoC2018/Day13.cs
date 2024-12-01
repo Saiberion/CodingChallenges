@@ -156,7 +156,7 @@ namespace AoC2018
         }
     }
 
-    public class Day13 : Day
+    public class Day13 : AoCDay
     {
         static MinecartTrackSystem GetInitialTrackState(List<string> input)
         {

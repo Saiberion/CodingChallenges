@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2018
 {
-    public class Day14 : Day
+    public class Day14 : AoCDay
     {
         static int CreateRecipes(List<int> recipes, ref int elf1, ref int elf2)
         {

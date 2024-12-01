@@ -52,7 +52,7 @@ namespace AoC2018
         }
     }
 
-    public class Day10 : Day
+    public class Day10 : AoCDay
     {
         static private string LightPlotter(List<MovingLight> lights)
         {

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2018
 {
-    public class Day05 : Day
+    public class Day05 : AoCDay
     {
         static string PolymerReaction(string polymer)
         {

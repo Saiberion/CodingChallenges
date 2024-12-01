@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2018
 {
-    public class Day02 : Day
+    public class Day02 : AoCDay
     {
         static int Find2MatchingDigits(string input)
         {

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AoC2018
 {
-    public class Day09 : Day
+    public class Day09 : AoCDay
     {
         /*long PlayGame(int maxPlayers, int maxMarbleNumber)
         {

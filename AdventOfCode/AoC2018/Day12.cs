@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AoC2018
 {
-    public class Day12 : Day
+    public class Day12 : AoCDay
     {
         long SimulateGenerations(long gens)
         {
