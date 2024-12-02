@@ -541,10 +541,7 @@ namespace AdventOfCode
                 return;
             }
             System.Reflection.PropertyInfo? aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            if (aProp != null)
-            {
-                aProp.SetValue(c, true, null);
-            }
+            aProp?.SetValue(c, true, null);
         }
 
         #endregion

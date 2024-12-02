@@ -244,7 +244,7 @@ namespace AdventOfCode
 
         public static string Render(int[,] display)
         {
-            List<int> textCols = new();
+            List<int> textCols = [];
             for (int x = 0; x < display.GetLength(0); x++)
             {
                 int pattern = 0;
