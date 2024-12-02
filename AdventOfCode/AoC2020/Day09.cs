@@ -50,8 +50,8 @@ namespace AdventOfCode.AoC2020
         override public void Solve()
         {
             long nextNr = 0;
-            List<long> encoding = new();
-            List<long> encodingComplete = new();
+            List<long> encoding = [];
+            List<long> encodingComplete = [];
             for (int i = 0; i < Input.Count; i++)
             {
                 encodingComplete.Add(long.Parse(Input[i]));

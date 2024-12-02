@@ -32,8 +32,8 @@ namespace AdventOfCode.AoC2020
                 bag = new Bag
                 {
                     Name = name,
-                    Within = new List<string>(),
-                    Content = new Dictionary<string, int>()
+                    Within = [],
+                    Content = []
                 };
                 bags.Add(bag);
             }
@@ -69,17 +69,17 @@ namespace AdventOfCode.AoC2020
 
         override public void Solve()
         {
-            List<Bag> bags = new();
+            List<Bag> bags = [];
             Bag bag, bagContainer;
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new string[] { " bags contain " }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([" bags contain "], StringSplitOptions.RemoveEmptyEntries);
 
                 bag = FindOrCreateBag(splitted[0], bags);
                 bagContainer = bag;
 
-                string[] splitted2 = splitted[1].Split(new string[] { " bag, ", " bags, ", " bag.", " bags." }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted2 = splitted[1].Split([" bag, ", " bags, ", " bag.", " bags."], StringSplitOptions.RemoveEmptyEntries);
                 if (!splitted2[0].Equals("no other"))
                 {
                     foreach (string s2 in splitted2)
@@ -93,7 +93,7 @@ namespace AdventOfCode.AoC2020
                 }
             }
 
-            OuterBagNames = new List<string>();
+            OuterBagNames = [];
             GetOuterBags("shiny gold", bags);
 
             Part1Solution = OuterBagNames.Count.ToString();

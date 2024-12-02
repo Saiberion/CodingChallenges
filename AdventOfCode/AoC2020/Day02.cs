@@ -31,7 +31,7 @@ namespace AdventOfCode.AoC2020
             int validCountAdvanced = 0;
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { '-', ' ', ':' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split(['-', ' ', ':'], StringSplitOptions.RemoveEmptyEntries);
                 int i1 = int.Parse(splitted[0]);
                 int i2 = int.Parse(splitted[1]);
                 char c = splitted[2][0];

@@ -22,7 +22,7 @@ namespace AdventOfCode.AoC2019
 
         public IntCodeComputer(string input)
         {
-            string[] splitted = input.Split(new char[] { ',' });
+            string[] splitted = input.Split([',']);
             baseProgram = new long[splitted.Length + splitted.Length * 10];
             for (int i = 0; i < splitted.Length; i++)
             {

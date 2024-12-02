@@ -9,12 +9,12 @@ namespace AdventOfCode.AoC2020
     {
         override public void Solve()
         {
-            List<int> adapters = new();
+            List<int> adapters = [];
             int diff1 = 0, diff3 = 1;
-            List<int> differences = new();
-            List<int> oneblocks = new();
+            List<int> differences = [];
+            List<int> oneblocks = [];
             int count = 0;
-            int[] combinations = { 1, 2, 4, 7 };
+            int[] combinations = [1, 2, 4, 7];
             long totalCombinations = 1;
 
             foreach (string s in Input)

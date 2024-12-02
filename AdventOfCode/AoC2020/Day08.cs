@@ -31,15 +31,15 @@ namespace AdventOfCode.AoC2020
 
         public BootCode()
         {
-            Instructions = new List<EBootCodeInstructions>();
-            Arguments = new List<int>();
-            Executed = new List<bool>();
+            Instructions = [];
+            Arguments = [];
+            Executed = [];
             Accumulator = 0;
         }
 
         public void AddInstruction(string instr)
         {
-            string[] splitted = instr.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitted = instr.Split([' '], StringSplitOptions.RemoveEmptyEntries);
 
             if (splitted[0].Equals("acc"))
             {

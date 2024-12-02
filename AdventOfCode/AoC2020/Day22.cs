@@ -28,8 +28,8 @@ namespace AdventOfCode.AoC2020
 
         private static int StartGame(List<int> p1, List<int> p2, bool recursive)
         {
-            List<List<int>> prevRoundsP1 = new();
-            List<List<int>> prevRoundsP2 = new();
+            List<List<int>> prevRoundsP1 = [];
+            List<List<int>> prevRoundsP2 = [];
             if (!recursive)
             {
                 while ((p1.Count > 0) && (p2.Count > 0))
@@ -131,10 +131,7 @@ namespace AdventOfCode.AoC2020
 
         private static int GetScore(List<int> p1, List<int> p2, int winnerIdx)
         {
-            List<int>[] new_deck = new List<int>[2];
-            new_deck[0] = p1;
-            new_deck[1] = p2;
-
+            List<int>[] new_deck = [p1, p2];
             int score = 0;
             for (int i = 0; i < new_deck[winnerIdx].Count; i++)
             {
@@ -145,11 +142,7 @@ namespace AdventOfCode.AoC2020
 
         override public void Solve()
         {
-            List<int>[] decks = new List<int>[2];
-
-            decks[0] = new List<int>();
-            decks[1] = new List<int>();
-
+            List<int>[] decks = [[], []];
             int playerIdx = -1;
             string[] splitted;
 
@@ -159,7 +152,7 @@ namespace AdventOfCode.AoC2020
                 {
                     if (s.StartsWith("Player"))
                     {
-                        splitted = s.Split(new string[] { "Player ", ":" }, StringSplitOptions.RemoveEmptyEntries);
+                        splitted = s.Split(["Player ", ":"], StringSplitOptions.RemoveEmptyEntries);
                         playerIdx = int.Parse(splitted[0]) - 1;
                     }
                     else
@@ -169,13 +162,13 @@ namespace AdventOfCode.AoC2020
                 }
             }
 
-            List<int> p1 = new(decks[0].ToArray());
-            List<int> p2 = new(decks[1].ToArray());
+            List<int> p1 = new([.. decks[0]]);
+            List<int> p2 = new([.. decks[1]]);
             playerIdx = StartGame(p1, p2, false);
             Part1Solution = GetScore(p1, p2, playerIdx).ToString();
 
-            p1 = new(decks[0].ToArray());
-            p2 = new(decks[1].ToArray());
+            p1 = new([.. decks[0]]);
+            p2 = new([.. decks[1]]);
             playerIdx = StartGame(p1, p2, true);
             Part2Solution = GetScore(p1, p2, playerIdx).ToString();
         }

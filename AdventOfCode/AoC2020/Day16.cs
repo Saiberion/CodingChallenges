@@ -5,22 +5,13 @@ using System.Text;
 
 namespace AdventOfCode.AoC2020
 {
-    public class TicketField
+    public class TicketField(string name, int min1, int max1, int min2, int max2)
     {
-        public string Name { get; set; }
-        public int Min1 { get; set; }
-        public int Min2 { get; set; }
-        public int Max1 { get; set; }
-        public int Max2 { get; set; }
-
-        public TicketField(string name, int min1, int max1, int min2, int max2)
-        {
-            Name = name;
-            Min1 = min1;
-            Min2 = min2;
-            Max1 = max1;
-            Max2 = max2;
-        }
+        public string Name { get; set; } = name;
+        public int Min1 { get; set; } = min1;
+        public int Min2 { get; set; } = min2;
+        public int Max1 { get; set; } = max1;
+        public int Max2 { get; set; } = max2;
     }
 
     public class Day16 : AoCDay
@@ -28,10 +19,10 @@ namespace AdventOfCode.AoC2020
         override public void Solve()
         {
             int readSection = 0;
-            List<TicketField> ticketFields = new();
-            List<int> myTicketValues = new();
-            List<List<int>> nearbyTickets = new();
-            List<List<int>> nearbyValidTickets = new();
+            List<TicketField> ticketFields = [];
+            List<int> myTicketValues = [];
+            List<List<int>> nearbyTickets = [];
+            List<List<int>> nearbyValidTickets = [];
             foreach (string s in Input)
             {
                 if (string.IsNullOrEmpty(s))
@@ -44,13 +35,13 @@ namespace AdventOfCode.AoC2020
                     switch (readSection)
                     {
                         case 0:
-                            splitted = s.Split(new string[] { ": ", "-", " or " }, StringSplitOptions.RemoveEmptyEntries);
+                            splitted = s.Split([": ", "-", " or "], StringSplitOptions.RemoveEmptyEntries);
                             ticketFields.Add(new TicketField(splitted[0], int.Parse(splitted[1]), int.Parse(splitted[2]), int.Parse(splitted[3]), int.Parse(splitted[4])));
                             break;
                         case 1:
                             if (!s.StartsWith("your"))
                             {
-                                splitted = s.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                                splitted = s.Split([","], StringSplitOptions.RemoveEmptyEntries);
                                 foreach (string s2 in splitted)
                                 {
                                     myTicketValues.Add(int.Parse(s2));
@@ -60,8 +51,8 @@ namespace AdventOfCode.AoC2020
                         case 2:
                             if (!s.StartsWith("nearby"))
                             {
-                                List<int> ticket = new();
-                                splitted = s.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                                List<int> ticket = [];
+                                splitted = s.Split([","], StringSplitOptions.RemoveEmptyEntries);
                                 foreach (string s2 in splitted)
                                 {
                                     ticket.Add(int.Parse(s2));
@@ -73,7 +64,7 @@ namespace AdventOfCode.AoC2020
                 }
             }
 
-            List<int> validNumbers = new();
+            List<int> validNumbers = [];
             foreach (TicketField t in ticketFields)
             {
                 for (int i = t.Min1; i <= t.Max1; i++)

@@ -10,7 +10,7 @@ namespace AdventOfCode.AoC2020
         override public void Solve()
         {
             int personCounter = 0;
-            Dictionary<char, int> groupAnswers = new();
+            Dictionary<char, int> groupAnswers = [];
             int sumOfYesAnswersPerGroup = 0;
             int sumOfYesAnswersPerGroupAdvanced = 0;
             for (int i = 0; i < Input.Count; i++)
@@ -28,16 +28,16 @@ namespace AdventOfCode.AoC2020
                         }
                     }
                     personCounter = 0;
-                    groupAnswers = new Dictionary<char, int>();
+                    groupAnswers = [];
                 }
                 else
                 {
                     personCounter++;
                     foreach (char c in Input[i])
                     {
-                        if (groupAnswers.ContainsKey(c))
+                        if (groupAnswers.TryGetValue(c, out int value))
                         {
-                            groupAnswers[c]++;
+                            groupAnswers[c] = ++value;
                         }
                         else
                         {

@@ -11,14 +11,14 @@ namespace AdventOfCode.AoC2020
         {
             int x;
             int y;
-            List<int[]> slopes = new()
-            {
-                new int[] { 1, 1 },
-                new int[] { 3, 1 },
-                new int[] { 5, 1 },
-                new int[] { 7, 1 },
-                new int[] { 1, 2 }
-            };
+            List<int[]> slopes =
+            [
+                [1, 1],
+                [3, 1],
+                [5, 1],
+                [7, 1],
+                [1, 2]
+            ];
             int[] trees = new int[slopes.Count];
             long treemultiply = 1;
 

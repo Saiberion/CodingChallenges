@@ -48,7 +48,7 @@ namespace AdventOfCode.AoC2020
 
         override public void Solve()
         {
-            List<int> accountingList = new();
+            List<int> accountingList = [];
             foreach (string s in Input)
             {
                 accountingList.Add(int.Parse(s));

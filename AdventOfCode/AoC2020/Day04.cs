@@ -36,7 +36,7 @@ namespace AdventOfCode.AoC2020
 
             if (p["hgt"].EndsWith("cm"))
             {
-                i = int.Parse(p["hgt"].TrimEnd(new char[] { 'c', 'm' }));
+                i = int.Parse(p["hgt"].TrimEnd(['c', 'm']));
                 if ((i < 150) || (i > 193))
                 {
                     return false;
@@ -44,7 +44,7 @@ namespace AdventOfCode.AoC2020
             }
             else if (p["hgt"].EndsWith("in"))
             {
-                i = int.Parse(p["hgt"].TrimEnd(new char[] { 'i', 'n' }));
+                i = int.Parse(p["hgt"].TrimEnd(['i', 'n']));
                 if ((i < 59) || (i > 76))
                 {
                     return false;
@@ -97,26 +97,26 @@ namespace AdventOfCode.AoC2020
 
         override public void Solve()
         {
-            List<Dictionary<string, string>> passports = new();
+            List<Dictionary<string, string>> passports = [];
             Dictionary<string, string> passport;
             int validPassports = 0;
             int validPassportsAdvanced = 0;
 
-            passport = new Dictionary<string, string>();
+            passport = [];
             for (int i = 0; i < Input.Count; i++)
             {
                 if (string.IsNullOrEmpty(Input[i]))
                 {
                     // blank line --> new passwort
                     passports.Add(passport);
-                    passport = new Dictionary<string, string>();
+                    passport = [];
                 }
                 else
                 {
-                    string[] splitted = Input[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] splitted = Input[i].Split([' '], StringSplitOptions.RemoveEmptyEntries);
                     foreach (string s in splitted)
                     {
-                        string[] splitted2 = s.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                        string[] splitted2 = s.Split([':'], StringSplitOptions.RemoveEmptyEntries);
                         if (passport.ContainsKey(splitted2[0]))
                         {
                             passport[splitted[0]] = splitted[1];
