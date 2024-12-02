@@ -18,10 +18,10 @@ namespace AdventOfCode.AoC2018
 
             result = 0;
             bool foundDuplicate = false;
-            HashSet<int> previousFrequencies = new()
-            {
+            HashSet<int> previousFrequencies =
+            [
                 result
-            };
+            ];
             while (!foundDuplicate)
             {
                 foreach (string s in Input)

@@ -53,8 +53,8 @@ namespace AdventOfCode.AoC2018
 
         public override void Solve()
         {
-            Dictionary<char, int> availablePolyUnits = new();
-            List<char> availablePolyUnitsKeys = new();
+            Dictionary<char, int> availablePolyUnits = [];
+            List<char> availablePolyUnitsKeys = [];
 
             string poly = PolymerReaction(Input[0]);
 

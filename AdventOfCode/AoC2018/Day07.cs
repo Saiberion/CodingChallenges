@@ -5,42 +5,36 @@ using System.Text;
 
 namespace AdventOfCode.AoC2018
 {
-    class Worker
+    class Worker(int id)
     {
-        public int ID { get; set; }
-        public string WorkingOnInstr { get; set; }
-        public int BusyTime { get; set; }
-
-        public Worker(int id)
-        {
-            this.ID = id;
-            this.WorkingOnInstr = string.Empty;
-            this.BusyTime = 0;
-        }
+        public int ID { get; set; } = id;
+        public string WorkingOnInstr { get; set; } = string.Empty;
+        public int BusyTime { get; set; } = 0;
     }
 
     public class Day07 : AoCDay
     {
         static Dictionary<string, List<string>> GetInstructionOrder(List<string> input)
         {
-            Dictionary<string, List<string>> instructionNodes = new();
+            Dictionary<string, List<string>> instructionNodes = [];
             foreach (string s in input)
             {
-                string[] splitted = s.Split(new char[] { ' ' });
+                string[] splitted = s.Split([' ']);
                 string preCond = splitted[1];
                 string instrNode = splitted[7];
 
                 if (!instructionNodes.ContainsKey(preCond))
                 {
-                    instructionNodes.Add(preCond, new List<string>());
+                    instructionNodes.Add(preCond, []);
                 }
 
-                if (!instructionNodes.ContainsKey(instrNode))
+                if (!instructionNodes.TryGetValue(instrNode, out List<string>? value))
                 {
-                    instructionNodes.Add(instrNode, new List<string>());
+                    value = ([]);
+                    instructionNodes.Add(instrNode, value);
                 }
 
-                instructionNodes[instrNode].Add(preCond);
+                value.Add(preCond);
             }
 
             return instructionNodes;
@@ -52,7 +46,7 @@ namespace AdventOfCode.AoC2018
 
             while (instructionNodes.Count > 0)
             {
-                List<string> availableInstructions = new();
+                List<string> availableInstructions = [];
                 foreach (KeyValuePair<string, List<string>> kvp in instructionNodes)
                 {
                     if (kvp.Value.Count == 0)
@@ -74,9 +68,9 @@ namespace AdventOfCode.AoC2018
             return sb.ToString();
         }
 
-        static Worker GetAvailableWorker(List<Worker> worker)
+        static Worker? GetAvailableWorker(List<Worker> worker)
         {
-            Worker work = null;
+            Worker? work = null;
 
             foreach (Worker w in worker)
             {
@@ -93,7 +87,7 @@ namespace AdventOfCode.AoC2018
         static int GetInstructionTime(Dictionary<string, List<string>> instructionNodes, int baseTime, int workerCount)
         {
             int timeCounter = 0;
-            List<Worker> worker = new();
+            List<Worker> worker = [];
 
             for (int i = 0; i < workerCount; i++)
             {
@@ -102,7 +96,7 @@ namespace AdventOfCode.AoC2018
 
             while (true)
             {
-                List<string> availableInstructions = new();
+                List<string> availableInstructions = [];
                 foreach (KeyValuePair<string, List<string>> kvp in instructionNodes)
                 {
                     if (kvp.Value.Count == 0)
@@ -114,7 +108,7 @@ namespace AdventOfCode.AoC2018
                 availableInstructions.Sort();
                 foreach (string instr in availableInstructions)
                 {
-                    Worker availableWorker = GetAvailableWorker(worker);
+                    Worker? availableWorker = GetAvailableWorker(worker);
                     if (availableWorker != null)
                     {
                         availableWorker.WorkingOnInstr = instr;

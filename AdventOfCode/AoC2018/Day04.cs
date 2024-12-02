@@ -21,12 +21,12 @@ namespace AdventOfCode.AoC2018
 
         public GuardLog(string input)
         {
-            string[] splittedEntry = input.Split(new char[] { '[', ']' });
+            string[] splittedEntry = input.Split(['[', ']']);
             this.TimeStamp = DateTime.ParseExact(splittedEntry[1], "yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture);
 
             if (splittedEntry[2].Contains("Guard #"))
             {
-                string[] extraSplit = splittedEntry[2].Split(new char[] { ' ' });
+                string[] extraSplit = splittedEntry[2].Split([' ']);
                 this.GuardID = int.Parse(extraSplit[2].Remove(0, 1));
                 this.GuardAction = EGuardAction.eGuardActionBeginsShift;
             }
@@ -45,7 +45,7 @@ namespace AdventOfCode.AoC2018
     {
         static List<GuardLog> FillGuardLog(List<string> input)
         {
-            List<GuardLog> sortedGuardLog = new();
+            List<GuardLog> sortedGuardLog = [];
 
             foreach (string s in input)
             {
@@ -79,7 +79,7 @@ namespace AdventOfCode.AoC2018
 
         static Dictionary<int, int[]> CreateGuardSleepChart(List<GuardLog> log)
         {
-            Dictionary<int, int[]> dict = new();
+            Dictionary<int, int[]> dict = [];
 
             int sleepStart = 0;
             int sleepEnd;
@@ -114,7 +114,7 @@ namespace AdventOfCode.AoC2018
 
         static int[] GetMostAsleepStrat1(Dictionary<int, int[]> sleepChart)
         {
-            Dictionary<int, int> sleepTime = new();
+            Dictionary<int, int> sleepTime = [];
 
             foreach (int g in sleepChart.Keys)
             {
@@ -148,7 +148,7 @@ namespace AdventOfCode.AoC2018
                 }
             }
 
-            return new int[] { sleepyGuard, sleepyMinute };
+            return [sleepyGuard, sleepyMinute];
         }
 
         static int[] GetMostAsleepStrat2(Dictionary<int, int[]> sleepChart)
@@ -169,7 +169,7 @@ namespace AdventOfCode.AoC2018
                 }
             }
 
-            return new int[] { sleepyGuard, sleepyMinute };
+            return [sleepyGuard, sleepyMinute];
         }
 
         public override void Solve()

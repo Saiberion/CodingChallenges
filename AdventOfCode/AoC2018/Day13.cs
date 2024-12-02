@@ -20,23 +20,17 @@ namespace AdventOfCode.AoC2018
         TurnRight = 1
     }
 
-    class Cart
+    class Cart(Directions dir)
     {
-        public Directions Facing { get; set; }
-        public IntersectionsActions NextIntersectionAction { get; set; }
-
-        public Cart(Directions dir)
-        {
-            NextIntersectionAction = IntersectionsActions.TurnLeft;
-            Facing = dir;
-        }
+        public Directions Facing { get; set; } = dir;
+        public IntersectionsActions NextIntersectionAction { get; set; } = IntersectionsActions.TurnLeft;
     }
 
     class MinecartTrackSystem
     {
         public char[,] TrackLayer { get; set; }
         public Cart[,] CartLayer { get; set; }
-        Coordinate CrashLocation { get; set; }
+        Coordinate CrashLocation { get; set; } = new(0, 0);
 
         private bool MoveCart(Cart[,] updateCarts, Cart c, int x, int y)
         {

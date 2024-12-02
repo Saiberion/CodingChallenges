@@ -55,7 +55,7 @@ namespace AdventOfCode.AoC2018
 
         public override void Solve()
         {
-            string[] splitted = Input[0].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitted = Input[0].Split([' '], StringSplitOptions.RemoveEmptyEntries);
             int maxPlayers = int.Parse(splitted[0]);
             int maxMarbleNumber = int.Parse(splitted[6]);
 
@@ -136,9 +136,9 @@ namespace AdventOfCode.AoC2018
 
     public class CircularLinkListNode
     {
-        public CircularLinkListNode Counterclockwise { get; set; }
+        public CircularLinkListNode Counterclockwise { get; set; } = new();
 
-        public CircularLinkListNode Clockwise { get; set; }
+        public CircularLinkListNode Clockwise { get; set; } = new();
 
         public long Marble { get; set; }
     }

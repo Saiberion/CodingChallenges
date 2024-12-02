@@ -9,14 +9,15 @@ namespace AdventOfCode.AoC2018
     {
         static int Find2MatchingDigits(string input)
         {
-            Dictionary<char, int> matches = new();
+            Dictionary<char, int> matches = [];
             foreach (char c in input)
             {
-                if (!matches.ContainsKey(c))
+                if (!matches.TryGetValue(c, out int value))
                 {
-                    matches.Add(c, 0);
+                    value = 0;
+                    matches.Add(c, value);
                 }
-                matches[c]++;
+                matches[c] = ++value;
             }
             foreach (int i in matches.Values)
             {
@@ -30,14 +31,15 @@ namespace AdventOfCode.AoC2018
 
         static int Find3MatchingDigits(string input)
         {
-            Dictionary<char, int> matches = new();
+            Dictionary<char, int> matches = [];
             foreach (char c in input)
             {
-                if (!matches.ContainsKey(c))
+                if (!matches.TryGetValue(c, out int value))
                 {
-                    matches.Add(c, 0);
+                    value = 0;
+                    matches.Add(c, value);
                 }
-                matches[c]++;
+                matches[c] = ++value;
             }
             foreach (int i in matches.Values)
             {

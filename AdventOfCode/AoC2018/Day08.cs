@@ -12,8 +12,8 @@ namespace AdventOfCode.AoC2018
 
         public Node()
         {
-            this.Children = new List<Node>();
-            this.MetaData = new List<int>();
+            this.Children = [];
+            this.MetaData = [];
         }
     }
 
@@ -40,8 +40,8 @@ namespace AdventOfCode.AoC2018
 
         static Node CreateNodeTree(string input)
         {
-            List<int> data = new();
-            string[] splitted = input.Split(new char[] { ' ' });
+            List<int> data = [];
+            string[] splitted = input.Split([' ']);
 
             for (int i = 0; i < splitted.Length; i++)
             {

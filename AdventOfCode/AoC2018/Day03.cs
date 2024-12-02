@@ -14,7 +14,7 @@ namespace AdventOfCode.AoC2018
 
         public Claim(string descriptor)
         {
-            string[] splitted = descriptor.Split(new char[] { '#', '@', ',', ':', 'x' });
+            string[] splitted = descriptor.Split(['#', '@', ',', ':', 'x']);
             this.ID = int.Parse(splitted[1]);
             this.Area = new Rectangle(int.Parse(splitted[2]), int.Parse(splitted[3]), int.Parse(splitted[4]), int.Parse(splitted[5]));
         }
@@ -54,7 +54,7 @@ namespace AdventOfCode.AoC2018
 
         static int FindUniqueClaim(List<string> input)
         {
-            List<Claim> claims = new();
+            List<Claim> claims = [];
             foreach (string s in input)
             {
                 claims.Add(new Claim(s));

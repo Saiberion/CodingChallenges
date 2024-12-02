@@ -5,27 +5,21 @@ using System.Text;
 
 namespace AdventOfCode.AoC2018
 {
-    public class Location : IComparable<Location>
+    public class Location(int x, int y) : IComparable<Location>
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int F { get; set; }
-        public int G { get; set; }
-        public int H { get; set; }
-        public Location Parent;
+        public int X { get; set; } = x;
+        public int Y { get; set; } = y;
+        public int F { get; set; } = 0;
+        public int G { get; set; } = 0;
+        public int H { get; set; } = 0;
+        public Location? Parent = null;
 
-        public Location(int x, int y)
+        public int CompareTo(Location? other)
         {
-            this.X = x;
-            this.Y = y;
-            this.F = 0;
-            this.G = 0;
-            this.H = 0;
-            this.Parent = null;
-        }
-
-        public int CompareTo(Location other)
-        {
+            if (other == null)
+            {
+                return 1;
+            }
             if (this.Y == other.Y)
             {
                 if (this.X == other.X)
@@ -43,7 +37,7 @@ namespace AdventOfCode.AoC2018
         public override void Solve()
         {
             string[,] mapLayer = new string[Input[0].Length, Input.Count];
-            List<Unit> units = new();
+            List<Unit> units = [];
             for (int y = 0; y < Input.Count; y++)
             {
                 for (int x = 0; x < Input[y].Length; x++)
@@ -93,23 +87,19 @@ namespace AdventOfCode.AoC2018
         Goblin
     }
 
-    public class Unit : IComparable<Unit>
+    public class Unit(UnitTypes type, Location pos) : IComparable<Unit>
     {
-        public UnitTypes Type { get; set; }
-        public Location Positon { get; set; }
-        public int AttackPower { get; set; }
-        public int HitPoints { get; set; }
+        public UnitTypes Type { get; set; } = type;
+        public Location Positon { get; set; } = pos;
+        public int AttackPower { get; set; } = 3;
+        public int HitPoints { get; set; } = 200;
 
-        public Unit(UnitTypes type, Location pos)
+        public int CompareTo(Unit? other)
         {
-            AttackPower = 3;
-            HitPoints = 200;
-            Type = type;
-            Positon = pos;
-        }
-
-        public int CompareTo(Unit other)
-        {
+            if (other == null)
+            {
+                return 1;
+            }
             if (this.Positon.Y == other.Positon.Y)
             {
                 if (this.Positon.X == other.Positon.X)
@@ -124,13 +114,13 @@ namespace AdventOfCode.AoC2018
         private bool IsEnemyInRange(string[,] mapLayer)
         {
             bool result = false;
-            List<string> adjecentSquares = new()
-            {
+            List<string> adjecentSquares =
+            [
                 mapLayer[this.Positon.X, this.Positon.Y - 1],
                 mapLayer[this.Positon.X + 1, this.Positon.Y],
                 mapLayer[this.Positon.X, this.Positon.Y + 1],
                 mapLayer[this.Positon.X - 1, this.Positon.Y]
-            };
+            ];
 
             foreach (string s in adjecentSquares)
             {
@@ -155,7 +145,7 @@ namespace AdventOfCode.AoC2018
 
         private List<Location> GetFreeAdjacentSqures(string[,] mapLayer)
         {
-            List<Location> freeSquares = new();
+            List<Location> freeSquares = [];
 
             if (mapLayer[this.Positon.X, this.Positon.Y - 1].Equals("."))
             {
@@ -180,7 +170,7 @@ namespace AdventOfCode.AoC2018
         public void Turn(List<Unit> allUnits, string[,] mapLayer)
         {
             // Identify possible targets
-            List<Unit> targets = new();
+            List<Unit> targets = [];
             foreach (Unit u in allUnits)
             {
                 if (this.Type != u.Type)
@@ -196,7 +186,7 @@ namespace AdventOfCode.AoC2018
             {
                 if (!IsEnemyInRange(mapLayer))
                 {
-                    List<Location> targetSquares = new();
+                    List<Location> targetSquares = [];
                     foreach (Unit t in targets)
                     {
                         targetSquares.AddRange(t.GetFreeAdjacentSqures(mapLayer));
@@ -204,7 +194,7 @@ namespace AdventOfCode.AoC2018
 
                     if (targetSquares.Count > 0)
                     {
-                        List<Location> reachable = new();
+                        List<Location> reachable = [];
                         foreach (Location l in targetSquares)
                         {
                             reachable.AddRange(GetShortestPathDistance(l, mapLayer));
@@ -214,7 +204,7 @@ namespace AdventOfCode.AoC2018
                         {
                             minimumDistance = Math.Min(minimumDistance, r.G);
                         }
-                        List<Location> closest = new();
+                        List<Location> closest = [];
                         foreach (Location r in reachable)
                         {
                             if (r.G == minimumDistance)
@@ -248,7 +238,7 @@ namespace AdventOfCode.AoC2018
 
         private void Attack(List<Unit> allTargets, string[,] mapLayer)
         {
-            List<Unit> possibleTargets = new();
+            List<Unit> possibleTargets = [];
             foreach (Unit t in allTargets)
             {
                 if (IsTargetInRange(t))
@@ -319,10 +309,10 @@ namespace AdventOfCode.AoC2018
             Location current;
             Location start = new(this.Positon.X, this.Positon.Y);
             Location target = new(targetSquare.X, targetSquare.Y);
-            List<Location> openList = new();
-            List<Location> closedList = new();
+            List<Location> openList = [];
+            List<Location> closedList = [];
             int g;
-            List<Location> reachable = new();
+            List<Location> reachable = [];
 
             // add the starting position to the open list
             openList.Add(start);
@@ -401,14 +391,14 @@ namespace AdventOfCode.AoC2018
 
         static private List<Location> GetWalkableAdjacentSquares(int x, int y, string[,] mapLayer)
         {
-            List<Location> proposedLocations = new()
-            {
+            List<Location> proposedLocations =
+            [
                 new(x, y - 1),
                 new(x - 1, y),
                 new(x + 1, y),
                 new(x, y + 1),
-            };
-            List<Location> possibleLocations = new();
+            ];
+            List<Location> possibleLocations = [];
 
             foreach (Location l in proposedLocations)
             {

@@ -6,26 +6,20 @@ using System.Text;
 
 namespace AdventOfCode.AoC2018
 {
-    class Coordinate
+    class Coordinate(int x, int y)
     {
-        public int Y { get; set; }
-        public int X { get; set; }
-
-        public Coordinate(int x, int y)
-        {
-            this.X = x;
-            this.Y = y;
-        }
+        public int Y { get; set; } = y;
+        public int X { get; set; } = x;
     }
 
     public class Day06 : AoCDay
     {
         static List<Coordinate> GetCoordinates(List<string> input)
         {
-            List<Coordinate> result = new();
+            List<Coordinate> result = [];
             foreach (string line in input)
             {
-                string[] splitted = line.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = line.Split([',', ' '], StringSplitOptions.RemoveEmptyEntries);
                 Coordinate coordinate = new(int.Parse(splitted[0]), int.Parse(splitted[1]));
                 result.Add(coordinate);
             }
@@ -70,7 +64,7 @@ namespace AdventOfCode.AoC2018
 
         public override void Solve()
         {
-            HashSet<int> Infinites = new();
+            HashSet<int> Infinites = [];
 
 
             List<Coordinate> coordinates = GetCoordinates(Input);
@@ -104,18 +98,18 @@ namespace AdventOfCode.AoC2018
                 }
             }
 
-            Dictionary<int, int> AreaSizes = new();
+            Dictionary<int, int> AreaSizes = [];
 
             for (int i = 0; i < grid.GetLength(0); i++)
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
                     if (Infinites.Contains(grid[i, j]))
+                    {
                         continue;
+                    }
 
-                    if (!AreaSizes.ContainsKey(grid[i, j]))
-                        AreaSizes.Add(grid[i, j], 0);
-
+                    AreaSizes.TryAdd(grid[i, j], 0);
                     AreaSizes[grid[i, j]] += 1;
                 }
             }

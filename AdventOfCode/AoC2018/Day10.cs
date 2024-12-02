@@ -80,11 +80,11 @@ namespace AdventOfCode.AoC2018
 
         public override void Solve()
         {
-            List<MovingLight> movingLights = new();
+            List<MovingLight> movingLights = [];
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { '<', ',', '>', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split(['<', ',', '>', ' '], StringSplitOptions.RemoveEmptyEntries);
                 movingLights.Add(new MovingLight()
                 {
                     PosX = int.Parse(splitted[1]),

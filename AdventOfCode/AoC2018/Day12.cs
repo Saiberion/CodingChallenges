@@ -11,7 +11,7 @@ namespace AdventOfCode.AoC2018
         {
             string currentState = "";
             string previousState = "";
-            Dictionary<string, string> replacements = new();
+            Dictionary<string, string> replacements = [];
             foreach (string s in Input)
             {
                 if (s.StartsWith("initial state"))
@@ -20,7 +20,7 @@ namespace AdventOfCode.AoC2018
                 }
                 else if (s.Length > 0)
                 {
-                    string[] splitted = s.Split(new char[] { ' ', '=', '>' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] splitted = s.Split([' ', '=', '>'], StringSplitOptions.RemoveEmptyEntries);
                     replacements.Add(splitted[0], splitted[1]);
                 }
             }
@@ -43,9 +43,9 @@ namespace AdventOfCode.AoC2018
                 for (int j = 2; j < currentState.Length - 2; j++)
                 {
                     string r = currentState.Substring(j - 2, 5);
-                    if (replacements.ContainsKey(r))
+                    if (replacements.TryGetValue(r, out string? value))
                     {
-                        sb.Append(replacements[r]);
+                        sb.Append(value);
                     }
                     else
                     {
@@ -53,8 +53,8 @@ namespace AdventOfCode.AoC2018
                     }
                 }
                 currentState = sb.ToString();
-                currentState = currentState.TrimEnd(new char[] { '.' });
-                string t = currentState.TrimStart(new char[] { '.' });
+                currentState = currentState.TrimEnd(['.']);
+                string t = currentState.TrimStart(['.']);
                 leftmostPotNumber += (currentState.Length - t.Length);
                 currentState = t;
             }
