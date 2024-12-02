@@ -9,7 +9,7 @@ namespace AdventOfCode.AoC2016
     {
         static string DragonChecksum(string input)
         {
-            string[] splitted = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitted = input.Split([' '], StringSplitOptions.RemoveEmptyEntries);
             int fillLength = int.Parse(splitted[0]);
             StringBuilder sb = new(splitted[1]);
 

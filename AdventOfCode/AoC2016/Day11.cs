@@ -51,9 +51,9 @@ namespace AdventOfCode.AoC2016
 
         public override void Solve()
         {
-            Part1Solution = StepsTaken(new int[] { 0, 4, 5, 1, 0 }).ToString();
+            Part1Solution = StepsTaken([0, 4, 5, 1, 0]).ToString();
 
-            Part2Solution = StepsTaken(new int[] { 0, 8, 5, 1, 0 }).ToString();
+            Part2Solution = StepsTaken([0, 8, 5, 1, 0]).ToString();
         }
     }
 }

@@ -10,16 +10,14 @@ namespace AdventOfCode.AoC2016
     {
         static Point[] FollowDirections(List<string> input)
         {
-            HashSet<Point> visitedCoords = new();
-            Point[] c = new Point[2];
-            c[0] = new();
-            c[1] = new();
+            HashSet<Point> visitedCoords = [];
+            Point[] c = [new(), new()];
             int facing = 0;
             bool c1Set = false;
 
             visitedCoords.Add(new(0, 0));
 
-            string[] splitted = input[0].Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitted = input[0].Split([',', ' '], StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string s in splitted)
             {

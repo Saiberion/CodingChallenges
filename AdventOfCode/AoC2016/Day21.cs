@@ -12,7 +12,7 @@ namespace AdventOfCode.AoC2016
             StringBuilder result = new(pw);
             foreach (string instr in input)
             {
-                string[] splitted = instr.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = instr.Split([' '], StringSplitOptions.RemoveEmptyEntries);
 
                 switch (splitted[0])
                 {
@@ -85,7 +85,7 @@ namespace AdventOfCode.AoC2016
             StringBuilder result = new(pw);
             for (int i = input.Count - 1; i >= 0; i--)
             {
-                string[] splitted = input[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = input[i].Split([' '], StringSplitOptions.RemoveEmptyEntries);
 
                 switch (splitted[0])
                 {

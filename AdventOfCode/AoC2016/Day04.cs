@@ -11,15 +11,15 @@ namespace AdventOfCode.AoC2016
         {
             StringBuilder sb = new();
 
-            SortedDictionary<char, int> letterOccurance = new();
+            SortedDictionary<char, int> letterOccurance = [];
 
             foreach (string namePart in roomName)
             {
                 foreach (char c in namePart)
                 {
-                    if (letterOccurance.ContainsKey(c))
+                    if (letterOccurance.TryGetValue(c, out int value))
                     {
-                        letterOccurance[c]++;
+                        letterOccurance[c] = ++value;
                     }
                     else
                     {
@@ -71,11 +71,11 @@ namespace AdventOfCode.AoC2016
         static int[] SumIdRealRooms(List<string> input)
         {
             int[] results = new int[2];
-            List<string> decryptedRoomNames = new();
+            List<string> decryptedRoomNames = [];
 
             foreach (string line in input)
             {
-                string[] roomCode = line.Split(new char[] { '-', '[', ']' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] roomCode = line.Split(['-', '[', ']'], StringSplitOptions.RemoveEmptyEntries);
                 string checksumGiven = roomCode[^1];
                 int sectorId = int.Parse(roomCode[^2]);
                 List<string> roomName = new(roomCode);

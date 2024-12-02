@@ -16,16 +16,16 @@ namespace AdventOfCode.AoC2016
 
             for (int i = 0; i < Input[0].Length; i++)
             {
-                charCountingByPosition[i] = new Dictionary<char, int>();
+                charCountingByPosition[i] = [];
             }
 
             foreach (string s in Input)
             {
                 for (int i = 0; i < s.Length; i++)
                 {
-                    if (charCountingByPosition[i].ContainsKey(s[i]))
+                    if (charCountingByPosition[i].TryGetValue(s[i], out int value))
                     {
-                        charCountingByPosition[i][s[i]]++;
+                        charCountingByPosition[i][s[i]] = ++value;
                     }
                     else
                     {

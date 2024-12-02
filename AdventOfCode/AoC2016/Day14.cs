@@ -9,7 +9,7 @@ namespace AdventOfCode.AoC2016
     public class Day14 : AoCDay
     {
         readonly MD5 md5 = MD5.Create();
-        readonly byte[] lookup = { 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102 };
+        readonly byte[] lookup = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102];
 
         byte[] ConvertToReadable(byte[] hash)
         {
@@ -46,19 +46,19 @@ namespace AdventOfCode.AoC2016
         int GenerateOTPs(string salt, int count, bool stretched)
         {
             int generatedKeys = 0;
-            Dictionary<int, byte[]> precreatedHashes = new();
+            Dictionary<int, byte[]> precreatedHashes = [];
             byte[] hash;
 
             int index = 0;
             while (generatedKeys < count)
             {
-                if (!precreatedHashes.ContainsKey(index))
+                if (!precreatedHashes.TryGetValue(index, out byte[]? value))
                 {
                     hash = GetHash(Encoding.ASCII.GetBytes(salt + index), stretched);
                 }
                 else
                 {
-                    hash = precreatedHashes[index];
+                    hash = value;
                     precreatedHashes.Remove(index);
                 }
 

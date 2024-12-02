@@ -10,17 +10,16 @@ namespace AdventOfCode.AoC2016
     {
         public int X;
         public int Y;
-        public string Movement;
+        public string Movement = "";
     }
 
     public class Day17 : AoCDay
     {
         static List<Location2> GetWalkableAdjacentSquares(int x, int y, string input, string movement)
         {
-            MD5 md5 = MD5.Create();
-            byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(input + movement));
+            byte[] hash = MD5.HashData(Encoding.ASCII.GetBytes(input + movement));
 
-            List<Location2> possibleLocations = new();
+            List<Location2> possibleLocations = [];
 
             if ((((hash[0] >> 4) & 0xf) > 10) && (y > 0))
             {
@@ -42,17 +41,17 @@ namespace AdventOfCode.AoC2016
             return possibleLocations;
         }
 
-        static Tuple<string, int> MazeRunner(string passcode)
+        static Tuple<string?, int> MazeRunner(string passcode)
         {
             Location2 current;
             Location2 start = new() { X = 0, Y = 0 };
             Location2 target = new() { X = 3, Y = 3 };
-            List<Location2> openList = new()
-            {
+            List<Location2> openList =
+            [
                 // add the starting position to the open list
                 start
-            };
-            List<Location2> targetList = new();
+            ];
+            List<Location2> targetList = [];
 
             while (openList.Count > 0)
             {
@@ -77,7 +76,7 @@ namespace AdventOfCode.AoC2016
                 }
             }
 
-            string shortest = null;
+            string? shortest = null;
             int mostSteps = int.MinValue;
             foreach (Location2 l in targetList)
             {
@@ -91,13 +90,20 @@ namespace AdventOfCode.AoC2016
                 }
             }
 
-            return new Tuple<string, int>(shortest, mostSteps);
+            return new Tuple<string?, int>(shortest, mostSteps);
         }
 
         public override void Solve()
         {
-            Tuple<string, int> result = MazeRunner(Input[0]);
-            Part1Solution = result.Item1.ToString();
+            Tuple<string?, int> result = MazeRunner(Input[0]);
+            if (result.Item1 != null)
+            {
+                Part1Solution = result.Item1.ToString();
+            }
+            else
+            {
+                Part1Solution = "Error";
+            }
 
             Part2Solution = result.Item2.ToString();
         }

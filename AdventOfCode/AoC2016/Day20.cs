@@ -11,17 +11,17 @@ namespace AdventOfCode.AoC2016
         {
             long validIPs = 0;
             long minResult = -1;
-            List<long[]> ranges = new();
+            List<long[]> ranges = [];
             foreach (string s in input)
             {
-                string[] splitted = s.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
-                ranges.Add(new long[] { long.Parse(splitted[0]), long.Parse(splitted[1]) });
+                string[] splitted = s.Split(['-'], StringSplitOptions.RemoveEmptyEntries);
+                ranges.Add([long.Parse(splitted[0]), long.Parse(splitted[1])]);
             }
 
             long minAllowed;
 
             long minimumBlocked = uint.MaxValue;
-            long[] minRange = null;
+            long[] minRange = [];
             foreach (long[] arr in ranges)
             {
                 if (minimumBlocked > arr[0])

@@ -11,14 +11,14 @@ namespace AdventOfCode.AoC2016
     {
         static List<Location> GetWalkableAdjacentSquares(int x, int y, int[,] grid)
         {
-            List<Location> proposedLocations = new()
-            {
+            List<Location> proposedLocations =
+            [
                 new Location { X = x, Y = y - 1 },
                 new Location { X = x, Y = y + 1 },
                 new Location { X = x - 1, Y = y },
                 new Location { X = x + 1, Y = y },
-            };
-            List<Location> possibleLocations = new();
+            ];
+            List<Location> possibleLocations = [];
 
             foreach (Location l in proposedLocations)
             {
@@ -56,11 +56,11 @@ namespace AdventOfCode.AoC2016
         static int GetShorestPathDistance(int startx, int starty, int targetx, int targety, int[,] grid)
         {
             // A* algorithm for path finding
-            Location current = null;
+            Location? current = null;
             Location start = new() { X = startx, Y = starty };
             Location target = new() { X = targetx, Y = targety };
-            List<Location> openList = new();
-            List<Location> closedList = new();
+            List<Location> openList = [];
+            List<Location> closedList = [];
             int g;
 
             // add the starting position to the open list
@@ -127,12 +127,19 @@ namespace AdventOfCode.AoC2016
                 }
             }
 
-            return current.G;
+            if (current != null)
+            {
+                return current.G;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public static List<List<Point>> Permutations(List<Point> values)
         {
-            List<List<Point>> route = new();
+            List<List<Point>> route = [];
             int[] p = new int[values.Count + 1];
             for (int pi = 0; pi < p.Length; pi++)
             {
@@ -171,7 +178,7 @@ namespace AdventOfCode.AoC2016
 
         public override void Solve()
         {
-            List<Point> wires = new();
+            List<Point> wires = [];
             int[,] hvac = new int[Input[0].Length, Input.Count];
             List<List<Point>> routes;
 
@@ -202,7 +209,7 @@ namespace AdventOfCode.AoC2016
                 }
             }
 
-            Dictionary<Tuple<Point, Point>, int> distances = new();
+            Dictionary<Tuple<Point, Point>, int> distances = [];
 
             for (int i = 0; i < wires.Count; i++)
             {

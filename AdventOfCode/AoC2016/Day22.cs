@@ -18,13 +18,13 @@ namespace AdventOfCode.AoC2016
     {
         static List<StorageNode> BuildGrid(List<string> input)
         {
-            List<StorageNode> grid = new();
+            List<StorageNode> grid = [];
 
             foreach (string line in input)
             {
-                if (line.StartsWith("/"))
+                if (line.StartsWith('/'))
                 {
-                    string[] splitted = line.Split(new char[] { ' ', '-', 'x', 'y', '/', 'T' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] splitted = line.Split([' ', '-', 'x', 'y', '/', 'T'], StringSplitOptions.RemoveEmptyEntries);
                     StorageNode node = new()
                     {
                         Coords = new Point(int.Parse(splitted[3]), int.Parse(splitted[4])),

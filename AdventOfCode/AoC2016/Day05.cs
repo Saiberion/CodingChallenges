@@ -11,15 +11,14 @@ namespace AdventOfCode.AoC2016
         static string[] GeneratePassword(string input)
         {
             StringBuilder pwLeftRight = new();
-            Dictionary<int, string> pwPosDetect = new();
-            MD5 md5 = MD5.Create();
+            Dictionary<int, string> pwPosDetect = [];
 
             int index = 0;
             while (pwPosDetect.Count < 8)
             {
                 string toHash;
                 toHash = input + index;
-                byte[] hash = md5.ComputeHash(System.Text.Encoding.ASCII.GetBytes(toHash.ToString()));
+                byte[] hash = MD5.HashData(System.Text.Encoding.ASCII.GetBytes(toHash.ToString()));
 
                 if (hash[0] == 0 && hash[1] == 0 && hash[2] <= 0x0F)
                 {
@@ -40,9 +39,11 @@ namespace AdventOfCode.AoC2016
                 index++;
             }
 
-            string[] result = new string[2];
-            result[0] = pwLeftRight.ToString();
-            result[1] = pwPosDetect[0] + pwPosDetect[1] + pwPosDetect[2] + pwPosDetect[3] + pwPosDetect[4] + pwPosDetect[5] + pwPosDetect[6] + pwPosDetect[7];
+            string[] result =
+            [
+                pwLeftRight.ToString(),
+                pwPosDetect[0] + pwPosDetect[1] + pwPosDetect[2] + pwPosDetect[3] + pwPosDetect[4] + pwPosDetect[5] + pwPosDetect[6] + pwPosDetect[7],
+            ];
             return result;
         }
 

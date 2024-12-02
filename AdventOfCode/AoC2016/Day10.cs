@@ -14,7 +14,7 @@ namespace AdventOfCode.AoC2016
 
         public Bot()
         {
-            this.Chips = new List<int>();
+            this.Chips = [];
         }
     }
 
@@ -22,54 +22,57 @@ namespace AdventOfCode.AoC2016
     {
         void ParseInstructions(List<string> input)
         {
-            Dictionary<int, Bot> bots = new();
-            Dictionary<int, List<int>> outputs = new();
+            Dictionary<int, Bot> bots = [];
+            Dictionary<int, List<int>> outputs = [];
 
             foreach (string s in input)
             {
-                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 if (splitted[0].Equals("value"))
                 {
                     int val = int.Parse(splitted[1]);
                     int botId = int.Parse(splitted[5]);
 
-                    if (!bots.ContainsKey(botId))
+                    if (!bots.TryGetValue(botId, out Bot? value))
                     {
-                        bots.Add(botId, new Bot());
+                        value = new Bot();
+                        bots.Add(botId, value);
                     }
-                    bots[botId].Chips.Add(val);
+
+                    value.Chips.Add(val);
                 }
                 else
                 {
                     int botId = int.Parse(splitted[1]);
                     int targetLow = int.Parse(splitted[6]);
                     int targetHigh = int.Parse(splitted[11]);
-                    if (!bots.ContainsKey(botId))
+                    if (!bots.TryGetValue(botId, out Bot? value))
                     {
-                        bots.Add(botId, new Bot());
+                        value = new Bot();
+                        bots.Add(botId, value);
                     }
                     if (splitted[5].Equals("bot"))
                     {
-                        bots[botId].GiveLowerTo = targetLow;
+                        value.GiveLowerTo = targetLow;
                     }
                     else
                     {
-                        bots[botId].GiveLowerTo = (targetLow * -1) - 1;
+                        value.GiveLowerTo = (targetLow * -1) - 1;
                         if (!outputs.ContainsKey(bots[botId].GiveLowerTo))
                         {
-                            outputs.Add(bots[botId].GiveLowerTo, new List<int>());
+                            outputs.Add(bots[botId].GiveLowerTo, []);
                         }
                     }
                     if (splitted[10].Equals("bot"))
                     {
-                        bots[botId].GiveHigherTo = targetHigh;
+                        value.GiveHigherTo = targetHigh;
                     }
                     else
                     {
-                        bots[botId].GiveHigherTo = (targetHigh * -1) - 1;
+                        value.GiveHigherTo = (targetHigh * -1) - 1;
                         if (!outputs.ContainsKey(bots[botId].GiveHigherTo))
                         {
-                            outputs.Add(bots[botId].GiveHigherTo, new List<int>());
+                            outputs.Add(bots[botId].GiveHigherTo, []);
                         }
                     }
                 }

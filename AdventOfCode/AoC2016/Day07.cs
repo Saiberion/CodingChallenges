@@ -46,7 +46,7 @@ namespace AdventOfCode.AoC2016
 
         static bool IPv7HasSSL(string ipv7)
         {
-            string[] splitted = ipv7.Split(new char[] { '[', ']' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitted = ipv7.Split(['[', ']'], StringSplitOptions.RemoveEmptyEntries);
             bool ret = false;
 
             for (int i = 0; i < splitted.Length; i += 2)

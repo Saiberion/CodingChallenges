@@ -5,16 +5,10 @@ using System.Text;
 
 namespace AdventOfCode.AoC2016
 {
-    class Disc
+    class Disc(int positions, int startingPosition)
     {
-        public int Positions { get; internal set; }
-        public int CurrentPosition { get; internal set; }
-
-        public Disc(int positions, int startingPosition)
-        {
-            this.Positions = positions;
-            this.CurrentPosition = startingPosition;
-        }
+        public int Positions { get; internal set; } = positions;
+        public int CurrentPosition { get; internal set; } = startingPosition;
 
         public int GetPositionAt(int time)
         {
@@ -26,10 +20,10 @@ namespace AdventOfCode.AoC2016
     {
         static int DiscMazePassThrough(List<string> input, bool second)
         {
-            List<Disc> discs = new();
+            List<Disc> discs = [];
             foreach (string line in input)
             {
-                string[] splitted = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = line.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 discs.Add(new Disc(int.Parse(splitted[3]), int.Parse(splitted[11].Remove(1))));
             }
             if (second)

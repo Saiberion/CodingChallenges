@@ -12,7 +12,7 @@ namespace AdventOfCode.AoC2016
         public int F;
         public int G;
         public int H;
-        public Location Parent;
+        public Location? Parent;
     }
 
     public class Day13 : AoCDay
@@ -31,14 +31,14 @@ namespace AdventOfCode.AoC2016
 
         static List<Location> GetWalkableAdjacentSquares(int x, int y, int input)
         {
-            List<Location> proposedLocations = new()
-            {
+            List<Location> proposedLocations =
+            [
                 new Location { X = x, Y = y - 1 },
                 new Location { X = x, Y = y + 1 },
                 new Location { X = x - 1, Y = y },
                 new Location { X = x + 1, Y = y },
-            };
-            List<Location> possibleLocations = new();
+            ];
+            List<Location> possibleLocations = [];
 
             foreach (Location l in proposedLocations)
             {
@@ -76,11 +76,11 @@ namespace AdventOfCode.AoC2016
         static int GetShorestPathDistance(int startx, int starty, int targetx, int targety, int input)
         {
             // A* algorithm for path finding
-            Location current = null;
+            Location? current = null;
             Location start = new() { X = startx, Y = starty };
             Location target = new() { X = targetx, Y = targety };
-            List<Location> openList = new();
-            List<Location> closedList = new();
+            List<Location> openList = [];
+            List<Location> closedList = [];
             int g;
 
             // add the starting position to the open list
@@ -147,7 +147,14 @@ namespace AdventOfCode.AoC2016
                 }
             }
 
-            return current.G;
+            if (current != null)
+            {
+                return current.G;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         static int GetNumberLocationsUpToDistance(int startx, int starty, int input)
@@ -155,8 +162,8 @@ namespace AdventOfCode.AoC2016
             // A* algorithm for path finding
             Location current;
             Location start = new() { X = startx, Y = starty };
-            List<Location> openList = new();
-            List<Location> closedList = new();
+            List<Location> openList = [];
+            List<Location> closedList = [];
             int g;
 
             // add the starting position to the open list

@@ -7,18 +7,18 @@ namespace AdventOfCode.AoC2016
 {
     public class Day08 : AoCDay
     {
-        string displayedText;
+        string displayedText = "";
         int DisplayControl(List<string> input)
         {
             int[,] display = new int[50, 6];
 
             foreach (string s in input)
             {
-                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 switch (splitted[0])
                 {
                     case "rect":
-                        string[] dim = splitted[1].Split(new char[] { 'x' }, StringSplitOptions.RemoveEmptyEntries);
+                        string[] dim = splitted[1].Split(['x'], StringSplitOptions.RemoveEmptyEntries);
                         for (int x = 0; x < int.Parse(dim[0]); x++)
                         {
                             for (int y = 0; y < int.Parse(dim[1]); y++)

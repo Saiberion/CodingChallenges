@@ -13,7 +13,7 @@ namespace AdventOfCode.AoC2016
 
             foreach (string line in input)
             {
-                string[] triangleSides = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] triangleSides = line.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 int a = int.Parse(triangleSides[0]);
                 int b = int.Parse(triangleSides[1]);
                 int c = int.Parse(triangleSides[2]);
@@ -36,15 +36,12 @@ namespace AdventOfCode.AoC2016
         static int GetPossibleTrianglesByColumn(List<string> input)
         {
             int possible = 0;
-            List<int[]> triangleData = new();
+            List<int[]> triangleData = [];
 
             foreach (string line in input)
             {
-                string[] triangleSides = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                int[] l = new int[3];
-                l[0] = int.Parse(triangleSides[0]);
-                l[1] = int.Parse(triangleSides[1]);
-                l[2] = int.Parse(triangleSides[2]);
+                string[] triangleSides = line.Split([' '], StringSplitOptions.RemoveEmptyEntries);
+                int[] l = [int.Parse(triangleSides[0]), int.Parse(triangleSides[1]), int.Parse(triangleSides[2])];
                 triangleData.Add(l);
             }
 

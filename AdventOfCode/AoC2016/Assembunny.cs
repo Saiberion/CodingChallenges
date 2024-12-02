@@ -25,7 +25,7 @@ namespace AdventOfCode.AoC2016
 
             for (int i = 0; (i >= 0) && (i < input.Count);)
             {
-                string[] splitted = input[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = input[i].Split([' '], StringSplitOptions.RemoveEmptyEntries);
 
                 switch (splitted[0])
                 {
@@ -95,7 +95,7 @@ namespace AdventOfCode.AoC2016
                             }
                             else if (input[i + val].StartsWith("tgl"))
                             {
-                                string[] spl = input[i + val].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                                string[] spl = input[i + val].Split([' '], StringSplitOptions.RemoveEmptyEntries);
                                 if (spl.Length == 2)
                                 {
                                     input[i + val] = input[i + val].Remove(0, 3).Insert(0, "inc");

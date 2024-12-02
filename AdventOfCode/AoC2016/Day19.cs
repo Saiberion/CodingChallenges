@@ -19,7 +19,7 @@ namespace AdventOfCode.AoC2016
         {
             Elf root = new() { Seat = 1, Presents = 1 };
             Elf elf = root;
-            Elf target = null;
+            Elf target = new();
 
             for (int i = 1; i < maxElves; i++)
             {
@@ -59,7 +59,7 @@ namespace AdventOfCode.AoC2016
         {
             Elf root = new() { Seat = 1, Presents = 1 };
             Elf elf = root;
-            Elf target = null;
+            Elf target = new();
             int remaining = maxElves;
 
             for (int i = 1; i < maxElves; i++)
