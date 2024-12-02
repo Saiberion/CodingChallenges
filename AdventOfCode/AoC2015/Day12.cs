@@ -28,7 +28,8 @@ namespace AdventOfCode.AoC2015
                 }
                 else if (skipRed && (jp.Value.ValueKind == JsonValueKind.String))
                 {
-                    if (jp.Value.GetString().Equals("red"))
+                    string? s = jp.Value.GetString();
+                    if ((s != null) && (s.Equals("red")))
                     {
                         return 0;
                     }

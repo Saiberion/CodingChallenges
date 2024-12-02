@@ -60,11 +60,11 @@ namespace AdventOfCode.AoC2015
 
         override public void Solve()
         {
-            List<string[]> instructions = new();
+            List<string[]> instructions = [];
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' ', ','], StringSplitOptions.RemoveEmptyEntries);
                 instructions.Add(splitted);
             }
 

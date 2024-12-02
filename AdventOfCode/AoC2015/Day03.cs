@@ -10,8 +10,8 @@ namespace AdventOfCode.AoC2015
     {
         override public void Solve()
         {
-            Dictionary<Point, int> houses = new();
-            int[] x = { 0, 0 }, y = { 0, 0 };
+            Dictionary<Point, int> houses = [];
+            int[] x = [0, 0], y = [0, 0];
             int move = 0;
 
             houses.Add(new Point(x[0], y[0]), 1);

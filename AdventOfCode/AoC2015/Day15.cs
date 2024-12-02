@@ -5,35 +5,26 @@ using System.Text;
 
 namespace AdventOfCode.AoC2015
 {
-    class Ingredient
+    class Ingredient(int cap, int dur, int fla, int tex, int cal)
     {
-        public int Capacity { get; set; }
-        public int Durability { get; set; }
-        public int Flavour { get; set; }
-        public int Texture { get; set; }
-        public int Calories { get; set; }
-
-        public Ingredient(int cap, int dur, int fla, int tex, int cal)
-        {
-            Capacity = cap;
-            Durability = dur;
-            Flavour = fla;
-            Texture = tex;
-            Calories = cal;
-        }
+        public int Capacity { get; set; } = cap;
+        public int Durability { get; set; } = dur;
+        public int Flavour { get; set; } = fla;
+        public int Texture { get; set; } = tex;
+        public int Calories { get; set; } = cal;
     }
 
     public class Day15 : AoCDay
     {
         override public void Solve()
         {
-            List<Ingredient> ingredients = new();
+            List<Ingredient> ingredients = [];
             int bestCookieScore = int.MinValue;
             int bestLightCookieScore = int.MinValue;
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' ', ','], StringSplitOptions.RemoveEmptyEntries);
                 ingredients.Add(new Ingredient(int.Parse(splitted[2]), int.Parse(splitted[4]), int.Parse(splitted[6]), int.Parse(splitted[8]), int.Parse(splitted[10])));
             }
 

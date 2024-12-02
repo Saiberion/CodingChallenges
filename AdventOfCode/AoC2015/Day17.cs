@@ -7,7 +7,7 @@ namespace AdventOfCode.AoC2015
 {
     public class Day17 : AoCDay
     {
-        private static readonly List<List<int>> combinations = new();
+        private static readonly List<List<int>> combinations = [];
 
         private static void SumUpRecursive(List<int> numbers, int target, List<int> partial)
         {
@@ -26,7 +26,7 @@ namespace AdventOfCode.AoC2015
 
             for (int i = 0; i < numbers.Count; i++)
             {
-                List<int> remaining = new();
+                List<int> remaining = [];
                 int n = numbers[i];
                 for (int j = i + 1; j < numbers.Count; j++)
                 {
@@ -43,13 +43,13 @@ namespace AdventOfCode.AoC2015
 
         private static void SumUp(List<int> numbers, int target)
         {
-            SumUpRecursive(numbers, target, new List<int>());
+            SumUpRecursive(numbers, target, []);
         }
 
         override public void Solve()
         {
             int target = 150;
-            List<int> bottles = new();
+            List<int> bottles = [];
             foreach (string s in Input)
             {
                 bottles.Add(int.Parse(s));

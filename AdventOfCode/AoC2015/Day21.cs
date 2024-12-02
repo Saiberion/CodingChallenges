@@ -39,27 +39,27 @@ namespace AdventOfCode.AoC2015
 
         override public void Solve()
         {
-            List<Item> weapons = new()
-            {
+            List<Item> weapons =
+            [
                 new Item {Cost = 8, Damage = 4, Armor = 0 },
                 new Item {Cost = 10, Damage = 5, Armor = 0 },
                 new Item {Cost = 25, Damage = 6, Armor = 0 },
                 new Item {Cost = 40, Damage = 7, Armor = 0 },
                 new Item {Cost = 74, Damage = 8, Armor = 0 }
-            };
+            ];
 
-            List<Item> armors = new()
-            {
+            List<Item> armors =
+            [
                 new Item {Cost = 0, Damage = 0, Armor = 0 },
                 new Item {Cost = 13, Damage = 0, Armor = 1 },
                 new Item {Cost = 31, Damage = 0, Armor = 2 },
                 new Item {Cost = 53, Damage = 0, Armor = 3 },
                 new Item {Cost = 75, Damage = 0, Armor = 4 },
                 new Item {Cost = 102, Damage = 0, Armor = 5 }
-            };
+            ];
 
-            List<Item> rings = new()
-            {
+            List<Item> rings =
+            [
                 new Item {Cost = 0, Damage = 0, Armor = 0 },
                 new Item {Cost = 25, Damage = 1, Armor = 0 },
                 new Item {Cost = 50, Damage = 2, Armor = 0 },
@@ -67,10 +67,10 @@ namespace AdventOfCode.AoC2015
                 new Item {Cost = 20, Damage = 0, Armor = 1 },
                 new Item {Cost = 40, Damage = 0, Armor = 2 },
                 new Item {Cost = 80, Damage = 0, Armor = 3 }
-            };
+            ];
 
-            List<int> costsWin = new();
-            List<int> costsLose = new();
+            List<int> costsWin = [];
+            List<int> costsLose = [];
 
             for (int w = 0; w < weapons.Count; w++)
             {

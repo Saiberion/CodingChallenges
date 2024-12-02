@@ -26,10 +26,10 @@ namespace AdventOfCode.AoC2015
     {
         private List<Instruction> ReadInstructionList()
         {
-            List<Instruction> instructions = new();
+            List<Instruction> instructions = [];
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' ', ','], StringSplitOptions.RemoveEmptyEntries);
                 Instruction instr = new();
                 switch (splitted.Length)
                 {
@@ -71,8 +71,8 @@ namespace AdventOfCode.AoC2015
 
         private static ushort SimulateCircuit(List<Instruction> allInstructions)
         {
-            List<Instruction> executable = new();
-            Dictionary<string, ushort> wires = new();
+            List<Instruction> executable = [];
+            Dictionary<string, ushort> wires = [];
             int val = 0, in1, in2;
 
             while (allInstructions.Count > 0)

@@ -9,12 +9,12 @@ namespace AdventOfCode.AoC2015
     {
         override public void Solve()
         {
-            List<Dictionary<string, int>> sues = new();
+            List<Dictionary<string, int>> sues = [];
 
             foreach (string s in Input)
             {
-                Dictionary<string, int> properties = new();
-                string[] splitted = s.Split(new char[] { ' ', ',', ':' }, StringSplitOptions.RemoveEmptyEntries);
+                Dictionary<string, int> properties = [];
+                string[] splitted = s.Split([' ', ',', ':'], StringSplitOptions.RemoveEmptyEntries);
 
                 properties.Add(splitted[0], int.Parse(splitted[1]));
                 properties.Add(splitted[2], int.Parse(splitted[3]));
@@ -123,8 +123,8 @@ namespace AdventOfCode.AoC2015
 
             foreach (string s in Input)
             {
-                Dictionary<string, int> properties = new();
-                string[] splitted = s.Split(new char[] { ' ', ',', ':' }, StringSplitOptions.RemoveEmptyEntries);
+                Dictionary<string, int> properties = [];
+                string[] splitted = s.Split([' ', ',', ':'], StringSplitOptions.RemoveEmptyEntries);
 
                 properties.Add(splitted[0], int.Parse(splitted[1]));
                 properties.Add(splitted[2], int.Parse(splitted[3]));

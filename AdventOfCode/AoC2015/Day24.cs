@@ -37,7 +37,7 @@ namespace AdventOfCode.AoC2015
 
         override public void Solve()
         {
-            List<int> weights = new();
+            List<int> weights = [];
             int totalWeight = 0;
             long minQE;
 

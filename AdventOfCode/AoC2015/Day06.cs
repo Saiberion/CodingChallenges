@@ -15,7 +15,7 @@ namespace AdventOfCode.AoC2015
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' ', ','], StringSplitOptions.RemoveEmptyEntries);
                 switch (splitted[0])
                 {
                     case "turn":
@@ -59,7 +59,7 @@ namespace AdventOfCode.AoC2015
             lightGrid = new int[1000, 1000];
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' ', ','], StringSplitOptions.RemoveEmptyEntries);
                 switch (splitted[0])
                 {
                     case "turn":

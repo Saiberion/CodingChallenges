@@ -5,29 +5,22 @@ using System.Text;
 
 namespace AdventOfCode.AoC2015
 {
-    class Distance
+    class Distance(string loc1, string loc2, int dist)
     {
-        public string location1;
-        public string location2;
-        public int distance;
-
-        public Distance(string loc1, string loc2, int dist)
-        {
-            location1 = loc1;
-            location2 = loc2;
-            distance = dist;
-        }
+        public string location1 = loc1;
+        public string location2 = loc2;
+        public int distance = dist;
     }
 
     public class Day09 : AoCDay
     {
-        internal List<List<string>> tracks = new();
+        internal List<List<string>> tracks = [];
 
         void GetAllCombinations(string[] input, int k, int m)
         {
             if (k == m)
             {
-                List<string> combination = new();
+                List<string> combination = [];
                 for (int i = 0; i <= m; i++)
                 {
                     combination.Add(input[i]);
@@ -47,12 +40,12 @@ namespace AdventOfCode.AoC2015
 
         override public void Solve()
         {
-            List<Distance> distances = new();
-            List<string> locations = new();
-            Dictionary<List<string>, int> trackDistances = new();
+            List<Distance> distances = [];
+            List<string> locations = [];
+            Dictionary<List<string>, int> trackDistances = [];
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
 
                 if (!locations.Contains(splitted[0]))
                 {
@@ -66,7 +59,7 @@ namespace AdventOfCode.AoC2015
                 Distance d = new(splitted[0], splitted[2], int.Parse(splitted[4]));
                 distances.Add(d);
             }
-            GetAllCombinations(locations.ToArray(), 0, locations.Count - 1);
+            GetAllCombinations([.. locations], 0, locations.Count - 1);
 
             foreach (List<string> t in tracks)
             {

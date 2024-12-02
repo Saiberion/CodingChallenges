@@ -5,29 +5,22 @@ using System.Text;
 
 namespace AdventOfCode.AoC2015
 {
-    class Happiness
+    class Happiness(string pers1, string pers2, int happ)
     {
-        public string person1;
-        public string person2;
-        public int happiness;
-
-        public Happiness(string pers1, string pers2, int happ)
-        {
-            person1 = pers1;
-            person2 = pers2;
-            happiness = happ;
-        }
+        public string person1 = pers1;
+        public string person2 = pers2;
+        public int happiness = happ;
     }
 
     public class Day13 : AoCDay
     {
-        internal List<List<string>> seatingOrder = new();
+        internal List<List<string>> seatingOrder = [];
 
         void GetAllCombinations(string[] input, int k, int m)
         {
             if (k == m)
             {
-                List<string> combination = new();
+                List<string> combination = [];
                 for (int i = 0; i <= m; i++)
                 {
                     combination.Add(input[i]);
@@ -49,12 +42,12 @@ namespace AdventOfCode.AoC2015
         {
             int maxHappiness = int.MinValue;
 
-            List<Happiness> happinesses = new();
-            List<string> persons = new();
-            Dictionary<List<string>, int> seatingHappines = new();
+            List<Happiness> happinesses = [];
+            List<string> persons = [];
+            Dictionary<List<string>, int> seatingHappines = [];
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ', '.' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' ', '.'], StringSplitOptions.RemoveEmptyEntries);
 
                 if (!persons.Contains(splitted[0]))
                 {
@@ -80,7 +73,7 @@ namespace AdventOfCode.AoC2015
                 persons.Add("myself");
             }
 
-            GetAllCombinations(persons.ToArray(), 0, persons.Count - 1);
+            GetAllCombinations([.. persons], 0, persons.Count - 1);
 
             foreach (List<string> t in seatingOrder)
             {

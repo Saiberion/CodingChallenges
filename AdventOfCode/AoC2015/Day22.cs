@@ -26,29 +26,17 @@ namespace AdventOfCode.AoC2015
         public ESpellType Type { get; set; }
     }
 
-    class Wizard
+    class Wizard(int hp, int mana)
     {
-        public int Hitpoints { get; set; }
-        public int Mana { get; set; }
+        public int Hitpoints { get; set; } = hp;
+        public int Mana { get; set; } = mana;
         public int Armor { get; set; }
-
-        public Wizard(int hp, int mana)
-        {
-            Hitpoints = hp;
-            Mana = mana;
-        }
     }
 
-    class Boss
+    class Boss(int hp, int dmg)
     {
-        public int Hitpoints { get; set; }
-        public int Damage { get; set; }
-
-        public Boss(int hp, int dmg)
-        {
-            Hitpoints = hp;
-            Damage = dmg;
-        }
+        public int Hitpoints { get; set; } = hp;
+        public int Damage { get; set; } = dmg;
     }
 
     class Effect
@@ -105,27 +93,27 @@ namespace AdventOfCode.AoC2015
             int minimumManaUsageForVictory = int.MaxValue;
             GameState currentState;
 
-            List<Spell> spells = new()
-            {
+            List<Spell> spells =
+            [
                 new Spell() { ManaCost = 53, Type = ESpellType.eMagicMissile },
                 new Spell() { ManaCost = 73, Type = ESpellType.eDrain },
                 new Spell() { ManaCost = 113, Type = ESpellType.eShield },
                 new Spell() { ManaCost = 173, Type = ESpellType.ePoison },
                 new Spell() { ManaCost = 229, Type = ESpellType.eRecharge }
-            };
+            ];
 
             GameState initial = new()
             {
                 wizard = new Wizard(50, 500),
                 boss = new Boss(51, 9),
                 IsWizwardTurn = true,
-                ActiveEffects = new()
+                ActiveEffects = []
             };
 
-            List<GameState> checkStates = new()
-            {
+            List<GameState> checkStates =
+            [
                 initial
-            };
+            ];
 
             while (checkStates.Count > 0)
             {
@@ -182,7 +170,7 @@ namespace AdventOfCode.AoC2015
                                     wizard = new Wizard(currentState.wizard.Hitpoints, currentState.wizard.Mana - s.ManaCost),
                                     boss = new Boss(currentState.boss.Hitpoints, currentState.boss.Damage),
                                     IsWizwardTurn = false,
-                                    ActiveEffects = new List<Effect>(),
+                                    ActiveEffects = [],
                                     ManaUsage = currentState.ManaUsage + s.ManaCost
                                 };
                                 foreach (Effect e in currentState.ActiveEffects)
@@ -246,7 +234,7 @@ namespace AdventOfCode.AoC2015
                             wizard = new Wizard(currentState.wizard.Hitpoints, currentState.wizard.Mana),
                             boss = new Boss(currentState.boss.Hitpoints, currentState.boss.Damage),
                             IsWizwardTurn = true,
-                            ActiveEffects = new List<Effect>(),
+                            ActiveEffects = [],
                             ManaUsage = currentState.ManaUsage
                         };
                         foreach (Effect e in currentState.ActiveEffects)

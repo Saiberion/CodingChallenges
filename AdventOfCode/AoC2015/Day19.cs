@@ -16,15 +16,15 @@ namespace AdventOfCode.AoC2015
         override public void Solve()
         {
             string startingMolecule = "";
-            List<ReplacementRule> replacementRules = new();
-            HashSet<string> uniqueMolecules = new();
+            List<ReplacementRule> replacementRules = [];
+            HashSet<string> uniqueMolecules = [];
 
             foreach (string s in Input)
             {
                 if (s.Contains("=>"))
                 {
                     // Replacement rule
-                    string[] splitted = s.Split(new char[] { ' ', '=', '>' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] splitted = s.Split([' ', '=', '>'], StringSplitOptions.RemoveEmptyEntries);
                     replacementRules.Add(new ReplacementRule() { From = splitted[0], To = splitted[1] });
                 }
                 else if (s.Length > 0)

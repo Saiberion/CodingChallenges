@@ -5,28 +5,16 @@ using System.Text;
 
 namespace AdventOfCode.AoC2015
 {
-    class Reindeer
+    class Reindeer(int speed, int flyTime, int restTime)
     {
-        public int Speed { get; set; }
-        public int FlyTime { get; set; }
-        public int RestTime { get; set; }
-        public int TraveledDistance { get; set; }
-        public int PointsScored { get; set; }
+        public int Speed { get; set; } = speed;
+        public int FlyTime { get; set; } = flyTime;
+        public int RestTime { get; set; } = restTime;
+        public int TraveledDistance { get; set; } = 0;
+        public int PointsScored { get; set; } = 0;
 
-        private bool isFlying;
-        private int travelTime;
-
-        public Reindeer(int speed, int flyTime, int restTime)
-        {
-            Speed = speed;
-            FlyTime = flyTime;
-            RestTime = restTime;
-
-            TraveledDistance = 0;
-            PointsScored = 0;
-            isFlying = true;
-            travelTime = 0;
-        }
+        private bool isFlying = true;
+        private int travelTime = 0;
 
         public void Travel()
         {
@@ -54,13 +42,13 @@ namespace AdventOfCode.AoC2015
     {
         override public void Solve()
         {
-            List<Reindeer> reindeers = new();
+            List<Reindeer> reindeers = [];
             int winningDistance = int.MinValue;
             int winningPoints = int.MinValue;
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 reindeers.Add(new Reindeer(int.Parse(splitted[3]), int.Parse(splitted[6]), int.Parse(splitted[13])));
             }
 
