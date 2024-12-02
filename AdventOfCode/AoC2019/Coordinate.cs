@@ -4,17 +4,10 @@ using System.Text;
 
 namespace AdventOfCode.AoC2019
 {
-    public class Coordinate3D
+    public class Coordinate3D(int x, int y, int z)
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Z { get; set; }
-
-        public Coordinate3D(int x, int y, int z)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-        }
+        public int X { get; set; } = x;
+        public int Y { get; set; } = y;
+        public int Z { get; set; } = z;
     }
 }

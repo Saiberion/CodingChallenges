@@ -25,7 +25,7 @@ namespace AdventOfCode.AoC2019
         public int Height { get; set; }
         public SIF(string fileContent, int width, int height)
         {
-            Layers = new List<SIFLayer>();
+            Layers = [];
             int fileIndex = 0;
             do
             {
@@ -105,9 +105,9 @@ namespace AdventOfCode.AoC2019
             Content = content;
             foreach (char c in Content)
             {
-                if (Statistics.ContainsKey(c))
+                if (Statistics.TryGetValue(c, out int value))
                 {
-                    Statistics[c]++;
+                    Statistics[c] = ++value;
                 }
                 else
                 {

@@ -84,7 +84,7 @@ namespace AdventOfCode.AoC2019
             int rangeStart = int.Parse(Input[0]);
             int rangeEnd = int.Parse(Input[1]);
 
-            List<int> validPasswords = new();
+            List<int> validPasswords = [];
 
             for (int i = rangeStart; i <= rangeEnd; i++)
             {

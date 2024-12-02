@@ -6,20 +6,14 @@ using System.Text;
 
 namespace AdventOfCode.AoC2019
 {
-    class Wire
+    class Wire(int id, int steps)
     {
-        public int ID { get; set; }
-        public int Steps { get; set; }
-
-        public Wire(int id, int steps)
-        {
-            ID = id;
-            Steps = steps;
-        }
+        public int ID { get; set; } = id;
+        public int Steps { get; set; } = steps;
     }
     public class Day03 : AoCDay
     {
-        internal List<Point> crossings = new();
+        internal List<Point> crossings = [];
 
         void UpdateGridPos(Dictionary<Point, Wire> wireGrid, Point currentPos, int wireID, int steps)
         {
@@ -81,11 +75,11 @@ namespace AdventOfCode.AoC2019
 
         override public void Solve()
         {
-            List<List<string>> wires = new();
+            List<List<string>> wires = [];
             foreach (string s in Input)
             {
-                List<string> sl = new();
-                string[] splitted = s.Split(new char[] { ',' });
+                List<string> sl = [];
+                string[] splitted = s.Split([',']);
                 foreach (string spl in splitted)
                 {
                     sl.Add(spl);

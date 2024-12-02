@@ -15,7 +15,7 @@ namespace AdventOfCode.AoC2019
             Queue<long> output = new();
             IntCodeComputer ic = new(Input[0]);
             PaintingRobot pr = new();
-            Dictionary<Point, long> hull = new();
+            Dictionary<Point, long> hull = [];
 
             ic.ExecuteAsync(input, output);
 
@@ -85,10 +85,10 @@ namespace AdventOfCode.AoC2019
                 maxY = Math.Max(maxY, p.Y);
             }
 
-            List<List<int>> disp = new();
+            List<List<int>> disp = [];
             for (int x = minX; x <= maxX; x++)
             {
-                List<int> line = new();
+                List<int> line = [];
                 for (int y = maxY - 1; y > minY + 1; y--)
                 {
                     Point p = new(x, y);

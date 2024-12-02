@@ -15,7 +15,7 @@ namespace AdventOfCode.AoC2019
 
             output = ic.Execute();
 
-            List<long> cameraview = new();
+            List<long> cameraview = [];
 
             while (output.Count > 0)
             {

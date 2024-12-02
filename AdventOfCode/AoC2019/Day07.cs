@@ -7,7 +7,7 @@ namespace AdventOfCode.AoC2019
 {
     public class Day07 : AoCDay
     {
-        internal List<List<int>> phaseCombinations = new();
+        internal List<List<int>> phaseCombinations = [];
         
         static void SwapElements(ref int a, ref int b)
         {
@@ -18,7 +18,7 @@ namespace AdventOfCode.AoC2019
         {
             if (k == m)
             {
-                List<int> combination = new();
+                List<int> combination = [];
                 for (int i = 0; i <= m; i++)
                 {
                     combination.Add(input[i]);
@@ -40,16 +40,16 @@ namespace AdventOfCode.AoC2019
         {
             Queue<long> input = new();
             IntCodeComputer ic = new(Input[0]);
-            List<long> thrusterSignals = new();
-            List<int> phaseSettings = new()
-            {
+            List<long> thrusterSignals = [];
+            List<int> phaseSettings =
+            [
                 0,
                 1,
                 2,
                 3,
                 4
-            };
-            GetAllCombinations(phaseSettings.ToArray(), 0, phaseSettings.Count - 1);
+            ];
+            GetAllCombinations([.. phaseSettings], 0, phaseSettings.Count - 1);
 
             foreach (List<int> ps in phaseCombinations)
             {

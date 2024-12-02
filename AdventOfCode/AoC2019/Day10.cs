@@ -11,7 +11,7 @@ namespace AdventOfCode.AoC2019
         override public void Solve()
         {
             Asteroid[,] asteroidMap = new Asteroid[Input[0].Length, Input.Count];
-            List<Asteroid> asteroids = new();
+            List<Asteroid> asteroids = [];
             for (int i = 0; i < Input.Count; i++)
             {
                 for (int k = 0; k < Input[i].Length; k++)
@@ -85,14 +85,9 @@ namespace AdventOfCode.AoC2019
         }
     }
 
-    class Asteroid
+    class Asteroid(Point p)
     {
         public int VisibleAsteroids { get; set; }
-        public Point Position { get; set; }
-
-        public Asteroid(Point p)
-        {
-            Position = new Point(p.X, p.Y);
-        }
+        public Point Position { get; set; } = new Point(p.X, p.Y);
     }
 }

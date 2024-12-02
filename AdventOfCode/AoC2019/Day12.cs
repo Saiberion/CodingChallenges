@@ -9,7 +9,7 @@ namespace AdventOfCode.AoC2019
     {
         override public void Solve()
         {
-            List<Moon> moons = new();
+            List<Moon> moons = [];
             foreach (string s in Input)
             {
                 moons.Add(new Moon(s));
@@ -49,7 +49,7 @@ namespace AdventOfCode.AoC2019
 
         public Moon(string initialPosition)
         {
-            string[] splitted = initialPosition.Split(new char[] { '=', ',', '>' });
+            string[] splitted = initialPosition.Split(['=', ',', '>']);
             Position = new Coordinate3D(int.Parse(splitted[1]), int.Parse(splitted[3]), int.Parse(splitted[5]));
             Velocity = new Coordinate3D(0, 0, 0);
         }

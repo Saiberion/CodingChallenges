@@ -17,7 +17,7 @@ namespace AdventOfCode.AoC2019
             // First value of input already set to starting value for part 2
             // the Intcode computer still outputs the initial gamescreen that is needed for part 1
             IntCodeComputer ic = new(Input[0]);
-            Dictionary<Point, long> gameScreen = new();
+            Dictionary<Point, long> gameScreen = [];
 
             ic.ExecuteAsync(input, output);
 
@@ -81,11 +81,7 @@ namespace AdventOfCode.AoC2019
                 {
                     Point p = new((int)output.Dequeue(), (int)output.Dequeue());
                     long tile = output.Dequeue();
-                    if (!gameScreen.ContainsKey(p))
-                    {
-                        gameScreen.Add(p, tile);
-                    }
-                    else
+                    if (!gameScreen.TryAdd(p, tile))
                     {
                         gameScreen[p] = tile;
                     }

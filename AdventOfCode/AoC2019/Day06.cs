@@ -9,11 +9,11 @@ namespace AdventOfCode.AoC2019
     {
         override public void Solve()
         {
-            List<TreeNode> fragments = new();
+            List<TreeNode> fragments = [];
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ')' });
+                string[] splitted = s.Split([')']);
 
                 TreeNode t1 = new(splitted[0]);
                 TreeNode t2 = new(splitted[1]);
@@ -29,7 +29,7 @@ namespace AdventOfCode.AoC2019
                 bool added = false;
                 foreach (TreeNode t in fragments)
                 {
-                    TreeNode t1 = t.GetTreeNodeByName(f.Name);
+                    TreeNode? t1 = t.GetTreeNodeByName(f.Name);
                     if (t1 != null)
                     {
                         foreach (TreeNode c in f.Children)
@@ -49,53 +49,58 @@ namespace AdventOfCode.AoC2019
             fragments[0].SetOrbits(0);
             Part1Solution = fragments[0].GetOrbits().ToString();
 
-            TreeNode startOrbit = fragments[0].GetTreeNodeByName("YOU").Parent;
+            TreeNode? tnYOU = fragments[0].GetTreeNodeByName("YOU");
+            TreeNode? startOrbit;
+            if (tnYOU != null)
+            {
+                startOrbit = tnYOU.Parent;
+            }
+            else
+            {
+                startOrbit = null;
+            }
 
             int orbitalTransfers = 0;
-            TreeNode currentOrbit = startOrbit;
+            TreeNode? currentOrbit = startOrbit;
 
             bool searchOrbit = true;
             while (searchOrbit)
             {
-                if (currentOrbit.GetTreeNodeByName("SAN") != null)
+                if (currentOrbit != null)
                 {
-                    foreach (TreeNode c in currentOrbit.Children)
+                    if (currentOrbit.GetTreeNodeByName("SAN") != null)
                     {
-                        if (c.Name.Equals("SAN"))
+                        foreach (TreeNode c in currentOrbit.Children)
                         {
-                            searchOrbit = false;
-                            break;
-                        }
-                        if (c.GetTreeNodeByName("SAN") != null)
-                        {
-                            orbitalTransfers++;
-                            currentOrbit = c;
+                            if (c.Name.Equals("SAN"))
+                            {
+                                searchOrbit = false;
+                                break;
+                            }
+                            if (c.GetTreeNodeByName("SAN") != null)
+                            {
+                                orbitalTransfers++;
+                                currentOrbit = c;
+                            }
                         }
                     }
-                }
-                else
-                {
-                    currentOrbit = currentOrbit.Parent;
-                    orbitalTransfers++;
+                    else
+                    {
+                        currentOrbit = currentOrbit.Parent;
+                        orbitalTransfers++;
+                    }
                 }
             }
             Part2Solution = orbitalTransfers.ToString();
         }
     }
 
-    class TreeNode
+    class TreeNode(string name)
     {
-        public TreeNode Parent { get; set; }
-        public List<TreeNode> Children { get; set; }
-        public string Name { get; set; }
+        public TreeNode? Parent { get; set; } = null;
+        public List<TreeNode> Children { get; set; } = [];
+        public string Name { get; set; } = name;
         public int Orbits { get; set; }
-
-        public TreeNode(string name)
-        {
-            Parent = null;
-            Name = name;
-            Children = new List<TreeNode>();
-        }
 
         public void AddChild(TreeNode child)
         {
@@ -103,7 +108,7 @@ namespace AdventOfCode.AoC2019
             Children.Add(child);
         }
 
-        public TreeNode GetTreeNodeByName(string name)
+        public TreeNode? GetTreeNodeByName(string name)
         {
             if (Name.Equals(name))
             {
@@ -113,7 +118,7 @@ namespace AdventOfCode.AoC2019
             {
                 foreach (TreeNode t in Children)
                 {
-                    TreeNode r = t.GetTreeNodeByName(name);
+                    TreeNode? r = t.GetTreeNodeByName(name);
                     if (r != null)
                     {
                         return r;

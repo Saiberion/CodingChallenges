@@ -15,7 +15,7 @@ namespace AdventOfCode.AoC2019
             {
                 foreach (string s in Input)
                 {
-                    string[] splitted = s.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] splitted = s.Split([" "], StringSplitOptions.RemoveEmptyEntries);
 
                     if (splitted[0].Equals("deal"))
                     {
