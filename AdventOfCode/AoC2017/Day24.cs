@@ -14,11 +14,11 @@ namespace AdventOfCode.AoC2017
             public BridgePart(string bp)
             {
                 string[] s = bp.Split('/');
-                PortStrength = new List<int>
-                {
+                PortStrength =
+                [
                     int.Parse(s[0]),
                     int.Parse(s[1])
-                };
+                ];
             }
         }
 
@@ -53,8 +53,8 @@ namespace AdventOfCode.AoC2017
 
         public override void Solve()
         {
-            List<BridgePart> bridgeParts = new();
-            List<List<BridgePart>> bridges = new();
+            List<BridgePart> bridgeParts = [];
+            List<List<BridgePart>> bridges = [];
             int bestBridgeStrength = int.MinValue;
             int bestBridgeStrengthLongest = int.MinValue;
             int longestBridge = int.MinValue;
@@ -64,7 +64,7 @@ namespace AdventOfCode.AoC2017
                 bridgeParts.Add(new BridgePart(line));
             }
 
-            CreateBridges(bridges, new(), bridgeParts, 0);
+            CreateBridges(bridges, [], bridgeParts, 0);
 
             foreach (List<BridgePart> bps in bridges)
             {

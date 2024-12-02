@@ -21,7 +21,7 @@ namespace AdventOfCode.AoC2017
         {
             int position = 0;
             EStates state = EStates.eA;
-            Dictionary<int, int> tape = new();
+            Dictionary<int, int> tape = [];
             int checksum = 0;
 
             tape.Add(0, 0);
@@ -115,10 +115,7 @@ namespace AdventOfCode.AoC2017
                         }
                         break;
                 }
-                if (!tape.ContainsKey(position))
-                {
-                    tape.Add(position, 0);
-                }
+                tape.TryAdd(position, 0);
             }
 
             foreach (int v in tape.Values)

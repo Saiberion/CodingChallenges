@@ -5,25 +5,15 @@ using System.Text;
 
 namespace AdventOfCode.AoC2017
 {
-	class TowerElement
-	{
-		public string Name { get; internal set; }
-		public int Weight { get; set; }
-		public List<TowerElement> Disc { get; internal set; }
-		public int TotalWeight { get; set; }
-		public bool IsBalanced { get; internal set; }
-		public TowerElement Parent { get; internal set; }
-
-		public TowerElement(string name)
-		{
-			Name = name;
-			Weight = 0;
-			Disc = new List<TowerElement>();
-			TotalWeight = 0;
-			IsBalanced = true;
-			Parent = null;
-		}
-	}
+	class TowerElement(string name)
+    {
+        public string Name { get; internal set; } = name;
+        public int Weight { get; set; } = 0;
+        public List<TowerElement> Disc { get; internal set; } = [];
+        public int TotalWeight { get; set; } = 0;
+        public bool IsBalanced { get; internal set; } = true;
+        public TowerElement? Parent { get; internal set; } = null;
+    }
 
 	public class Day07 : AoCDay
 	{
@@ -53,24 +43,28 @@ namespace AdventOfCode.AoC2017
 
 		static int FindUnbalancedElement(TowerElement tower)
 		{
-			Dictionary<int, int> d = new();
+			Dictionary<int, int> d = [];
 			foreach (TowerElement t in tower.Disc)
 			{
-				if (!d.ContainsKey(t.TotalWeight))
+				if (!d.TryGetValue(t.TotalWeight, out int value))
 				{
-					d.Add(t.TotalWeight, 0);
+                    value = 0;
+                    d.Add(t.TotalWeight, value);
 				}
-				d[t.TotalWeight]++;
+				d[t.TotalWeight] = ++value;
 			}
 			if (d.Count == 1)
 			{
-				foreach (TowerElement te2 in tower.Parent.Disc)
+				if (tower.Parent != null)
 				{
-					if (tower.TotalWeight != te2.TotalWeight)
+					foreach (TowerElement te2 in tower.Parent.Disc)
 					{
-						int nw = tower.TotalWeight - tower.Weight;
-						nw = Math.Abs(nw - te2.TotalWeight);
-						return nw;
+						if (tower.TotalWeight != te2.TotalWeight)
+						{
+							int nw = tower.TotalWeight - tower.Weight;
+							nw = Math.Abs(nw - te2.TotalWeight);
+							return nw;
+						}
 					}
 				}
 				return 0;
@@ -97,29 +91,31 @@ namespace AdventOfCode.AoC2017
 
 		public override void Solve()
 		{
-			Dictionary<string, TowerElement> programs = new();
-			TowerElement root = null;
+			Dictionary<string, TowerElement> programs = [];
+			TowerElement? root = null;
 
 			foreach (string line in Input)
 			{
 				TowerElement t;
-				string[] s = line.Split(new string[] { "(", ")", "->", ",", " " }, StringSplitOptions.RemoveEmptyEntries);
+				string[] s = line.Split(["(", ")", "->", ",", " "], StringSplitOptions.RemoveEmptyEntries);
 
-				if (!programs.ContainsKey(s[0]))
+				if (!programs.TryGetValue(s[0], out TowerElement? value))
 				{
 					t = new TowerElement(s[0]);
-					programs.Add(s[0], t);
+                    value = t;
+                    programs.Add(s[0], value);
 				}
-				t = programs[s[0]];
+				t = value;
 				t.Weight = int.Parse(s[1]);
 				for (int i = 2; i < s.Length; i++)
 				{
-					if (!programs.ContainsKey(s[i]))
+					if (!programs.TryGetValue(s[i], out TowerElement? te))
 					{
-						programs.Add(s[i], new TowerElement(s[i]));
+                        te = new TowerElement(s[i]);
+                        programs.Add(s[i], te);
 					}
-					TowerElement te = programs[s[i]];
-					t.Disc.Add(te);
+
+                    t.Disc.Add(te);
 					te.Parent = t;
 				}
 			}
@@ -132,11 +128,19 @@ namespace AdventOfCode.AoC2017
 				}
 			}
 
-			Part1Solution = root.Name;
+			if (root != null)
+			{
+				Part1Solution = root.Name;
+                
+				DetermineTotalWeights(root);
 
-			DetermineTotalWeights(root);
-
-			Part2Solution = FindUnbalancedElement(root).ToString();
+                Part2Solution = FindUnbalancedElement(root).ToString();
+            }
+			else
+			{
+				Part1Solution = "Something went wrong";
+				Part2Solution = "Something went wrong";
+            }
 		}
 	}
 }

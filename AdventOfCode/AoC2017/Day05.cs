@@ -52,7 +52,7 @@ namespace AdventOfCode.AoC2017
 
         public override void Solve()
         {
-            List<int> jumpList = new();
+            List<int> jumpList = [];
             foreach (string line in Input)
             {
                 jumpList.Add(int.Parse(line));

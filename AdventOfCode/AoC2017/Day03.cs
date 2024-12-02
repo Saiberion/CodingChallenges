@@ -11,8 +11,8 @@ namespace AdventOfCode.AoC2017
         public static int SumAdjecent(Dictionary<Point, int> grid, int x, int y)
         {
             int sum = 0;
-            List<Point> possibleAdjecent = new()
-            {
+            List<Point> possibleAdjecent =
+            [
                 new Point (x - 1, y - 1),
                 new Point (x, y - 1),
                 new Point (x + 1, y - 1),
@@ -21,13 +21,13 @@ namespace AdventOfCode.AoC2017
                 new Point (x, y + 1),
                 new Point (x - 1, y + 1),
                 new Point (x - 1, y)
-            };
+            ];
 
             foreach (Point p in possibleAdjecent)
             {
-                if (grid.ContainsKey(p))
+                if (grid.TryGetValue(p, out int value))
                 {
-                    sum += grid[p];
+                    sum += value;
                 }
             }
 
@@ -36,7 +36,7 @@ namespace AdventOfCode.AoC2017
 
         public override void Solve()
         {
-            Dictionary<Point, int> grid = new();
+            Dictionary<Point, int> grid = [];
             int x = 0, y = 0;
             int dir = 0;
             int count = 1;

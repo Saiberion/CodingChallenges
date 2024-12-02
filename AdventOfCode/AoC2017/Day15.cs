@@ -5,17 +5,11 @@ using System.Text;
 
 namespace AdventOfCode.AoC2017
 {
-    class Generator
+    class Generator(UInt64 initialValue, UInt64 factor)
     {
-        private UInt64 previousValue;
-        private readonly UInt64 factor;
+        private UInt64 previousValue = initialValue;
+        private readonly UInt64 factor = factor;
         private const UInt64 modulo = 2147483647;
-
-        public Generator(UInt64 initialValue, UInt64 factor)
-        {
-            this.previousValue = initialValue;
-            this.factor = factor;
-        }
 
         private UInt64 Generate()
         {

@@ -6,18 +6,11 @@ using System.Text;
 
 namespace AdventOfCode.AoC2017
 {
-    class ValueTriple
+    class ValueTriple(long x, long y, long z)
     {
-        public long X { get; set; }
-        public long Y { get; set; }
-        public long Z { get; set; }
-
-        public ValueTriple(long x, long y, long z)
-        {
-            this.X = x;
-            this.Y = y;
-            this.Z = z;
-        }
+        public long X { get; set; } = x;
+        public long Y { get; set; } = y;
+        public long Z { get; set; } = z;
 
         public static ValueTriple operator +(ValueTriple v1, ValueTriple v2)
         {
@@ -28,14 +21,14 @@ namespace AdventOfCode.AoC2017
     class Particle
     {
         public int ID { get; set; }
-        public ValueTriple Position { get; set; }
-        public ValueTriple Velocity { get; set; }
-        public ValueTriple Acceleration { get; set; }
+        public ValueTriple Position { get; set; } = new(0, 0, 0);
+        public ValueTriple Velocity { get; set; } = new(0, 0, 0);
+        public ValueTriple Acceleration { get; set; } = new(0, 0, 0);
 
         public Particle(string initLine, int id)
         {
             // initLine in Format p=<XP,YP,ZP>, v=<XV,YV,ZV>, a=<XA,YA,ZA>
-            string[] parameters = initLine.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+            string[] parameters = initLine.Split([", "], StringSplitOptions.RemoveEmptyEntries);
             foreach (string param in parameters)
             {
                 char p = param[0];
@@ -77,7 +70,7 @@ namespace AdventOfCode.AoC2017
             return (this.Position.X == v.X) && (this.Position.Y == v.Y) && (this.Position.Z == v.Z);
         }
 
-        public static ValueTriple CollisionDetection(Particle p1, Particle p2)
+        public static ValueTriple? CollisionDetection(Particle p1, Particle p2)
         {
             if (p1.Match(p2))
             {
@@ -94,7 +87,7 @@ namespace AdventOfCode.AoC2017
     {
         public override void Solve()
         {
-            List<Particle> particles = new();
+            List<Particle> particles = [];
 
             int count = 0;
             foreach (string line in Input)
@@ -149,11 +142,11 @@ namespace AdventOfCode.AoC2017
         {
             //Console.WriteLine("Day20 part 2");
             var lines = Input;
-            List<Particle2> particles = new();
+            List<Particle2> particles = [];
             for (int x = 0; x < lines.Count; x++)
             {
                 var line = lines[x];
-                var parts = line.Split(new char[] { ',', '=', 'p', 'v', 'a', '<', '>', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(p => long.Parse(p)).ToList();
+                var parts = line.Split([',', '=', 'p', 'v', 'a', '<', '>', ' '], StringSplitOptions.RemoveEmptyEntries).Select(p => long.Parse(p)).ToList();
 
                 particles.Add(new Particle2()
                 {
@@ -232,9 +225,16 @@ namespace AdventOfCode.AoC2017
             return Math.Abs(XPos) + Math.Abs(YPos) + Math.Abs(ZPos);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            return (obj as Particle2).Id == this.Id;
+            if (obj is Particle2 other)
+            {
+                return other.Id == this.Id;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override int GetHashCode()

@@ -172,23 +172,23 @@ namespace AdventOfCode.AoC2017
                 }
             }
 
-            string[] grid = new string[]
-            {
+            string[] grid =
+            [
             ".#.",
             "..#",
             "###",
-            };
+            ];
 
             grid = Enhance(iterations: 5, grid: grid, rules: rulesMap);
 
             Part1Solution = CountOn(grid).ToString();
 
-            grid = new string[]
-            {
+            grid =
+            [
             ".#.",
             "..#",
             "###",
-            };
+            ];
             grid = Enhance(iterations: 18, grid: grid, rules: rulesMap);
 
             Part2Solution = CountOn(grid).ToString();

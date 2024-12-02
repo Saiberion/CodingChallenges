@@ -40,8 +40,8 @@ namespace AdventOfCode.AoC2017
 
 		public override void Solve()
 		{
-			List<int> memoryBanks = new();
-			List<int> uniqueSignatures = new();
+			List<int> memoryBanks = [];
+			List<int> uniqueSignatures = [];
 			int steps;
 			int loopsize;
 

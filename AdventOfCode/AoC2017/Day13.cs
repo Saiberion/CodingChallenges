@@ -7,20 +7,13 @@ namespace AdventOfCode.AoC2017
 {
 	public class Day13 : AoCDay
 	{
-		class FirewallLayer
-		{
-			public int Depth { get; set; }
-			private int scannerPosition;
-			private int direction;
+		class FirewallLayer(int depth)
+        {
+            public int Depth { get; set; } = depth;
+            private int scannerPosition = 1;
+			private int direction = 1;
 
-			public FirewallLayer(int depth)
-			{
-				this.Depth = depth;
-				scannerPosition = 1;
-				direction = 1;
-			}
-
-			public void MoveScanner()
+            public void MoveScanner()
 			{
 				scannerPosition += direction;
 				if (this.scannerPosition == this.Depth)
@@ -60,7 +53,7 @@ namespace AdventOfCode.AoC2017
 
 		public override void Solve()
 		{
-			Dictionary<int, FirewallLayer> firewall = new();
+			Dictionary<int, FirewallLayer> firewall = [];
 			int packetLayerPosition = -1;
 			int severity = 0;
 			int maxKeyValue = int.MinValue;
@@ -69,7 +62,7 @@ namespace AdventOfCode.AoC2017
 
 			foreach (string line in Input)
 			{
-				string[] s = line.Split(new string[] { ": " }, StringSplitOptions.RemoveEmptyEntries);
+				string[] s = line.Split([": "], StringSplitOptions.RemoveEmptyEntries);
 				int keyVal = int.Parse(s[0]);
 				firewall.Add(keyVal, new FirewallLayer(int.Parse(s[1])));
 				if (keyVal > maxKeyValue)

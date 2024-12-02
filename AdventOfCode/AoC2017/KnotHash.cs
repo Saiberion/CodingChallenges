@@ -56,8 +56,8 @@ namespace AdventOfCode.AoC2017
 
         public int GetHashChecksum(string stream)
         {
-            List<byte> inputLengths = new();
-            List<byte> knotHash = new();
+            List<byte> inputLengths = [];
+            List<byte> knotHash = [];
 
             this.Reset();
 
@@ -78,9 +78,9 @@ namespace AdventOfCode.AoC2017
 
         public string GetHashString(string input)
         {
-            List<byte> inputLengths = new();
-            List<byte> knotHash = new();
-            List<byte> denseHash = new();
+            List<byte> inputLengths = [];
+            List<byte> knotHash = [];
+            List<byte> denseHash = [];
 
             this.Reset();
 

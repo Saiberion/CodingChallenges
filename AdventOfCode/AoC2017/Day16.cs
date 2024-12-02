@@ -15,7 +15,7 @@ namespace AdventOfCode.AoC2017
         {
             string[] tmp;
             this.Move = move[0];
-            this.Operands = new List<object>();
+            this.Operands = [];
             switch (this.Move)
             {
                 case 's':
@@ -41,19 +41,19 @@ namespace AdventOfCode.AoC2017
         {
             string dance = Input[0];
 
-            List<char> dancers = new();
+            List<char> dancers = [];
             for (int i = 0; i < 16; i++)
             {
                 dancers.Add(Convert.ToChar('a' + i));
             }
             string[] danceMoves = dance.Split(',');
-            List<DanceMove> listDanceMoves = new();
+            List<DanceMove> listDanceMoves = [];
             for (int i = 0; i < danceMoves.Length; i++)
             {
                 listDanceMoves.Add(new DanceMove(danceMoves[i]));
             }
 
-            List<string> dancePattern = new();
+            List<string> dancePattern = [];
             StringBuilder sb = new();
             int indA, indB;
             char tmp;

@@ -67,16 +67,16 @@ namespace AdventOfCode.AoC2017
 
     class DuetThread
     {
-        public List<InstructionD18> Program { get; set; }
+        public List<InstructionD18> Program { get; set; } = [];
         public int ID { get; set; }
-        public BlockingCollection<Int64> SendQueue { get; set; }
-        public BlockingCollection<Int64> ReceiveQueue { get; set; }
+        public BlockingCollection<Int64> SendQueue { get; set; } = [];
+        public BlockingCollection<Int64> ReceiveQueue { get; set; } = [];
         public int SendCounter { get; private set; }
 
         public void ThreadFunc()
         {
             Int64 programCounter = 0;
-            Dictionary<string, Int64> registerMap = new();
+            Dictionary<string, Int64> registerMap = [];
             BlockingCollection<Int64> sndQ = this.SendQueue;
             BlockingCollection<Int64> rcvQ = this.ReceiveQueue;
 
@@ -102,9 +102,9 @@ namespace AdventOfCode.AoC2017
 
                 if (!Int64.TryParse(instr.Parameter, out parameter))
                 {
-                    if (registerMap.ContainsKey(instr.Parameter))
+                    if (registerMap.TryGetValue(instr.Parameter, out long value))
                     {
-                        parameter = registerMap[instr.Parameter];
+                        parameter = value;
                     }
                 }
 
@@ -161,8 +161,8 @@ namespace AdventOfCode.AoC2017
     {
         public override void Solve()
         {
-            List<InstructionD18> program = new();
-            Dictionary<string, Int64> registerMap = new();
+            List<InstructionD18> program = [];
+            Dictionary<string, Int64> registerMap = [];
             Int64 programCounter = 0;
             Int64 lastFrequency = 0;
 
@@ -175,23 +175,24 @@ namespace AdventOfCode.AoC2017
             {
                 InstructionD18 instr = program[(int)programCounter];
 
-                if (!registerMap.ContainsKey(instr.Register))
+                if (!registerMap.TryGetValue(instr.Register, out long value))
                 {
-                    registerMap.Add(instr.Register, 0);
+                    value = 0;
+                    registerMap.Add(instr.Register, value);
                 }
 
                 if (!Int64.TryParse(instr.Parameter, out Int64 parameter))
                 {
-                    if (registerMap.ContainsKey(instr.Parameter))
+                    if (registerMap.TryGetValue(instr.Parameter, out long value2))
                     {
-                        parameter = registerMap[instr.Parameter];
+                        parameter = value2;
                     }
                 }
 
                 switch (instr.Opcode)
                 {
                     case EOpcodes.eOpcodeSND:
-                        lastFrequency = registerMap[instr.Register];
+                        lastFrequency = value;
                         programCounter++;
                         break;
                     case EOpcodes.eOpcodeSET:
@@ -245,8 +246,8 @@ namespace AdventOfCode.AoC2017
             dt1.ID = 0;
             dt2.ID = 1;
 
-            dt1.SendQueue = new BlockingCollection<Int64>();
-            dt2.SendQueue = new BlockingCollection<Int64>();
+            dt1.SendQueue = [];
+            dt2.SendQueue = [];
 
             dt1.ReceiveQueue = dt2.SendQueue;
             dt2.ReceiveQueue = dt1.SendQueue;

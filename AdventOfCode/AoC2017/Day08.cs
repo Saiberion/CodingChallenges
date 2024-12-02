@@ -5,27 +5,17 @@ using System.Text;
 
 namespace AdventOfCode.AoC2017
 {
-	class Instruction
-	{
-		public string Register { get; internal set; }
-		public string Operation { get; internal set; }
-		public int OperationValue { get; internal set; }
-		public string ConditionRegister { get; internal set; }
-		public string Condition { get; internal set; }
-		public int ConditionValue { get; internal set; }
+	class Instruction(string[] s)
+    {
+        public string Register { get; internal set; } = s[0];
+        public string Operation { get; internal set; } = s[1];
+        public int OperationValue { get; internal set; } = int.Parse(s[2]);
+		// s[3] ist immer "if"
+        public string ConditionRegister { get; internal set; } = s[4];
+        public string Condition { get; internal set; } = s[5];
+        public int ConditionValue { get; internal set; } = int.Parse(s[6]);
 
-		public Instruction(string[] s)
-		{
-			this.Register = s[0];
-			this.Operation = s[1];
-			this.OperationValue = int.Parse(s[2]);
-			// s[3] ist immer "if"
-			this.ConditionRegister = s[4];
-			this.Condition = s[5];
-			this.ConditionValue = int.Parse(s[6]);
-		}
-
-		private bool IsConditionValid(Dictionary<string, int> registers)
+        private bool IsConditionValid(Dictionary<string, int> registers)
 		{
 			int condRegVal = registers[this.ConditionRegister];
 			bool ret;
@@ -117,18 +107,15 @@ namespace AdventOfCode.AoC2017
 
 		public override void Solve()
 		{
-			Dictionary<string, int> registers = new();
-			List<Instruction> instructionList = new();
+			Dictionary<string, int> registers = [];
+			List<Instruction> instructionList = [];
 			int largestEver;
 
 			foreach (string line in Input)
 			{
 				string[] s = line.Split(' ');
-				if (!registers.ContainsKey(s[0]))
-				{
-					registers.Add(s[0], 0);
-				}
-				instructionList.Add(new Instruction(s));
+				registers.TryAdd(s[0], 0);
+                instructionList.Add(new Instruction(s));
 			}
 
 			largestEver = ExecuteInstructions(registers, instructionList);

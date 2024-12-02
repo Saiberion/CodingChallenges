@@ -33,7 +33,7 @@ namespace AdventOfCode.AoC2017
         {
             string baseKey = Input[0];
             KnotHash knotHash = new();
-            List<int[]> diskGrid = new();
+            List<int[]> diskGrid = [];
             int usedGridCells = 0;
             int regionCount = 0;
 

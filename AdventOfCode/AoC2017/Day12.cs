@@ -25,14 +25,13 @@ namespace AdventOfCode.AoC2017
 
 		public override void Solve()
 		{
-			Dictionary<int, List<int>> progPipes = new();
-			List<int> groups = new();
+			Dictionary<int, List<int>> progPipes = [];
+			List<int> groups = [];
 
 			foreach (string line in Input)
 			{
-				List<int> canTalkTo;
-				string[] s = line.Replace(" ", "").Split(new string[] { "<->", "," }, StringSplitOptions.RemoveEmptyEntries);
-				canTalkTo = new();
+				List<int> canTalkTo = [];
+				string[] s = line.Replace(" ", "").Split(["<->", ","], StringSplitOptions.RemoveEmptyEntries);
 				for (int i = 1; i < s.Length; i++)
 				{
 					canTalkTo.Add(int.Parse(s[i]));
@@ -42,7 +41,7 @@ namespace AdventOfCode.AoC2017
 
 			while (progPipes.Count > 0)
 			{
-				List<int> groupIDs = new();
+				List<int> groupIDs = [];
 				groups.Add(CountIDs(progPipes, groupIDs, progPipes.First().Key));
 				foreach (int i in groupIDs)
 				{

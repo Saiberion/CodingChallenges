@@ -9,7 +9,7 @@ namespace AdventOfCode.AoC2017
     {
         public override void Solve()
         {
-            List<int> spinLock = new();
+            List<int> spinLock = [];
             int currentPosition = 0;
             int valueAt1 = 0;
 

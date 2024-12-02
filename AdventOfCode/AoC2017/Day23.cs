@@ -76,14 +76,14 @@ namespace AdventOfCode.AoC2017
 
         class CoProcessor
         {
-            public List<Instruction> Program { get; set; }
+            public List<Instruction> Program { get; set; } = [];
             public bool DebugMode { get; set; }
             public int MulCounter { get; private set; }
 
             public void ThreadFunc()
             {
                 Int64 programCounter = 0;
-                Dictionary<string, Int64> registerMap = new();
+                Dictionary<string, Int64> registerMap = [];
 
                 if (!DebugMode)
                 {
@@ -109,9 +109,9 @@ namespace AdventOfCode.AoC2017
 
                     if (!Int64.TryParse(instr.Parameter, out parameter))
                     {
-                        if (registerMap.ContainsKey(instr.Parameter))
+                        if (registerMap.TryGetValue(instr.Parameter, out long value))
                         {
-                            parameter = registerMap[instr.Parameter];
+                            parameter = value;
                         }
                     }
 
@@ -206,7 +206,7 @@ namespace AdventOfCode.AoC2017
 
         public override void Solve()
         {
-            List<Instruction> program = new();
+            List<Instruction> program = [];
 
             foreach (string line in Input)
             {
