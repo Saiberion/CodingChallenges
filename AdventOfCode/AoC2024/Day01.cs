@@ -13,7 +13,7 @@ namespace AoC2024
             List<int> right = [];
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 left.Add(int.Parse(splitted[0]));
                 right.Add(int.Parse(splitted[1]));
             }
