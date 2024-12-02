@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AoC2016
+namespace AdventOfCode.AoC2016
 {
     public static class Assembunny
     {

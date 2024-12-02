@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 
-namespace AoC2019
+namespace AdventOfCode.AoC2019
 {
     public class Day13 : AoCDay
     {

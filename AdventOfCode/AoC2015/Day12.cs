@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 
-namespace AoC2015
+namespace AdventOfCode.AoC2015
 {
     public class Day12 : AoCDay
     {

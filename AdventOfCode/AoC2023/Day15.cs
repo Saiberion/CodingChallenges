@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 
-namespace AoC2023
+namespace AdventOfCode.AoC2023
 {
     public class Lens
     {

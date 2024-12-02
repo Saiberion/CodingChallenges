@@ -1,4 +1,4 @@
-﻿namespace AoC2017
+﻿namespace AdventOfCode.AoC2017
 {
     public enum EDirections
     {

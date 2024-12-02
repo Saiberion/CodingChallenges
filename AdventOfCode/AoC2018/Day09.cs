@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AoC2018
+namespace AdventOfCode.AoC2018
 {
     public class Day09 : AoCDay
     {

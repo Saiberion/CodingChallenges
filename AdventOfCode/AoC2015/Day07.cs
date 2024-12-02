@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AoC2015
+namespace AdventOfCode.AoC2015
 {
     enum EInstruction
     {

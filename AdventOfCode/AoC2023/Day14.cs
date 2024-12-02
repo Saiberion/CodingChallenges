@@ -1,11 +1,10 @@
 ﻿using AdventOfCode;
-using AoC2021;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-namespace AoC2023
+namespace AdventOfCode.AoC2023
 {
     public class Day14 : AoCDay
     {

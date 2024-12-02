@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace AoC2015
+namespace AdventOfCode.AoC2015
 {
     public class Day04 : AoCDay
     {

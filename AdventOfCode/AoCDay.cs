@@ -20,7 +20,14 @@ namespace AdventOfCode
         {
             StopWatch = new Stopwatch();
             Input = [];
-            Load(string.Format("{0}/inputs/{1}.txt", this.GetType().Namespace, this.GetType().Name));
+            string? ns = GetType().Namespace;
+            string nsname;
+            if (!string.IsNullOrEmpty(ns))
+            {
+                string[] nssplit = ns.Split(['.'], StringSplitOptions.RemoveEmptyEntries);
+                nsname = nssplit[^1];
+                Load(string.Format("{0}/inputs/{1}.txt", nsname, this.GetType().Name));
+            }
             Part1Solution = "TBD";
             Part2Solution = "TBD";
         }

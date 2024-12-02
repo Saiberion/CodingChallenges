@@ -5,7 +5,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms.VisualStyles;
 
-namespace AoC2022
+namespace AdventOfCode.AoC2022
 {
     public class Day11 : AoCDay
     {

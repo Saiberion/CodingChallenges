@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace AoC2022
+namespace AdventOfCode.AoC2022
 {
     public class Day14 : AoCDay
     {

@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AoC2017
+namespace AdventOfCode.AoC2017
 {
     enum EOpcodes
     {

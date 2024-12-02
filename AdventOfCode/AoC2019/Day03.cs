@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace AoC2019
+namespace AdventOfCode.AoC2019
 {
     class Wire
     {
