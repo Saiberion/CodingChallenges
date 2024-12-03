@@ -10,7 +10,7 @@ namespace AdventOfCode.AoC2019
     {
         override public void Solve()
         {
-            Asteroid[,] asteroidMap = new Asteroid[Input[0].Length, Input.Count];
+            Asteroid?[,] asteroidMap = new Asteroid[Input[0].Length, Input.Count];
             List<Asteroid> asteroids = [];
             for (int i = 0; i < Input.Count; i++)
             {
@@ -18,8 +18,9 @@ namespace AdventOfCode.AoC2019
                 {
                     if (Input[i][k] == '#')
                     {
-                        asteroidMap[k, i] = new Asteroid(new Point(k, i));
-                        asteroids.Add(asteroidMap[k, i]);
+                        Asteroid a = new(new Point(k, i));
+                        asteroidMap[k, i] = a;
+                        asteroids.Add(a);
                     }
                     else
                     {

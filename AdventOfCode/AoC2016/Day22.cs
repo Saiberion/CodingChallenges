@@ -134,9 +134,13 @@ namespace AdventOfCode.AoC2016
                 Console.WriteLine();
             }
 
-            int result = Math.Abs(hole.Coords.X - wStart.Coords.X) + Math.Abs(hole.Coords.Y - wStart.Coords.Y);
-            result += Math.Abs(wStart.Coords.X - x_size) + wStart.Coords.Y;
-            return result + 5 * (x_size - 1);
+            if ((hole != null) && (wStart != null))
+            {
+                int result = Math.Abs(hole.Coords.X - wStart.Coords.X) + Math.Abs(hole.Coords.Y - wStart.Coords.Y);
+                result += Math.Abs(wStart.Coords.X - x_size) + wStart.Coords.Y;
+                return result + 5 * (x_size - 1);
+            }
+            return 0;
         }
 
         public override void Solve()

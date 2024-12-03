@@ -28,13 +28,13 @@ namespace AdventOfCode.AoC2018
 
     class MinecartTrackSystem
     {
-        public char[,] TrackLayer { get; set; }
-        public Cart[,] CartLayer { get; set; }
-        Coordinate CrashLocation { get; set; } = new(0, 0);
+        public char[,] TrackLayer { get; set; } = new char[0, 0];
+        public Cart?[,] CartLayer { get; set; } = new Cart[0, 0];
+        Coordinate? CrashLocation { get; set; }
 
-        private bool MoveCart(Cart[,] updateCarts, Cart c, int x, int y)
+        private bool MoveCart(Cart?[,] updateCarts, Cart? c, int x, int y)
         {
-            if ((updateCarts[x, y] == null) && (CartLayer[x, y] == null))
+            if ((updateCarts[x, y] == null) && (CartLayer[x, y] == null) && (c != null))
             {
                 updateCarts[x, y] = c;
                 IntersectionsActions action;
@@ -97,9 +97,10 @@ namespace AdventOfCode.AoC2018
             {
                 for (int x = 0; x < TrackLayer.GetLength(0); x++)
                 {
-                    if (CartLayer[x, y] != null)
+                    Cart? currentCart = CartLayer[x, y];
+                    if (currentCart != null)
                     {
-                        switch (CartLayer[x, y].Facing)
+                        switch (currentCart.Facing)
                         {
                             case Directions.Up:
                                 MoveCart(updateCarts, CartLayer[x, y], x, y - 1);
@@ -119,7 +120,7 @@ namespace AdventOfCode.AoC2018
             }
             CartLayer = updateCarts;
             int remainingCarts = 0;
-            foreach (Cart c in CartLayer)
+            foreach (Cart? c in CartLayer)
             {
                 if (c != null)
                 {
@@ -131,7 +132,7 @@ namespace AdventOfCode.AoC2018
 
         public string GetCrashLocation()
         {
-            return string.Format("{0},{1}", CrashLocation.X, CrashLocation.Y);
+            return string.Format("{0},{1}", CrashLocation?.X, CrashLocation?.Y);
         }
 
         public string GetLonelyCartLocation()

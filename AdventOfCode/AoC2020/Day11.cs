@@ -219,8 +219,8 @@ namespace AdventOfCode.AoC2020
 
         private static int RunSeating(int distance, int seatLimit, char[,] seatingArea)
         {
-            char[,] newSeatingArea;
-            char[,] oldSeatingArea = null;
+            char[,]? newSeatingArea;
+            char[,]? oldSeatingArea = null;
             int occupiedSeats = 0;
 
             newSeatingArea = seatingArea.Clone() as char[,];
@@ -228,28 +228,34 @@ namespace AdventOfCode.AoC2020
             while (somethingChanged)
             {
                 somethingChanged = false;
-                oldSeatingArea = newSeatingArea.Clone() as char[,];
-                for (int y = 0; y < oldSeatingArea.GetLength(1); y++)
+                oldSeatingArea = newSeatingArea?.Clone() as char[,];
+                for (int y = 0; y < oldSeatingArea?.GetLength(1); y++)
                 {
                     for (int x = 0; x < oldSeatingArea.GetLength(0); x++)
                     {
                         char newState = GetNextSeatState(x, y, oldSeatingArea, distance, seatLimit);
-                        if (newSeatingArea[x, y] != newState)
+                        if (newSeatingArea != null)
                         {
-                            somethingChanged = true;
+                            if (newSeatingArea[x, y] != newState)
+                            {
+                                somethingChanged = true;
+                            }
+                            newSeatingArea[x, y] = newState;
                         }
-                        newSeatingArea[x, y] = newState;
                     }
                 }
             }
 
-            for (int y = 0; y < oldSeatingArea.GetLength(1); y++)
+            for (int y = 0; y < oldSeatingArea?.GetLength(1); y++)
             {
                 for (int x = 0; x < oldSeatingArea.GetLength(0); x++)
                 {
-                    if (newSeatingArea[x, y] == '#')
+                    if (newSeatingArea != null)
                     {
-                        occupiedSeats++;
+                        if (newSeatingArea[x, y] == '#')
+                        {
+                            occupiedSeats++;
+                        }
                     }
                 }
             }

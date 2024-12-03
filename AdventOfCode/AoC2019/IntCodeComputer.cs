@@ -8,11 +8,11 @@ namespace AdventOfCode.AoC2019
     public class IntCodeComputer
     {
         internal long[] baseProgram;
-        internal long[] memory;
+        internal long[] memory = [];
         internal long relativeBase;
-        internal Queue<long> input;
-        internal Queue<long> output;
-        Task runningTask;
+        internal Queue<long> input = [];
+        internal Queue<long> output = [];
+        Task? runningTask;
 
         void ResetMemory()
         {

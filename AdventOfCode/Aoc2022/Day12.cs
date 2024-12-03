@@ -14,7 +14,7 @@ namespace AdventOfCode.AoC2022
             public int F;
             public int G;
             //public int H;
-            public Location Parent;
+            public Location? Parent;
         }
 
         private static bool IsInList(Location l, List<Location> list)
@@ -135,13 +135,17 @@ namespace AdventOfCode.AoC2022
                 }
             }
 
-            return current.G;
+            if (current != null)
+            {
+                return current.G;
+            }
+            return 0;
         }
 
         private static int GetShorestPathDistance(int targetx, int targety, char[,] heightmap)
         {
             // A* algorithm for path finding
-            Location current = null;
+            Location? current = null;
             //Location start = new() { X = startx, Y = starty };
             Location target = new() { X = targetx, Y = targety };
             List<Location> openList = [];
@@ -223,7 +227,11 @@ namespace AdventOfCode.AoC2022
                 }
             }
 
-            return current.G;
+            if (current != null)
+            {
+                return current.G;
+            }
+            return 0;
         }
 
         public override void Solve()

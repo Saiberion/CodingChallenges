@@ -14,7 +14,7 @@ namespace AdventOfCode.AoC2022
                 Name = "/",
                 Parent = null
             };
-            FilesystemDirectory currentDir = rootDir;
+            FilesystemDirectory? currentDir = rootDir;
 
             foreach (string s in Input)
             {
@@ -30,11 +30,11 @@ namespace AdventOfCode.AoC2022
                         }
                         else if (splitted[2].Equals(".."))
                         {
-                            currentDir = currentDir.Parent;
+                            currentDir = currentDir?.Parent;
                         }
                         else
                         {
-                            currentDir = currentDir.dirs[splitted[2]];
+                            currentDir = currentDir?.dirs[splitted[2]];
                         }
                     }
                 }
@@ -46,7 +46,7 @@ namespace AdventOfCode.AoC2022
                         Parent = currentDir
                     };
 
-                    currentDir.dirs.Add(splitted[1], dir);
+                    currentDir?.dirs.Add(splitted[1], dir);
                 }
                 else
                 {
@@ -55,7 +55,7 @@ namespace AdventOfCode.AoC2022
                         Name = splitted[1],
                         Size = int.Parse(splitted[0])
                     };
-                    currentDir.files.Add(file);
+                    currentDir?.files.Add(file);
                     AddUpSizeToAllParents(currentDir, file.Size);
                 }
             }
@@ -65,12 +65,15 @@ namespace AdventOfCode.AoC2022
             Part2Solution = FindClosestTotalSize(rootDir, 30000000 - (70000000 - rootDir.TotalSize), rootDir.TotalSize).ToString();
         }
 
-        public static void AddUpSizeToAllParents(FilesystemDirectory dir, int filesize)
+        public static void AddUpSizeToAllParents(FilesystemDirectory? dir, int filesize)
         {
-            dir.TotalSize += filesize;
-            if (dir.Parent != null)
+            if (dir != null)
             {
-                AddUpSizeToAllParents(dir.Parent, filesize);
+                dir.TotalSize += filesize;
+                if (dir.Parent != null)
+                {
+                    AddUpSizeToAllParents(dir.Parent, filesize);
+                }
             }
         }
 
