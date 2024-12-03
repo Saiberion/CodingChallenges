@@ -48,7 +48,7 @@ namespace AdventOfCode.AoC2024
             return true;
         }
 
-        private bool IsValidDampened(List<int> report)
+        private static bool IsValidDampened(List<int> report)
         {
             if (!IsValidReport(report))
             {

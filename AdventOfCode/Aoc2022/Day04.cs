@@ -17,7 +17,7 @@ namespace AdventOfCode.AoC2022
             int maxRange2;
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { '-', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split(['-', ','], StringSplitOptions.RemoveEmptyEntries);
                 minRange1 = int.Parse(splitted[0]);
                 maxRange1 = int.Parse(splitted[1]);
                 minRange2 = int.Parse(splitted[2]);

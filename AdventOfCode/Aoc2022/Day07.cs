@@ -18,7 +18,7 @@ namespace AdventOfCode.AoC2022
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 if (splitted[0].Equals("$"))
                 {
                     // command input
@@ -109,16 +109,16 @@ namespace AdventOfCode.AoC2022
 
     public class FilesystemFile
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
         public int Size { get; set; }
     }
 
     public class FilesystemDirectory
     {
-        public Dictionary<string, FilesystemDirectory> dirs = new();
-        public List<FilesystemFile> files = new();
-        public string Name;
-        public FilesystemDirectory Parent;
+        public Dictionary<string, FilesystemDirectory> dirs = [];
+        public List<FilesystemFile> files = [];
+        public string Name = "";
+        public FilesystemDirectory? Parent;
         public int TotalSize = 0;
     }
 }

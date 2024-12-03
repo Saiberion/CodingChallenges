@@ -11,13 +11,13 @@ namespace AdventOfCode.AoC2022
     {
         public class Monkey
         {
-            public List<ulong> items = new();
+            public List<ulong> items = [];
             public ulong testValue;
             public int trueTarget;
             public int falseTarget;
             public uint inspectionCount;
-            public string worryOperation;
-            public string worryValue;
+            public string worryOperation = "";
+            public string worryValue = "";
 
             public void Inspect(ulong commonDivisor)
             {
@@ -78,11 +78,11 @@ namespace AdventOfCode.AoC2022
 
         public List<Monkey> InitializeHoard(ref ulong commonDivisor)
         {
-            List<Monkey> monkies = new();
+            List<Monkey> monkies = [];
             Monkey monkey = new();
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' ', ','], StringSplitOptions.RemoveEmptyEntries);
                 if (splitted.Length > 0)
                 {
                     if (splitted[0].Equals("Monkey"))
@@ -122,7 +122,7 @@ namespace AdventOfCode.AoC2022
 
         public static ulong GetMonkeyBusiness(List<Monkey> monkies)
         {
-            List<ulong> monkeyBusiness = new();
+            List<ulong> monkeyBusiness = [];
             foreach (Monkey m in monkies)
             {
                 monkeyBusiness.Add(m.inspectionCount);

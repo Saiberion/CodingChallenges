@@ -20,7 +20,7 @@ namespace AdventOfCode.AoC2022
 
         public override void Solve()
         {
-            List<int> elves = new();
+            List<int> elves = [];
 
             int calories = 0;
 

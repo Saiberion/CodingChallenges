@@ -11,7 +11,7 @@ namespace AdventOfCode.AoC2021
         {
             long allFish;
             long[] lanternFishDays = new long[9];
-            string[] splitted = Input[0].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitted = Input[0].Split([','], StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string s in splitted)
             {

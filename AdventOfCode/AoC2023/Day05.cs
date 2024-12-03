@@ -13,7 +13,7 @@ namespace AdventOfCode.AoC2023
 
         public SeedMapper(string s)
         {
-            string[] mapping = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] mapping = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
             DestinationStart = long.Parse(mapping[0]);
             SourceStart = long.Parse(mapping[1]);
             RangeLength = long.Parse(mapping[2]);
@@ -49,14 +49,14 @@ namespace AdventOfCode.AoC2023
 
         public override void Solve()
         {
-            List<long> seeds = new();
-            List<SeedMapper> seedToSoil = new();
-            List<SeedMapper> soilToFertilizer = new();
-            List<SeedMapper> fertilizerToWater = new();
-            List<SeedMapper> waterToLight = new();
-            List<SeedMapper> lightToTemperature = new();
-            List<SeedMapper> temperatureToHumidity = new();
-            List<SeedMapper> humidityToLocation = new();
+            List<long> seeds = [];
+            List<SeedMapper> seedToSoil = [];
+            List<SeedMapper> soilToFertilizer = [];
+            List<SeedMapper> fertilizerToWater = [];
+            List<SeedMapper> waterToLight = [];
+            List<SeedMapper> lightToTemperature = [];
+            List<SeedMapper> temperatureToHumidity = [];
+            List<SeedMapper> humidityToLocation = [];
 
             EInputReadType readType = EInputReadType.none;
 
@@ -111,7 +111,7 @@ namespace AdventOfCode.AoC2023
                     case EInputReadType.none:
                         break;
                     case EInputReadType.seeds:
-                        string[] seedsStr = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                        string[] seedsStr = line.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                         foreach (string seed in seedsStr)
                         {
                             if (char.IsDigit(seed[0]))

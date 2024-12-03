@@ -14,7 +14,7 @@ namespace AdventOfCode.AoC2021
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 switch (splitted[0])
                 {
                     case "forward":
@@ -38,7 +38,7 @@ namespace AdventOfCode.AoC2021
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 switch (splitted[0])
                 {
                     case "forward":

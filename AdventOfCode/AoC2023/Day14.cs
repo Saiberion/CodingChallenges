@@ -58,11 +58,11 @@ namespace AdventOfCode.AoC2023
 
         public override void Solve()
         {
-            List<List<char>> reflectorDish = new();
+            List<List<char>> reflectorDish = [];
 
             foreach (string line in Input)
             {
-                List<char> reflectorLine = new();
+                List<char> reflectorLine = [];
                 foreach (char c in line)
                 {
                     reflectorLine.Add(c);

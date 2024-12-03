@@ -9,48 +9,48 @@ namespace AdventOfCode.AoC2023
     {
         private static List<int> GetDigitsFromString(string s, bool part2)
         {
-            List<int> digits = new();
+            List<int> digits = [];
 
             for (int i = 0; i < s.Length; i++)
             {
                 string s1 = s.Remove(0, i);
-                if (s1.StartsWith("0") || (part2 && s1.StartsWith("zero")))
+                if (s1.StartsWith('0') || (part2 && s1.StartsWith("zero")))
                 {
                     digits.Add(0);
                 }
-                else if (s1.StartsWith("1") || (part2 && s1.StartsWith("one")))
+                else if (s1.StartsWith('1') || (part2 && s1.StartsWith("one")))
                 {
                     digits.Add(1);
                 }
-                else if (s1.StartsWith("2") || (part2 && s1.StartsWith("two")))
+                else if (s1.StartsWith('2') || (part2 && s1.StartsWith("two")))
                 {
                     digits.Add(2);
                 }
-                else if (s1.StartsWith("3") || (part2 && s1.StartsWith("three")))
+                else if (s1.StartsWith('3') || (part2 && s1.StartsWith("three")))
                 {
                     digits.Add(3);
                 }
-                else if (s1.StartsWith("4") || (part2 && s1.StartsWith("four")))
+                else if (s1.StartsWith('4') || (part2 && s1.StartsWith("four")))
                 {
                     digits.Add(4);
                 }
-                else if (s1.StartsWith("5") || (part2 && s1.StartsWith("five")))
+                else if (s1.StartsWith('5') || (part2 && s1.StartsWith("five")))
                 {
                     digits.Add(5);
                 }
-                else if (s1.StartsWith("6") || (part2 && s1.StartsWith("six")))
+                else if (s1.StartsWith('6') || (part2 && s1.StartsWith("six")))
                 {
                     digits.Add(6);
                 }
-                else if (s1.StartsWith("7") || (part2 && s1.StartsWith("seven")))
+                else if (s1.StartsWith('7') || (part2 && s1.StartsWith("seven")))
                 {
                     digits.Add(7);
                 }
-                else if (s1.StartsWith("8") || (part2 && s1.StartsWith("eight")))
+                else if (s1.StartsWith('8') || (part2 && s1.StartsWith("eight")))
                 {
                     digits.Add(8);
                 }
-                else if (s1.StartsWith("9") || (part2 && s1.StartsWith("nine")))
+                else if (s1.StartsWith('9') || (part2 && s1.StartsWith("nine")))
                 {
                     digits.Add(9);
                 }

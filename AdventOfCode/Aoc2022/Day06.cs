@@ -11,7 +11,7 @@ namespace AdventOfCode.AoC2022
         {
             int i;
             bool nextChar;
-            List<char> uniques = new();
+            List<char> uniques = [];
             for (i = distinct; i < Input[0].Length; i++)
             {
                 uniques.Clear();

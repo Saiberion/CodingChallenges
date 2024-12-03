@@ -15,7 +15,7 @@ namespace AdventOfCode.AoC2021
         {
             for (int y = 0; y < boardData.Count; y++)
             {
-                string[] splitted = boardData[y].Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = boardData[y].Split([' ', ','], StringSplitOptions.RemoveEmptyEntries);
                 for (int x = 0; x < splitted.Length; x++)
                 {
                     numbers[x, y] = int.Parse(splitted[x]);
@@ -32,11 +32,11 @@ namespace AdventOfCode.AoC2021
                 {
                     if (numbers[x, y] == drawnNumber)
                     {
-                        return new int[] { x, y };
+                        return [x, y];
                     }
                 }
             }
-            return new int[] { -1, -1 };
+            return [-1, -1];
         }
 
         private bool CheckBingo(int x, int y)

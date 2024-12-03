@@ -9,13 +9,13 @@ namespace AdventOfCode.AoC2021
     {
         override public void Solve()
         {
-            List<Line> vents = new();
+            List<Line> vents = [];
             int maxX = int.MinValue, maxY = int.MinValue;
             int[,] field;
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new string[] { " -> ", "," }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([" -> ", ","], StringSplitOptions.RemoveEmptyEntries);
                 vents.Add(new Line(int.Parse(splitted[0]), int.Parse(splitted[1]), int.Parse(splitted[2]), int.Parse(splitted[3])));
             }
 

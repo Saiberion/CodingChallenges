@@ -9,12 +9,12 @@ namespace AdventOfCode.AoC2021
     {
         override public void Solve()
         {
-            int gammaRate = GetGammaRate(new List<string>(Input.ToArray()));
+            int gammaRate = GetGammaRate(new List<string>([.. Input]));
 
             Part1Solution = (gammaRate * (~gammaRate & ((int)Math.Pow(2, Input[0].Length) - 1))).ToString();
 
-            int o2Rate = GetO2GenRate(new List<string>(Input.ToArray()));
-            int co2Rate = GetCO2GenRate(new List<string>(Input.ToArray()));
+            int o2Rate = GetO2GenRate(new List<string>([.. Input]));
+            int co2Rate = GetCO2GenRate(new List<string>([.. Input]));
             Part2Solution = (o2Rate * co2Rate).ToString();
         }
 
@@ -47,7 +47,7 @@ namespace AdventOfCode.AoC2021
                     o2Rate.Append('0');
                 }
 
-                List<string> newdiag = new();
+                List<string> newdiag = [];
                 for (int l = 0; l < diag.Count; l++)
                 {
                     if (diag[l].StartsWith(o2Rate.ToString()))
@@ -99,7 +99,7 @@ namespace AdventOfCode.AoC2021
                     co2Rate.Append('1');
                 }
 
-                List<string> newdiag = new();
+                List<string> newdiag = [];
                 for (int l = 0; l < diag.Count; l++)
                 {
                     if (diag[l].StartsWith(co2Rate.ToString()))

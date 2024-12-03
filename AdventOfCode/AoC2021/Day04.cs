@@ -10,9 +10,9 @@ namespace AdventOfCode.AoC2021
         override public void Solve()
         {
             bool firstWin = false;
-            List<int> drawPool = new();
-            List<BingoBoard> boards = new();
-            string[] splitted = Input[0].Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+            List<int> drawPool = [];
+            List<BingoBoard> boards = [];
+            string[] splitted = Input[0].Split([' ', ','], StringSplitOptions.RemoveEmptyEntries);
             foreach (string s in splitted)
             {
                 drawPool.Add(int.Parse(s));
@@ -20,14 +20,14 @@ namespace AdventOfCode.AoC2021
 
             for (int i = 2; i < Input.Count; i += 6)
             {
-                List<string> bingoBoardLines = new()
-                {
+                List<string> bingoBoardLines =
+                [
                     Input[i],
                     Input[i + 1],
                     Input[i + 2],
                     Input[i + 3],
                     Input[i + 4]
-                };
+                ];
                 boards.Add(new BingoBoard(bingoBoardLines));
             }
 

@@ -13,19 +13,19 @@ namespace AdventOfCode.AoC2023
             int sumP2 = 0;
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
-                int gameId = int.Parse(splitted[0].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)[1]);
-                string[] sets = splitted[1].Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([':'], StringSplitOptions.RemoveEmptyEntries);
+                int gameId = int.Parse(splitted[0].Split([' '], StringSplitOptions.RemoveEmptyEntries)[1]);
+                string[] sets = splitted[1].Split([';'], StringSplitOptions.RemoveEmptyEntries);
                 bool possible = true;
                 int maxred = int.MinValue;
                 int maxgreen = int.MinValue;
                 int maxblue = int.MinValue;
                 foreach (string set in sets)
                 {
-                    string[] cubes = set.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] cubes = set.Split([','], StringSplitOptions.RemoveEmptyEntries);
                     foreach (string shownCubes in cubes)
                     {
-                        string[] cubecount = shownCubes.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                        string[] cubecount = shownCubes.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                         switch (cubecount[1])
                         {
                             case "red":

@@ -11,8 +11,8 @@ namespace AdventOfCode.AoC2021
         {
             int max = int.MinValue;
             int minFuel = int.MaxValue;
-            List<int> hpos = new();
-            string[] splitted = Input[0].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            List<int> hpos = [];
+            string[] splitted = Input[0].Split([','], StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string s in splitted)
             {

@@ -9,7 +9,7 @@ namespace AdventOfCode.AoC2021
     {
         override public void Solve()
         {
-            List<int[]> basins = new();
+            List<int[]> basins = [];
             int y = Input.Count;
             int x = Input[0].Length;
             int risklevel = 0;
@@ -60,7 +60,7 @@ namespace AdventOfCode.AoC2021
 
                     if (isLowPoint)
                     {
-                        basins.Add(new int[] { x, y });
+                        basins.Add([x, y]);
                         risklevel += heightMap[x, y] + 1;
                     }
                 }
@@ -68,7 +68,7 @@ namespace AdventOfCode.AoC2021
 
             Part1Solution = risklevel.ToString();
 
-            List<int> basinAreas = new();
+            List<int> basinAreas = [];
 
             foreach (int[] baspos in basins)
             {
@@ -86,10 +86,10 @@ namespace AdventOfCode.AoC2021
                         {
                             area++;
                             heightMap[fillpos[0], fillpos[1]] += 10;
-                            flood.Push(new int[] { fillpos[0] - 1, fillpos[1] });
-                            flood.Push(new int[] { fillpos[0] + 1, fillpos[1] });
-                            flood.Push(new int[] { fillpos[0], fillpos[1] - 1 });
-                            flood.Push(new int[] { fillpos[0], fillpos[1] + 1 });
+                            flood.Push([fillpos[0] - 1, fillpos[1]]);
+                            flood.Push([fillpos[0] + 1, fillpos[1]]);
+                            flood.Push([fillpos[0], fillpos[1] - 1]);
+                            flood.Push([fillpos[0], fillpos[1] + 1]);
                         }
                     }
                 }

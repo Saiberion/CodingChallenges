@@ -10,28 +10,28 @@ namespace AdventOfCode.AoC2023
         public override void Solve()
         {
             int sumP1 = 0;
-            List<int> cardMatches = new() { 0 };
-            List<int> cardCount = new() { 0 };
+            List<int> cardMatches = [0];
+            List<int> cardCount = [0];
 
             foreach (string s in Input)
             {
                 int cardID;
-                string[] splitted = s.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([':'], StringSplitOptions.RemoveEmptyEntries);
 
-                string[] cardidSplit = splitted[0].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] cardidSplit = splitted[0].Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 cardID = int.Parse(cardidSplit[1]);
 
-                string[] numberSplit = splitted[1].Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] numberSplit = splitted[1].Split(['|'], StringSplitOptions.RemoveEmptyEntries);
 
-                string[] winningNumbersSplit = numberSplit[0].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] winningNumbersSplit = numberSplit[0].Split([' '], StringSplitOptions.RemoveEmptyEntries);
 
-                List<int> winningNumbers = new();
+                List<int> winningNumbers = [];
                 foreach (string wns in winningNumbersSplit)
                 {
                     winningNumbers.Add(int.Parse(wns));
                 }
 
-                string[] scratchNumbersSplit = numberSplit[1].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] scratchNumbersSplit = numberSplit[1].Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 int numberMatches = 0;
                 foreach (string sns in scratchNumbersSplit)
                 {

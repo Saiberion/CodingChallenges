@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AoCTemplate
+namespace AdventOfCode.AoCTemplate
 {
     public class Day20 : AoCDay
     {

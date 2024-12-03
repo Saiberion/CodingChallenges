@@ -25,8 +25,8 @@ namespace AdventOfCode.AoC2023
 
         private void DetermineHandTypeAndCardValues()
         {
-            Dictionary<char, int> cardCounts = new();
-            CardValues = new();
+            Dictionary<char, int> cardCounts = [];
+            CardValues = [];
 
             foreach (char c in Cards)
             {
@@ -55,9 +55,9 @@ namespace AdventOfCode.AoC2023
                             break;
                     }
                 }
-                if (cardCounts.ContainsKey(c))
+                if (cardCounts.TryGetValue(c, out int value))
                 {
-                    cardCounts[c]++;
+                    cardCounts[c] = ++value;
                 }
                 else
                 {
@@ -124,11 +124,16 @@ namespace AdventOfCode.AoC2023
         {
             Cards = cards;
             Bid = bid;
+            CardValues = [];
             DetermineHandTypeAndCardValues();
         }
 
-        public int CompareTo(Hand other)
+        public int CompareTo(Hand? other)
         {
+            if (other == null)
+            {
+                return 1;
+            }
             if (this.Type == other.Type)
             {
                 for (int i = 0; i < this.CardValues.Count; i++)
@@ -159,11 +164,11 @@ namespace AdventOfCode.AoC2023
     {
         public override void Solve()
         {
-            List<Hand> hands = new();
+            List<Hand> hands = [];
 
             foreach (string line in Input)
             {
-                string[] splitted = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = line.Split([' '], StringSplitOptions.RemoveEmptyEntries);
 
                 Hand h = new(splitted[0], int.Parse(splitted[1]));
                 hands.Add(h);

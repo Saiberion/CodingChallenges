@@ -8,19 +8,14 @@ namespace AdventOfCode.AoC2022
 {
     public class Day20 : AoCDay
     {
-        public class MixItem
+        public class MixItem(string s, long key)
         {
-            public long item;
-
-            public MixItem(string s, long key)
-            {
-                item = long.Parse(s) * key;
-            }
+            public long item = long.Parse(s) * key;
         }
 
         public long Decrypt(int rounds, long key)
         {
-            List<MixItem> mixingFile = new();
+            List<MixItem> mixingFile = [];
 
             foreach (string s in Input)
             {

@@ -11,14 +11,14 @@ namespace AdventOfCode.AoC2022
     {
         public override void Solve()
         {
-            Dictionary<Point, bool> cave = new();
+            Dictionary<Point, bool> cave = [];
             int maxy = int.MinValue;
             int spawns = 0;
             Point p;
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new string[] { " -> ", "," }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([" -> ", ","], StringSplitOptions.RemoveEmptyEntries);
                 Point lineStart = new(int.Parse(splitted[0]), int.Parse(splitted[1]));
                 cave[lineStart] = true;
                 maxy = Math.Max(maxy, lineStart.Y);

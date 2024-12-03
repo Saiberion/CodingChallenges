@@ -16,7 +16,7 @@ namespace AdventOfCode.AoC2023
         public static long GetSumOfDistances(List<List<char>> universe, int expansion)
         {
             long sumPaths = 0;
-            List<Point> galaxies = new();
+            List<Point> galaxies = [];
 
             // get galaxy coordinates
             for (int y = 0; y < universe.Count; y++)
@@ -96,12 +96,12 @@ namespace AdventOfCode.AoC2023
 
         public override void Solve()
         {
-            List<List<char>> universe = new();
+            List<List<char>> universe = [];
 
             // Build universe map
             foreach (string line in Input)
             {
-                List<char> mapLine = new();
+                List<char> mapLine = [];
                 foreach (char c in line)
                 {
                     mapLine.Add(c);

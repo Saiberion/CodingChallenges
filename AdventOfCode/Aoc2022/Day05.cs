@@ -9,7 +9,7 @@ namespace AdventOfCode.AoC2022
     {
         private static int GetStackCount(string stackIDs)
         {
-            string[] splitted = stackIDs.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitted = stackIDs.Split([' '], StringSplitOptions.RemoveEmptyEntries);
             return splitted.Length;
         }
 
@@ -36,7 +36,7 @@ namespace AdventOfCode.AoC2022
         {
             for (int i = 10; i < Input.Count; i++)
             {
-                string[] splitted = Input[i].Split(new string[] { "move", "from", " ", "to" }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = Input[i].Split(["move", "from", " ", "to"], StringSplitOptions.RemoveEmptyEntries);
                 int count = int.Parse(splitted[0]);
                 int from = int.Parse(splitted[1]) - 1;
                 int to = int.Parse(splitted[2]) - 1;

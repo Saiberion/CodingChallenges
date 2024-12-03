@@ -38,14 +38,14 @@ namespace AdventOfCode.AoC2022
 
         private static List<Location> GetWalkableAdjacentSquares(int x, int y, char[,] heightmap)
         {
-            List<Location> proposedLocations = new()
-            {
+            List<Location> proposedLocations =
+            [
                 new Location { X = x, Y = y - 1 },
                 new Location { X = x, Y = y + 1 },
                 new Location { X = x - 1, Y = y },
                 new Location { X = x + 1, Y = y },
-            };
-            List<Location> possibleLocations = new();
+            ];
+            List<Location> possibleLocations = [];
 
             foreach (Location l in proposedLocations)
             {
@@ -64,11 +64,11 @@ namespace AdventOfCode.AoC2022
         private static int GetShorestPathDistance(int startx, int starty, int targetx, int targety, char[,] heightmap)
         {
             // A* algorithm for path finding
-            Location current = null;
+            Location? current = null;
             Location start = new() { X = startx, Y = starty };
             Location target = new() { X = targetx, Y = targety };
-            List<Location> openList = new();
-            List<Location> closedList = new();
+            List<Location> openList = [];
+            List<Location> closedList = [];
             int g;
 
             // add the starting position to the open list
@@ -144,8 +144,8 @@ namespace AdventOfCode.AoC2022
             Location current = null;
             //Location start = new() { X = startx, Y = starty };
             Location target = new() { X = targetx, Y = targety };
-            List<Location> openList = new();
-            List<Location> closedList = new();
+            List<Location> openList = [];
+            List<Location> closedList = [];
             int g;
 
             for (int y = 0; y < heightmap.GetLength(1); y++)
@@ -231,7 +231,7 @@ namespace AdventOfCode.AoC2022
             char[,] heightmap = new char[Input[0].Length, Input.Count];
             int startx = 0, starty = 0, endx = 0, endy = 0;
 
-            List<Location> startPoints = new();
+            List<Location> startPoints = [];
 
             for (int y = 0; y < Input.Count; y++)
             {

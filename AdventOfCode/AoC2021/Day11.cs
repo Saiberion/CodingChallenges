@@ -92,7 +92,7 @@ namespace AdventOfCode.AoC2021
             {
                 if (++field[x, y] > 9)
                 {
-                    FlashList.Push(new int[] { x, y });
+                    FlashList.Push([x, y]);
                 }
             }
         }

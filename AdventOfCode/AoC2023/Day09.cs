@@ -11,12 +11,12 @@ namespace AdventOfCode.AoC2023
         {
             long sumP1 = 0;
             long sumP2 = 0;
-            List<List<long>> histories = new();
+            List<List<long>> histories = [];
 
             foreach (string line in Input)
             {
-                List<long> history = new();
-                string[] splitted = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                List<long> history = [];
+                string[] splitted = line.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 foreach (string s in splitted)
                 {
                     history.Add(long.Parse(s));
@@ -26,13 +26,13 @@ namespace AdventOfCode.AoC2023
 
             foreach (List<long> hist in histories)
             {
-                List<List<long>> differenceTree = new() { hist };
+                List<List<long>> differenceTree = [hist];
                 bool allZeroes = true;
 
                 do
                 {
                     allZeroes = true;
-                    List<long> differences = new();
+                    List<long> differences = [];
                     for (int i = 1; i < differenceTree[^1].Count; i++)
                     {
                         long diff = differenceTree[^1][i] - differenceTree[^1][i - 1];

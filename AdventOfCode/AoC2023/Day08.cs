@@ -8,13 +8,13 @@ namespace AdventOfCode.AoC2023
 {
     public class Day08 : AoCDay
     {
-        readonly Dictionary<string, List<string>> network = new();
+        readonly Dictionary<string, List<string>> network = [];
 
         private long StepsToEnd(string node)
         {
             int jumps = 0;
 
-            while (!node.EndsWith("Z"))
+            while (!node.EndsWith('Z'))
             {
                 for (int i = 0; (i < Input[0].Length) && !node.Equals("ZZZ"); i++)
                 {
@@ -37,9 +37,9 @@ namespace AdventOfCode.AoC2023
         {
             for (int i = 2; i < Input.Count; i++)
             {
-                string[] splitted = Input[i].Split(new char[] { ' ', '=', '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = Input[i].Split([' ', '=', '(', ')', ','], StringSplitOptions.RemoveEmptyEntries);
 
-                network.Add(splitted[0], new List<string>() { splitted[1], splitted[2] });
+                network.Add(splitted[0], [splitted[1], splitted[2]]);
             }
 
             string node = "AAA";
@@ -52,7 +52,7 @@ namespace AdventOfCode.AoC2023
             long prod = 1;
             foreach (string k in network.Keys)
             {
-                if (k.EndsWith("A"))
+                if (k.EndsWith('A'))
                 {
                     //nodeWalker.Add(StepsToEnd(k));
                     prod *= StepsToEnd(k);

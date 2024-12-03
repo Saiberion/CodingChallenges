@@ -10,13 +10,13 @@ namespace AdventOfCode.AoC2021
         override public void Solve()
         {
             int target_min_x, target_max_x;
-            string[] splitted = Input[0].Split(new char[] { ' ', '=', '.', ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitted = Input[0].Split([' ', '=', '.', ','], StringSplitOptions.RemoveEmptyEntries);
 
             target_min_x = int.Parse(splitted[3]);
             target_max_x = int.Parse(splitted[4]);
 
             int velocity_x, position_x;
-            List<int> valid_x_velocities = new();
+            List<int> valid_x_velocities = [];
 
             for (int i = 1; i <= target_max_x; i++)
             {

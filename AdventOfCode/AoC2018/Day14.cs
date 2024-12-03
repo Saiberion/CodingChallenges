@@ -62,7 +62,7 @@ namespace AdventOfCode.AoC2018
             long result = 0;
             int skillLevel = int.Parse(Input[0]);
 
-            List<int> recipes = new() { 3, 7 };
+            List<int> recipes = [3, 7];
             int elf1 = 0;
             int elf2 = 1;
 

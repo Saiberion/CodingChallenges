@@ -10,13 +10,13 @@ namespace AdventOfCode.AoC2021
         override public void Solve()
         {
             string polymer = Input[0];
-            Dictionary<string, string> polypair = new();
+            Dictionary<string, string> polypair = [];
 
             foreach (string s in Input)
             {
                 if (s.Contains(" -> "))
                 {
-                    string[] splitted = s.Split(new string[] { " -> " }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] splitted = s.Split([" -> "], StringSplitOptions.RemoveEmptyEntries);
                     polypair.Add(splitted[0], splitted[1]);
                 }
             }
@@ -30,13 +30,13 @@ namespace AdventOfCode.AoC2021
                 }
             }
 
-            Dictionary<char, int> distribution = new();
+            Dictionary<char, int> distribution = [];
 
             foreach (char c in polymer)
             {
-                if (distribution.ContainsKey(c))
+                if (distribution.TryGetValue(c, out int value))
                 {
-                    distribution[c]++;
+                    distribution[c] = ++value;
                 }
                 else
                 {

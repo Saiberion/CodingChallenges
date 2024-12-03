@@ -14,9 +14,9 @@ namespace AdventOfCode.AoC2021
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
-                string[] splitted2 = splitted[1].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                string[] splitted3 = splitted[0].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split(['|'], StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted2 = splitted[1].Split([' '], StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted3 = splitted[0].Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 foreach (string s2 in splitted2)
                 {
                     if ((s2.Length == 2) || (s2.Length == 3) || (s2.Length == 4) || (s2.Length == 7))
@@ -175,7 +175,7 @@ namespace AdventOfCode.AoC2021
                 }
 
 
-                Dictionary<string, int> numberMapping = new();
+                Dictionary<string, int> numberMapping = [];
                 StringBuilder sb;
 
                 sb = new StringBuilder();

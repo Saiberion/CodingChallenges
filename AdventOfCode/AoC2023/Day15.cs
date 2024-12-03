@@ -15,7 +15,7 @@ namespace AdventOfCode.AoC2023
 
         public Lens(string sequence)
         {
-            string[] lensData = sequence.Split(new char[] { '=', '-' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] lensData = sequence.Split(['=', '-'], StringSplitOptions.RemoveEmptyEntries);
             Label = lensData[0];
             if (lensData.Length > 1)
             {
@@ -46,7 +46,7 @@ namespace AdventOfCode.AoC2023
 
         public override void Solve()
         {
-            string[] initialisationSequence = Input[0].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] initialisationSequence = Input[0].Split([','], StringSplitOptions.RemoveEmptyEntries);
             int hashCheck = 0;
             foreach (string s in initialisationSequence)
             {
@@ -58,7 +58,7 @@ namespace AdventOfCode.AoC2023
             List<Lens>[] boxes = new List<Lens>[256];
             for (int i = 0; i < boxes.Length; i++)
             {
-                boxes[i] = new List<Lens>();
+                boxes[i] = [];
             }
 
             foreach (string s in initialisationSequence)

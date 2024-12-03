@@ -101,7 +101,7 @@ namespace AdventOfCode.AoC2016
                 nodes[n.Coords.X, n.Coords.Y] = n;
             }
 
-            StorageNode wStart = null, hole = null;
+            StorageNode? wStart = null, hole = null;
 
             for (int y = 0; y < nodes.GetLength(1); y++)
             {

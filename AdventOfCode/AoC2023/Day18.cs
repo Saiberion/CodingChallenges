@@ -18,7 +18,7 @@ namespace AdventOfCode.AoC2023
 
             foreach (string line in Input)
             {
-                string[] instructions = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] instructions = line.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 int steps = int.Parse(instructions[1]);
 
                 switch (instructions[0])

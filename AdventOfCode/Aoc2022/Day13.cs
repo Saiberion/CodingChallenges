@@ -16,7 +16,7 @@ namespace AdventOfCode.AoC2022
             {
                 if (s[i] == '[')
                 {
-                    List<object> l = new();
+                    List<object> l = [];
                     parent.Add(l);
                     int skip = CreatePacket(l, s[(i + 1)..]);
                     i += skip;
@@ -114,10 +114,8 @@ namespace AdventOfCode.AoC2022
         public override void Solve()
         {
             int indexSum = 0;
-            List<object>[] packetPairs = new List<object>[2];
-            packetPairs[0] = new();
-            packetPairs[1] = new();
-            List<object> distressSignal = new();
+            List<object>[] packetPairs = [[], []];
+            List<object> distressSignal = [];
 
             for (int i = 0; i < Input.Count; i += 3)
             {
@@ -138,8 +136,8 @@ namespace AdventOfCode.AoC2022
 
             distressSignal.AddRange(packetPairs[0]);
             distressSignal.AddRange(packetPairs[1]);
-            List<object> divPacket1 = new() { new List<object> { 2 } };
-            List<object> divPacket2 = new() { new List<object> { 6 } };
+            List<object> divPacket1 = [new List<object> { 2 }];
+            List<object> divPacket2 = [new List<object> { 6 }];
             distressSignal.Add(divPacket1);
             distressSignal.Add(divPacket2);
 

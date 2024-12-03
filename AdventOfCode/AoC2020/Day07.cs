@@ -7,18 +7,18 @@ namespace AdventOfCode.AoC2020
 {
     public class Bag
     {
-        public string Name { get; set; }
-        public List<string> Within { get; set; }
-        public Dictionary<string, int> Content { get; set; }
+        public string Name { get; set; } = "";
+        public List<string> Within { get; set; } = [];
+        public Dictionary<string, int> Content { get; set; } = [];
     }
 
     public class Day07 : AoCDay
     {
-        private List<string> OuterBagNames;
+        private List<string> OuterBagNames = [];
 
         private static Bag FindOrCreateBag(string name, List<Bag> bags)
         {
-            Bag bag = null;
+            Bag? bag = null;
             foreach (Bag g in bags)
             {
                 if (g.Name.Equals(name))

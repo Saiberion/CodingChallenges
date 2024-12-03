@@ -25,7 +25,7 @@ namespace AdventOfCode.AoC2023
 
         private static List<Point> GetPossibleNewLocations(char[,] g, Point p)
         {
-            List<Point> l = new();
+            List<Point> l = [];
             Point n;
 
             n = new(p.X + 1, p.Y);
@@ -55,7 +55,7 @@ namespace AdventOfCode.AoC2023
         {
             char[,] garden = new char[Input[0].Length, Input.Count];
             Point startingPosition = new();
-            List<Point> reachableTiles = new();
+            List<Point> reachableTiles = [];
 
             for (int y = 0; y < Input.Count; y++)
             {
@@ -75,7 +75,7 @@ namespace AdventOfCode.AoC2023
 
             for (int i = 0; i < 64; i++)
             {
-                List<Point> newTiles = new();
+                List<Point> newTiles = [];
                 foreach (Point p in reachableTiles)
                 {
                     List<Point> possibleLocations = GetPossibleNewLocations(garden, p);

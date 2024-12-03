@@ -10,7 +10,7 @@ namespace AdventOfCode.AoC2021
         override public void Solve()
         {
             int errorScore = 0;
-            List<long> completeScores = new();
+            List<long> completeScores = [];
             Dictionary<char, int> errorPoints = new()
             {
                 { ')', 3 },

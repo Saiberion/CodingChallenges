@@ -79,7 +79,7 @@ namespace AdventOfCode.AoC2022
                     }
                 }
             }
-            return new int[] { visibleTrees, maxScenicScore };
+            return [visibleTrees, maxScenicScore];
         }
 
         public override void Solve()

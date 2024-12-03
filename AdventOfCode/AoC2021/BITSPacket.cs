@@ -10,7 +10,7 @@ namespace AdventOfCode.AoC2021
     {
         public int Version { get; set; }
         public int TypeID { get; set; }
-        public List<int> Data { get; set; }
-        public List<BITSPacket> SubPackets { get; set; }
+        public List<int> Data { get; set; } = [];
+        public List<BITSPacket> SubPackets { get; set; } = [];
     }
 }

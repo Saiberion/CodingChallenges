@@ -14,7 +14,7 @@ namespace AdventOfCode.AoC2021
 
             for (int i = 0; i < Input.Count; i++)
             {
-                string[] splitted = Input[i].Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = Input[i].Split([':'], StringSplitOptions.RemoveEmptyEntries);
                 playerPos[i] = int.Parse(splitted[1]);
                 playerScore[i] = 0;
             }

@@ -34,8 +34,8 @@ namespace AdventOfCode.AoC2023
 
             // confirmed by debugging that a part number will have only one special character around it
             bool isPartNumber = false;
-            List<char> partNumber = new();
-            Dictionary<Point, List<int>> gears = new();
+            List<char> partNumber = [];
+            Dictionary<Point, List<int>> gears = [];
 
             for (int y = 0; y < Input.Count; y++)
             {
@@ -94,13 +94,13 @@ namespace AdventOfCode.AoC2023
                                 int partNr = int.Parse(sb.ToString());
                                 if (gearCoords != new Point(-1, -1))
                                 {
-                                    if (gears.ContainsKey(gearCoords))
+                                    if (gears.TryGetValue(gearCoords, out List<int>? value))
                                     {
-                                        gears[gearCoords].Add(partNr);
+                                        value.Add(partNr);
                                     }
                                     else
                                     {
-                                        gears.Add(gearCoords, new List<int>() { partNr });
+                                        gears.Add(gearCoords, [partNr]);
                                     }
                                     gearCoords = new(-1, -1);
                                 }

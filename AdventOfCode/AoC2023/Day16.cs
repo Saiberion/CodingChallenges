@@ -16,16 +16,10 @@ namespace AdventOfCode.AoC2023
             up = 8
         }
 
-        public class Beam
+        public class Beam(Point c, Day16.EDirections d)
         {
-            public Point Coords { get; set; }
-            public EDirections Dir { get; set; }
-
-            public Beam(Point c, EDirections d)
-            {
-                Coords = c;
-                Dir = d;
-            }
+            public Point Coords { get; set; } = c;
+            public EDirections Dir { get; set; } = d;
         }
 
         public int EnergizeTiles(char[,] lightMaze, Beam beam)
@@ -161,7 +155,7 @@ namespace AdventOfCode.AoC2023
 
             Part1Solution = EnergizeTiles(lightMaze, new(new(-1, 0), EDirections.right)).ToString();
 
-            List<Beam> startingPositions = new();
+            List<Beam> startingPositions = [];
 
             for (int x = 0; x < lightMaze.GetLength(0); x++)
             {

@@ -18,7 +18,7 @@ namespace AdventOfCode.AoC2022
             int currentPos = 0;
             for (int i = 0; i < Input.Count; i++)
             {
-                string[] splitted = Input[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = Input[i].Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 ticks++;
                 if ((((ticks - 1) % 40) == (regx - 1)) || (((ticks - 1) % 40) == (regx)) || (((ticks - 1) % 40) == (regx + 1)))
                 {
