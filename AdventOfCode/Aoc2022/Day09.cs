@@ -34,7 +34,7 @@ namespace AdventOfCode.AoC2022
 
         public int Move(int ropeLength)
         {
-            Dictionary<Point, int> tailVisits = new();
+            Dictionary<Point, int> tailVisits = [];
             int i;
 
             Point[] rope = new Point[ropeLength];
@@ -46,7 +46,7 @@ namespace AdventOfCode.AoC2022
 
             foreach (string s in Input)
             {
-                string[] splitted = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] splitted = s.Split([' '], StringSplitOptions.RemoveEmptyEntries);
                 switch (splitted[0])
                 {
                     case "U":
