@@ -306,7 +306,7 @@ namespace AdventOfCode
                     new AoC2024.Day06() { Enabled = true },
                     new AoC2024.Day07() { Enabled = false },
                     new AoC2024.Day08() { Enabled = false },
-                    new AoC2024.Day09() { Enabled = false },
+                    new AoC2024.Day09() { Enabled = true },
                     new AoC2024.Day10() { Enabled = false },
                     new AoC2024.Day11() { Enabled = false },
                     new AoC2024.Day12() { Enabled = false },
