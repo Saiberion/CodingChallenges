@@ -55,11 +55,12 @@ namespace AdventOfCode.AoC2024
             int nextFreeBlockSize = -1;
             int fileToMove = disk[^1];
             int fileSize = 0;
+            List<int> copiedIDs = [];
 
             for (int f = disk.Count - 1; f >= 0; f--)
             {
                 // i still have to figure out how to skip ids I already moved
-                if (disk[f] < fileToMove)
+                if ((disk[f] < fileToMove) && !copiedIDs.Contains(disk[f]))
                 {
                     if (fileSize == 0)
                     {
@@ -93,6 +94,7 @@ namespace AdventOfCode.AoC2024
                                     // new data begin from here on, check if space is enough for fileToMove to fit
                                     if (nextFreeBlockSize >= fileSize)
                                     {
+                                        copiedIDs.Add(disk[f + 1]);
                                         for (int s = 0; s < fileSize; s++)
                                         {
                                             disk[nextFreeBlock + s] = disk[f + 1 + s];
