@@ -17,6 +17,8 @@ namespace AdventOfCode.AoC2024
                 pebbles.Add(long.Parse(s));
             }
 
+            // still have to find a mathematical way to calculate the number of pebbles after each blink to solve for part 2
+            // because brute forcing part 2 needs probably more RAM than any consumer machine at this time has.
             for (int blinks = 0; blinks < 25; blinks++)
             {
                 List<long> newPebbles = [];
@@ -40,11 +42,13 @@ namespace AdventOfCode.AoC2024
                     }
                 }
                 pebbles = newPebbles;
+                if (blinks == 24)
+                {
+                    Part1Solution = pebbles.Count.ToString();
+                }
             }
 
-            Part1Solution = pebbles.Count.ToString();
-
-            Part2Solution = "TBD";
+            Part2Solution = pebbles.Count.ToString();
         }
     }
 }
