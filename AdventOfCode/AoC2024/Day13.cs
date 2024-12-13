@@ -7,24 +7,27 @@ namespace AdventOfCode.AoC2024
 {
     public class Clawmachine
     {
-        public Point ADistance;
-        public Point BDistance;
-        public Point Prize;
+        public long Ax;
+        public long Ay;
+        public long Bx;
+        public long By;
+        public long PrizeX;
+        public long PrizeY;
 
-        private List<(int a, int b)> winningButtonPresses = [];
+        private List<(long a, long b)> winningButtonPresses = [];
 
-        public int MinimumTokensForWin = int.MaxValue;
+        public long MinimumTokensForWin = long.MaxValue;
 
         public void FindValidButtonPresses()
         {
             winningButtonPresses = [];
-            for (int a = 0; a < 100; a++)
+            for (long a = 0; a < 100; a++)
             {
-                for (int b = 0; b < 100; b++)
+                for (long b = 0; b < 100; b++)
                 {
-                    int x = a * ADistance.X + b * BDistance.X;
-                    int y = a * ADistance.Y + b * BDistance.Y;
-                    if ((x == Prize.X) && (y == Prize.Y))
+                    long x = a * Ax + b * Bx;
+                    long y = a * Ay + b * By;
+                    if ((x == PrizeX) && (y == PrizeY))
                     {
                         winningButtonPresses.Add((a, b));
                         MinimumTokensForWin = Math.Min(MinimumTokensForWin, a * 3 + b);
@@ -50,24 +53,24 @@ namespace AdventOfCode.AoC2024
                 string[] splitted = line.Split([' ', ':', '+', ',', '='], StringSplitOptions.RemoveEmptyEntries);
                 if (line.StartsWith("Button"))
                 {
-                    int x, y;
-                    x = int.Parse(splitted[3]);
-                    y = int.Parse(splitted[5]);
+                    long x, y;
+                    x = long.Parse(splitted[3]);
+                    y = long.Parse(splitted[5]);
                     if (splitted[1].Equals("A"))
                     {
-                        cm.ADistance.X = x;
-                        cm.ADistance.Y = y;
+                        cm.Ax = x;
+                        cm.Ay = y;
                     }
                     else
                     {
-                        cm.BDistance.X = x;
-                        cm.BDistance.Y = y;
+                        cm.Bx = x;
+                        cm.By = y;
                     }
                 }
                 else if (line.StartsWith("Prize"))
                 {
-                    cm.Prize.X = int.Parse(splitted[2]);
-                    cm.Prize.Y = int.Parse(splitted[4]);
+                    cm.PrizeX = int.Parse(splitted[2]);
+                    cm.PrizeY = int.Parse(splitted[4]);
                 }
                 else if (string.IsNullOrEmpty(line))
                 {
@@ -78,7 +81,7 @@ namespace AdventOfCode.AoC2024
             }
             clawmachines.Add(cm);
 
-            int tokenUsage = 0;
+            long tokenUsage = 0;
             foreach (Clawmachine c in clawmachines)
             {
                 c.FindValidButtonPresses();
