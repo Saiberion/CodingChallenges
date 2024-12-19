@@ -14,11 +14,11 @@ namespace AdventOfCode.AoC2024
         public int F;
         public int G;
         public int H;
-        public Location Parent;
+        public Location? Parent;
     }
     public class Day16 : AoCDay
     {
-        List<Location> GetWalkableAdjacentSquares(int x, int y, Directions dir)
+        List<Location> GetWalkableAdjacentSquares(int x, int y)
         {
             List<Location> proposedLocations =
             [
@@ -57,7 +57,7 @@ namespace AdventOfCode.AoC2024
             return ret;
         }
 
-        public int FindLowestScore(Point s, Point e, Directions dir)
+        public int FindLowestScore(Point s, Point e)
         {
             // A* algorithm for path finding
             Location current;
@@ -65,6 +65,7 @@ namespace AdventOfCode.AoC2024
             Location target = new() { X = e.X, Y = e.Y };
             List<Location> openList = [];
             List<Location> closedList = [];
+            int g;
 
             // add the starting position to the open list
             openList.Add(start);
@@ -93,7 +94,7 @@ namespace AdventOfCode.AoC2024
                     break;
                 }
 
-                List<Location> adjacentSquares = GetWalkableAdjacentSquares(current.X, current.Y, dir);
+                List<Location> adjacentSquares = GetWalkableAdjacentSquares(current.X, current.Y);
                 g = current.G + 1;
 
                 foreach (Location adjacentSquare in adjacentSquares)
@@ -109,7 +110,8 @@ namespace AdventOfCode.AoC2024
                     {
                         // compute its score, set the parent
                         adjacentSquare.G = g;
-                        adjacentSquare.H = ComputeHScore(adjacentSquare.X, adjacentSquare.Y, target.X, target.Y);
+                        //adjacentSquare.H = ComputeHScore(adjacentSquare.X, adjacentSquare.Y, target.X, target.Y);
+                        adjacentSquare.H = 0;
                         adjacentSquare.F = adjacentSquare.G + adjacentSquare.H;
                         adjacentSquare.Parent = current;
 
@@ -129,13 +131,14 @@ namespace AdventOfCode.AoC2024
                     }
                 }
             }
+            return 0;
         }
 
         public override void Solve()
         {
             Point start = new();
             Point end = new();
-            Directions dir = Directions.Right;
+            //Directions4Way dir = Directions4Way.Right;
 
             for (int y = 0; y < Input.Count; y++)
             {

@@ -12,7 +12,7 @@ namespace AdventOfCode.AoC2016
         {
             HashSet<Point> visitedCoords = [];
             Point[] c = [new(), new()];
-            int facing = 0;
+            Directions4Way facing = Directions4Way.Up;
             bool c1Set = false;
 
             visitedCoords.Add(new(0, 0));
@@ -30,13 +30,16 @@ namespace AdventOfCode.AoC2016
                         facing--;
                         break;
                 }
-                if (facing > 3)
+                if (!Enum.IsDefined(facing))
                 {
-                    facing = 0;
-                }
-                if (facing < 0)
-                {
-                    facing = 3;
+                    if ((int)facing > 0)
+                    {
+                        facing = Directions4Way.Up;
+                    }
+                    else
+                    {
+                        facing = Directions4Way.Left;
+                    }
                 }
                 int steps = int.Parse(s.Remove(0, 1));
 
@@ -44,16 +47,16 @@ namespace AdventOfCode.AoC2016
                 {
                     switch (facing)
                     {
-                        case 0:
+                        case Directions4Way.Up:
                             c[0].Y++;
                             break;
-                        case 1:
+                        case Directions4Way.Right:
                             c[0].X++;
                             break;
-                        case 2:
+                        case Directions4Way.Down:
                             c[0].Y--;
                             break;
-                        case 3:
+                        case Directions4Way.Left:
                             c[0].X--;
                             break;
                     }

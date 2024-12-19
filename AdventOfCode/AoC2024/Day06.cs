@@ -10,23 +10,23 @@ namespace AdventOfCode.AoC2024
     internal class Guard
     {
         public Point Position;
-        public Directions Direction { get; set; }
+        public Directions4Way Direction { get; set; }
 
         public void Move()
         {
             
             switch (Direction)
             {
-                case Directions.Up:
+                case Directions4Way.Up:
                     Position.Y--;
                     break;
-                case Directions.Right:
+                case Directions4Way.Right:
                     Position.X++;
                     break;
-                case Directions.Down:
+                case Directions4Way.Down:
                     Position.Y++;
                     break;
-                case Directions.Left:
+                case Directions4Way.Left:
                     Position.X--;
                     break;
             }
@@ -50,7 +50,7 @@ namespace AdventOfCode.AoC2024
                     {
                         g.Position.X = x;
                         g.Position.Y = y;
-                        g.Direction = Directions.Up;
+                        g.Direction = Directions4Way.Up;
                     }
                 }
             }
@@ -61,25 +61,25 @@ namespace AdventOfCode.AoC2024
             bool result = false;
             switch (g.Direction)
             {
-                case Directions.Up:
+                case Directions4Way.Up:
                     if ((g.Position.Y > 0) && (map[g.Position.X, g.Position.Y - 1] == '#'))
                     {
                         result = true;
                     }
                     break;
-                case Directions.Right:
+                case Directions4Way.Right:
                     if ((g.Position.X < (map.GetLength(0) - 1)) && (map[g.Position.X + 1, g.Position.Y] == '#'))
                     {
                         result = true;
                     }
                     break;
-                case Directions.Down:
+                case Directions4Way.Down:
                     if ((g.Position.Y < (map.GetLength(1) - 1)) && (map[g.Position.X, g.Position.Y + 1] == '#'))
                     {
                         result = true;
                     }
                     break;
-                case Directions.Left:
+                case Directions4Way.Left:
                     if ((g.Position.X > 0) && (map[g.Position.X - 1, g.Position.Y] == '#'))
                     {
                         result = true;
@@ -98,17 +98,17 @@ namespace AdventOfCode.AoC2024
                 {
                     switch (g.Direction)
                     {
-                        case Directions.Up:
-                            g.Direction = Directions.Right;
+                        case Directions4Way.Up:
+                            g.Direction = Directions4Way.Right;
                             break;
-                        case Directions.Right:
-                            g.Direction = Directions.Down;
+                        case Directions4Way.Right:
+                            g.Direction = Directions4Way.Down;
                             break;
-                        case Directions.Down:
-                            g.Direction = Directions.Left;
+                        case Directions4Way.Down:
+                            g.Direction = Directions4Way.Left;
                             break;
-                        case Directions.Left:
-                            g.Direction = Directions.Up;
+                        case Directions4Way.Left:
+                            g.Direction = Directions4Way.Up;
                             break;
                     }
                 }
@@ -154,14 +154,6 @@ namespace AdventOfCode.AoC2024
 
     public class Day06 : AoCDay
     {
-        enum Directions
-        {
-            Up,
-            Right,
-            Down,
-            Left
-        }
-
         public override void Solve()
         {
             Laboratory l = new();

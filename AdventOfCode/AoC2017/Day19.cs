@@ -27,7 +27,7 @@ namespace AdventOfCode.AoC2017
             // Maze walker
             int x = FindMazeStart(maze);
             int y = 0;
-            EDirections dir = EDirections.eDown;
+            Directions4Way dir = Directions4Way.Down;
             int steps = 0;
             StringBuilder sb = new();
 
@@ -35,16 +35,16 @@ namespace AdventOfCode.AoC2017
             {
                 switch (dir)
                 {
-                    case EDirections.eUp:
+                    case Directions4Way.Up:
                         y--;
                         break;
-                    case EDirections.eDown:
+                    case Directions4Way.Down:
                         y++;
                         break;
-                    case EDirections.eLeft:
+                    case Directions4Way.Left:
                         x--;
                         break;
-                    case EDirections.eRight:
+                    case Directions4Way.Right:
                         x++;
                         break;
                 }
@@ -54,44 +54,44 @@ namespace AdventOfCode.AoC2017
                 {
                     switch (dir)
                     {
-                        case EDirections.eUp:
+                        case Directions4Way.Up:
                             if ((maze[y][x - 1] == '-') || char.IsLetter(maze[y][x - 1]))
                             {
-                                dir = EDirections.eLeft;
+                                dir = Directions4Way.Left;
                             }
                             else if ((maze[y][x + 1] == '-') || char.IsLetter(maze[y][x + 1]))
                             {
-                                dir = EDirections.eRight;
+                                dir = Directions4Way.Right;
                             }
                             break;
-                        case EDirections.eDown:
+                        case Directions4Way.Down:
                             if ((maze[y][x - 1] == '-') || char.IsLetter(maze[y][x - 1]))
                             {
-                                dir = EDirections.eLeft;
+                                dir = Directions4Way.Left;
                             }
                             else if ((maze[y][x + 1] == '-') || char.IsLetter(maze[y][x + 1]))
                             {
-                                dir = EDirections.eRight;
+                                dir = Directions4Way.Right;
                             }
                             break;
-                        case EDirections.eLeft:
+                        case Directions4Way.Left:
                             if ((maze[y - 1][x] == '|') || char.IsLetter(maze[y - 1][x]))
                             {
-                                dir = EDirections.eUp;
+                                dir = Directions4Way.Up;
                             }
                             else if ((maze[y + 1][x] == '|') || char.IsLetter(maze[y + 1][x]))
                             {
-                                dir = EDirections.eDown;
+                                dir = Directions4Way.Down;
                             }
                             break;
-                        case EDirections.eRight:
+                        case Directions4Way.Right:
                             if ((maze[y - 1][x] == '|') || char.IsLetter(maze[y - 1][x]))
                             {
-                                dir = EDirections.eUp;
+                                dir = Directions4Way.Up;
                             }
                             else if ((maze[y + 1][x] == '|') || char.IsLetter(maze[y + 1][x]))
                             {
-                                dir = EDirections.eDown;
+                                dir = Directions4Way.Down;
                             }
                             break;
                     }

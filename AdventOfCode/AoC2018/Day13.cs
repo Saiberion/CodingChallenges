@@ -5,14 +5,6 @@ using System.Text;
 
 namespace AdventOfCode.AoC2018
 {
-    enum Directions
-    {
-        Up,
-        Right,
-        Down,
-        Left
-    }
-
     enum IntersectionsActions
     {
         TurnLeft = -1,
@@ -20,9 +12,9 @@ namespace AdventOfCode.AoC2018
         TurnRight = 1
     }
 
-    class Cart(Directions dir)
+    class Cart(Directions4Way dir)
     {
-        public Directions Facing { get; set; } = dir;
+        public Directions4Way Facing { get; set; } = dir;
         public IntersectionsActions NextIntersectionAction { get; set; } = IntersectionsActions.TurnLeft;
     }
 
@@ -42,7 +34,7 @@ namespace AdventOfCode.AoC2018
                 {
                     case '+':
                         action = c.NextIntersectionAction;
-                        c.Facing = (Directions)(((int)c.Facing + (int)action + 4) % 4);
+                        c.Facing = (Directions4Way)(((int)c.Facing + (int)action + 4) % 4);
                         switch (c.NextIntersectionAction)
                         {
                             case IntersectionsActions.Straight:
@@ -57,7 +49,7 @@ namespace AdventOfCode.AoC2018
                         }
                         break;
                     case '/':
-                        if ((c.Facing == Directions.Up) || (c.Facing == Directions.Down))
+                        if ((c.Facing == Directions4Way.Up) || (c.Facing == Directions4Way.Down))
                         {
                             action = IntersectionsActions.TurnRight;
                         }
@@ -65,10 +57,10 @@ namespace AdventOfCode.AoC2018
                         {
                             action = IntersectionsActions.TurnLeft;
                         }
-                        c.Facing = (Directions)(((int)c.Facing + (int)action + 4) % 4);
+                        c.Facing = (Directions4Way)(((int)c.Facing + (int)action + 4) % 4);
                         break;
                     case '\\':
-                        if ((c.Facing == Directions.Up) || (c.Facing == Directions.Down))
+                        if ((c.Facing == Directions4Way.Up) || (c.Facing == Directions4Way.Down))
                         {
                             action = IntersectionsActions.TurnLeft;
                         }
@@ -76,7 +68,7 @@ namespace AdventOfCode.AoC2018
                         {
                             action = IntersectionsActions.TurnRight;
                         }
-                        c.Facing = (Directions)(((int)c.Facing + (int)action + 4) % 4);
+                        c.Facing = (Directions4Way)(((int)c.Facing + (int)action + 4) % 4);
                         break;
                 }
                 return false;
@@ -102,16 +94,16 @@ namespace AdventOfCode.AoC2018
                     {
                         switch (currentCart.Facing)
                         {
-                            case Directions.Up:
+                            case Directions4Way.Up:
                                 MoveCart(updateCarts, CartLayer[x, y], x, y - 1);
                                 break;
-                            case Directions.Down:
+                            case Directions4Way.Down:
                                 MoveCart(updateCarts, CartLayer[x, y], x, y + 1);
                                 break;
-                            case Directions.Left:
+                            case Directions4Way.Left:
                                 MoveCart(updateCarts, CartLayer[x, y], x - 1, y);
                                 break;
-                            case Directions.Right:
+                            case Directions4Way.Right:
                                 MoveCart(updateCarts, CartLayer[x, y], x + 1, y);
                                 break;
                         }
@@ -169,19 +161,19 @@ namespace AdventOfCode.AoC2018
                     {
                         case '^':
                             tracks.TrackLayer[x, y] = '|';
-                            tracks.CartLayer[x, y] = new Cart(Directions.Up);
+                            tracks.CartLayer[x, y] = new Cart(Directions4Way.Up);
                             break;
                         case 'v':
                             tracks.TrackLayer[x, y] = '|';
-                            tracks.CartLayer[x, y] = new Cart(Directions.Down);
+                            tracks.CartLayer[x, y] = new Cart(Directions4Way.Down);
                             break;
                         case '<':
                             tracks.TrackLayer[x, y] = '-';
-                            tracks.CartLayer[x, y] = new Cart(Directions.Left);
+                            tracks.CartLayer[x, y] = new Cart(Directions4Way.Left);
                             break;
                         case '>':
                             tracks.TrackLayer[x, y] = '-';
-                            tracks.CartLayer[x, y] = new Cart(Directions.Right);
+                            tracks.CartLayer[x, y] = new Cart(Directions4Way.Right);
                             break;
                         default:
                             tracks.TrackLayer[x, y] = input[y][x];
