@@ -10,7 +10,7 @@ namespace AdventOfCode.AoC2024
         public override void Solve()
         {
             List<string> towels = [];
-            List<string> patterns = [];
+            //List<string> patterns = [];
             foreach (string line in Input)
             {
                 if (line.Contains(','))
@@ -19,7 +19,7 @@ namespace AdventOfCode.AoC2024
                     {
                         towels.Add(s);
                     }
-                    towels.Sort(StringComparer.Create(System.Globalization.CultureInfo.);
+                    towels.Sort();
                 }
                 else if (!string.IsNullOrEmpty(line))
                 {
