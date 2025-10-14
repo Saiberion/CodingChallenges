@@ -295,6 +295,32 @@ namespace AdventOfCode
                 }
             },
             {
+                "EC2024",
+                new List<AoCDay>()
+                {
+                    new EC2024.Day01() { Enabled = true },
+                    new EC2024.Day02() { Enabled = false },
+                    new EC2024.Day03() { Enabled = false },
+                    new EC2024.Day04() { Enabled = false },
+                    new EC2024.Day05() { Enabled = false },
+                    new EC2024.Day06() { Enabled = false },
+                    new EC2024.Day07() { Enabled = false },
+                    new EC2024.Day08() { Enabled = false },
+                    new EC2024.Day09() { Enabled = false },
+                    new EC2024.Day10() { Enabled = false },
+                    new EC2024.Day11() { Enabled = false },
+                    new EC2024.Day12() { Enabled = false },
+                    new EC2024.Day13() { Enabled = false },
+                    new EC2024.Day14() { Enabled = false },
+                    new EC2024.Day15() { Enabled = false },
+                    new EC2024.Day16() { Enabled = false },
+                    new EC2024.Day17() { Enabled = false },
+                    new EC2024.Day18() { Enabled = false },
+                    new EC2024.Day19() { Enabled = false },
+                    new EC2024.Day20() { Enabled = false }
+                }
+            },
+            {
                 "AoC2024",
                 new List<AoCDay>()
                 {
@@ -357,9 +383,9 @@ namespace AdventOfCode
             if ((sender is Button b) && (b.Parent is TableLayoutPanel tbl))
             {
                 TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
-                if (tbl.GetControlFromPosition(3, pos.Row) is Label l3)
+                if (tbl.GetControlFromPosition(4, pos.Row) is Label l4)
                 {
-                    l3.Text = "initialised";
+                    l4.Text = "initialised";
                 }
             }
 
@@ -371,9 +397,9 @@ namespace AdventOfCode
             if ((e.UserState is Button b) && (b.Parent is TableLayoutPanel tbl))
             {
                 TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
-                if (tbl.GetControlFromPosition(3, pos.Row) is Label l3)
+                if (tbl.GetControlFromPosition(4, pos.Row) is Label l4)
                 {
-                    l3.Text = "Running";
+                    l4.Text = "Running";
                 }
             }
         }
@@ -391,9 +417,13 @@ namespace AdventOfCode
                 {
                     t2.Text = d.Part2Solution;
                 }
-                if (tbl.GetControlFromPosition(3, pos.Row) is Label l3)
+                if (tbl.GetControlFromPosition(3, pos.Row) is TextBox t3)
                 {
-                    l3.Text = d.StopWatch.Elapsed.ToString();
+                    t3.Text = d.Part3Solution;
+                }
+                if (tbl.GetControlFromPosition(4, pos.Row) is Label l4)
+                {
+                    l4.Text = d.StopWatch.Elapsed.ToString();
                 }
             }
         }
@@ -417,7 +447,7 @@ namespace AdventOfCode
         {
             foreach (string dir in Directory.GetDirectories(Directory.GetCurrentDirectory()).Reverse())
             {
-                if (Path.GetFileName(dir).StartsWith("AoC"))
+                if (Path.GetFileName(dir).StartsWith("AoC") || Path.GetFileName(dir).StartsWith("EC"))
                 {
                     comboBoxYearSelect.Items.Add(Path.GetFileName(dir));
                 }
@@ -450,10 +480,18 @@ namespace AdventOfCode
             tableLayoutPanelDayGrid.Controls.Add(new Label()
             {
                 Anchor = AnchorStyles.None,
+                Name = string.Format("labelCaptionSolutionPart3"),
+                Text = "Solution Part 3",
+                AutoSize = true
+            }, 3, 0);
+
+            tableLayoutPanelDayGrid.Controls.Add(new Label()
+            {
+                Anchor = AnchorStyles.None,
                 Name = string.Format("labelCaptionRuntime"),
                 Text = "Durchlaufzeit",
                 AutoSize = true
-            }, 3, 0);
+            }, 4, 0);
             tableLayoutPanelDayGrid.RowCount = 1;
 
             if (comboBoxYearSelect.SelectedItem != null)
@@ -506,17 +544,29 @@ namespace AdventOfCode
                             Width = 200
                         }, 2, i + 1);
 
+                        tableLayoutPanelDayGrid.Controls.Add(new TextBox()
+                        {
+                            Anchor = AnchorStyles.None,
+                            Name = string.Format("textBoxD{0}P3", i + 1),
+                            Text = "",
+                            AutoSize = true,
+                            ReadOnly = true,
+                            TextAlign = HorizontalAlignment.Center,
+                            BorderStyle = BorderStyle.None,
+                            Padding = new Padding(0, 8, 0, 0),
+                            Width = 200
+                        }, 3, i + 1);
+
                         tableLayoutPanelDayGrid.Controls.Add(new Label()
                         {
                             Anchor = AnchorStyles.None,
                             Name = string.Format("labelD{0}Perf", i + 1),
                             Text = "",
                             AutoSize = true
-                        }, 3, i + 1);
+                        }, 4, i + 1);
                     }
-                }            }
-
-            
+                }            
+            }
 
             Button b2 = new()
             {

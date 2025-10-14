@@ -12,6 +12,7 @@ namespace AdventOfCode
     {
         public string Part1Solution { get; set; }
         public string Part2Solution { get; set; }
+        public string Part3Solution { get; set; }
         internal List<string> Input { get; set; }
         public Stopwatch StopWatch { get; set; }
         public bool Enabled { get; set; }
@@ -30,6 +31,7 @@ namespace AdventOfCode
             }
             Part1Solution = "TBD";
             Part2Solution = "TBD";
+            Part3Solution = "TBD";
         }
 
         virtual public void Solve()
