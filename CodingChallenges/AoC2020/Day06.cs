@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2020
 {
-    public class Day06 : AoCDay
+    public class Day06 : Challenge
     {
         override public void Solve()
         {

@@ -143,7 +143,7 @@ namespace CodingChallenges.AoC2018
         }
     }
 
-    public class Day13 : AoCDay
+    public class Day13 : Challenge
     {
         static MinecartTrackSystem GetInitialTrackState(List<string> input)
         {

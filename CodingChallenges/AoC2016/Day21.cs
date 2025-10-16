@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day21 : AoCDay
+    public class Day21 : Challenge
     {
         static string Scramble(string pw, List<string> input)
         {

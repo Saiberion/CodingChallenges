@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day23 : AoCDay
+    public class Day23 : Challenge
     {
         static long Factorial(long f)
         {

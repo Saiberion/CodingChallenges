@@ -41,7 +41,7 @@ namespace CodingChallenges.AoC2018
         }
     }
 
-    public class Day04 : AoCDay
+    public class Day04 : Challenge
     {
         static List<GuardLog> FillGuardLog(List<string> input)
         {

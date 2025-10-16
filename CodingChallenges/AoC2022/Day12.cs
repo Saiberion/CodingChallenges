@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2022
 {
-    public class Day12 : AoCDay
+    public class Day12 : Challenge
     {
         class Location
         {

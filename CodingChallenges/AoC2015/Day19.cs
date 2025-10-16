@@ -11,7 +11,7 @@ namespace CodingChallenges.AoC2015
         public required string To { get; set; }
     }
 
-    public class Day19 : AoCDay
+    public class Day19 : Challenge
     {
         override public void Solve()
         {

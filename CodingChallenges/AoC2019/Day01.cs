@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2019
 {
-    public class Day01 : AoCDay
+    public class Day01 : Challenge
     {
         static int CalculateFuel(int mass, bool morePrecise)
         {

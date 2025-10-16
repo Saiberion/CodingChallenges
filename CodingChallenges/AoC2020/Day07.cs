@@ -12,7 +12,7 @@ namespace CodingChallenges.AoC2020
         public Dictionary<string, int> Content { get; set; } = [];
     }
 
-    public class Day07 : AoCDay
+    public class Day07 : Challenge
     {
         private List<string> OuterBagNames = [];
 

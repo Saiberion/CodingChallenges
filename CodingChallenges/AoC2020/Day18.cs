@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2020
 {
-    public class Day18 : AoCDay
+    public class Day18 : Challenge
     {
         private int exprIdx = 0;
         private long Evaluate(string expr)

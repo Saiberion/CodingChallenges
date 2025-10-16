@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2022
 {
-    public class Day01 : AoCDay
+    public class Day01 : Challenge
     {
         private static int GetCaloriesTopElves(List<int> sortedWeights, int topCount)
         {

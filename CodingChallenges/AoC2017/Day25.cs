@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-    public class Day25 : AoCDay
+    public class Day25 : Challenge
     {
         enum EStates
         {

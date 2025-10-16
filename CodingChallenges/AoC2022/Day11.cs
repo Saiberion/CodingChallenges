@@ -7,7 +7,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace CodingChallenges.AoC2022
 {
-    public class Day11 : AoCDay
+    public class Day11 : Challenge
     {
         public class Monkey
         {

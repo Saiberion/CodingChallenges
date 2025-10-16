@@ -13,7 +13,7 @@ namespace CodingChallenges.AoC2016
         public Elf? Prev { get; set; }
     }
 
-    public class Day19 : AoCDay
+    public class Day19 : Challenge
     {
         static int StealingPart1(int maxElves)
         {

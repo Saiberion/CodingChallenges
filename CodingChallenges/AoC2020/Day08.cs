@@ -148,7 +148,7 @@ namespace CodingChallenges.AoC2020
         }
     }
 
-    public class Day08 : AoCDay
+    public class Day08 : Challenge
     {
         override public void Solve()
         {

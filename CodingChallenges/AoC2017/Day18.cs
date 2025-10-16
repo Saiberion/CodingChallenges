@@ -157,7 +157,7 @@ namespace CodingChallenges.AoC2017
         }
     }
 
-    public class Day18 : AoCDay
+    public class Day18 : Challenge
     {
         public override void Solve()
         {

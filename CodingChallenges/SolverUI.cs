@@ -13,11 +13,11 @@ namespace CodingChallenges
 {
     public partial class FormSolverUI : Form
     {
-        private readonly Dictionary<string, List<AoCDay>> allAoCDays = new()
+        private readonly Dictionary<string, List<Challenge>> allAoCDays = new()
         {
             {
                 "AoC2015",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2015.Day01() { Enabled = true },
                     new AoC2015.Day02() { Enabled = true },
@@ -48,7 +48,7 @@ namespace CodingChallenges
             },
             {
                 "AoC2016",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2016.Day01() { Enabled = true },
                     new AoC2016.Day02() { Enabled = true },
@@ -79,7 +79,7 @@ namespace CodingChallenges
             },
             {
                 "AoC2017",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2017.Day01() { Enabled = true },
                     new AoC2017.Day02() { Enabled = true },
@@ -110,7 +110,7 @@ namespace CodingChallenges
             },
             {
                 "AoC2018",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2018.Day01() { Enabled = true },
                     new AoC2018.Day02() { Enabled = true },
@@ -141,7 +141,7 @@ namespace CodingChallenges
             },
             {
                 "AoC2019",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2019.Day01() { Enabled = true },
                     new AoC2019.Day02() { Enabled = true },
@@ -172,7 +172,7 @@ namespace CodingChallenges
             },
             {
                 "AoC2020",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2020.Day01() { Enabled = true },
                     new AoC2020.Day02() { Enabled = true },
@@ -203,7 +203,7 @@ namespace CodingChallenges
             },
             {
                 "AoC2021",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2021.Day01() { Enabled = true },
                     new AoC2021.Day02() { Enabled = true },
@@ -234,7 +234,7 @@ namespace CodingChallenges
             },
             {
                 "AoC2022",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2022.Day01() { Enabled = true },
                     new AoC2022.Day02() { Enabled = true },
@@ -265,7 +265,7 @@ namespace CodingChallenges
             },
             {
                 "AoC2023",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2023.Day01() { Enabled = true },
                     new AoC2023.Day02() { Enabled = true },
@@ -296,7 +296,7 @@ namespace CodingChallenges
             },
             {
                 "EC2024",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new EC2024.Day01() { Enabled = true },
                     new EC2024.Day02() { Enabled = false },
@@ -322,7 +322,7 @@ namespace CodingChallenges
             },
             {
                 "AoC2024",
-                new List<AoCDay>()
+                new List<Challenge>()
                 {
                     new AoC2024.Day01() { Enabled = true },
                     new AoC2024.Day02() { Enabled = true },
@@ -406,7 +406,7 @@ namespace CodingChallenges
 
         private void BackgroundWorkerDaySolverCompleted(object? sender, RunWorkerCompletedEventArgs e)
         {
-            if ((e.Result is Button b) && (b.Tag is AoCDay d) && (b.Parent is TableLayoutPanel tbl))
+            if ((e.Result is Button b) && (b.Tag is Challenge d) && (b.Parent is TableLayoutPanel tbl))
             {
                 TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
                 if (tbl.GetControlFromPosition(1, pos.Row) is TextBox t1)
@@ -433,7 +433,7 @@ namespace CodingChallenges
             if ((e.Argument is Button b) && (sender is BackgroundWorker bw))
             {
                 bw.ReportProgress(0, b);
-                if (b.Tag is AoCDay d)
+                if (b.Tag is Challenge d)
                 {
                     d.StopWatch.Restart();
                     d.Solve();
@@ -456,7 +456,7 @@ namespace CodingChallenges
 
         private void ComboBoxYearSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<AoCDay> days;
+            List<Challenge> days;
             tableLayoutPanelDayGrid.SuspendLayout();
             tableLayoutPanelDayGrid.Controls.Clear();
             tableLayoutPanelDayGrid.RowStyles.Clear();

@@ -14,7 +14,7 @@ namespace CodingChallenges.AoC2020
         public int Max2 { get; set; } = max2;
     }
 
-    public class Day16 : AoCDay
+    public class Day16 : Challenge
     {
         override public void Solve()
         {

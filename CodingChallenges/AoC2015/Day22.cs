@@ -86,7 +86,7 @@ namespace CodingChallenges.AoC2015
         }
     }
 
-    public class Day22 : AoCDay
+    public class Day22 : Challenge
     {
         private static int SimulateGames(bool hardMode)
         {

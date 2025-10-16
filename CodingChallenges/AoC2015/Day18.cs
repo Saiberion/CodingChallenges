@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2015
 {
-    public class Day18 : AoCDay
+    public class Day18 : Challenge
     {
         static int GetActiveNeighbors(int[,] grid, int x, int y)
         {

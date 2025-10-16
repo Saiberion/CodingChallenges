@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-	public class Day06 : AoCDay
+	public class Day06 : Challenge
 	{
 		static int CalculateSignature(List<int> l)
 		{

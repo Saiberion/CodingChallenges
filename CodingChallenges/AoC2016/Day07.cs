@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day07 : AoCDay
+    public class Day07 : Challenge
     {
         static bool IPv7HasTLS(string ipv7)
         {

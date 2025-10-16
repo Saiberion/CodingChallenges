@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2015
 {
-    public class Day23 : AoCDay
+    public class Day23 : Challenge
     {
         private static int RunProgram(List<string[]> instructions, bool part2)
         {

@@ -20,7 +20,7 @@ namespace CodingChallenges.AoC2018
         }
     }
 
-    public class Day03 : AoCDay
+    public class Day03 : Challenge
     {
         static int GetOverlappingArea(List<string> input)
         {

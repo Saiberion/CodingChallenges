@@ -19,7 +19,7 @@ namespace CodingChallenges.AoC2015
         public int Defense { get; set; }
     }
 
-    public class Day21 : AoCDay
+    public class Day21 : Challenge
     {
         private static bool Fight(Player p, Player b)
         {

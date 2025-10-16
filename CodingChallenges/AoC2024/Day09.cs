@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2024
 {
-    public class Day09 : AoCDay
+    public class Day09 : Challenge
     {
         private static List<int> FillDisk(string map)
         {

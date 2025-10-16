@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2019
 {
-    public class Day04 : AoCDay
+    public class Day04 : Challenge
     {
         static bool IsValidPassword(int pw)
         {

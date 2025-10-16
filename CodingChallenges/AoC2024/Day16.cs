@@ -16,7 +16,7 @@ namespace CodingChallenges.AoC2024
         public int H;
         public Location? Parent;
     }
-    public class Day16 : AoCDay
+    public class Day16 : Challenge
     {
         List<Location> GetWalkableAdjacentSquares(int x, int y)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2020
 {
-    public class Day11 : AoCDay
+    public class Day11 : Challenge
     {
         public static int CountOccupiedSeatsInSight(int x, int y, char[,] seatingArea, int distance)
         {

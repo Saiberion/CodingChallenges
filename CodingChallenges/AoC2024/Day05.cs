@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2024
 {
-    public class Day05 : AoCDay
+    public class Day05 : Challenge
     {
         int middlePagesSum = 0;
         public override void Solve()

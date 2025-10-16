@@ -38,7 +38,7 @@ namespace CodingChallenges.AoC2015
         }
     }
 
-    public class Day14 : AoCDay
+    public class Day14 : Challenge
     {
         override public void Solve()
         {

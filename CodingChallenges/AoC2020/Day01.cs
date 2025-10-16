@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2020
 {
-    public class Day01 : AoCDay
+    public class Day01 : Challenge
     {
         private static string FindMatching2Entries(List<int> l)
         {

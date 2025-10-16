@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-    public class Day22 : AoCDay
+    public class Day22 : Challenge
     {
         public void GridInit(int[,] grid)
         {

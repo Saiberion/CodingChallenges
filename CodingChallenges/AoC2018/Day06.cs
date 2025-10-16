@@ -12,7 +12,7 @@ namespace CodingChallenges.AoC2018
         public int X { get; set; } = x;
     }
 
-    public class Day06 : AoCDay
+    public class Day06 : Challenge
     {
         static List<Coordinate> GetCoordinates(List<string> input)
         {

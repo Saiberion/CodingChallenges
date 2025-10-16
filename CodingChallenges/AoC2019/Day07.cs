@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2019
 {
-    public class Day07 : AoCDay
+    public class Day07 : Challenge
     {
         internal List<List<int>> phaseCombinations = [];
         

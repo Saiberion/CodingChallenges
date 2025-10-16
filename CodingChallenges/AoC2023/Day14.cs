@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2023
 {
-    public class Day14 : AoCDay
+    public class Day14 : Challenge
     {
         private static void Tilt(List<List<char>> dish, int direction)
         {

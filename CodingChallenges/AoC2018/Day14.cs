@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2018
 {
-    public class Day14 : AoCDay
+    public class Day14 : Challenge
     {
         static int CreateRecipes(List<int> recipes, ref int elf1, ref int elf2)
         {

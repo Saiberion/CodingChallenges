@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2023
 {
-    public class Day08 : AoCDay
+    public class Day08 : Challenge
     {
         readonly Dictionary<string, List<string>> network = [];
 

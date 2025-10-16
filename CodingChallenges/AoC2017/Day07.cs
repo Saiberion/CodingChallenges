@@ -15,7 +15,7 @@ namespace CodingChallenges.AoC2017
         public TowerElement? Parent { get; internal set; } = null;
     }
 
-	public class Day07 : AoCDay
+	public class Day07 : Challenge
 	{
 		static void DetermineTotalWeights(TowerElement t)
 		{

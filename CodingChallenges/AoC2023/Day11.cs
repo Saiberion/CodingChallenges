@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2023
 {
-    public class Day11 : AoCDay
+    public class Day11 : Challenge
     {
         public static int GetDistance(Point a, Point b)
         {

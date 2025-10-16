@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day11 : AoCDay
+    public class Day11 : Challenge
     {
         static int StepsTaken(int[] floorTest)
         {

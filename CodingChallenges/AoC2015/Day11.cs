@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2015
 {
-    public class Day11 : AoCDay
+    public class Day11 : Challenge
     {
         static bool HasStraight(string pw)
         {

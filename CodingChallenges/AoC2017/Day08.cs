@@ -73,7 +73,7 @@ namespace CodingChallenges.AoC2017
 		}
 	}
 
-	public class Day08 : AoCDay
+	public class Day08 : Challenge
 	{
 		static int ExecuteInstructions(Dictionary<string, int> registers, List<Instruction> instructionList)
 		{

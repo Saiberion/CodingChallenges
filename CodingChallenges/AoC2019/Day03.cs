@@ -11,7 +11,7 @@ namespace CodingChallenges.AoC2019
         public int ID { get; set; } = id;
         public int Steps { get; set; } = steps;
     }
-    public class Day03 : AoCDay
+    public class Day03 : Challenge
     {
         internal List<Point> crossings = [];
 

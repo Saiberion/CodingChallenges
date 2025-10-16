@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2018
 {
-    public class Day02 : AoCDay
+    public class Day02 : Challenge
     {
         static int Find2MatchingDigits(string input)
         {

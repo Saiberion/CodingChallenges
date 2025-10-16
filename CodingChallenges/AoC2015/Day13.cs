@@ -12,7 +12,7 @@ namespace CodingChallenges.AoC2015
         public int happiness = happ;
     }
 
-    public class Day13 : AoCDay
+    public class Day13 : Challenge
     {
         internal List<List<string>> seatingOrder = [];
 

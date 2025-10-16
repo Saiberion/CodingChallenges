@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2015
 {
-    public class Day03 : AoCDay
+    public class Day03 : Challenge
     {
         override public void Solve()
         {

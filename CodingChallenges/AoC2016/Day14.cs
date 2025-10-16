@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day14 : AoCDay
+    public class Day14 : Challenge
     {
         readonly MD5 md5 = MD5.Create();
         readonly byte[] lookup = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102];

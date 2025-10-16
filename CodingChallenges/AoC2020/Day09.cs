@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2020
 {
-    public class Day09 : AoCDay
+    public class Day09 : Challenge
     {
         private static bool IsValidNumber(long nr, List<long> l)
         {

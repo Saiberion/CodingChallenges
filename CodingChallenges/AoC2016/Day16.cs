@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day16 : AoCDay
+    public class Day16 : Challenge
     {
         static string DragonChecksum(string input)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.EC2024
 {
-    public class Day01 : AoCDay
+    public class Day01 : Challenge
     {
         private int OrderPotions(string enemyOrder, int enemyGroupSize)
         {

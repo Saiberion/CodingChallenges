@@ -15,7 +15,7 @@ namespace CodingChallenges.AoC2016
         public Location? Parent;
     }
 
-    public class Day13 : AoCDay
+    public class Day13 : Challenge
     {
         static bool GetParity(int n)
         {

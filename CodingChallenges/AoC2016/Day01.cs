@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day01 : AoCDay
+    public class Day01 : Challenge
     {
         static Point[] FollowDirections(List<string> input)
         {

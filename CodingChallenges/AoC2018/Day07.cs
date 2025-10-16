@@ -12,7 +12,7 @@ namespace CodingChallenges.AoC2018
         public int BusyTime { get; set; } = 0;
     }
 
-    public class Day07 : AoCDay
+    public class Day07 : Challenge
     {
         static Dictionary<string, List<string>> GetInstructionOrder(List<string> input)
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CodingChallenges
 {
-    abstract public class AoCDay
+    abstract public class Challenge
     {
         public string Part1Solution { get; set; }
         public string Part2Solution { get; set; }
@@ -17,7 +17,7 @@ namespace CodingChallenges
         public Stopwatch StopWatch { get; set; }
         public bool Enabled { get; set; }
 
-        public AoCDay()
+        public Challenge()
         {
             StopWatch = new Stopwatch();
             Input = [];

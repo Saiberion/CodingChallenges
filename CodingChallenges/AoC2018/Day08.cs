@@ -17,7 +17,7 @@ namespace CodingChallenges.AoC2018
         }
     }
 
-    public class Day08 : AoCDay
+    public class Day08 : Challenge
     {
         static Node CreateNode(List<int> data)
         {

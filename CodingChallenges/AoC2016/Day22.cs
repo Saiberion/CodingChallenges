@@ -14,7 +14,7 @@ namespace CodingChallenges.AoC2016
         public Point Coords { get; set; }
     }
 
-    public class Day22 : AoCDay
+    public class Day22 : Challenge
     {
         static List<StorageNode> BuildGrid(List<string> input)
         {

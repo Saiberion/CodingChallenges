@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2023
 {
-    public class Day16 : AoCDay
+    public class Day16 : Challenge
     {
         public enum EDirections
         {

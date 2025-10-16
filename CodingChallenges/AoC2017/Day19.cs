@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-    public class Day19 : AoCDay
+    public class Day19 : Challenge
     {
         static int FindMazeStart(List<string> maze)
         {

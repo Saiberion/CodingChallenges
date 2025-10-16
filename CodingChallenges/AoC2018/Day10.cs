@@ -52,7 +52,7 @@ namespace CodingChallenges.AoC2018
         }
     }
 
-    public class Day10 : AoCDay
+    public class Day10 : Challenge
     {
         static private string LightPlotter(List<MovingLight> lights)
         {

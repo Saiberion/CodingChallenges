@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day08 : AoCDay
+    public class Day08 : Challenge
     {
         string displayedText = "";
         int DisplayControl(List<string> input)

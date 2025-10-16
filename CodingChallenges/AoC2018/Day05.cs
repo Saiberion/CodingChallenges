@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2018
 {
-    public class Day05 : AoCDay
+    public class Day05 : Challenge
     {
         static string PolymerReaction(string polymer)
         {

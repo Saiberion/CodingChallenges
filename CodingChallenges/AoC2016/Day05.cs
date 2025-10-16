@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day05 : AoCDay
+    public class Day05 : Challenge
     {
         static string[] GeneratePassword(string input)
         {

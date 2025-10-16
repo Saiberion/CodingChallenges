@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-    public class Day21 : AoCDay
+    public class Day21 : Challenge
     {
         static string FlipHorizontal(string grid)
         {

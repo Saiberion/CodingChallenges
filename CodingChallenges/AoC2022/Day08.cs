@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2022
 {
-    public class Day08 : AoCDay
+    public class Day08 : Challenge
     {
         private int[] AnalyzePlantation(int[,] plantation)
         {

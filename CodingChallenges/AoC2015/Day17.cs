@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2015
 {
-    public class Day17 : AoCDay
+    public class Day17 : Challenge
     {
         private static readonly List<List<int>> combinations = [];
 

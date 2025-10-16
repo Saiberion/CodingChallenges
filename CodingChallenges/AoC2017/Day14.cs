@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-    public class Day14 : AoCDay
+    public class Day14 : Challenge
     {
         static void FillRegion(int regionNumber, int x, int y, List<int[]> grid)
         {

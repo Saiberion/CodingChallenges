@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2022
 {
-    public class Day06 : AoCDay
+    public class Day06 : Challenge
     {
         private int PositionAfterDistinctChars(int distinct)
         {

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2022
 {
-    public class Day20 : AoCDay
+    public class Day20 : Challenge
     {
         public class MixItem(string s, long key)
         {

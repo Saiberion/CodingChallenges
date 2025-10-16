@@ -16,7 +16,7 @@ namespace CodingChallenges.AoC2016
         }
     }
 
-    public class Day15 : AoCDay
+    public class Day15 : Challenge
     {
         static int DiscMazePassThrough(List<string> input, bool second)
         {

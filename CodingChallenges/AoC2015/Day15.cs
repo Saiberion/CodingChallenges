@@ -14,7 +14,7 @@ namespace CodingChallenges.AoC2015
         public int Calories { get; set; } = cal;
     }
 
-    public class Day15 : AoCDay
+    public class Day15 : Challenge
     {
         override public void Solve()
         {

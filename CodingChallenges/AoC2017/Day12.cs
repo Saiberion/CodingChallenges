@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-	public class Day12 : AoCDay
+	public class Day12 : Challenge
 	{
 		static int CountIDs(Dictionary<int, List<int>> pipes, List<int> groupIDs, int searchID)
 		{

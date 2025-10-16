@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2023
 {
-    public class Day01 : AoCDay
+    public class Day01 : Challenge
     {
         private static List<int> GetDigitsFromString(string s, bool part2)
         {

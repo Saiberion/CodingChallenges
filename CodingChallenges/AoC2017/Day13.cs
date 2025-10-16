@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-	public class Day13 : AoCDay
+	public class Day13 : Challenge
 	{
 		class FirewallLayer(int depth)
         {

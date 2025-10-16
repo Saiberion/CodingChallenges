@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2023
 {
-    public class Day03 : AoCDay
+    public class Day03 : Challenge
     {
         private Point gearCoords = new(-1, -1);
 

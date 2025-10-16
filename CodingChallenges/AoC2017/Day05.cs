@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-    public class Day05 : AoCDay
+    public class Day05 : Challenge
     {
         static int ListWalkerPart1(List<int> jumpList)
         {

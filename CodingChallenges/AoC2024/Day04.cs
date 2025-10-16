@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2024
 {
-    public class Day04 : AoCDay
+    public class Day04 : Challenge
     {
         enum Direction
         {

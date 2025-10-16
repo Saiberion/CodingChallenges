@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day02 : AoCDay
+    public class Day02 : Challenge
     {
         static string KeypadNormal(List<string> input)
         {

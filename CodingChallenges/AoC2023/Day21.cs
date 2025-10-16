@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2023
 {
-    public class Day21 : AoCDay
+    public class Day21 : Challenge
     {
         private static bool IsValidLocation(char[,] g, Point p)
         {

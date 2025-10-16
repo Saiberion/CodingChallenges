@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2015
 {
-    public class Day10 : AoCDay
+    public class Day10 : Challenge
     {
         static string LookAndSay(string origin, int iterations)
         {

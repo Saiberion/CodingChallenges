@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day18 : AoCDay
+    public class Day18 : Challenge
     {
         static int TrapRoom(List<string> input, int rows)
         {

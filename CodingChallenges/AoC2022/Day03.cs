@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2022
 {
-    public class Day03 : AoCDay
+    public class Day03 : Challenge
     {
         private static int GetPriority(char c)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2015
 {
-    public class Day24 : AoCDay
+    public class Day24 : Challenge
     {
         private static Tuple<long, int> Balance(List<int> weights, int pos, int remWt, long currQe, int currCt)
         {

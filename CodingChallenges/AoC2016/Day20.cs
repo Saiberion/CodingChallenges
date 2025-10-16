@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day20 : AoCDay
+    public class Day20 : Challenge
     {
         static Tuple<long, long> MinimumFreeIP(List<string> input)
         {

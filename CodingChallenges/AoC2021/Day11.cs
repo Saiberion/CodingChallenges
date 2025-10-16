@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2021
 {
-    public class Day11 : AoCDay
+    public class Day11 : Challenge
     {
         private readonly Stack<int[]> FlashList = new();
 

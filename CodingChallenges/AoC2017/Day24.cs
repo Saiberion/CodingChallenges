@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2017
 {
-    public class Day24 : AoCDay
+    public class Day24 : Challenge
     {
         class BridgePart
         {

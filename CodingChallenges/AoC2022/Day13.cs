@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2022
 {
-    public class Day13 : AoCDay
+    public class Day13 : Challenge
     {
         private static int CreatePacket(List<object> parent, string s)
         {

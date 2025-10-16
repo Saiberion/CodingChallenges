@@ -12,7 +12,7 @@ namespace CodingChallenges.AoC2015
         public int distance = dist;
     }
 
-    public class Day09 : AoCDay
+    public class Day09 : Challenge
     {
         internal List<List<string>> tracks = [];
 

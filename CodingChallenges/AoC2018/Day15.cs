@@ -32,7 +32,7 @@ namespace CodingChallenges.AoC2018
         }
     }
 
-    public class Day15 : AoCDay
+    public class Day15 : Challenge
     {
         public override void Solve()
         {

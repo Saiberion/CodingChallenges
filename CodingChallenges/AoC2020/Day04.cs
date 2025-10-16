@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2020
 {
-    public class Day04 : AoCDay
+    public class Day04 : Challenge
     {
         private static bool IsPassportValid(Dictionary<string, string> p)
         {

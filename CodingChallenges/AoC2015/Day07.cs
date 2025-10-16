@@ -22,7 +22,7 @@ namespace CodingChallenges.AoC2015
         public EInstruction instruction;
     }
 
-    public class Day07 : AoCDay
+    public class Day07 : Challenge
     {
         private List<Instruction> ReadInstructionList()
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day04 : AoCDay
+    public class Day04 : Challenge
     {
         static string GetRoomChecksum(List<string> roomName)
         {

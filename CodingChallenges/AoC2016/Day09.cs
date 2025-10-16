@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodingChallenges.AoC2016
 {
-    public class Day09 : AoCDay
+    public class Day09 : Challenge
     {
         static Int64 DecompressV1(string input)
         {

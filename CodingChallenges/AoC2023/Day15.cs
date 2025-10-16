@@ -30,7 +30,7 @@ namespace CodingChallenges.AoC2023
         }
     }
 
-    public class Day15 : AoCDay
+    public class Day15 : Challenge
     {
         public static int GetHash(string sequence)
         {

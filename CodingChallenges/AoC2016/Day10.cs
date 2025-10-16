@@ -18,7 +18,7 @@ namespace CodingChallenges.AoC2016
         }
     }
 
-    public class Day10 : AoCDay
+    public class Day10 : Challenge
     {
         void ParseInstructions(List<string> input)
         {
