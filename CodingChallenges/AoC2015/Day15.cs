@@ -1,9 +1,9 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AdventOfCode.AoC2015
+namespace CodingChallenges.AoC2015
 {
     class Ingredient(int cap, int dur, int fla, int tex, int cal)
     {

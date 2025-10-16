@@ -1,9 +1,9 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AdventOfCode.AoC2021
+namespace CodingChallenges.AoC2021
 {
     public class Day19 : AoCDay
     {

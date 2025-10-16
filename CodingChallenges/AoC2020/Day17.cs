@@ -1,10 +1,10 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
 
-namespace AdventOfCode.AoC2020
+namespace CodingChallenges.AoC2020
 {
     public class Day17 : AoCDay
     {

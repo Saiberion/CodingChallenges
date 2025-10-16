@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode.AoC2017
+namespace CodingChallenges.AoC2017
 {
     public class KnotHash
     {

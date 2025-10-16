@@ -1,11 +1,11 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.Drawing;
 using System.Text;
 
-namespace AdventOfCode.AoC2023
+namespace CodingChallenges.AoC2023
 {
     public class Day18 : AoCDay
     {

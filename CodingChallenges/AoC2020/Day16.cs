@@ -1,9 +1,9 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AdventOfCode.AoC2020
+namespace CodingChallenges.AoC2020
 {
     public class TicketField(string name, int min1, int max1, int min2, int max2)
     {

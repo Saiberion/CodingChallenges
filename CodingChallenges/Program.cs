@@ -1,4 +1,4 @@
-namespace AdventOfCode
+namespace CodingChallenges
 {
     internal static class Program
     {

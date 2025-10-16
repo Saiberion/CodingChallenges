@@ -1,11 +1,11 @@
-﻿using AdventOfCode;
-using AdventOfCode.AoC2018;
+﻿using CodingChallenges;
+using CodingChallenges.AoC2018;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace AdventOfCode.AoC2024
+namespace CodingChallenges.AoC2024
 {
     internal class Guard
     {

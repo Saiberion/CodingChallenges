@@ -1,9 +1,9 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AdventOfCode.AoC2017
+namespace CodingChallenges.AoC2017
 {
     class Generator(UInt64 initialValue, UInt64 factor)
     {

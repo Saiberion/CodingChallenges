@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode.AoC2019
+namespace CodingChallenges.AoC2019
 {
     public class IntCodeComputer
     {

@@ -1,11 +1,11 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Linq;
 
-namespace AdventOfCode.AoC2016
+namespace CodingChallenges.AoC2016
 {
     public class Day24 : AoCDay
     {

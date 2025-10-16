@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdventOfCode
+namespace CodingChallenges
 {
     public partial class FormSolverUI : Form
     {

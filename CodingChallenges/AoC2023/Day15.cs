@@ -1,11 +1,11 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
 
-namespace AdventOfCode.AoC2023
+namespace CodingChallenges.AoC2023
 {
     public class Lens
     {

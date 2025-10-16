@@ -1,11 +1,11 @@
-﻿using AdventOfCode;
-using AdventOfCode.AoC2018;
+﻿using CodingChallenges;
+using CodingChallenges.AoC2018;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using static System.Windows.Forms.AxHost;
 
-namespace AdventOfCode.AoC2024
+namespace CodingChallenges.AoC2024
 {
     class Location
     {

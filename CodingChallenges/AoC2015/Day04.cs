@@ -1,10 +1,10 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace AdventOfCode.AoC2015
+namespace CodingChallenges.AoC2015
 {
     public class Day04 : AoCDay
     {

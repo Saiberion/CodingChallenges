@@ -1,10 +1,10 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 
-namespace AdventOfCode.AoC2015
+namespace CodingChallenges.AoC2015
 {
     public class Day12 : AoCDay
     {

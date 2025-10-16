@@ -1,11 +1,11 @@
-﻿using AdventOfCode;
+﻿using CodingChallenges;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode.AoC2016
+namespace CodingChallenges.AoC2016
 {
     public static class Assembunny
     {

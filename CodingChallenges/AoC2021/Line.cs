@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode.AoC2021
+namespace CodingChallenges.AoC2021
 {
     public class Line
     {

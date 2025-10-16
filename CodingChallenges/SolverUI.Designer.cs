@@ -1,5 +1,5 @@
 ﻿
-namespace AdventOfCode
+namespace CodingChallenges
 {
     partial class FormSolverUI
     {
