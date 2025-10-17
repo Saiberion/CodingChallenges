@@ -6,7 +6,7 @@ namespace CodingChallenges.EverybodyCodes.Year2024
 {
     public class Challenge01 : Challenge
     {
-        private int OrderPotions(string enemyOrder, int enemyGroupSize)
+        private static int OrderPotions(string enemyOrder, int enemyGroupSize)
         {
             int potions = 0;
 
