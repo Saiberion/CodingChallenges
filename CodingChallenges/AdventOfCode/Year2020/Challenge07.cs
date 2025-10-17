@@ -83,8 +83,8 @@ namespace CodingChallenges.AdventOfCode.Year2020
                 {
                     foreach (string s2 in splitted2)
                     {
-                        int amount = int.Parse(s2.Remove(1, s2.Length - 1));
-                        string name = s2.Remove(0, 2);
+                        int amount = int.Parse(s2[..1]);
+                        string name = s2[2..];
                         bag = FindOrCreateBag(name, bags);
                         bag.Within.Add(splitted[0]);
                         bagContainer.Content.Add(bag.Name, amount);

@@ -12,7 +12,7 @@ namespace CodingChallenges.AdventOfCode.Year2023
 
             for (int i = 0; i < s.Length; i++)
             {
-                string s1 = s.Remove(0, i);
+                string s1 = s[i..];
                 if (s1.StartsWith('0') || part2 && s1.StartsWith("zero"))
                 {
                     digits.Add(0);

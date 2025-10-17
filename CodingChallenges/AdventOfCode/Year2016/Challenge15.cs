@@ -23,7 +23,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
             foreach (string line in input)
             {
                 string[] splitted = line.Split([' '], StringSplitOptions.RemoveEmptyEntries);
-                discs.Add(new Disc(int.Parse(splitted[3]), int.Parse(splitted[11].Remove(1))));
+                discs.Add(new Disc(int.Parse(splitted[3]), int.Parse(splitted[11][..1])));
             }
             if (second)
             {

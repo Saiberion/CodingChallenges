@@ -66,7 +66,7 @@ namespace CodingChallenges.AdventOfCode.Year2020
                 }
                 else
                 {
-                    string hex = p["hcl"].Remove(0, 1);
+                    string hex = p["hcl"][1..];
                     if (!int.TryParse(hex, System.Globalization.NumberStyles.HexNumber, null, out _))
                     {
                         return false;

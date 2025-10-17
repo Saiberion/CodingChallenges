@@ -86,7 +86,7 @@ namespace CodingChallenges.AdventOfCode.Year2023
                         }
                     }
                 }
-                reachableTiles = new(newTiles);
+                reachableTiles = [.. newTiles];
             }
 
             Part1Solution = reachableTiles.Count.ToString();

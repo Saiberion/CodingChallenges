@@ -79,7 +79,7 @@ namespace CodingChallenges.AdventOfCode.Year2021
                     }
                 }
             }
-            return binmsg.Remove(0, pckidx);
+            return binmsg[pckidx..];
         }
 
         private static string ConvertHexToBinaryText(string hex)

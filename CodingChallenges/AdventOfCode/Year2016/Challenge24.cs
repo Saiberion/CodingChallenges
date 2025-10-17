@@ -145,7 +145,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
                 p[pi] = pi;
             }
 
-            route.Add(new List<Point>(values));
+            route.Add([.. values]);
 
             int i = 1;
             while (i < values.Count)
@@ -164,7 +164,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
                 {
                     (values[j], values[i]) = (values[i], values[j]);
                 }
-                route.Add(new List<Point>(values));
+                route.Add([.. values]);
                 i = 1;
                 while (p[i] == 0)
                 {
@@ -226,7 +226,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
             foreach (List<Point> l in routes)
             {
                 int dist = 0;
-                List<Point> l2 = new(l);
+                List<Point> l2 = [.. l];
                 l2.Insert(0, wires[0]);
                 for (int c = 0; c < l2.Count - 1; c++)
                 {
@@ -240,7 +240,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
             foreach (List<Point> l in routes)
             {
                 int dist = 0;
-                List<Point> l2 = new(l);
+                List<Point> l2 = [.. l];
                 l2.Insert(0, wires[0]);
                 l2.Add(wires[0]);
                 for (int c = 0; c < l2.Count - 1; c++)

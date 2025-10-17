@@ -31,7 +31,7 @@ namespace CodingChallenges.AdventOfCode.Year2017
             foreach (string param in parameters)
             {
                 char p = param[0];
-                string[] values = param.Remove(param.Length - 1).Remove(0, 3).Split(',');
+                string[] values = param[3..^1].Split(',');
                 switch (p)
                 {
                     case 'p':

@@ -26,7 +26,7 @@ namespace CodingChallenges.AdventOfCode.Year2018
             if (splittedEntry[2].Contains("Guard #"))
             {
                 string[] extraSplit = splittedEntry[2].Split([' ']);
-                GuardID = int.Parse(extraSplit[2].Remove(0, 1));
+                GuardID = int.Parse(extraSplit[2][1..]);
                 GuardAction = EGuardAction.eGuardActionBeginsShift;
             }
             else if (splittedEntry[2].Contains("falls"))

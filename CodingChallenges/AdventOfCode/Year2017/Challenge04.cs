@@ -8,8 +8,8 @@ namespace CodingChallenges.AdventOfCode.Year2017
     {
         static int IsValidPassphrasePart1(string line)
         {
-            List<string> wordList = new(line.Split(' '));
-            List<string> compareList = new(wordList);
+            List<string> wordList = [.. line.Split(' ')];
+            List<string> compareList = [.. wordList];
 
             foreach (string word in wordList)
             {
@@ -48,8 +48,8 @@ namespace CodingChallenges.AdventOfCode.Year2017
 
         static int IsValidPassphrasePart2(string line)
         {
-            List<string> wordList = new(line.Split(' '));
-            List<string> compareList = new(wordList);
+            List<string> wordList = [.. line.Split(' ')];
+            List<string> compareList = [.. wordList];
 
             foreach (string word in wordList)
             {

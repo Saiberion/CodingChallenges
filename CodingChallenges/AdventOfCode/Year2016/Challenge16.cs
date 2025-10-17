@@ -31,7 +31,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
             }
 
             // get checksum
-            string chk = sb.ToString().Remove(fillLength);
+            string chk = sb.ToString()[..fillLength];
             do
             {
                 StringBuilder sbChk = new();

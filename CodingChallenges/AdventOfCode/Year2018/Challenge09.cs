@@ -81,28 +81,47 @@ namespace CodingChallenges.AdventOfCode.Year2018
         public void GameMarble(long marble)
         {
             var c1Node = ActiveNode.Clockwise;
-            var c2Node = c1Node.Clockwise;
+            if (c1Node != null)
+            {
+                var c2Node = c1Node.Clockwise;
 
-            var nNode = new CircularLinkListNode() { Marble = marble, Clockwise = c2Node, Counterclockwise = c1Node };
-            c1Node.Clockwise = nNode;
-            c2Node.Counterclockwise = nNode;
-            ActiveNode = nNode;
+                if (c2Node != null)
+                {
+                    var nNode = new CircularLinkListNode() { Marble = marble, Clockwise = c2Node, Counterclockwise = c1Node };
+                    c1Node.Clockwise = nNode;
+                    c2Node.Counterclockwise = nNode;
+                    ActiveNode = nNode;
+                }
+            }
         }
 
         public long Game23k(long marble)
         {
             long score = marble;
 
-            var remNode = ActiveNode.Counterclockwise.Counterclockwise.Counterclockwise.Counterclockwise.Counterclockwise.Counterclockwise.Counterclockwise;
+            var node = ActiveNode;
+            for(int i = 0; i < 7; i++)
+            {
+                if (node != null)
+                {
+                    node = node.Counterclockwise;
+                }
+            }
 
-            score += remNode.Marble;
+            if (node != null)
+            {
+                score += node.Marble;
 
-            var rcc = remNode.Counterclockwise;
-            var rc = remNode.Clockwise;
+                var rcc = node.Counterclockwise;
+                var rc = node.Clockwise;
 
-            rcc.Clockwise = rc;
-            rc.Counterclockwise = rcc;
-            ActiveNode = rc;
+                if ((rcc != null) && (rc != null))
+                {
+                    rcc.Clockwise = rc;
+                    rc.Counterclockwise = rcc;
+                    ActiveNode = rc;
+                }
+            }
 
             return score;
         }

@@ -37,7 +37,7 @@ namespace CodingChallenges.AdventOfCode.Year2019
             int steps = 0;
             foreach (string direction in directions)
             {
-                int stepsToTake = int.Parse(direction.Remove(0, 1));
+                int stepsToTake = int.Parse(direction[1..]);
                 switch (direction[0])
                 {
                     case 'U':

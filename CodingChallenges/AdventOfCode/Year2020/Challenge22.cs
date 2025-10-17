@@ -74,8 +74,8 @@ namespace CodingChallenges.AdventOfCode.Year2020
                         continue;
                     }
 
-                    prevRoundsP1.Add(new List<int>(p1));
-                    prevRoundsP2.Add(new List<int>(p2));
+                    prevRoundsP1.Add([.. p1]);
+                    prevRoundsP2.Add([.. p2]);
 
                     int c1 = p1[0];
                     int c2 = p2[0];
@@ -91,7 +91,7 @@ namespace CodingChallenges.AdventOfCode.Year2020
                         p1.CopyTo(0, new_p1, 0, c1);
                         p2.CopyTo(0, new_p2, 0, c2);
                         // start sub game
-                        if (StartGame(new List<int>(new_p1), new List<int>(new_p2), recursive) == 0)
+                        if (StartGame([.. new_p1], [.. new_p2], recursive) == 0)
                         {
                             p1.Add(c1);
                             p1.Add(c2);

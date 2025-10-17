@@ -86,31 +86,31 @@ namespace CodingChallenges.AdventOfCode.Year2016
                         {
                             if (input[i + val].StartsWith("inc"))
                             {
-                                input[i + val] = input[i + val].Remove(0, 3).Insert(0, "dec");
+                                input[i + val] = input[i + val][3..].Insert(0, "dec");
                             }
                             else if (input[i + val].StartsWith("dec"))
                             {
-                                input[i + val] = input[i + val].Remove(0, 3).Insert(0, "inc");
+                                input[i + val] = input[i + val][3..].Insert(0, "inc");
                             }
                             else if (input[i + val].StartsWith("tgl"))
                             {
                                 string[] spl = input[i + val].Split([' '], StringSplitOptions.RemoveEmptyEntries);
                                 if (spl.Length == 2)
                                 {
-                                    input[i + val] = input[i + val].Remove(0, 3).Insert(0, "inc");
+                                    input[i + val] = input[i + val][3..].Insert(0, "inc");
                                 }
                                 else if (spl.Length == 3)
                                 {
-                                    input[i + val] = input[i + val].Remove(0, 3).Insert(0, "jnz");
+                                    input[i + val] = input[i + val][3..].Insert(0, "jnz");
                                 }
                             }
                             else if (input[i + val].StartsWith("jnz"))
                             {
-                                input[i + val] = input[i + val].Remove(0, 3).Insert(0, "cpy");
+                                input[i + val] = input[i + val][3..].Insert(0, "cpy");
                             }
                             else if (input[i + val].StartsWith("cpy"))
                             {
-                                input[i + val] = input[i + val].Remove(0, 3).Insert(0, "jnz");
+                                input[i + val] = input[i + val][3..].Insert(0, "jnz");
                             }
                         }
 

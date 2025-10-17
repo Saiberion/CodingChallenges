@@ -15,7 +15,7 @@ namespace CodingChallenges.AdventOfCode.Year2015
             {
                 lengthInput += s.Length;
 
-                string str = s.Remove(s.Length - 1, 1).Remove(0, 1);
+                string str = s[1..^1];
                 for (int i = 0; i < str.Length; i++)
                 {
                     if (str[i] == '\\')

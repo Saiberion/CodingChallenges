@@ -18,15 +18,15 @@ namespace CodingChallenges.AdventOfCode.Year2017
             switch (Move)
             {
                 case 's':
-                    Operands.Add(int.Parse(move.Remove(0, 1)));
+                    Operands.Add(int.Parse(move[1..]));
                     break;
                 case 'x':
-                    tmp = move.Remove(0, 1).Split('/');
+                    tmp = move[1..].Split('/');
                     Operands.Add(int.Parse(tmp[0]));
                     Operands.Add(int.Parse(tmp[1]));
                     break;
                 case 'p':
-                    tmp = move.Remove(0, 1).Split('/');
+                    tmp = move[1..].Split('/');
                     Operands.Add(tmp[0]);
                     Operands.Add(tmp[1]);
                     break;
@@ -72,10 +72,13 @@ namespace CodingChallenges.AdventOfCode.Year2017
                     {
                         case 's':
                             int rotate = (int)listDanceMoves[i].Operands[0];
-                            dancers = dancers.Skip(dancers.Count - rotate)
-                            .Take(rotate)
-                            .Concat(dancers.Take(dancers.Count - rotate))
-                            .ToList();
+                            dancers =
+                            [
+                                .. dancers.Skip(dancers.Count - rotate)
+                                                            .Take(rotate)
+,
+                                .. dancers.Take(dancers.Count - rotate),
+                            ];
                             break;
                         case 'x':
                             indA = (int)listDanceMoves[i].Operands[0];

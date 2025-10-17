@@ -16,7 +16,7 @@ namespace CodingChallenges.AdventOfCode.Year2020
             for (int i = 0; i < Input.Count; i++)
             {
                 char navinstr = Input[i][0];
-                int navval = int.Parse(Input[i].Remove(0, 1));
+                int navval = int.Parse(Input[i][1..]);
 
                 switch (navinstr)
                 {

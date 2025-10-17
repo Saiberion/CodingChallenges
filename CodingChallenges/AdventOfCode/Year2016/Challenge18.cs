@@ -63,9 +63,9 @@ namespace CodingChallenges.AdventOfCode.Year2016
 
         public override void Solve()
         {
-            Part1Solution = TrapRoom(new List<string>(Input), 40).ToString();
+            Part1Solution = TrapRoom([.. Input], 40).ToString();
 
-            Part2Solution = TrapRoom(new List<string>(Input), 400000).ToString();
+            Part2Solution = TrapRoom([.. Input], 400000).ToString();
         }
     }
 }

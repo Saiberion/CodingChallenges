@@ -40,7 +40,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
                         facing = Directions4Way.Left;
                     }
                 }
-                int steps = int.Parse(s.Remove(0, 1));
+                int steps = int.Parse(s[1..]);
 
                 while (steps-- > 0)
                 {

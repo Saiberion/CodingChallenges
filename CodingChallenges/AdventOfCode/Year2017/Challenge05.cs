@@ -10,7 +10,7 @@ namespace CodingChallenges.AdventOfCode.Year2017
         {
             int steps = 0;
             int index = 0;
-            List<int> jList = new(jumpList);
+            List<int> jList = [.. jumpList];
 
             while (true)
             {
@@ -27,7 +27,7 @@ namespace CodingChallenges.AdventOfCode.Year2017
         {
             int steps = 0;
             int index = 0;
-            List<int> jList = new(jumpList);
+            List<int> jList = [.. jumpList];
 
             while (true)
             {

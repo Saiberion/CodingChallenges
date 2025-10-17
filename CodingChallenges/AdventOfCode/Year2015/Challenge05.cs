@@ -45,7 +45,7 @@ namespace CodingChallenges.AdventOfCode.Year2015
             for (int i = 0; i < s.Length - 1; i++)
             {
                 string compare = string.Format("{0}{1}", s[i], s[i + 1]);
-                if (s.Remove(0, i + 2).Contains(compare))
+                if (s[(i + 2)..].Contains(compare))
                 {
                     return true;
                 }

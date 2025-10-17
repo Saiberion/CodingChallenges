@@ -23,7 +23,7 @@ namespace CodingChallenges.AdventOfCode.Year2017
 
         static void CreateBridges(List<List<BridgePart>> bridges, List<BridgePart> currentBridge, List<BridgePart> bridgeParts, int nextConnector)
         {
-            List<BridgePart> bps = new(bridgeParts);
+            List<BridgePart> bps = [.. bridgeParts];
             int next;
 
             for (int i = 0; i < bps.Count; i++)
@@ -38,11 +38,8 @@ namespace CodingChallenges.AdventOfCode.Year2017
                     {
                         next = bps[i].PortStrength[0];
                     }
-                    List<BridgePart> curBridge = new(currentBridge)
-                    {
-                        bps[i]
-                    };
-                    List<BridgePart> remainingParts = new(bps);
+                    List<BridgePart> curBridge = [.. currentBridge, bps[i]];
+                    List<BridgePart> remainingParts = [.. bps];
                     remainingParts.Remove(bps[i]);
                     bridges.Add(curBridge);
                     CreateBridges(bridges, curBridge, remainingParts, next);

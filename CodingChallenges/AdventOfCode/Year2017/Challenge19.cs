@@ -21,7 +21,7 @@ namespace CodingChallenges.AdventOfCode.Year2017
 
         public override void Solve()
         {
-            List<string> maze = new(Input);
+            List<string> maze = [.. Input];
 
             // Maze walker
             int x = FindMazeStart(maze);

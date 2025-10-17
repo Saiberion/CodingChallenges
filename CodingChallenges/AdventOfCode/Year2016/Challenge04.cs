@@ -77,7 +77,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
                 string[] roomCode = line.Split(['-', '[', ']'], StringSplitOptions.RemoveEmptyEntries);
                 string checksumGiven = roomCode[^1];
                 int sectorId = int.Parse(roomCode[^2]);
-                List<string> roomName = new(roomCode);
+                List<string> roomName = [.. roomCode];
                 roomName.RemoveAt(roomName.Count - 1);
                 roomName.RemoveAt(roomName.Count - 1);
                 string checksumCalculated = GetRoomChecksum(roomName);

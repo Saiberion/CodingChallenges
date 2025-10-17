@@ -30,7 +30,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
                         switch (splitted[1])
                         {
                             case "column":
-                                int col = int.Parse(splitted[2].Remove(0, 2));
+                                int col = int.Parse(splitted[2][2..]);
                                 for (int rot = 0; rot < int.Parse(splitted[4]); rot++)
                                 {
                                     int tmp = display[col, display.GetLength(1) - 1];
@@ -42,7 +42,7 @@ namespace CodingChallenges.AdventOfCode.Year2016
                                 }
                                 break;
                             case "row":
-                                int row = int.Parse(splitted[2].Remove(0, 2));
+                                int row = int.Parse(splitted[2][2..]);
                                 for (int rot = 0; rot < int.Parse(splitted[4]); rot++)
                                 {
                                     int tmp = display[display.GetLength(0) - 1, row];
