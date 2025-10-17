@@ -9,814 +9,814 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="AoC2015\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2015\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2015\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2016\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2016\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2017\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2017\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2018\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2018\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2019\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2019\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2020\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2020\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2021\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2021\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2022\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2022\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2023\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2023\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day01.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day02.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day03.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day04.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day05.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day06.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day07.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day08.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day09.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day10.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day11.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day12.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day13.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day14.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day15.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day16.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day17.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day18.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day19.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day20.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day21.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge21.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day22.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge22.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day23.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge23.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day24.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge24.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AoC2024\inputs\Day25.txt">
+    <None Update="AdventOfCode\Year2024\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day01.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge01.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day02.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day03.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day04.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day05.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge05.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day06.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge06.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day07.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day08.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day09.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day10.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge10.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day11.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day12.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge12.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day13.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge13.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day14.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge14.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day15.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge15.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day16.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge16.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day17.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge17.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day18.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge18.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day19.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge19.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="EC2024\inputs\Day20.txt">
+    <None Update="EverybodyCodes\Year2024\inputs\Challenge20.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

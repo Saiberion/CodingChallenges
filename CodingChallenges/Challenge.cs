@@ -22,12 +22,14 @@ namespace CodingChallenges
             StopWatch = new Stopwatch();
             Input = [];
             string? ns = GetType().Namespace;
-            string nsname;
+            string eventname;
+            string eventyear;
             if (!string.IsNullOrEmpty(ns))
             {
                 string[] nssplit = ns.Split(['.'], StringSplitOptions.RemoveEmptyEntries);
-                nsname = nssplit[^1];
-                Load(string.Format("{0}/inputs/{1}.txt", nsname, this.GetType().Name));
+                eventname = nssplit[^2];
+                eventyear = nssplit[^1];
+                Load(string.Format("{0}/{1}/inputs/{2}.txt", eventname, eventyear, this.GetType().Name));
             }
             Part1Solution = "TBD";
             Part2Solution = "TBD";

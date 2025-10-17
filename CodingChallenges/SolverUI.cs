@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,342 +14,342 @@ namespace CodingChallenges
 {
     public partial class FormSolverUI : Form
     {
-        private readonly Dictionary<string, List<Challenge>> allAoCDays = new()
+        private readonly Dictionary<string, List<Challenge>> allChallenges = new()
         {
             {
-                "AoC2015",
+                "AdventOfCode Year2015",
                 new List<Challenge>()
                 {
-                    new AoC2015.Day01() { Enabled = true },
-                    new AoC2015.Day02() { Enabled = true },
-                    new AoC2015.Day03() { Enabled = true },
-                    new AoC2015.Day04() { Enabled = true },
-                    new AoC2015.Day05() { Enabled = true },
-                    new AoC2015.Day06() { Enabled = true },
-                    new AoC2015.Day07() { Enabled = true },
-                    new AoC2015.Day08() { Enabled = true },
-                    new AoC2015.Day09() { Enabled = true },
-                    new AoC2015.Day10() { Enabled = true },
-                    new AoC2015.Day11() { Enabled = true },
-                    new AoC2015.Day12() { Enabled = true },
-                    new AoC2015.Day13() { Enabled = true },
-                    new AoC2015.Day14() { Enabled = true },
-                    new AoC2015.Day15() { Enabled = true },
-                    new AoC2015.Day16() { Enabled = true },
-                    new AoC2015.Day17() { Enabled = true },
-                    new AoC2015.Day18() { Enabled = true },
-                    new AoC2015.Day19() { Enabled = true },
-                    new AoC2015.Day20() { Enabled = true },
-                    new AoC2015.Day21() { Enabled = true },
-                    new AoC2015.Day22() { Enabled = true },
-                    new AoC2015.Day23() { Enabled = true },
-                    new AoC2015.Day24() { Enabled = true },
-                    new AoC2015.Day25() { Enabled = true }
+                    new AdventOfCode.Year2015.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge07() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge08() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge10() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge12() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge13() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge14() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge15() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge16() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge17() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge18() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge19() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge20() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge21() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge22() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge23() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge24() { Enabled = true },
+                    new AdventOfCode.Year2015.Challenge25() { Enabled = true }
                 }
             },
             {
-                "AoC2016",
+                "AdventOfCode Year2016",
                 new List<Challenge>()
                 {
-                    new AoC2016.Day01() { Enabled = true },
-                    new AoC2016.Day02() { Enabled = true },
-                    new AoC2016.Day03() { Enabled = true },
-                    new AoC2016.Day04() { Enabled = true },
-                    new AoC2016.Day05() { Enabled = true },
-                    new AoC2016.Day06() { Enabled = true },
-                    new AoC2016.Day07() { Enabled = true },
-                    new AoC2016.Day08() { Enabled = true },
-                    new AoC2016.Day09() { Enabled = true },
-                    new AoC2016.Day10() { Enabled = true },
-                    new AoC2016.Day11() { Enabled = true },
-                    new AoC2016.Day12() { Enabled = true },
-                    new AoC2016.Day13() { Enabled = true },
-                    new AoC2016.Day14() { Enabled = true },
-                    new AoC2016.Day15() { Enabled = true },
-                    new AoC2016.Day16() { Enabled = true },
-                    new AoC2016.Day17() { Enabled = true },
-                    new AoC2016.Day18() { Enabled = true },
-                    new AoC2016.Day19() { Enabled = true },
-                    new AoC2016.Day20() { Enabled = true },
-                    new AoC2016.Day21() { Enabled = true },
-                    new AoC2016.Day22() { Enabled = true },
-                    new AoC2016.Day23() { Enabled = true },
-                    new AoC2016.Day24() { Enabled = true },
-                    new AoC2016.Day25() { Enabled = true }
+                    new AdventOfCode.Year2016.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge07() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge08() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge10() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge12() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge13() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge14() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge15() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge16() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge17() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge18() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge19() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge20() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge21() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge22() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge23() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge24() { Enabled = true },
+                    new AdventOfCode.Year2016.Challenge25() { Enabled = true }
                 }
             },
             {
-                "AoC2017",
+                "AdventOfCode Year2017",
                 new List<Challenge>()
                 {
-                    new AoC2017.Day01() { Enabled = true },
-                    new AoC2017.Day02() { Enabled = true },
-                    new AoC2017.Day03() { Enabled = true },
-                    new AoC2017.Day04() { Enabled = true },
-                    new AoC2017.Day05() { Enabled = true },
-                    new AoC2017.Day06() { Enabled = true },
-                    new AoC2017.Day07() { Enabled = true },
-                    new AoC2017.Day08() { Enabled = true },
-                    new AoC2017.Day09() { Enabled = true },
-                    new AoC2017.Day10() { Enabled = true },
-                    new AoC2017.Day11() { Enabled = true },
-                    new AoC2017.Day12() { Enabled = true },
-                    new AoC2017.Day13() { Enabled = true },
-                    new AoC2017.Day14() { Enabled = true },
-                    new AoC2017.Day15() { Enabled = true },
-                    new AoC2017.Day16() { Enabled = true },
-                    new AoC2017.Day17() { Enabled = true },
-                    new AoC2017.Day18() { Enabled = true },
-                    new AoC2017.Day19() { Enabled = true },
-                    new AoC2017.Day20() { Enabled = true },
-                    new AoC2017.Day21() { Enabled = true },
-                    new AoC2017.Day22() { Enabled = true },
-                    new AoC2017.Day23() { Enabled = true },
-                    new AoC2017.Day24() { Enabled = true },
-                    new AoC2017.Day25() { Enabled = true }
+                    new AdventOfCode.Year2017.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge07() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge08() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge10() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge12() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge13() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge14() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge15() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge16() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge17() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge18() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge19() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge20() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge21() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge22() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge23() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge24() { Enabled = true },
+                    new AdventOfCode.Year2017.Challenge25() { Enabled = true }
                 }
             },
             {
-                "AoC2018",
+                "AdventOfCode Year2018",
                 new List<Challenge>()
                 {
-                    new AoC2018.Day01() { Enabled = true },
-                    new AoC2018.Day02() { Enabled = true },
-                    new AoC2018.Day03() { Enabled = true },
-                    new AoC2018.Day04() { Enabled = true },
-                    new AoC2018.Day05() { Enabled = true },
-                    new AoC2018.Day06() { Enabled = true },
-                    new AoC2018.Day07() { Enabled = true },
-                    new AoC2018.Day08() { Enabled = true },
-                    new AoC2018.Day09() { Enabled = true },
-                    new AoC2018.Day10() { Enabled = true },
-                    new AoC2018.Day11() { Enabled = true },
-                    new AoC2018.Day12() { Enabled = true },
-                    new AoC2018.Day13() { Enabled = true },
-                    new AoC2018.Day14() { Enabled = true },
-                    new AoC2018.Day15() { Enabled = false },
-                    new AoC2018.Day16() { Enabled = false },
-                    new AoC2018.Day17() { Enabled = false },
-                    new AoC2018.Day18() { Enabled = false },
-                    new AoC2018.Day19() { Enabled = false },
-                    new AoC2018.Day20() { Enabled = false },
-                    new AoC2018.Day21() { Enabled = false },
-                    new AoC2018.Day22() { Enabled = false },
-                    new AoC2018.Day23() { Enabled = false },
-                    new AoC2018.Day24() { Enabled = false },
-                    new AoC2018.Day25() { Enabled = false }
+                    new AdventOfCode.Year2018.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge07() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge08() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge10() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge12() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge13() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge14() { Enabled = true },
+                    new AdventOfCode.Year2018.Challenge15() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge16() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge17() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge18() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge19() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge20() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge21() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge22() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge23() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge24() { Enabled = false },
+                    new AdventOfCode.Year2018.Challenge25() { Enabled = false }
                 }
             },
             {
-                "AoC2019",
+                "AdventOfCode Year2019",
                 new List<Challenge>()
                 {
-                    new AoC2019.Day01() { Enabled = true },
-                    new AoC2019.Day02() { Enabled = true },
-                    new AoC2019.Day03() { Enabled = true },
-                    new AoC2019.Day04() { Enabled = true },
-                    new AoC2019.Day05() { Enabled = true },
-                    new AoC2019.Day06() { Enabled = true },
-                    new AoC2019.Day07() { Enabled = true },
-                    new AoC2019.Day08() { Enabled = true },
-                    new AoC2019.Day09() { Enabled = true },
-                    new AoC2019.Day10() { Enabled = true },
-                    new AoC2019.Day11() { Enabled = true },
-                    new AoC2019.Day12() { Enabled = true },
-                    new AoC2019.Day13() { Enabled = true },
-                    new AoC2019.Day14() { Enabled = false },
-                    new AoC2019.Day15() { Enabled = false },
-                    new AoC2019.Day16() { Enabled = false },
-                    new AoC2019.Day17() { Enabled = true },
-                    new AoC2019.Day18() { Enabled = false },
-                    new AoC2019.Day19() { Enabled = true },
-                    new AoC2019.Day20() { Enabled = false },
-                    new AoC2019.Day21() { Enabled = false },
-                    new AoC2019.Day22() { Enabled = true },
-                    new AoC2019.Day23() { Enabled = false },
-                    new AoC2019.Day24() { Enabled = false },
-                    new AoC2019.Day25() { Enabled = false }
+                    new AdventOfCode.Year2019.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge07() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge08() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge10() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge12() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge13() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge14() { Enabled = false },
+                    new AdventOfCode.Year2019.Challenge15() { Enabled = false },
+                    new AdventOfCode.Year2019.Challenge16() { Enabled = false },
+                    new AdventOfCode.Year2019.Challenge17() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge18() { Enabled = false },
+                    new AdventOfCode.Year2019.Challenge19() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge20() { Enabled = false },
+                    new AdventOfCode.Year2019.Challenge21() { Enabled = false },
+                    new AdventOfCode.Year2019.Challenge22() { Enabled = true },
+                    new AdventOfCode.Year2019.Challenge23() { Enabled = false },
+                    new AdventOfCode.Year2019.Challenge24() { Enabled = false },
+                    new AdventOfCode.Year2019.Challenge25() { Enabled = false }
                 }
             },
             {
-                "AoC2020",
+                "AdventOfCode Year2020",
                 new List<Challenge>()
                 {
-                    new AoC2020.Day01() { Enabled = true },
-                    new AoC2020.Day02() { Enabled = true },
-                    new AoC2020.Day03() { Enabled = true },
-                    new AoC2020.Day04() { Enabled = true },
-                    new AoC2020.Day05() { Enabled = true },
-                    new AoC2020.Day06() { Enabled = true },
-                    new AoC2020.Day07() { Enabled = true },
-                    new AoC2020.Day08() { Enabled = true },
-                    new AoC2020.Day09() { Enabled = true },
-                    new AoC2020.Day10() { Enabled = true },
-                    new AoC2020.Day11() { Enabled = true },
-                    new AoC2020.Day12() { Enabled = true },
-                    new AoC2020.Day13() { Enabled = true },
-                    new AoC2020.Day14() { Enabled = true },
-                    new AoC2020.Day15() { Enabled = false },
-                    new AoC2020.Day16() { Enabled = true },
-                    new AoC2020.Day17() { Enabled = true },
-                    new AoC2020.Day18() { Enabled = true },
-                    new AoC2020.Day19() { Enabled = false },
-                    new AoC2020.Day20() { Enabled = false },
-                    new AoC2020.Day21() { Enabled = false },
-                    new AoC2020.Day22() { Enabled = true },
-                    new AoC2020.Day23() { Enabled = false },
-                    new AoC2020.Day24() { Enabled = false },
-                    new AoC2020.Day25() { Enabled = false }
+                    new AdventOfCode.Year2020.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge07() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge08() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge10() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge12() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge13() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge14() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge15() { Enabled = false },
+                    new AdventOfCode.Year2020.Challenge16() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge17() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge18() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge19() { Enabled = false },
+                    new AdventOfCode.Year2020.Challenge20() { Enabled = false },
+                    new AdventOfCode.Year2020.Challenge21() { Enabled = false },
+                    new AdventOfCode.Year2020.Challenge22() { Enabled = true },
+                    new AdventOfCode.Year2020.Challenge23() { Enabled = false },
+                    new AdventOfCode.Year2020.Challenge24() { Enabled = false },
+                    new AdventOfCode.Year2020.Challenge25() { Enabled = false }
                 }
             },
             {
-                "AoC2021",
+                "AdventOfCode Year2021",
                 new List<Challenge>()
                 {
-                    new AoC2021.Day01() { Enabled = true },
-                    new AoC2021.Day02() { Enabled = true },
-                    new AoC2021.Day03() { Enabled = true },
-                    new AoC2021.Day04() { Enabled = true },
-                    new AoC2021.Day05() { Enabled = true },
-                    new AoC2021.Day06() { Enabled = true },
-                    new AoC2021.Day07() { Enabled = true },
-                    new AoC2021.Day08() { Enabled = true },
-                    new AoC2021.Day09() { Enabled = true },
-                    new AoC2021.Day10() { Enabled = true },
-                    new AoC2021.Day11() { Enabled = true },
-                    new AoC2021.Day12() { Enabled = false },
-                    new AoC2021.Day13() { Enabled = false },
-                    new AoC2021.Day14() { Enabled = true },
-                    new AoC2021.Day15() { Enabled = false },
-                    new AoC2021.Day16() { Enabled = true },
-                    new AoC2021.Day17() { Enabled = true },
-                    new AoC2021.Day18() { Enabled = false },
-                    new AoC2021.Day19() { Enabled = false },
-                    new AoC2021.Day20() { Enabled = false },
-                    new AoC2021.Day21() { Enabled = true },
-                    new AoC2021.Day22() { Enabled = false },
-                    new AoC2021.Day23() { Enabled = false },
-                    new AoC2021.Day24() { Enabled = false },
-                    new AoC2021.Day25() { Enabled = false }
+                    new AdventOfCode.Year2021.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge07() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge08() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge10() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge12() { Enabled = false },
+                    new AdventOfCode.Year2021.Challenge13() { Enabled = false },
+                    new AdventOfCode.Year2021.Challenge14() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge15() { Enabled = false },
+                    new AdventOfCode.Year2021.Challenge16() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge17() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge18() { Enabled = false },
+                    new AdventOfCode.Year2021.Challenge19() { Enabled = false },
+                    new AdventOfCode.Year2021.Challenge20() { Enabled = false },
+                    new AdventOfCode.Year2021.Challenge21() { Enabled = true },
+                    new AdventOfCode.Year2021.Challenge22() { Enabled = false },
+                    new AdventOfCode.Year2021.Challenge23() { Enabled = false },
+                    new AdventOfCode.Year2021.Challenge24() { Enabled = false },
+                    new AdventOfCode.Year2021.Challenge25() { Enabled = false }
                 }
             },
             {
-                "AoC2022",
+                "AdventOfCode Year2022",
                 new List<Challenge>()
                 {
-                    new AoC2022.Day01() { Enabled = true },
-                    new AoC2022.Day02() { Enabled = true },
-                    new AoC2022.Day03() { Enabled = true },
-                    new AoC2022.Day04() { Enabled = true },
-                    new AoC2022.Day05() { Enabled = true },
-                    new AoC2022.Day06() { Enabled = true },
-                    new AoC2022.Day07() { Enabled = true },
-                    new AoC2022.Day08() { Enabled = true },
-                    new AoC2022.Day09() { Enabled = true },
-                    new AoC2022.Day10() { Enabled = true },
-                    new AoC2022.Day11() { Enabled = true },
-                    new AoC2022.Day12() { Enabled = true },
-                    new AoC2022.Day13() { Enabled = true },
-                    new AoC2022.Day14() { Enabled = true },
-                    new AoC2022.Day15() { Enabled = false },
-                    new AoC2022.Day16() { Enabled = false },
-                    new AoC2022.Day17() { Enabled = false },
-                    new AoC2022.Day18() { Enabled = false },
-                    new AoC2022.Day19() { Enabled = false },
-                    new AoC2022.Day20() { Enabled = true },
-                    new AoC2022.Day21() { Enabled = false },
-                    new AoC2022.Day22() { Enabled = false },
-                    new AoC2022.Day23() { Enabled = false },
-                    new AoC2022.Day24() { Enabled = false },
-                    new AoC2022.Day25() { Enabled = false }
+                    new AdventOfCode.Year2022.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge07() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge08() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge10() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge12() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge13() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge14() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge15() { Enabled = false },
+                    new AdventOfCode.Year2022.Challenge16() { Enabled = false },
+                    new AdventOfCode.Year2022.Challenge17() { Enabled = false },
+                    new AdventOfCode.Year2022.Challenge18() { Enabled = false },
+                    new AdventOfCode.Year2022.Challenge19() { Enabled = false },
+                    new AdventOfCode.Year2022.Challenge20() { Enabled = true },
+                    new AdventOfCode.Year2022.Challenge21() { Enabled = false },
+                    new AdventOfCode.Year2022.Challenge22() { Enabled = false },
+                    new AdventOfCode.Year2022.Challenge23() { Enabled = false },
+                    new AdventOfCode.Year2022.Challenge24() { Enabled = false },
+                    new AdventOfCode.Year2022.Challenge25() { Enabled = false }
                 }
             },
             {
-                "AoC2023",
+                "AdventOfCode Year2023",
                 new List<Challenge>()
                 {
-                    new AoC2023.Day01() { Enabled = true },
-                    new AoC2023.Day02() { Enabled = true },
-                    new AoC2023.Day03() { Enabled = true },
-                    new AoC2023.Day04() { Enabled = true },
-                    new AoC2023.Day05() { Enabled = true },
-                    new AoC2023.Day06() { Enabled = true },
-                    new AoC2023.Day07() { Enabled = true },
-                    new AoC2023.Day08() { Enabled = true },
-                    new AoC2023.Day09() { Enabled = true },
-                    new AoC2023.Day10() { Enabled = true },
-                    new AoC2023.Day11() { Enabled = true },
-                    new AoC2023.Day12() { Enabled = false },
-                    new AoC2023.Day13() { Enabled = false },
-                    new AoC2023.Day14() { Enabled = true },
-                    new AoC2023.Day15() { Enabled = true },
-                    new AoC2023.Day16() { Enabled = true },
-                    new AoC2023.Day17() { Enabled = false },
-                    new AoC2023.Day18() { Enabled = true },
-                    new AoC2023.Day19() { Enabled = false },
-                    new AoC2023.Day20() { Enabled = false },
-                    new AoC2023.Day21() { Enabled = true },
-                    new AoC2023.Day22() { Enabled = false },
-                    new AoC2023.Day23() { Enabled = false },
-                    new AoC2023.Day24() { Enabled = false },
-                    new AoC2023.Day25() { Enabled = false }
+                    new AdventOfCode.Year2023.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge07() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge08() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge10() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge12() { Enabled = false },
+                    new AdventOfCode.Year2023.Challenge13() { Enabled = false },
+                    new AdventOfCode.Year2023.Challenge14() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge15() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge16() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge17() { Enabled = false },
+                    new AdventOfCode.Year2023.Challenge18() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge19() { Enabled = false },
+                    new AdventOfCode.Year2023.Challenge20() { Enabled = false },
+                    new AdventOfCode.Year2023.Challenge21() { Enabled = true },
+                    new AdventOfCode.Year2023.Challenge22() { Enabled = false },
+                    new AdventOfCode.Year2023.Challenge23() { Enabled = false },
+                    new AdventOfCode.Year2023.Challenge24() { Enabled = false },
+                    new AdventOfCode.Year2023.Challenge25() { Enabled = false }
                 }
             },
             {
-                "EC2024",
+                "EverybodyCodes Year2024",
                 new List<Challenge>()
                 {
-                    new EC2024.Day01() { Enabled = true },
-                    new EC2024.Day02() { Enabled = false },
-                    new EC2024.Day03() { Enabled = false },
-                    new EC2024.Day04() { Enabled = false },
-                    new EC2024.Day05() { Enabled = false },
-                    new EC2024.Day06() { Enabled = false },
-                    new EC2024.Day07() { Enabled = false },
-                    new EC2024.Day08() { Enabled = false },
-                    new EC2024.Day09() { Enabled = false },
-                    new EC2024.Day10() { Enabled = false },
-                    new EC2024.Day11() { Enabled = false },
-                    new EC2024.Day12() { Enabled = false },
-                    new EC2024.Day13() { Enabled = false },
-                    new EC2024.Day14() { Enabled = false },
-                    new EC2024.Day15() { Enabled = false },
-                    new EC2024.Day16() { Enabled = false },
-                    new EC2024.Day17() { Enabled = false },
-                    new EC2024.Day18() { Enabled = false },
-                    new EC2024.Day19() { Enabled = false },
-                    new EC2024.Day20() { Enabled = false }
+                    new EverybodyCodes.Year2024.Challenge01() { Enabled = true },
+                    new EverybodyCodes.Year2024.Challenge02() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge03() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge04() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge05() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge06() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge07() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge08() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge09() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge10() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge11() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge12() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge13() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge14() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge15() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge16() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge17() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge18() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge19() { Enabled = false },
+                    new EverybodyCodes.Year2024.Challenge20() { Enabled = false }
                 }
             },
             {
-                "AoC2024",
+                "AdventOfCode Year2024",
                 new List<Challenge>()
                 {
-                    new AoC2024.Day01() { Enabled = true },
-                    new AoC2024.Day02() { Enabled = true },
-                    new AoC2024.Day03() { Enabled = true },
-                    new AoC2024.Day04() { Enabled = true },
-                    new AoC2024.Day05() { Enabled = true },
-                    new AoC2024.Day06() { Enabled = true },
-                    new AoC2024.Day07() { Enabled = false },
-                    new AoC2024.Day08() { Enabled = false },
-                    new AoC2024.Day09() { Enabled = true },
-                    new AoC2024.Day10() { Enabled = false },
-                    new AoC2024.Day11() { Enabled = true },
-                    new AoC2024.Day12() { Enabled = false },
-                    new AoC2024.Day13() { Enabled = true },
-                    new AoC2024.Day14() { Enabled = false },
-                    new AoC2024.Day15() { Enabled = false },
-                    new AoC2024.Day16() { Enabled = false },
-                    new AoC2024.Day17() { Enabled = false },
-                    new AoC2024.Day18() { Enabled = false },
-                    new AoC2024.Day19() { Enabled = false },
-                    new AoC2024.Day20() { Enabled = true },
-                    new AoC2024.Day21() { Enabled = false },
-                    new AoC2024.Day22() { Enabled = false },
-                    new AoC2024.Day23() { Enabled = false },
-                    new AoC2024.Day24() { Enabled = false },
-                    new AoC2024.Day25() { Enabled = false }
+                    new AdventOfCode.Year2024.Challenge01() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge02() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge03() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge04() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge05() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge06() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge07() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge08() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge09() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge10() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge11() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge12() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge13() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge14() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge15() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge16() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge17() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge18() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge19() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge20() { Enabled = true },
+                    new AdventOfCode.Year2024.Challenge21() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge22() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge23() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge24() { Enabled = false },
+                    new AdventOfCode.Year2024.Challenge25() { Enabled = false }
                 }
             }
         };
@@ -360,23 +361,23 @@ namespace CodingChallenges
             SetDoubleBuffered(tableLayoutPanelDayGrid);
         }
 
-        private void ButtonSolveAllDays(object? sender, EventArgs e)
+        private void ButtonSolveAllChallenges(object? sender, EventArgs e)
         {
             for (int i = 1; i < tableLayoutPanelDayGrid.RowCount; i++)
             {
                 if ((tableLayoutPanelDayGrid.GetControlFromPosition(0, i) is Button b) && (b.Enabled))
                 {
-                    ButtonSolveSingleDay(b, new EventArgs());
+                    ButtonSolveSingleChallenge(b, new EventArgs());
                 }
             }
         }
 
-        private void ButtonSolveSingleDay(object? sender, EventArgs e)
+        private void ButtonSolveSingleChallenge(object? sender, EventArgs e)
         {
             BackgroundWorker bw = new();
-            bw.DoWork += BackgroundWorkerDaySolver;
-            bw.RunWorkerCompleted += BackgroundWorkerDaySolverCompleted;
-            bw.ProgressChanged += BackgroundWorkerDaySolverProgressChanged;
+            bw.DoWork += BackgroundWorkerChallengeSolver;
+            bw.RunWorkerCompleted += BackgroundWorkerChallengeSolverCompleted;
+            bw.ProgressChanged += BackgroundWorkerChallengeSolverProgressChanged;
             bw.WorkerReportsProgress = true;
             bw.RunWorkerAsync(sender);
 
@@ -392,7 +393,7 @@ namespace CodingChallenges
             bw.Dispose();
         }
 
-        private void BackgroundWorkerDaySolverProgressChanged(object? sender, ProgressChangedEventArgs e)
+        private void BackgroundWorkerChallengeSolverProgressChanged(object? sender, ProgressChangedEventArgs e)
         {
             if ((e.UserState is Button b) && (b.Parent is TableLayoutPanel tbl))
             {
@@ -404,7 +405,7 @@ namespace CodingChallenges
             }
         }
 
-        private void BackgroundWorkerDaySolverCompleted(object? sender, RunWorkerCompletedEventArgs e)
+        private void BackgroundWorkerChallengeSolverCompleted(object? sender, RunWorkerCompletedEventArgs e)
         {
             if ((e.Result is Button b) && (b.Tag is Challenge d) && (b.Parent is TableLayoutPanel tbl))
             {
@@ -428,7 +429,7 @@ namespace CodingChallenges
             }
         }
 
-        private void BackgroundWorkerDaySolver(object? sender, DoWorkEventArgs e)
+        private void BackgroundWorkerChallengeSolver(object? sender, DoWorkEventArgs e)
         {
             if ((e.Argument is Button b) && (sender is BackgroundWorker bw))
             {
@@ -445,11 +446,11 @@ namespace CodingChallenges
 
         private void SolverUI_Load(object sender, EventArgs e)
         {
-            foreach (string dir in Directory.GetDirectories(Directory.GetCurrentDirectory()).Reverse())
+            foreach (string dir in Directory.GetDirectories(Directory.GetCurrentDirectory()))
             {
-                if (Path.GetFileName(dir).StartsWith("AoC") || Path.GetFileName(dir).StartsWith("EC"))
+                if (Path.GetFileName(dir).StartsWith("AdventOfCode") || Path.GetFileName(dir).StartsWith("EverybodyCodes"))
                 {
-                    comboBoxYearSelect.Items.Add(Path.GetFileName(dir));
+                    comboBoxEventSelect.Items.Add(Path.GetFileName(dir));
                 }
             }
         }
@@ -494,12 +495,12 @@ namespace CodingChallenges
             }, 4, 0);
             tableLayoutPanelDayGrid.RowCount = 1;
 
-            if (comboBoxYearSelect.SelectedItem != null)
+            if ((comboBoxEventSelect.SelectedItem != null) && (comboBoxYearSelect.SelectedItem != null))
             {
-                string? key = comboBoxYearSelect.SelectedItem.ToString();
+                string? key = $"{comboBoxEventSelect.SelectedItem} {comboBoxYearSelect.SelectedItem}";
                 if (key != null)
                 {
-                    days = allAoCDays[key];
+                    days = allChallenges[key];
 
                     for (int i = 0; i < days.Count; i++)
                     {
@@ -509,19 +510,19 @@ namespace CodingChallenges
                         Button b = new()
                         {
                             Anchor = AnchorStyles.None,
-                            Name = string.Format("buttonSolveDay{0}", i + 1),
-                            Text = string.Format("Solve day {0}", i + 1),
-                            Size = new Size(90, 25),
+                            Name = string.Format("buttonSolveChallenge{0}", i + 1),
+                            Text = string.Format("Solve Challenge {0}", i + 1),
+                            Size = new Size(120, 25),
                             Tag = days[i],
                             Enabled = days[i].Enabled
                         };
-                        b.Click += ButtonSolveSingleDay;
+                        b.Click += ButtonSolveSingleChallenge;
                         tableLayoutPanelDayGrid.Controls.Add(b, 0, i + 1);
 
                         tableLayoutPanelDayGrid.Controls.Add(new TextBox()
                         {
                             Anchor = AnchorStyles.None,
-                            Name = string.Format("textBoxD{0}P1", i + 1),
+                            Name = string.Format("textBoxC{0}P1", i + 1),
                             Text = "",
                             AutoSize = true,
                             ReadOnly = true,
@@ -534,7 +535,7 @@ namespace CodingChallenges
                         tableLayoutPanelDayGrid.Controls.Add(new TextBox()
                         {
                             Anchor = AnchorStyles.None,
-                            Name = string.Format("textBoxD{0}P2", i + 1),
+                            Name = string.Format("textBoxC{0}P2", i + 1),
                             Text = "",
                             AutoSize = true,
                             ReadOnly = true,
@@ -547,7 +548,7 @@ namespace CodingChallenges
                         tableLayoutPanelDayGrid.Controls.Add(new TextBox()
                         {
                             Anchor = AnchorStyles.None,
-                            Name = string.Format("textBoxD{0}P3", i + 1),
+                            Name = string.Format("textBoxC{0}P3", i + 1),
                             Text = "",
                             AutoSize = true,
                             ReadOnly = true,
@@ -560,22 +561,22 @@ namespace CodingChallenges
                         tableLayoutPanelDayGrid.Controls.Add(new Label()
                         {
                             Anchor = AnchorStyles.None,
-                            Name = string.Format("labelD{0}Perf", i + 1),
+                            Name = string.Format("labelC{0}Perf", i + 1),
                             Text = "",
                             AutoSize = true
                         }, 4, i + 1);
                     }
-                }            
+                }
             }
 
             Button b2 = new()
             {
                 Anchor = AnchorStyles.None,
                 Name = "buttonSolveAll",
-                Text = "Solve all days",
-                Size = new Size(90, 25)
+                Text = "Solve all challenges",
+                Size = new Size(120, 25)
             };
-            b2.Click += ButtonSolveAllDays;
+            b2.Click += ButtonSolveAllChallenges;
             tableLayoutPanelDayGrid.Controls.Add(b2, 0, 0);
             tableLayoutPanelDayGrid.ResumeLayout(false);
             tableLayoutPanelDayGrid.PerformLayout();
@@ -595,5 +596,18 @@ namespace CodingChallenges
         }
 
         #endregion
+
+        private void ComboBoxEventSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxYearSelect.Items.Clear();
+
+            foreach (string dir in Directory.GetDirectories($"{Directory.GetCurrentDirectory()}/{comboBoxEventSelect.Text}").Reverse())
+            {
+                if (Path.GetFileName(dir).StartsWith("Year"))
+                {
+                    comboBoxYearSelect.Items.Add(Path.GetFileName(dir));
+                }
+            }
+        }
     }
 }
