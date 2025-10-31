@@ -15,7 +15,7 @@ namespace CodingChallenges.AdventOfCode.Year2015
 
             if (s == target)
             {
-                combinations.Add(new List<int>(partial));
+                combinations.Add([.. partial]);
             }
 
             if (s >= target)
@@ -32,10 +32,7 @@ namespace CodingChallenges.AdventOfCode.Year2015
                     remaining.Add(numbers[j]);
                 }
 
-                List<int> partial_rec = new(partial)
-                {
-                    n
-                };
+                List<int> partial_rec = [.. partial, n];
                 SumUpRecursive(remaining, target, partial_rec);
             }
         }
