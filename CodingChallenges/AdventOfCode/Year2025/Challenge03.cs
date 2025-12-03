@@ -1,4 +1,5 @@
 ﻿using CodingChallenges;
+using CodingChallenges.AdventOfCode.Year2021;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,36 +8,40 @@ namespace CodingChallenges.AdventOfCode.Year2025
 {
     public class Challenge03 : Challenge
     {
-        public override void Solve()
+        static private long FindLargestJoltage(string batteryBank,int digits)
         {
-            
-            int overallJoltage = 0;
-            foreach(string line in Input)
-            {
-                char largestTenth = '0';
-                char largestOneth = '0';
-                int indexTenth = 0;
-                for (int i = 0; i < (line.Length - 1); i++)
-                {
-                    if (line[i] > largestTenth)
-                    {
-                        largestTenth = line[i];
-                        indexTenth = i;
-                    }
-                }
-                for (int i = (line.Length - 1); i > indexTenth; i--)
-                {
-                    if (line[i] > largestOneth)
-                    {
-                        largestOneth = line[i];
-                    }
-                }
-                string joltage = string.Format("{0}{1}", largestTenth, largestOneth);
-                overallJoltage += int.Parse(joltage);
-            }
-            Part1Solution = overallJoltage.ToString();
+            StringBuilder sb = new();
 
-            Part2Solution = "TBD";
+            int scanStart = -1;
+            for (int j = 0; j < digits; j++)
+            {
+                char largestBattery = '0';
+                for (int i = (scanStart + 1); i < (batteryBank.Length - digits + 1 + j); i++)
+                {
+                    if (batteryBank[i] > largestBattery)
+                    {
+                        largestBattery = batteryBank[i];
+                        scanStart = i;
+                    }
+                }
+                sb.Append(largestBattery);
+            }
+
+            return long.Parse(sb.ToString());
+        }
+
+        public override void Solve()
+        {   
+            long overallJoltageP1 = 0;
+            long overallJoltageP2 = 0;
+            foreach (string line in Input)
+            {
+                overallJoltageP1 += FindLargestJoltage(line, 2);
+                overallJoltageP2 += FindLargestJoltage(line, 12);
+            }
+            Part1Solution = overallJoltageP1.ToString();
+
+            Part2Solution = overallJoltageP2.ToString();
 
             Part3Solution = "";
         }
