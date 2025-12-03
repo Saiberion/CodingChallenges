@@ -358,7 +358,7 @@ namespace CodingChallenges
                 {
                     new AdventOfCode.Year2025.Challenge01() { Enabled = true },
                     new AdventOfCode.Year2025.Challenge02() { Enabled = true },
-                    new AdventOfCode.Year2025.Challenge03() { Enabled = false },
+                    new AdventOfCode.Year2025.Challenge03() { Enabled = true },
                     new AdventOfCode.Year2025.Challenge04() { Enabled = false },
                     new AdventOfCode.Year2025.Challenge05() { Enabled = false },
                     new AdventOfCode.Year2025.Challenge06() { Enabled = false },
