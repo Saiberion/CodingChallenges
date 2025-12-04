@@ -21,95 +21,27 @@ namespace CodingChallenges.AdventOfCode.Year2025
         
         static private bool IdIsValidExtended(string id)
         {
-            // by analysing the input all IDs are in the length range of 2 - 10
-            switch(id.Length)
+            if (id.Length > 1)
             {
-                case 10:
-                    if (id[0..(id.Length / 2)].Equals(id[(id.Length / 2)..]))
+                for (int matchWindowSize = 1; matchWindowSize <= (id.Length / 2); matchWindowSize++)
+                {
+                    if ((id.Length % matchWindowSize) == 0)
                     {
-                        return false;
+                        bool allBlocksEqual = true;
+                        for (int i = 0; i < (id.Length - matchWindowSize); i += matchWindowSize)
+                        {
+                            allBlocksEqual &= (id[i..(i + matchWindowSize)].Equals(id[(i + matchWindowSize)..(i + 2 * matchWindowSize)]));
+                            if (allBlocksEqual == false)
+                            {
+                                break;
+                            }
+                        }
+                        if (allBlocksEqual)
+                        {
+                            return false;
+                        }
                     }
-                    if ((id[0..2].Equals(id[2..4])) && (id[0..2].Equals(id[4..6])) && (id[0..2].Equals(id[6..8])) && (id[0..2].Equals(id[8..10])))
-                    {
-                        return false;
-                    }
-                    if ((id[0] == id[1]) && (id[0] == id[2]) && (id[0] == id[3]) && (id[0] == id[4]) && (id[0] == id[5]) && (id[0] == id[6]) && (id[0] == id[7]) && (id[0] == id[8]) && (id[0] == id[9]))
-                    {
-                        return false;
-                    }
-                    break;
-                case 9:
-                    if ((id[0..3].Equals(id[3..6])) && (id[0..3].Equals(id[6..9])))
-                    {
-                        return false;
-                    }
-                    if ((id[0] == id[1]) && (id[0] == id[2]) && (id[0] == id[3]) && (id[0] == id[4]) && (id[0] == id[5]) && (id[0] == id[6]) && (id[0] == id[7]) && (id[0] == id[8]))
-                    {
-                        return false;
-                    }
-                    break;
-                case 8:
-                    if (id[0..(id.Length / 2)].Equals(id[(id.Length / 2)..]))
-                    {
-                        return false;
-                    }
-                    if ((id[0..2].Equals(id[2..4])) && (id[0..2].Equals(id[4..6])) && (id[0..2].Equals(id[6..8])))
-                    {
-                        return false;
-                    }
-                    if ((id[0] == id[1]) && (id[0] == id[2]) && (id[0] == id[3]) && (id[0] == id[4]) && (id[0] == id[5]) && (id[0] == id[6]) && (id[0] == id[7]))
-                    {
-                        return false;
-                    }
-                    break;
-                case 7:
-                    if ((id[0] == id[1]) && (id[0] == id[2]) && (id[0] == id[3]) && (id[0] == id[4]) && (id[0] == id[5]) && (id[0] == id[6]))
-                    {
-                        return false;
-                    }
-                    break;
-                case 6:
-                    if (id[0..(id.Length / 2)].Equals(id[(id.Length / 2)..]))
-                    {
-                        return false;
-                    }
-                    if ((id[0..2].Equals(id[2..4])) && (id[0..2].Equals(id[4..6])))
-                    {
-                        return false;
-                    }
-                    if ((id[0] == id[1]) && (id[0] == id[2]) && (id[0] == id[3]) && (id[0] == id[4]) && (id[0] == id[5]))
-                    {
-                        return false;
-                    }
-                    break;
-                case 5:
-                    if ((id[0] == id[1]) && (id[0] == id[2]) && (id[0] == id[3]) && (id[0] == id[4]))
-                    {
-                        return false;
-                    }
-                    break;
-                case 4:
-                    if (id[0..(id.Length / 2)].Equals(id[(id.Length / 2)..]))
-                    {
-                        return false;
-                    }
-                    if ((id[0] == id[1]) && (id[0] == id[2]) && (id[0] == id[3]))
-                    {
-                        return false;
-                    }
-                    break;
-                case 3:
-                    if ((id[0] == id[1]) && (id[0] == id[2]))
-                    {
-                        return false;
-                    }
-                    break;
-                case 2:
-                    if (id[0..(id.Length / 2)].Equals(id[(id.Length / 2)..]))
-                    {
-                        return false;
-                    }
-                    break;
+                }
             }
             return true;
         }
