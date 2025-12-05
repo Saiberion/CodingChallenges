@@ -12,6 +12,8 @@ namespace CodingChallenges.AdventOfCode.Year2025
             List<long[]> ranges = [];
             List<long> ingredients = [];
 
+            long countFresh = 0;
+
             foreach(string line in Input)
             {
                 if (line.Length > 0)
