@@ -9,11 +9,42 @@ namespace CodingChallenges.AdventOfCode.Year2025
     {
         public override void Solve()
         {
-            Part1Solution = "TBD";
+            List<long[]> ranges = [];
+            List<long> ingredients = [];
+
+            foreach(string line in Input)
+            {
+                if (line.Length > 0)
+                {
+                    if (line.Contains('-'))
+                    {
+                        string[] r = line.Split(['-'], StringSplitOptions.RemoveEmptyEntries);
+                        ranges.Add([long.Parse(r[0]), long.Parse(r[1])]);
+                    }
+                    else
+                    {
+                        ingredients.Add(long.Parse(line));
+                    }
+                }
+            }
+
+            foreach(long id in ingredients)
+            {
+                foreach (long[] range in ranges)
+                {
+                    if ((id >= range[0]) && (id <= range[1]))
+                    {
+                        countFresh++;
+                        break;
+                    }
+                }
+            }
+
+            Part1Solution = countFresh.ToString();
 
             Part2Solution = "TBD";
 
-            Part3Solution = "TBD";
+            Part3Solution = "";
         }
     }
 }
