@@ -17,7 +17,7 @@ namespace CodingChallenges.AdventOfCode.Year2025
             }
 
             long grandTotal = 0;
-            long result = 0;
+            long result;
             for (int i = 0; i < mathProblems[0].Length; i++)
             {
                 if (mathProblems[^1][i][0] == '+')
@@ -43,7 +43,68 @@ namespace CodingChallenges.AdventOfCode.Year2025
 
             Part1Solution = grandTotal.ToString();
 
-            Part2Solution = "TBD";
+            grandTotal = 0;
+            List<long> numbers = [];
+            for (int i = Input[0].Length - 1; i >= 0; i--)
+            {
+                StringBuilder sb = new();
+                for (int j = 0; j < Input.Count - 1; j++)
+                {
+                    sb.Append(Input[j][i]);
+                }
+                string num = sb.ToString().Trim();
+                if (!string.IsNullOrEmpty(num))
+                {
+                    numbers.Add(long.Parse(num));
+                }
+                else
+                {
+                    if (Input[^1][i + 1] == '+')
+                    {
+                        // addition
+                        result = 0;
+                        foreach(long l in numbers)
+                        {
+                            result += l;
+                        }
+                    }
+                    else
+                    {
+                        // multiplication
+                        result = 1;
+                        foreach (long l in numbers)
+                        {
+                            result *= l;
+                        }
+                    }
+                    grandTotal += result;
+                    numbers.Clear();
+                }
+                if (i == 0)
+                {
+                    if (Input[^1][i] == '+')
+                    {
+                        // addition
+                        result = 0;
+                        foreach (long l in numbers)
+                        {
+                            result += l;
+                        }
+                    }
+                    else
+                    {
+                        // multiplication
+                        result = 1;
+                        foreach (long l in numbers)
+                        {
+                            result *= l;
+                        }
+                    }
+                    grandTotal += result;
+                }
+            }
+
+            Part2Solution = grandTotal.ToString();
 
             Part3Solution = "";
         }
