@@ -45,6 +45,28 @@ namespace CodingChallenges.AdventOfCode.Year2025
 
             Part1Solution = beamSplits.ToString();
 
+            // This approach will either run out of time or more likely memory
+            /*beams = [];
+            beams.Add(Input[0].IndexOf('S'));
+
+            for (int i = 1; i < Input.Count; i++)
+            {
+                List<int> nextBeams = [];
+                foreach (int b in beams)
+                {
+                    if (Input[i][b] == '^')
+                    {
+                        nextBeams.Add(b - 1);
+                        nextBeams.Add(b + 1);
+                    }
+                    else
+                    {
+                        nextBeams.Add(b);
+                    }
+                }
+                beams = nextBeams;
+            }*/
+
             Part2Solution = "TBD";
 
             Part3Solution = "";
