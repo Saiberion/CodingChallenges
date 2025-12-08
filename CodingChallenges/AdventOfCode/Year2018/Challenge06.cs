@@ -5,31 +5,25 @@ using System.Text;
 
 namespace CodingChallenges.AdventOfCode.Year2018
 {
-    class Coordinate(int x, int y)
-    {
-        public int Y { get; set; } = y;
-        public int X { get; set; } = x;
-    }
-
     public class Challenge06 : Challenge
     {
-        static List<Coordinate> GetCoordinates(List<string> input)
+        static List<Point> GetCoordinates(List<string> input)
         {
-            List<Coordinate> result = [];
+            List<Point> result = [];
             foreach (string line in input)
             {
                 string[] splitted = line.Split([',', ' '], StringSplitOptions.RemoveEmptyEntries);
-                Coordinate coordinate = new(int.Parse(splitted[0]), int.Parse(splitted[1]));
+                Point coordinate = new(int.Parse(splitted[0]), int.Parse(splitted[1]));
                 result.Add(coordinate);
             }
             return result;
         }
 
-        static int GetHighestXCoord(List<Coordinate> coordinates)
+        static int GetHighestXCoord(List<Point> coordinates)
         {
             int result = 0;
 
-            foreach (Coordinate c in coordinates)
+            foreach (Point c in coordinates)
             {
                 if (c.X > result)
                 {
@@ -40,11 +34,11 @@ namespace CodingChallenges.AdventOfCode.Year2018
             return result + 1;
         }
 
-        static int GetHighestYCoord(List<Coordinate> coordinates)
+        static int GetHighestYCoord(List<Point> coordinates)
         {
             int result = 0;
 
-            foreach (Coordinate c in coordinates)
+            foreach (Point c in coordinates)
             {
                 if (c.Y > result)
                 {
@@ -66,7 +60,7 @@ namespace CodingChallenges.AdventOfCode.Year2018
             HashSet<int> Infinites = [];
 
 
-            List<Coordinate> coordinates = GetCoordinates(Input);
+            List<Point> coordinates = GetCoordinates(Input);
             int highestX = GetHighestXCoord(coordinates);
             int highestY = GetHighestYCoord(coordinates);
             int[,] grid = new int[highestY, highestX];

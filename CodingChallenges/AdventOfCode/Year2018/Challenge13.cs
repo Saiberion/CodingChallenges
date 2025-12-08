@@ -21,7 +21,7 @@ namespace CodingChallenges.AdventOfCode.Year2018
     {
         public char[,] TrackLayer { get; set; } = new char[0, 0];
         public Cart?[,] CartLayer { get; set; } = new Cart[0, 0];
-        Coordinate? CrashLocation { get; set; }
+        Point? CrashLocation { get; set; }
 
         private bool MoveCart(Cart?[,] updateCarts, Cart? c, int x, int y)
         {
@@ -76,7 +76,7 @@ namespace CodingChallenges.AdventOfCode.Year2018
             {
                 updateCarts[x, y] = null;
                 CartLayer[x, y] = null;
-                CrashLocation ??= new Coordinate(x, y);
+                CrashLocation ??= new Point(x, y);
                 return true;
             }
         }
