@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CodingChallenges.AdventOfCode.Year2019
+namespace CodingChallenges
 {
     public class Coordinate3D(int x, int y, int z)
     {
