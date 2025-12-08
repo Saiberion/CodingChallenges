@@ -363,7 +363,7 @@ namespace CodingChallenges
                     new AdventOfCode.Year2025.Challenge05() { Enabled = true },
                     new AdventOfCode.Year2025.Challenge06() { Enabled = true },
                     new AdventOfCode.Year2025.Challenge07() { Enabled = true },
-                    new AdventOfCode.Year2025.Challenge08() { Enabled = false },
+                    new AdventOfCode.Year2025.Challenge08() { Enabled = true },
                     new AdventOfCode.Year2025.Challenge09() { Enabled = false },
                     new AdventOfCode.Year2025.Challenge10() { Enabled = false },
                     new AdventOfCode.Year2025.Challenge11() { Enabled = false },
