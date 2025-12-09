@@ -6,19 +6,7 @@ namespace CodingChallenges.AdventOfCode.Year2025
 {
     public class Challenge08 : Challenge
     {
-        List<List<int>> circuits = [];
-
-        private bool HasDirectConnection(int a, int b)
-        {
-            foreach(List<int> l in circuits)
-            {
-                if (l.Contains(a) && l.Contains(b))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+        private readonly List<List<int>> circuits = [];
 
         private int GetCircuitIndex(int a)
         {
@@ -57,8 +45,22 @@ namespace CodingChallenges.AdventOfCode.Year2025
             sortedDistances.Sort();
 
             circuits.Clear();
-            for (int iter = 0; iter < 1000; iter ++)
+            for (int iter = 0; iter < sortedDistances.Count; iter ++)
             {
+                if (iter == 1000)
+                {
+                    List<int> nodesInCircuit = [];
+                    foreach (List<int> l in circuits)
+                    {
+                        nodesInCircuit.Add(l.Count);
+                    }
+                    nodesInCircuit.Sort();
+                    nodesInCircuit.Reverse();
+
+                    Part1Solution = (nodesInCircuit[0] * nodesInCircuit[1] * nodesInCircuit[2]).ToString();
+                }
+
+
                 int boxA = distances[sortedDistances[iter]][0];
                 int boxB = distances[sortedDistances[iter]][1];
 
@@ -80,19 +82,13 @@ namespace CodingChallenges.AdventOfCode.Year2025
                     circuits.Remove(l);
                     circuits[GetCircuitIndex(boxA)].AddRange(l);
                 }
+
+                if (circuits[0].Count == junctionBoxes.Count)
+                {
+                    Part2Solution = (junctionBoxes[boxA].X * junctionBoxes[boxB].X).ToString();
+                    break;
+                }
             }
-
-            List<int> nodesInCircuit = [];
-            foreach(List<int> l in circuits)
-            {
-                nodesInCircuit.Add(l.Count);
-            }
-            nodesInCircuit.Sort();
-            nodesInCircuit.Reverse();
-
-            Part1Solution = (nodesInCircuit[0] * nodesInCircuit[1] * nodesInCircuit[2]).ToString();
-
-            Part2Solution = "TBD";
 
             Part3Solution = "";
         }
