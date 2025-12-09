@@ -6,68 +6,91 @@ namespace CodingChallenges.AdventOfCode.Year2025
 {
     public class Challenge08 : Challenge
     {
+        List<List<int>> circuits = [];
+
+        private bool HasDirectConnection(int a, int b)
+        {
+            foreach(List<int> l in circuits)
+            {
+                if (l.Contains(a) && l.Contains(b))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private int GetCircuitIndex(int a)
+        {
+            for (int i = 0; i < circuits.Count; i++)
+            {
+                if (circuits[i].Contains(a))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         public override void Solve()
         {
-            List<JunctionBox> junctionBoxes = [];
-            List<List<JunctionBox>> circuits = [];
+            List<Coordinate3D> junctionBoxes = [];
+            Dictionary<long, List<int>> distances = [];
+            List<long> sortedDistances = [];
 
             foreach (string line in Input)
             {
                 string[] coords = line.Split([','], StringSplitOptions.RemoveEmptyEntries);
-                JunctionBox b = new(int.Parse(coords[0]), int.Parse(coords[1]), int.Parse(coords[2]));
-                junctionBoxes.Add(b);
-                circuits.Add([b]);
+                Coordinate3D c = new(int.Parse(coords[0]), int.Parse(coords[1]), int.Parse(coords[2]));
+                junctionBoxes.Add(c);
             }
 
-            int nextFreeCircuit = 1;
-
-            int iter = 0;
-            do
+            for (int i = 0; i < junctionBoxes.Count - 1; i++)
             {
-                int minDistance = int.MaxValue;
-                int startBox = -1;
-                int endBox = -1;
-                for (int i = 0; i < junctionBoxes.Count - 1; i++)
+                for (int j = i + 1; j < junctionBoxes.Count; j++)
                 {
-                    for (int j = i + 1; j < junctionBoxes.Count; j++)
-                    {
-                        if (!junctionBoxes[i].ConnectedBoxes.Contains(junctionBoxes[j]))
-                        {
-                            int distance = junctionBoxes[i].Position.GetDistanceTo(junctionBoxes[j].Position);
-                            if (distance < minDistance)
-                            {
-                                minDistance = distance;
-                                startBox = i;
-                                endBox = j;
-                            }
-                        }
-                    }
+                    long distance = junctionBoxes[i].GetDistanceTo(junctionBoxes[j]);
+                    distances.Add(distance, [i, j]);
                 }
-                junctionBoxes[startBox].ConnectedBoxes.Add(junctionBoxes[endBox]);
-                junctionBoxes[endBox].ConnectedBoxes.Add(junctionBoxes[startBox]);
             }
-            while (++iter < 10);
+            sortedDistances.AddRange(distances.Keys);
+            sortedDistances.Sort();
 
-            
-
-            /*if ((junctionBoxes[startBox].Circuit == 0) && (junctionBoxes[endBox].Circuit == 0))
+            circuits.Clear();
+            for (int iter = 0; iter < 1000; iter ++)
             {
-                junctionBoxes[startBox].Circuit = junctionBoxes[endBox].Circuit = nextFreeCircuit++;
+                int boxA = distances[sortedDistances[iter]][0];
+                int boxB = distances[sortedDistances[iter]][1];
+
+                if ((GetCircuitIndex(boxA) == -1) && (GetCircuitIndex(boxB) == -1))
+                {
+                    circuits.Add([boxA, boxB]);
+                }
+                else if ((GetCircuitIndex(boxA) != -1) && (GetCircuitIndex(boxB) == -1))
+                {
+                    circuits[GetCircuitIndex(boxA)].Add(boxB);
+                }
+                else if ((GetCircuitIndex(boxA) == -1) && (GetCircuitIndex(boxB) != -1))
+                {
+                    circuits[GetCircuitIndex(boxB)].Add(boxA);
+                }
+                else if ((GetCircuitIndex(boxA) != -1) && (GetCircuitIndex(boxB) != -1) && (GetCircuitIndex(boxA) != GetCircuitIndex(boxB)))
+                {
+                    List<int> l = circuits[GetCircuitIndex(boxB)];
+                    circuits.Remove(l);
+                    circuits[GetCircuitIndex(boxA)].AddRange(l);
+                }
             }
-            else if ((junctionBoxes[startBox].Circuit != 0) && (junctionBoxes[endBox].Circuit == 0))
-            {
-                junctionBoxes[endBox].Circuit = junctionBoxes[startBox].Circuit;
-            }
-            else if ((junctionBoxes[startBox].Circuit == 0) && (junctionBoxes[endBox].Circuit != 0))
-            {
-                junctionBoxes[startBox].Circuit = junctionBoxes[endBox].Circuit;
-            }
-            else
-            {
 
-            }*/
+            List<int> nodesInCircuit = [];
+            foreach(List<int> l in circuits)
+            {
+                nodesInCircuit.Add(l.Count);
+            }
+            nodesInCircuit.Sort();
+            nodesInCircuit.Reverse();
 
-                Part1Solution = "TBD";
+            Part1Solution = (nodesInCircuit[0] * nodesInCircuit[1] * nodesInCircuit[2]).ToString();
 
             Part2Solution = "TBD";
 
