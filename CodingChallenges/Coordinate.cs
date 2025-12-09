@@ -21,4 +21,10 @@ namespace CodingChallenges
             return deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ;
         }
     }
+
+    public class Coordinate2D(long x, long y)
+    {
+        public long X { get; set; } = x;
+        public long Y { get; set; } = y;
+    }
 }
