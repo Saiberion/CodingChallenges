@@ -29,7 +29,7 @@ namespace CodingChallenges.AdventOfCode.Year2019
                 }
             }
 
-            int systemEnergy = 0;
+            long systemEnergy = 0;
             foreach (Moon m in moons)
             {
                 systemEnergy += m.GetTotalEnergy();
@@ -43,8 +43,8 @@ namespace CodingChallenges.AdventOfCode.Year2019
     {
         Coordinate3D Position { get; set; }
         Coordinate3D Velocity { get; set; }
-        int PotentialEnergy { get; set; }
-        int KineticEnergy { get; set; }
+        long PotentialEnergy { get; set; }
+        long KineticEnergy { get; set; }
 
         public Moon(string initialPosition)
         {
@@ -108,7 +108,7 @@ namespace CodingChallenges.AdventOfCode.Year2019
             }
         }
 
-        public int GetTotalEnergy()
+        public long GetTotalEnergy()
         {
             return PotentialEnergy * KineticEnergy;
         }

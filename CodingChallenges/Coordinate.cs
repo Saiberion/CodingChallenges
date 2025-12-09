@@ -4,18 +4,18 @@ using System.Text;
 
 namespace CodingChallenges
 {
-    public class Coordinate3D(int x, int y, int z)
+    public class Coordinate3D(long x, long y, long z)
     {
-        public int X { get; set; } = x;
-        public int Y { get; set; } = y;
-        public int Z { get; set; } = z;
+        public long X { get; set; } = x;
+        public long Y { get; set; } = y;
+        public long Z { get; set; } = z;
 
-        public int GetDistanceTo(Coordinate3D other)
+        public long GetDistanceTo(Coordinate3D other)
         {
             // skip the square root part as we do not need to know the exact distance but only have to compare them
-            int deltaX = X - other.X;
-            int deltaY = Y - other.Y;
-            int deltaZ = Z - other.Z;
+            long deltaX = X - other.X;
+            long deltaY = Y - other.Y;
+            long deltaZ = Z - other.Z;
 
             // for the exact distance we would need to switch to floating point and calculate the square root of the following return value
             return deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ;
