@@ -10,64 +10,34 @@ namespace CodingChallenges.AdventOfCode.Year2025
         public override void Solve()
         {
             
-            List<int> beams = [];
             int beamSplits = 0;
+            long[] activeBeams = new long [Input[0].Length];
 
-            beams.Add(Input[0].IndexOf('S'));
+            activeBeams[Input[0].IndexOf('S')] = 1;
 
             for (int i = 1; i < Input.Count; i++)
             {
-                List<int> nextBeams = [];
-                foreach(int b in beams)
+                for (int k = 0; k < Input[i].Length; k++)
                 {
-                    if (Input[i][b] == '^')
+                    if ((Input[i][k] == '^') && (activeBeams[k] > 0))
                     {
-                        if (!nextBeams.Contains(b - 1))
-                        {
-                            nextBeams.Add(b - 1);
-                        }
-                        if (!nextBeams.Contains(b + 1))
-                        {
-                            nextBeams.Add(b + 1);
-                        }
                         beamSplits++;
-                    }
-                    else
-                    {
-                        if (!nextBeams.Contains(b))
-                        {
-                            nextBeams.Add(b);
-                        }
+                        activeBeams[k - 1] += activeBeams[k];
+                        activeBeams[k + 1] += activeBeams[k];
+                        activeBeams[k] = 0;
                     }
                 }
-                beams = nextBeams;
             }
 
             Part1Solution = beamSplits.ToString();
 
-            // This approach will either run out of time or more likely memory
-            /*beams = [];
-            beams.Add(Input[0].IndexOf('S'));
-
-            for (int i = 1; i < Input.Count; i++)
+            long allTimelines = 0;
+            foreach (long a in activeBeams)
             {
-                List<int> nextBeams = [];
-                foreach (int b in beams)
-                {
-                    if (Input[i][b] == '^')
-                    {
-                        nextBeams.Add(b - 1);
-                        nextBeams.Add(b + 1);
-                    }
-                    else
-                    {
-                        nextBeams.Add(b);
-                    }
-                }
-                beams = nextBeams;
-            }*/
+                allTimelines += a;
+            }
 
-            Part2Solution = "TBD";
+            Part2Solution = allTimelines.ToString();
 
             Part3Solution = "";
         }
