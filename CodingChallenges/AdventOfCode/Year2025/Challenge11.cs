@@ -5,65 +5,49 @@ using System.Text;
 
 namespace CodingChallenges.AdventOfCode.Year2025
 {
-    class Device(string name, string[] connections)
-    {
-        public string Name { get; set; } = name;
-        public List<string> ConnectedTo { get; set; } = [.. connections];
-        public bool Visited = false;
-    }
-
     public class Challenge11 : Challenge
     {
-        static void DFS(string node, string dest, Dictionary<string, Device> graph, ref int count)
+        static long PathCount(Dictionary<string, string[]> g, string from, string to, Dictionary<string, long> cache)
         {
-            // If destination is reached, 
-            // increment count
-            if (node.Equals(dest))
+            if (!cache.ContainsKey(from))
             {
-                count++;
-                return;
-            }
-
-            // Mark current node as visited
-            graph[node].Visited = true;
-
-            // Explore all unvisited neighbors
-            foreach (string neighbor in graph[node].ConnectedTo)
-            {
-                if (!graph[neighbor].Visited)
+                if (from == to)
                 {
-                    DFS(neighbor, dest, graph, ref count);
+                    cache[from] = 1;
+                }
+                else
+                {
+                    long res = 0;
+                    foreach (string next in g[from])
+                    {
+                        res += PathCount(g, next, to, cache);
+                    }
+                    cache[from] = res;
                 }
             }
-
-            // Backtrack: unmark the node 
-            // before returning
-            graph[node].Visited = false;
-        }
-
-        static int CountPaths(Dictionary<string, Device> nodes, string source, string destination)
-        {
-            int count = 0;
-
-            // Start DFS from source
-            DFS(source, destination, nodes, ref count);
-
-            return count;
+            return cache[from];
         }
 
         public override void Solve()
         {
-            Dictionary<string, Device> devices= [];
+            Dictionary<string, string[]> devices= [];
 
-            devices.Add("out", new("out", []));
             foreach (string line in Input)
             {
                 string[] devcon = line.Split([' ', ':'], StringSplitOptions.RemoveEmptyEntries);
-                devices.Add(devcon[0], new(devcon[0], [.. devcon[1..]]));
+                devices.Add(devcon[0], [.. devcon[1..]]);
             }
-            Part1Solution = CountPaths(devices, "you", "out").ToString();
+            devices["out"] = [];
+            Part1Solution = PathCount(devices, "you", "out", []).ToString();
 
-            Part2Solution = "TBD";
+            long a = PathCount(devices, "dac", "out", []);
+            long b = PathCount(devices, "fft", "dac", []);
+            long c = PathCount(devices, "svr", "fft", []);
+            long d = PathCount(devices, "fft", "out", []);
+            long e = PathCount(devices, "dac", "fft", []);
+            long f = PathCount(devices, "svr", "dac", []);
+
+            Part2Solution = ((a * b * c) + (d * e * f)).ToString();
 
             Part3Solution = "";
         }
