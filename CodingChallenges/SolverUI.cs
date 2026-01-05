@@ -392,72 +392,28 @@ namespace CodingChallenges
 
         private void ButtonSolveSingleChallenge(object? sender, EventArgs e)
         {
-            BackgroundWorker bw = new();
-            bw.DoWork += BackgroundWorkerChallengeSolver;
-            bw.RunWorkerCompleted += BackgroundWorkerChallengeSolverCompleted;
-            bw.ProgressChanged += BackgroundWorkerChallengeSolverProgressChanged;
-            bw.WorkerReportsProgress = true;
-            bw.RunWorkerAsync(sender);
-
-            if ((sender is Button b) && (b.Parent is TableLayoutPanel tbl))
+            if ((sender is Button b) && (b.Parent is TableLayoutPanel tbl) && (b.Tag is Challenge c))
             {
-                TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
-                if (tbl.GetControlFromPosition(4, pos.Row) is Label l4)
-                {
-                    l4.Text = "initialised";
-                }
-            }
+                c.StopWatch.Restart();
+                c.Solve();
+                c.StopWatch.Stop();
 
-            bw.Dispose();
-        }
-
-        private void BackgroundWorkerChallengeSolverProgressChanged(object? sender, ProgressChangedEventArgs e)
-        {
-            if ((e.UserState is Button b) && (b.Parent is TableLayoutPanel tbl))
-            {
-                TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
-                if (tbl.GetControlFromPosition(4, pos.Row) is Label l4)
-                {
-                    l4.Text = "Running";
-                }
-            }
-        }
-
-        private void BackgroundWorkerChallengeSolverCompleted(object? sender, RunWorkerCompletedEventArgs e)
-        {
-            if ((e.Result is Button b) && (b.Tag is Challenge d) && (b.Parent is TableLayoutPanel tbl))
-            {
                 TableLayoutPanelCellPosition pos = tbl.GetCellPosition(b);
                 if (tbl.GetControlFromPosition(1, pos.Row) is TextBox t1)
                 {
-                    t1.Text = d.Part1Solution;
+                    t1.Text = c.Part1Solution;
                 }
                 if (tbl.GetControlFromPosition(2, pos.Row) is TextBox t2)
                 {
-                    t2.Text = d.Part2Solution;
+                    t2.Text = c.Part2Solution;
                 }
                 if (tbl.GetControlFromPosition(3, pos.Row) is TextBox t3)
                 {
-                    t3.Text = d.Part3Solution;
+                    t3.Text = c.Part3Solution;
                 }
                 if (tbl.GetControlFromPosition(4, pos.Row) is Label l4)
                 {
-                    l4.Text = d.StopWatch.Elapsed.ToString();
-                }
-            }
-        }
-
-        private void BackgroundWorkerChallengeSolver(object? sender, DoWorkEventArgs e)
-        {
-            if ((e.Argument is Button b) && (sender is BackgroundWorker bw))
-            {
-                bw.ReportProgress(0, b);
-                if (b.Tag is Challenge d)
-                {
-                    d.StopWatch.Restart();
-                    d.Solve();
-                    d.StopWatch.Stop();
-                    e.Result = b;
+                    l4.Text = c.StopWatch.Elapsed.ToString();
                 }
             }
         }
@@ -515,6 +471,7 @@ namespace CodingChallenges
 
             if ((comboBoxEventSelect.SelectedItem != null) && (comboBoxYearSelect.SelectedItem != null))
             {
+                comboBoxChallengeSelect.Items.Clear();
                 string? key = $"{comboBoxEventSelect.SelectedItem} {comboBoxYearSelect.SelectedItem}";
                 if (key != null)
                 {
@@ -522,6 +479,7 @@ namespace CodingChallenges
 
                     for (int i = 0; i < days.Count; i++)
                     {
+                        comboBoxChallengeSelect.Items.Add($"Challenge {i + 1}");
                         tableLayoutPanelDayGrid.RowCount++;
                         tableLayoutPanelDayGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
 
@@ -618,12 +576,40 @@ namespace CodingChallenges
         private void ComboBoxEventSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxYearSelect.Items.Clear();
+            comboBoxChallengeSelect.Items.Clear();
 
             foreach (string dir in Directory.GetDirectories($"{Directory.GetCurrentDirectory()}/{comboBoxEventSelect.Text}").Reverse())
             {
                 if (Path.GetFileName(dir).StartsWith("Year"))
                 {
                     comboBoxYearSelect.Items.Add(Path.GetFileName(dir));
+                }
+            }
+        }
+
+        private void ButtonSolveSelected_Click(object sender, EventArgs e)
+        {
+            if (comboBoxChallengeSelect == null)
+            {
+                MessageBox.Show("No challenge selected");
+                return;
+            }
+
+            if ((comboBoxEventSelect.SelectedItem != null) && (comboBoxYearSelect.SelectedItem != null) && (comboBoxChallengeSelect.SelectedItem != null))
+            {
+                string key = $"{comboBoxEventSelect.SelectedItem} {comboBoxYearSelect.SelectedItem}";
+                buttonSolveSelected.Tag = allChallenges[key][comboBoxChallengeSelect.SelectedIndex];
+                if (buttonSolveSelected.Tag is Challenge d)
+                {
+                    d.StopWatch.Restart();
+                    d.Solve(checkBoxTestData.Checked);
+                    d.StopWatch.Stop();
+
+                    if (tableLayoutPanelDayGrid.GetControlFromPosition(4, 1) is Label l4)
+                    {
+                        l4.Text = $"{d.StopWatch.Elapsed}";
+                    }
+                    MessageBox.Show($"Part1: {d.Part1Solution}\nPart2: {d.Part2Solution}\nPart3: {d.Part3Solution}\nTime: {d.StopWatch.Elapsed}");
                 }
             }
         }
