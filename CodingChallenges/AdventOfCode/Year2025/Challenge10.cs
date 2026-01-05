@@ -65,7 +65,7 @@ namespace CodingChallenges.AdventOfCode.Year2025
                 }
             }
 
-            int presses = PressButtons(targetLeds[0], 0, buttons[0], []);
+            //int presses = PressButtons(targetLeds[0], 0, buttons[0], []);
 
             Part1Solution = "TBD";
 
