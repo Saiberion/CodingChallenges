@@ -30,14 +30,18 @@ namespace CodingChallenges
         private void InitializeComponent()
         {
             tableLayoutPanelMainContainer = new TableLayoutPanel();
-            comboBoxYearSelect = new ComboBox();
-            comboBoxEventSelect = new ComboBox();
-            labelCaptionSolutionPart3 = new Label();
-            labelCaptionRuntime = new Label();
-            labelCaptionSolutionPart2 = new Label();
-            labelCaptionSolutionPart1 = new Label();
             tableLayoutPanelDayGrid = new TableLayoutPanel();
+            labelCaptionSolutionPart1 = new Label();
+            labelCaptionSolutionPart2 = new Label();
+            labelCaptionRuntime = new Label();
+            labelCaptionSolutionPart3 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            comboBoxEventSelect = new ComboBox();
+            comboBoxYearSelect = new ComboBox();
+            comboBoxChallengeSelect = new ComboBox();
+            checkBoxVisualization = new CheckBox();
+            checkBoxTestData = new CheckBox();
+            buttonSolveSelected = new Button();
             tableLayoutPanelMainContainer.SuspendLayout();
             tableLayoutPanelDayGrid.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -61,73 +65,6 @@ namespace CodingChallenges
             tableLayoutPanelMainContainer.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanelMainContainer.Size = new Size(1082, 519);
             tableLayoutPanelMainContainer.TabIndex = 0;
-            // 
-            // comboBoxYearSelect
-            // 
-            comboBoxYearSelect.Anchor = AnchorStyles.Left;
-            comboBoxYearSelect.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxYearSelect.FormattingEnabled = true;
-            comboBoxYearSelect.Location = new Point(152, 3);
-            comboBoxYearSelect.Margin = new Padding(4, 3, 4, 3);
-            comboBoxYearSelect.Name = "comboBoxYearSelect";
-            comboBoxYearSelect.Size = new Size(140, 23);
-            comboBoxYearSelect.TabIndex = 2;
-            comboBoxYearSelect.SelectedIndexChanged += ComboBoxYearSelect_SelectedIndexChanged;
-            // 
-            // comboBoxEventSelect
-            // 
-            comboBoxEventSelect.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxEventSelect.FormattingEnabled = true;
-            comboBoxEventSelect.Location = new Point(4, 3);
-            comboBoxEventSelect.Margin = new Padding(4, 3, 4, 3);
-            comboBoxEventSelect.Name = "comboBoxEventSelect";
-            comboBoxEventSelect.Size = new Size(140, 23);
-            comboBoxEventSelect.TabIndex = 0;
-            comboBoxEventSelect.SelectedIndexChanged += ComboBoxEventSelect_SelectedIndexChanged;
-            // 
-            // labelCaptionSolutionPart3
-            // 
-            labelCaptionSolutionPart3.Anchor = AnchorStyles.None;
-            labelCaptionSolutionPart3.AutoSize = true;
-            labelCaptionSolutionPart3.Location = new Point(679, 231);
-            labelCaptionSolutionPart3.Margin = new Padding(4, 0, 4, 0);
-            labelCaptionSolutionPart3.Name = "labelCaptionSolutionPart3";
-            labelCaptionSolutionPart3.Size = new Size(84, 15);
-            labelCaptionSolutionPart3.TabIndex = 4;
-            labelCaptionSolutionPart3.Text = "Solution Part 3";
-            // 
-            // labelCaptionRuntime
-            // 
-            labelCaptionRuntime.Anchor = AnchorStyles.None;
-            labelCaptionRuntime.AutoSize = true;
-            labelCaptionRuntime.Location = new Point(917, 231);
-            labelCaptionRuntime.Margin = new Padding(4, 0, 4, 0);
-            labelCaptionRuntime.Name = "labelCaptionRuntime";
-            labelCaptionRuntime.Size = new Size(77, 15);
-            labelCaptionRuntime.TabIndex = 3;
-            labelCaptionRuntime.Text = "Durchlaufzeit";
-            // 
-            // labelCaptionSolutionPart2
-            // 
-            labelCaptionSolutionPart2.Anchor = AnchorStyles.None;
-            labelCaptionSolutionPart2.AutoSize = true;
-            labelCaptionSolutionPart2.Location = new Point(445, 231);
-            labelCaptionSolutionPart2.Margin = new Padding(4, 0, 4, 0);
-            labelCaptionSolutionPart2.Name = "labelCaptionSolutionPart2";
-            labelCaptionSolutionPart2.Size = new Size(84, 15);
-            labelCaptionSolutionPart2.TabIndex = 2;
-            labelCaptionSolutionPart2.Text = "Solution Part 2";
-            // 
-            // labelCaptionSolutionPart1
-            // 
-            labelCaptionSolutionPart1.Anchor = AnchorStyles.None;
-            labelCaptionSolutionPart1.AutoSize = true;
-            labelCaptionSolutionPart1.Location = new Point(211, 231);
-            labelCaptionSolutionPart1.Margin = new Padding(4, 0, 4, 0);
-            labelCaptionSolutionPart1.Name = "labelCaptionSolutionPart1";
-            labelCaptionSolutionPart1.Size = new Size(84, 15);
-            labelCaptionSolutionPart1.TabIndex = 1;
-            labelCaptionSolutionPart1.Text = "Solution Part 1";
             // 
             // tableLayoutPanelDayGrid
             // 
@@ -153,17 +90,131 @@ namespace CodingChallenges
             tableLayoutPanelDayGrid.Size = new Size(1074, 478);
             tableLayoutPanelDayGrid.TabIndex = 1;
             // 
+            // labelCaptionSolutionPart1
+            // 
+            labelCaptionSolutionPart1.Anchor = AnchorStyles.None;
+            labelCaptionSolutionPart1.AutoSize = true;
+            labelCaptionSolutionPart1.Location = new Point(211, 231);
+            labelCaptionSolutionPart1.Margin = new Padding(4, 0, 4, 0);
+            labelCaptionSolutionPart1.Name = "labelCaptionSolutionPart1";
+            labelCaptionSolutionPart1.Size = new Size(84, 15);
+            labelCaptionSolutionPart1.TabIndex = 1;
+            labelCaptionSolutionPart1.Text = "Solution Part 1";
+            // 
+            // labelCaptionSolutionPart2
+            // 
+            labelCaptionSolutionPart2.Anchor = AnchorStyles.None;
+            labelCaptionSolutionPart2.AutoSize = true;
+            labelCaptionSolutionPart2.Location = new Point(445, 231);
+            labelCaptionSolutionPart2.Margin = new Padding(4, 0, 4, 0);
+            labelCaptionSolutionPart2.Name = "labelCaptionSolutionPart2";
+            labelCaptionSolutionPart2.Size = new Size(84, 15);
+            labelCaptionSolutionPart2.TabIndex = 2;
+            labelCaptionSolutionPart2.Text = "Solution Part 2";
+            // 
+            // labelCaptionRuntime
+            // 
+            labelCaptionRuntime.Anchor = AnchorStyles.None;
+            labelCaptionRuntime.AutoSize = true;
+            labelCaptionRuntime.Location = new Point(917, 231);
+            labelCaptionRuntime.Margin = new Padding(4, 0, 4, 0);
+            labelCaptionRuntime.Name = "labelCaptionRuntime";
+            labelCaptionRuntime.Size = new Size(77, 15);
+            labelCaptionRuntime.TabIndex = 3;
+            labelCaptionRuntime.Text = "Durchlaufzeit";
+            // 
+            // labelCaptionSolutionPart3
+            // 
+            labelCaptionSolutionPart3.Anchor = AnchorStyles.None;
+            labelCaptionSolutionPart3.AutoSize = true;
+            labelCaptionSolutionPart3.Location = new Point(679, 231);
+            labelCaptionSolutionPart3.Margin = new Padding(4, 0, 4, 0);
+            labelCaptionSolutionPart3.Name = "labelCaptionSolutionPart3";
+            labelCaptionSolutionPart3.Size = new Size(84, 15);
+            labelCaptionSolutionPart3.TabIndex = 4;
+            labelCaptionSolutionPart3.Text = "Solution Part 3";
+            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoSize = true;
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Controls.Add(comboBoxEventSelect);
             flowLayoutPanel1.Controls.Add(comboBoxYearSelect);
+            flowLayoutPanel1.Controls.Add(comboBoxChallengeSelect);
+            flowLayoutPanel1.Controls.Add(checkBoxVisualization);
+            flowLayoutPanel1.Controls.Add(checkBoxTestData);
+            flowLayoutPanel1.Controls.Add(buttonSolveSelected);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1076, 29);
             flowLayoutPanel1.TabIndex = 6;
+            // 
+            // comboBoxEventSelect
+            // 
+            comboBoxEventSelect.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxEventSelect.FormattingEnabled = true;
+            comboBoxEventSelect.Location = new Point(4, 3);
+            comboBoxEventSelect.Margin = new Padding(4, 3, 4, 3);
+            comboBoxEventSelect.Name = "comboBoxEventSelect";
+            comboBoxEventSelect.Size = new Size(140, 23);
+            comboBoxEventSelect.TabIndex = 0;
+            comboBoxEventSelect.SelectedIndexChanged += ComboBoxEventSelect_SelectedIndexChanged;
+            // 
+            // comboBoxYearSelect
+            // 
+            comboBoxYearSelect.Anchor = AnchorStyles.Left;
+            comboBoxYearSelect.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxYearSelect.FormattingEnabled = true;
+            comboBoxYearSelect.Location = new Point(152, 3);
+            comboBoxYearSelect.Margin = new Padding(4, 3, 4, 3);
+            comboBoxYearSelect.Name = "comboBoxYearSelect";
+            comboBoxYearSelect.Size = new Size(140, 23);
+            comboBoxYearSelect.TabIndex = 2;
+            comboBoxYearSelect.SelectedIndexChanged += ComboBoxYearSelect_SelectedIndexChanged;
+            // 
+            // comboBoxChallengeSelect
+            // 
+            comboBoxChallengeSelect.Anchor = AnchorStyles.Left;
+            comboBoxChallengeSelect.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxChallengeSelect.FormattingEnabled = true;
+            comboBoxChallengeSelect.Location = new Point(299, 3);
+            comboBoxChallengeSelect.Name = "comboBoxChallengeSelect";
+            comboBoxChallengeSelect.Size = new Size(140, 23);
+            comboBoxChallengeSelect.TabIndex = 3;
+            // 
+            // checkBoxVisualization
+            // 
+            checkBoxVisualization.Anchor = AnchorStyles.Left;
+            checkBoxVisualization.AutoSize = true;
+            checkBoxVisualization.Location = new Point(445, 5);
+            checkBoxVisualization.Name = "checkBoxVisualization";
+            checkBoxVisualization.Size = new Size(92, 19);
+            checkBoxVisualization.TabIndex = 4;
+            checkBoxVisualization.Text = "Visualization";
+            checkBoxVisualization.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTestData
+            // 
+            checkBoxTestData.Anchor = AnchorStyles.Left;
+            checkBoxTestData.AutoSize = true;
+            checkBoxTestData.Location = new Point(543, 5);
+            checkBoxTestData.Name = "checkBoxTestData";
+            checkBoxTestData.Size = new Size(74, 19);
+            checkBoxTestData.TabIndex = 5;
+            checkBoxTestData.Text = "Test Data";
+            checkBoxTestData.UseVisualStyleBackColor = true;
+            // 
+            // buttonSolveSelected
+            // 
+            buttonSolveSelected.Anchor = AnchorStyles.Left;
+            buttonSolveSelected.Location = new Point(623, 3);
+            buttonSolveSelected.Name = "buttonSolveSelected";
+            buttonSolveSelected.Size = new Size(75, 23);
+            buttonSolveSelected.TabIndex = 6;
+            buttonSolveSelected.Text = "Solve";
+            buttonSolveSelected.UseVisualStyleBackColor = true;
+            buttonSolveSelected.Click += ButtonSolveSelected_Click;
             // 
             // FormSolverUI
             // 
@@ -183,6 +234,7 @@ namespace CodingChallenges
             tableLayoutPanelDayGrid.ResumeLayout(false);
             tableLayoutPanelDayGrid.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
 
@@ -199,6 +251,10 @@ namespace CodingChallenges
         private Label labelCaptionRuntime;
         private Label labelCaptionSolutionPart3;
         private FlowLayoutPanel flowLayoutPanel1;
+        private ComboBox comboBoxChallengeSelect;
+        private CheckBox checkBoxVisualization;
+        private CheckBox checkBoxTestData;
+        private Button buttonSolveSelected;
     }
 }
 

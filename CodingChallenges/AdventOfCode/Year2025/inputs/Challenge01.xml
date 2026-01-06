@@ -1,4 +1,17 @@
-L44
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ChallengeInput>
+  <TestData>
+L68
+L30
+R48
+L5
+R60
+L55
+L1
+L99
+R14
+L82</TestData>
+  <PuzzleData>L44
 R35
 R4
 L40
@@ -4409,4 +4422,5 @@ R46
 L6
 R16
 L1
-R47
+R47</PuzzleData>
+</ChallengeInput>

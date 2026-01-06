@@ -1,4 +1,29 @@
-rey: hlt gax hrb
+<?xml version="1.0" encoding="utf-8" ?>
+<ChallengeInput>
+  <TestData>aaa: you hhh
+you: bbb ccc
+bbb: ddd eee
+ccc: ddd eee fff
+ddd: ggg
+eee: out
+fff: out
+ggg: out
+hhh: ccc fff iii
+iii: out</TestData>
+  <TestData>svr: aaa bbb
+aaa: fft
+fft: ccc
+bbb: tty
+tty: ccc
+ccc: ddd eee
+ddd: hub
+hub: fff
+eee: dac
+dac: fff
+fff: ggg hhh
+ggg: out
+hhh: out</TestData>
+  <PuzzleData>rey: hlt gax hrb
 nhb: ttd
 yzv: qnv nif iyv
 kyu: wdd knt
@@ -601,4 +626,5 @@ coz: ipf bli
 wgn: dxz miv
 tpf: fnk
 dvo: smo
-rci: ggb enz zte
+rci: ggb enz zte</PuzzleData>
+</ChallengeInput>

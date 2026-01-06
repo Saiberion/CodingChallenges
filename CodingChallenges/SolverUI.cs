@@ -395,6 +395,7 @@ namespace CodingChallenges
             if ((sender is Button b) && (b.Parent is TableLayoutPanel tbl) && (b.Tag is Challenge c))
             {
                 c.StopWatch.Restart();
+                c.UseTestData = checkBoxTestData.Checked;
                 c.Solve();
                 c.StopWatch.Stop();
 
@@ -602,7 +603,8 @@ namespace CodingChallenges
                 if (buttonSolveSelected.Tag is Challenge d)
                 {
                     d.StopWatch.Restart();
-                    d.Solve(checkBoxTestData.Checked);
+                    d.UseTestData = checkBoxTestData.Checked;
+                    d.Solve();
                     d.StopWatch.Stop();
 
                     if (tableLayoutPanelDayGrid.GetControlFromPosition(4, 1) is Label l4)

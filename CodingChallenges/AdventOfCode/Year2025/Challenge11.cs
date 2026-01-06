@@ -40,6 +40,17 @@ namespace CodingChallenges.AdventOfCode.Year2025
             devices["out"] = [];
             Part1Solution = PathCount(devices, "you", "out", []).ToString();
 
+            if (UseTestData)
+            {
+                devices.Clear();
+                foreach (string line in TestInput[1])
+                {
+                    string[] devcon = line.Split([' ', ':'], StringSplitOptions.RemoveEmptyEntries);
+                    devices.Add(devcon[0], [.. devcon[1..]]);
+                }
+                devices["out"] = [];
+            }
+
             long a = PathCount(devices, "dac", "out", []);
             long b = PathCount(devices, "fft", "dac", []);
             long c = PathCount(devices, "svr", "fft", []);

@@ -759,40 +759,40 @@
     <None Update="AdventOfCode\Year2024\inputs\Challenge25.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge01.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge01.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge02.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge02.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge03.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge03.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge04.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge04.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge05.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge05.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge06.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge06.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge07.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge07.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge08.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge08.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge09.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge09.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge10.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge10.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge11.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge11.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="AdventOfCode\Year2025\inputs\Challenge12.txt">
+    <None Update="AdventOfCode\Year2025\inputs\Challenge12.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="EverybodyCodes\Year2024\inputs\Challenge01.txt">

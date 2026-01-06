@@ -47,7 +47,7 @@ namespace CodingChallenges.AdventOfCode.Year2025
             circuits.Clear();
             for (int iter = 0; iter < sortedDistances.Count; iter ++)
             {
-                if (iter == 1000)
+                if (iter == Repetitions[UseTestData ? 0 : 1])
                 {
                     List<int> nodesInCircuit = [];
                     foreach (List<int> l in circuits)
